@@ -50,6 +50,22 @@ namespace GUI_20212202_IJA9WQ.Renderer
             }
         }
 
+        public Brush PeashooterBrush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "peashooter.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+
+        public Brush SunflowerBrush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "sunflower.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
@@ -58,9 +74,19 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 drawingContext.DrawRectangle(BackgroundDayBrush, null, new Rect(0, 0, 1025, 600));
                 drawingContext.DrawRectangle(ItemShopBrush, null, new Rect(10, 10, 104, 495));
 
+                for (int i = 0; i < logic.PlantsSelectionDay.Length; i++)
+                {
+                    drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ImageBrush(), null, new Rect(30, 22 + (i * 65), 60, 60));
+                }
+
                 foreach (var item in logic.LawnMovers)
                 {
                     drawingContext.DrawGeometry(LawnMoverBrush, null, item.Area);
+                }
+
+                foreach (var item in logic.Plants)
+                {
+                    drawingContext.DrawGeometry(item.ImageBrush(), null, item.Area);
                 }
             }
         }

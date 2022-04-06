@@ -9,7 +9,11 @@ namespace GUI_20212202_IJA9WQ.Logic
 {
     public class GameLogic : IGameLogic
     {
+
+
         public List<Plant> Plants { get; set; }
+        public Plant[] PlantsSelectionDay { get; }
+        public Plant CurrentlySelected { get; set; }
         public List<Zombie> Zombies { get; set; }
         public List<LawnMover> LawnMovers { get; set; }
 
@@ -23,6 +27,8 @@ namespace GUI_20212202_IJA9WQ.Logic
             {
                 LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 50, 75, 53, 10));
             }
+
+            PlantsSelectionDay = new Plant[] { new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower() };
         }
 
         public void TimeStep()
@@ -30,12 +36,25 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             for (int i = 0; i < LawnMovers.Count; i++)
             {
-                bool outside = LawnMovers[i].Move();
-                if (outside)
-                {
-                    LawnMovers.RemoveAt(i);
-                }
+                //bool outside = LawnMovers[i].Move();
+                //if (outside)
+                //{
+                //    LawnMovers.RemoveAt(i);
+                //}
             }
+        }
+
+        public void PlantSelect(int i)
+        {
+            CurrentlySelected = PlantsSelectionDay[i];
+        }
+
+        public void PlantToPlant(int i, int j)
+        {
+            CurrentlySelected.CenterX = i;
+            CurrentlySelected.CenterY = j;
+            Plants.Add(CurrentlySelected.GetCopy());
+            CurrentlySelected = null;
         }
 
     }

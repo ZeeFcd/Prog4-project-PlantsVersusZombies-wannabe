@@ -10,31 +10,32 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public abstract class Plant : GameItem
     {
-        private int placeX;
-        private int placeY;
+        public int CenterX { get; set; }
+        public int CenterY { get; set; }
         private int displayWidth;
         private int displayHeight;
 
-        public int Price { get; }
-        public int Cooldown { get; }
-        public int Range { get; }
+        public int Price { get; set; }
+        public int Cooldown { get; set; }
+        public int Range { get; set; }
 
         protected abstract void Ability();
+        public abstract ImageBrush ImageBrush();
 
-        public Plant(int placeX, int placeY, int displayWidth, int displayHeight)
+        public Plant()
         {
-            this.placeX = placeX;
-            this.placeY = placeY;
-            this.displayWidth = displayWidth;
-            this.displayHeight = displayHeight;
+            displayWidth = 60;
+            displayHeight = 60;
         }
 
         public override Geometry Area
         {
             get
             {
-                return new RectangleGeometry(new Rect(placeX, placeY, displayWidth / 24, displayHeight / 8)); //TODO
+                return new RectangleGeometry(new Rect(CenterX, CenterY, displayWidth, displayHeight));
             }
         }
+
+        public abstract Plant GetCopy();
     }
 }

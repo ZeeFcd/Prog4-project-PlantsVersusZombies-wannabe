@@ -37,7 +37,7 @@ namespace GUI_20212202_IJA9WQ.Models
         public bool Move()
         {
             centerX += speed;
-            if (centerX > 500)
+            if (centerX > 1500)
             {
                 return true;
             }

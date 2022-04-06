@@ -23,6 +23,7 @@ namespace GUI_20212202_IJA9WQ
     public partial class MainWindow : Window
     {
         DispatcherTimer dt;
+        IGameLogic logic;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace GUI_20212202_IJA9WQ
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var logic = new GameLogic((int)grid.ActualWidth, (int)grid.ActualHeight);
+            logic = new GameLogic((int)grid.ActualWidth, (int)grid.ActualHeight);
             display.SetupLogic(logic);
             display.InvalidateVisual();
             dt = new DispatcherTimer();
@@ -41,6 +42,32 @@ namespace GUI_20212202_IJA9WQ
                 display.InvalidateVisual();
             };
             dt.Start();
-        }      
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            int x = (int)e.GetPosition(grid).X;
+            int y = (int)e.GetPosition(grid).Y;
+
+            if (10 < x && x < 114 && 10 < y && y < 415)
+            {
+                int z = y-10;
+                int cellnumber = z / (int)(410 / 6);
+                logic.PlantSelect(cellnumber);
+            }
+
+            if (logic.CurrentlySelected != null && 260 < x && x < 975 && 75 < y && y < 565)
+            {
+                int temp = (int)(715 / 9);
+                int i = x / temp;
+
+                int temp2 = (int)(490 / 5);
+                int j = y / temp2;
+
+                logic.PlantToPlant(temp * i + 20, temp2 * j);
+            }
+
+            this.InvalidateVisual();
+        }
     }
 }

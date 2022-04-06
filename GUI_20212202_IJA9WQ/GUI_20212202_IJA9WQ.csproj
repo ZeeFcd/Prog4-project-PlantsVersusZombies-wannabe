@@ -12,6 +12,8 @@
     <None Remove="Images\itemShop1.png" />
     <None Remove="Images\lawn_mover.png" />
     <None Remove="Images\lawn_mover2.png" />
+    <None Remove="Images\peashooter.png" />
+    <None Remove="Images\sunflower.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +30,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\lawn_mover2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflower.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
