@@ -7,7 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Remove="Images\background_day.png" />
+    <None Remove="Images\background_night.png" />
+    <None Remove="Images\lawn_mover.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\background_day.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\background_night.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\lawn_mover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

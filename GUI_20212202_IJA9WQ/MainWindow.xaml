@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:GUI_20212202_IJA9WQ"
         xmlns:renderer="clr-namespace:GUI_20212202_IJA9WQ.Renderer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
-    <Grid>
-
+        Title="MainWindow" ResizeMode="NoResize" Loaded="Window_Loaded" >
+    <Grid x:Name="grid" Height="600" Width="1025">
+        <renderer:Display x:Name="display" />
     </Grid>
 </Window>

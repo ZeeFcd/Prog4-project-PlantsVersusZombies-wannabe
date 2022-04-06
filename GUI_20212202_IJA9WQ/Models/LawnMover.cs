@@ -8,35 +8,27 @@ using System.Windows.Media;
 
 namespace GUI_20212202_IJA9WQ.Models
 {
-    public class Zombie : GameItem
+    public class LawnMover : GameItem
     {
-        private int centerX;
-        private int centerY;
+        private int placeX;
+        private int placeY;
         private int displayWidth;
         private int displayHeight;
 
-        public Zombie(int centerX, int centerY, int displayWidth, int displayHeight)
+        public LawnMover(int placeX, int placeY, int displayWidth, int displayHeight)
         {
-            this.centerX = centerX;
-            this.centerY = centerY;
+            this.placeX = placeX;
+            this.placeY = placeY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
         }
-
-        public int Speed { get; }
-
 
         public override Geometry Area
         {
             get
             {
-                return new RectangleGeometry(new Rect(centerX, centerY, displayWidth / 24, displayHeight / 8));
+                return new RectangleGeometry(new Rect(placeX, placeY, displayWidth / 24, displayHeight / 8));
             }
-        }
-
-        public void Move()
-        {
-            centerX += Speed;
         }
     }
 }
