@@ -15,15 +15,16 @@ namespace GUI_20212202_IJA9WQ.Models
         private int displayWidth;
         private int displayHeight;
 
-        public Zombie(int centerX, int centerY, int displayWidth, int displayHeight)
+        public Zombie(int centerX, int centerY, int displayWidth, int displayHeight, int speed)
         {
             this.centerX = centerX;
             this.centerY = centerY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
+            this.speed = speed;
         }
 
-        public int Speed { get; }
+        public int speed;
 
 
         public override Geometry Area
@@ -36,7 +37,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public void Move()
         {
-            centerX += Speed;
+            centerX += speed;
         }
     }
 }

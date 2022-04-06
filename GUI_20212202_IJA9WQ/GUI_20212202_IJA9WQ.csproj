@@ -9,7 +9,9 @@
   <ItemGroup>
     <None Remove="Images\background_day.png" />
     <None Remove="Images\background_night.png" />
+    <None Remove="Images\itemShop1.png" />
     <None Remove="Images\lawn_mover.png" />
+    <None Remove="Images\lawn_mover2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +21,13 @@
     <Content Include="Images\background_night.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\itemShop1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\lawn_mover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\lawn_mover2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

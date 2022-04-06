@@ -10,25 +10,38 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class LawnMover : GameItem
     {
-        private int placeX;
-        private int placeY;
+        private int centerX;
+        private int centerY;
         private int displayWidth;
         private int displayHeight;
 
-        public LawnMover(int placeX, int placeY, int displayWidth, int displayHeight)
+        public LawnMover(int placeX, int placeY, int displayWidth, int displayHeight, int speed)
         {
-            this.placeX = placeX;
-            this.placeY = placeY;
+            this.centerX = placeX;
+            this.centerY = placeY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
+            this.speed = speed;
         }
+
+        private int speed;
 
         public override Geometry Area
         {
             get
             {
-                return new RectangleGeometry(new Rect(placeX, placeY, displayWidth / 24, displayHeight / 8));
+                return new RectangleGeometry(new Rect(centerX, centerY, displayWidth, displayHeight));
             }
+        }
+
+        public bool Move()
+        {
+            centerX += speed;
+            if (centerX > 500)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

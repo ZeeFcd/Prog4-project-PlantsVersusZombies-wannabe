@@ -19,19 +19,25 @@ namespace GUI_20212202_IJA9WQ.Logic
             Zombies = new List<Zombie>();
             LawnMovers = new List<LawnMover>();
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 1; i < 6; i++)
             {
-                LawnMovers.Add(new LawnMover(areaWidth + 100, areaHeight + 100, areaWidth, areaHeight));
+                LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 50, 75, 53, 10));
             }
         }
 
         public void TimeStep()
         {
 
-
+            for (int i = 0; i < LawnMovers.Count; i++)
+            {
+                bool outside = LawnMovers[i].Move();
+                if (outside)
+                {
+                    LawnMovers.RemoveAt(i);
+                }
+            }
         }
-
-
 
     }
 }
+
