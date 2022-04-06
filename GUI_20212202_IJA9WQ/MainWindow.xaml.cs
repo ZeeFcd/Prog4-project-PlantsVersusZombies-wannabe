@@ -24,5 +24,15 @@ namespace GUI_20212202_IJA9WQ
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+        }
     }
 }
