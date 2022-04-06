@@ -56,15 +56,15 @@ namespace GUI_20212202_IJA9WQ
                 logic.PlantSelect(cellnumber);
             }
 
-            if (logic.CurrentlySelected != null && 260 < x && x < 975 && 75 < y && y < 565)
+            if (logic.CurrentlySelected != null && 260 < x && x < 970 && 75 < y && y < 565)
             {
                 int temp = (int)(715 / 9);
-                int i = x / temp;
-
+                int i = (x-260) / temp;
+                
                 int temp2 = (int)(490 / 5);
-                int j = y / temp2;
-
-                logic.PlantToPlant(temp * i + 20, temp2 * j);
+                int j = (y-75) / temp2;
+                ;
+                logic.PlantToPlant(temp * i +260, temp2 * j+75);
             }
 
             this.InvalidateVisual();
