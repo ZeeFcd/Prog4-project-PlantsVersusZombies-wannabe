@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_20212202_IJA9WQ.Assets;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,9 +25,13 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Cooldown = 10;
         }
 
-        public override ImageBrush ImageBrush()
+        public override Brush ShopImage()
         {
-            return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "peashooter.png"), UriKind.RelativeOrAbsolute)));
+            return GameBrushes.PeashooterBrush;
+        }
+        public override Brush Animation()
+        {
+            return GameBrushes.PeashooterBrush;
         }
 
         public override Plant GetCopy()

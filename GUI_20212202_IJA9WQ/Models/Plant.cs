@@ -20,7 +20,8 @@ namespace GUI_20212202_IJA9WQ.Models
         public int Range { get; set; }
 
         protected abstract void Ability();
-        public abstract ImageBrush ImageBrush();
+        public abstract Brush ShopImage();
+        public abstract Brush Animation();
 
         public Plant()
         {
