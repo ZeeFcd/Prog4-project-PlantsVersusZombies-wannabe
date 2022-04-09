@@ -39,9 +39,10 @@ namespace GUI_20212202_IJA9WQ
             dt.Tick += (sender, eventargs) =>
             {
                 logic.TimeStep();
-                display.InvalidateVisual();
+                //display.InvalidateVisual();
             };
             dt.Start();
+
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -55,8 +56,7 @@ namespace GUI_20212202_IJA9WQ
                 int cellnumber = z / (int)(410 / 6);
                 logic.PlantSelect(cellnumber);
             }
-
-            if (logic.CurrentlySelected != null && 260 < x && x < 970 && 75 < y && y < 565)
+            else if (logic.CurrentlySelected != null && 260 < x && x < 970 && 75 < y && y < 565)
             {
                 int temp = (int)(715 / 9);
                 int i = (x-260) / temp;
@@ -67,7 +67,7 @@ namespace GUI_20212202_IJA9WQ
                 logic.PlantToPlant(temp * i +260, temp2 * j+75);
             }
 
-            this.InvalidateVisual();
+            display.InvalidateVisual();
         }
     }
 }

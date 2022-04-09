@@ -34,14 +34,14 @@ namespace GUI_20212202_IJA9WQ.Logic
         public void TimeStep()
         {
 
-            for (int i = 0; i < LawnMovers.Count; i++)
-            {
-                //bool outside = LawnMovers[i].Move();
-                //if (outside)
-                //{
-                //    LawnMovers.RemoveAt(i);
-                //}
-            }
+            //for (int i = 0; i < LawnMovers.Count; i++)
+            //{
+            //    bool outside = LawnMovers[i].Move();
+            //    if (outside)
+            //    {
+            //        LawnMovers.RemoveAt(i);
+            //    }
+            //}
         }
 
         public void PlantSelect(int i)
