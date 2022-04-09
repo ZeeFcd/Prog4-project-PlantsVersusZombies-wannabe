@@ -1,4 +1,5 @@
 ﻿using GUI_20212202_IJA9WQ.Models;
+using GUI_20212202_IJA9WQ.Assets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +26,17 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             for (int i = 1; i < 6; i++)
             {
-                LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 50, 75, 53, 10));
+                LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 60, 75, 53, 10));
             }
 
-            PlantsSelectionDay = new Plant[] { new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower() };
+            
+            for (int i = 1; i < 6; i++)
+            {
+                
+                Zombies.Add(new Zombie(1050, 75 + (99 * i) -103, 75, 101, -0.4f));
+            }
+
+            PlantsSelectionDay = new Plant[]{ new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower() };
         }
 
         public void TimeStep()
@@ -42,6 +50,11 @@ namespace GUI_20212202_IJA9WQ.Logic
             //        LawnMovers.RemoveAt(i);
             //    }
             //}
+            for (int i = 0; i < Zombies.Count; i++)
+            {
+                Zombies[i].Move();
+            }
+
         }
 
         public void PlantSelect(int i)

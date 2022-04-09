@@ -21,12 +21,12 @@ namespace GUI_20212202_IJA9WQ.Models
 
         protected abstract void Ability();
         public abstract Brush ShopImage();
-        public abstract Brush Animation();
+        public abstract ImageSource Animation();
 
         public Plant()
         {
-            displayWidth = 60;
-            displayHeight = 60;
+            displayWidth = 65;
+            displayHeight = 65;
         }
 
         public override Geometry Area
@@ -36,6 +36,8 @@ namespace GUI_20212202_IJA9WQ.Models
                 return new RectangleGeometry(new Rect(CenterX, CenterY, displayWidth, displayHeight));
             }
         }
+
+
 
         public abstract Plant GetCopy();
     }

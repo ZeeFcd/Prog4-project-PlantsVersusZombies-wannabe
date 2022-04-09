@@ -21,9 +21,9 @@ namespace GUI_20212202_IJA9WQ.Models
         {
             return GameBrushes.SunflowerBrush;
         }
-        public override Brush Animation()
+        public override ImageSource Animation()
         {
-            return GameBrushes.SunflowerBrush;
+            return AnimatedImages.SunflowerImage;
         }
 
         public override Plant GetCopy()

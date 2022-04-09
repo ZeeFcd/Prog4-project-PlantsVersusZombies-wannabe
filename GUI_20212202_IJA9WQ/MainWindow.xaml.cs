@@ -23,7 +23,7 @@ namespace GUI_20212202_IJA9WQ
     public partial class MainWindow : Window
     {
         DispatcherTimer dt;
-        IGameLogic logic;
+        GameLogic logic;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,14 +35,14 @@ namespace GUI_20212202_IJA9WQ
             display.SetupLogic(logic);
             display.InvalidateVisual();
             dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromMilliseconds(10);
+            dt.Interval = TimeSpan.FromMilliseconds(17);
             dt.Tick += (sender, eventargs) =>
             {
                 logic.TimeStep();
-                //display.InvalidateVisual();
+                display.InvalidateVisual();
             };
             dt.Start();
-
+            
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -64,7 +64,7 @@ namespace GUI_20212202_IJA9WQ
                 int temp2 = (int)(490 / 5);
                 int j = (y-75) / temp2;
                 ;
-                logic.PlantToPlant(temp * i +260, temp2 * j+75);
+                logic.PlantToPlant(temp * i +260, temp2 * j+99);
             }
 
             display.InvalidateVisual();

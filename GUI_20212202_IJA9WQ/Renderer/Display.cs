@@ -38,17 +38,26 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 for (int i = 0; i < logic.PlantsSelectionDay.Length; i++)
                 {
-                    drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImage(), null, new Rect(30, 22 + (i * 65), 60, 60));
+                    drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImage(), new Pen(Brushes.Black, 1), new Rect(30, 22 + (i * 65), 60, 60));
                 }
 
                 foreach (var item in logic.LawnMovers)
                 {
-                    drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, null, item.Area);
+                    drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, new Pen(Brushes.Black,1), item.Area);
                 }
-                
+
+                foreach (var item in logic.Zombies)
+                {
+                    drawingContext.DrawGeometry(GameBrushes.ZombieBrush, new Pen(Brushes.Black, 1), item.Area);
+                }
+
                 foreach (var item in logic.Plants)
                 {
-                    drawingContext.DrawGeometry(item.Animation(), null, item.Area);
+
+                    drawingContext.DrawGeometry(item.ShopImage(), new Pen(Brushes.Black, 1), item.Area);
+
+
+
                 }
             }
         }

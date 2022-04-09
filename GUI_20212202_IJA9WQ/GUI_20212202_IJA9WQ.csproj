@@ -15,6 +15,7 @@
     <None Remove="Images\peashooter.png" />
     <None Remove="Images\sunflower.png" />
     <None Remove="Images\sunflowerAnim.gif" />
+    <None Remove="Images\thiller.gif" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,10 +43,9 @@
     <Content Include="Images\sunflowerAnim.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+    <Content Include="Images\thiller.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

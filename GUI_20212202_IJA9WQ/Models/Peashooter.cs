@@ -29,9 +29,9 @@ namespace GUI_20212202_IJA9WQ.Models
         {
             return GameBrushes.PeashooterBrush;
         }
-        public override Brush Animation()
+        public override ImageSource Animation()
         {
-            return GameBrushes.PeashooterBrush;
+            return AnimatedImages.PeashooterImage;
         }
 
         public override Plant GetCopy()
