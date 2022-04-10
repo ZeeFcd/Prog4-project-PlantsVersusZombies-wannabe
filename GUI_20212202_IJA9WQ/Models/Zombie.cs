@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_20212202_IJA9WQ.Assets;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,39 +9,31 @@ using System.Windows.Media;
 
 namespace GUI_20212202_IJA9WQ.Models
 {
-    public class Zombie : GameItem
+    public class Zombie : Moveable
     {
-        private int centerX;
-        private int centerY;
-        private int displayWidth;
-        private int displayHeight;
-
-        public Zombie(int centerX, int centerY, int displayWidth, int displayHeight, float speed)
+        bool ally;
+        public Zombie(int placeX, int placeY, int displayWidth, int displayHeight, float speed)
         {
-            this.centerX = centerX;
-            this.centerY = centerY;
+            this.placeX = placeX;
+            this.placeY = placeY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
             this.speed = speed;
-            this.actualX = centerX;
+            this.actualX = placeX;
+            ally=false;
         }
-
-        public float speed;
-        public float actualX;
-
 
         public override Geometry Area
         {
             get
             {
-                return new RectangleGeometry(new Rect(centerX, centerY, displayWidth, displayHeight));
+                return new RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight));
             }
         }
 
-        public void Move()
+        public override void Terminated()
         {
-            actualX+= speed;
-            centerX =(int)Math.Round(actualX);
+            throw new NotImplementedException();
         }
     }
 }

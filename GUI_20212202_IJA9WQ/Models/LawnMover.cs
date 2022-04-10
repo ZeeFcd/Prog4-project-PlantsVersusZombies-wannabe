@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_20212202_IJA9WQ.Assets;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,40 +9,24 @@ using System.Windows.Media;
 
 namespace GUI_20212202_IJA9WQ.Models
 {
-    public class LawnMover : GameItem
+    public class LawnMover : Moveable
     {
-        private int centerX;
-        private int centerY;
-        private int displayWidth;
-        private int displayHeight;
-
-        public LawnMover(int placeX, int placeY, int displayWidth, int displayHeight, int speed)
+        public LawnMover(int placeX, int placeY, int displayWidth, int displayHeight, float speed)
         {
-            this.centerX = placeX;
-            this.centerY = placeY;
+            this.placeX = placeX;
+            this.placeY = placeY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
             this.speed = speed;
         }
 
-        private int speed;
-
         public override Geometry Area
         {
-            get
-            {
-                return new RectangleGeometry(new Rect(centerX, centerY, displayWidth, displayHeight));
-            }
+            get { return new RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
         }
-
-        public bool Move()
+        public override void Terminated()
         {
-            centerX += speed;
-            if (centerX > 1500)
-            {
-                return true;
-            }
-            return false;
+            throw new NotImplementedException();
         }
     }
 }

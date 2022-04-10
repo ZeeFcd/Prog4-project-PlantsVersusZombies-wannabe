@@ -12,11 +12,6 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Peashooter : Plant
     {
-        protected override void Ability()
-        {
-
-        }
-
         public Peashooter()
         {
             this.HP = 100;
@@ -25,15 +20,20 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Cooldown = 10;
         }
 
-        public override Brush ShopImage()
+        public override Brush ShopImage 
         {
-            return GameBrushes.PeashooterBrush;
-        }
-        public override ImageSource Animation()
-        {
-            return AnimatedImages.PeashooterImage;
+            get { return GameBrushes.PeashooterBrush; }
         }
 
+        public override ImageSource Animation
+        {
+            get { return AnimatedImages.PeashooterImage; }
+        }
+
+        protected override void Ability()
+        {
+
+        }
         public override Plant GetCopy()
         {
             return new Peashooter()
@@ -42,9 +42,15 @@ namespace GUI_20212202_IJA9WQ.Models
                 Damage = this.Damage,
                 Price = this.Price,
                 Cooldown = 10,
-                CenterX = this.CenterX,
-                CenterY = this.CenterY
+                placeX = this.placeX,
+                placeY = this.placeY,
+                
             };
+        }
+
+        public override void Terminated()
+        {
+            throw new NotImplementedException();
         }
     }
 }

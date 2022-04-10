@@ -10,14 +10,12 @@ namespace GUI_20212202_IJA9WQ.Logic
 {
     public class GameLogic : IGameLogic
     {
-
-
         public List<Plant> Plants { get; set; }
-        public Plant[] PlantsSelectionDay { get; }
-        public Plant CurrentlySelected { get; set; }
         public List<Zombie> Zombies { get; set; }
         public List<LawnMover> LawnMovers { get; set; }
-
+        public Plant[] PlantsSelectionDay { get; }
+        public Plant CurrentlySelected { get; set; }
+       
         public GameLogic(int areaWidth, int areaHeight)
         {
             Plants = new List<Plant>();
@@ -50,9 +48,10 @@ namespace GUI_20212202_IJA9WQ.Logic
             //        LawnMovers.RemoveAt(i);
             //    }
             //}
-            for (int i = 0; i < Zombies.Count; i++)
+
+            foreach (var zombie in Zombies)
             {
-                Zombies[i].Move();
+                zombie.Move();
             }
 
         }
@@ -64,8 +63,8 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         public void PlantToPlant(int i, int j)
         {
-            CurrentlySelected.CenterX = i;
-            CurrentlySelected.CenterY = j;
+            CurrentlySelected.PlaceX = i;
+            CurrentlySelected.PlaceY = j;
             Plants.Add(CurrentlySelected.GetCopy());
             CurrentlySelected = null;
         }

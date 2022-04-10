@@ -12,20 +12,20 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Sunflower : Plant
     {
+        public override Brush ShopImage
+        {
+            get { return GameBrushes.SunflowerBrush; }
+        }
+
+        public override ImageSource Animation
+        {
+            get { return AnimatedImages.SunflowerImage; }
+        }
+
         protected override void Ability()
         {
 
         }
-
-        public override Brush ShopImage()
-        {
-            return GameBrushes.SunflowerBrush;
-        }
-        public override ImageSource Animation()
-        {
-            return AnimatedImages.SunflowerImage;
-        }
-
         public override Plant GetCopy()
         {
             return new Sunflower()
@@ -34,9 +34,14 @@ namespace GUI_20212202_IJA9WQ.Models
                 Damage = this.Damage,
                 Price = this.Price,
                 Cooldown = 10,
-                CenterX = this.CenterX,
-                CenterY = this.CenterY
+                placeX = this.placeX,
+                placeY = this.placeY
             };
+        }
+
+        public override void Terminated()
+        {
+            throw new NotImplementedException();
         }
     }
 }
