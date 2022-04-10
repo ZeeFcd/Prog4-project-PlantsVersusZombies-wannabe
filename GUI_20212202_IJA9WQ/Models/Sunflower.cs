@@ -12,14 +12,14 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Sunflower : Plant
     {
-        public override Brush ShopImage
+        public override Brush ShopImageBrush
         {
-            get { return GameBrushes.SunflowerBrush; }
+            get { return GameBrushes.SunflowerItemBrush; }
         }
 
-        public override ImageSource Animation
+        public override Brush GameImageBrush
         {
-            get { return AnimatedImages.SunflowerImage; }
+            get { return GameBrushes.SunflowerBrush; }
         }
 
         protected override void Ability()

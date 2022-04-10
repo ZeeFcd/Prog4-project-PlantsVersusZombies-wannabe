@@ -64,7 +64,7 @@ namespace GUI_20212202_IJA9WQ
                 int temp2 = (int)(490 / 5);
                 int j = (y-75) / temp2;
                 ;
-                logic.PlantToPlant(temp * i +260, temp2 * j+99);
+                logic.PlantToPlant(i,j,temp * i +260, temp2 * j+99);
             }
 
             display.InvalidateVisual();

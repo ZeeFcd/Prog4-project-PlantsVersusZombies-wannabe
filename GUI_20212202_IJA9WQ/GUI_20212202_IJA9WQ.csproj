@@ -9,12 +9,16 @@
   <ItemGroup>
     <None Remove="Images\background_day.png" />
     <None Remove="Images\background_night.png" />
+    <None Remove="Images\itemShop.png" />
     <None Remove="Images\itemShop1.png" />
     <None Remove="Images\lawn_mover.png" />
     <None Remove="Images\lawn_mover2.png" />
     <None Remove="Images\peashooter.png" />
+    <None Remove="Images\peashooterItem.png" />
     <None Remove="Images\sunflower.png" />
     <None Remove="Images\sunflowerAnim.gif" />
+    <None Remove="Images\sunflowerItem.png" />
+    <None Remove="Images\test.png" />
     <None Remove="Images\thiller.gif" />
   </ItemGroup>
 
@@ -25,22 +29,22 @@
     <Content Include="Images\background_night.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\itemShop1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\lawn_mover.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\lawn_mover2.png">
+    <Content Include="Images\peashooter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\peashooter.png">
+    <Content Include="Images\peashooterItem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sunflower.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sunflowerAnim.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerItem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\thiller.gif">
@@ -50,6 +54,12 @@
 
   <ItemGroup>
     <Folder Include="Images\Animations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\itemShop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

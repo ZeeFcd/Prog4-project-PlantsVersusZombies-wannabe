@@ -30,7 +30,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 for (int i = 0; i < logic.PlantsSelectionDay.Length; i++)
                 {
-                    drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImage, new Pen(Brushes.Black, 1), new Rect(30, 22 + (i * 65), 60, 60));
+                    drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImageBrush, new Pen(Brushes.Black, 1), new Rect(30, 25 + (i * 65), 60, 60));
                 }
 
                 foreach (var item in logic.LawnMovers)
@@ -45,7 +45,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 foreach (var item in logic.Plants)
                 {
-                    drawingContext.DrawGeometry(item.ShopImage, new Pen(Brushes.Black, 1), item.Area);
+                    drawingContext.DrawGeometry(item.GameImageBrush, new Pen(Brushes.Black, 1), item.Area);
                 }
                 
             }

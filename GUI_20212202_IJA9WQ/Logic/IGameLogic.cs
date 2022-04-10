@@ -12,7 +12,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         List<Zombie> Zombies { get; set; }
 
         void PlantSelect(int i);
-        void PlantToPlant(int i, int j);
+        void PlantToPlant(int i, int j,int x, int y);
         void TimeStep();
     }
 }

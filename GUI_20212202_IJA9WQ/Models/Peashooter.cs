@@ -20,14 +20,14 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Cooldown = 10;
         }
 
-        public override Brush ShopImage 
+        public override Brush ShopImageBrush
         {
-            get { return GameBrushes.PeashooterBrush; }
+            get { return GameBrushes.PeashooterItemBrush; }
         }
 
-        public override ImageSource Animation
+        public override Brush GameImageBrush
         {
-            get { return AnimatedImages.PeashooterImage; }
+            get { return GameBrushes.PeashooterBrush; }
         }
 
         protected override void Ability()

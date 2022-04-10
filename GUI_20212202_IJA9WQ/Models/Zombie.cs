@@ -12,6 +12,8 @@ namespace GUI_20212202_IJA9WQ.Models
     public class Zombie : Moveable
     {
         bool ally;
+        bool stunned;
+        bool exploded;
         public Zombie(int placeX, int placeY, int displayWidth, int displayHeight, float speed)
         {
             this.placeX = placeX;
@@ -20,7 +22,8 @@ namespace GUI_20212202_IJA9WQ.Models
             this.displayHeight = displayHeight;
             this.speed = speed;
             this.actualX = placeX;
-            ally=false;
+            this.ally=false;
+            this.stunned =false;
         }
 
         public override Geometry Area

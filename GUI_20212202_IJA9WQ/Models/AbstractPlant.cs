@@ -29,8 +29,8 @@ namespace GUI_20212202_IJA9WQ.Models
         public int Price { get; set; }
         public int Cooldown { get; set; }
         public int Range { get; set; }
-        public abstract Brush ShopImage { get; }
-        public abstract ImageSource Animation { get; }
+        public abstract Brush ShopImageBrush { get; }
+        public abstract Brush GameImageBrush { get; }
         public override Geometry Area
         {
             get { return new RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
