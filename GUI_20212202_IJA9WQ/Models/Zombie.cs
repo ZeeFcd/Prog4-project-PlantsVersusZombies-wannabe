@@ -24,7 +24,22 @@ namespace GUI_20212202_IJA9WQ.Models
             this.actualX = placeX;
             this.ally=false;
             this.stunned =false;
+            this.PlaceGameMatrixX = -1;
+            this.PlaceGameMatrixY = -1;
         }
+        public int PlaceX
+        {
+            get { return placeX; }
+            set { placeX = value; }
+        }
+        public int PlaceY
+        {
+            get { return placeY; }
+            set { placeY = value; }
+        }
+
+        public int PlaceGameMatrixX { get; set; }
+        public int PlaceGameMatrixY { get; set; }
 
         public override Geometry Area
         {

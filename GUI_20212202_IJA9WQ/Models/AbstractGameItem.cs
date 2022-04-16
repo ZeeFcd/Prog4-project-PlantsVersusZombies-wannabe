@@ -18,7 +18,9 @@ namespace GUI_20212202_IJA9WQ.Models
         
         public bool IsCollision(GameItem other)
         {
-            return Geometry.Combine(this.Area, other.Area,
+            return Geometry.Combine(
+                this.Area,
+                other.Area,
                 GeometryCombineMode.Intersect, null).GetArea() > 0;
         }
 

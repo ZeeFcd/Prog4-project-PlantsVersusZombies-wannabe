@@ -18,6 +18,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
             this.speed = speed;
+            this.actualX = placeX;
         }
 
         public override Geometry Area

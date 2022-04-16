@@ -33,7 +33,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             PlantsSelectionDay = new Plant[] { new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower() };
             for (int i = 1; i < 6; i++)
             {
-                LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 60, 75, 53, 10));
+                LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 60, 75, 53, 20));
             }
 
             for (int i = 1; i < 6; i++)
@@ -49,17 +49,30 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             //for (int i = 0; i < LawnMovers.Count; i++)
             //{
-            //    bool outside = LawnMovers[i].Move();
-            //    if (outside)
-            //    {
-            //        LawnMovers.RemoveAt(i);
-            //    }
+            //   LawnMovers[i].Move();
             //}
-
-            //foreach (var zombie in Zombies)
-            //{
-            //    zombie.Move();
-            //}
+            
+            foreach (var zombie in Zombies)
+            {
+                int firstplantXindex = FirstPlantInSameRow(zombie);
+                if (260 < zombie.PlaceX && zombie.PlaceX < 970 && 75 < zombie.PlaceY && zombie.PlaceY < 565 && firstplantXindex > -1)
+                {
+                    if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]))
+                    {
+                        zombie.Move();
+                        PlaceZombieInGamematrix(zombie);
+                    }  
+                }
+                else
+                {
+                    zombie.Move();
+                    PlaceZombieInGamematrix(zombie);
+                }
+            }
+            if (gameClock%170==0)
+            {
+                ;
+            }
 
             gameClock += 1;
         }
@@ -78,6 +91,47 @@ namespace GUI_20212202_IJA9WQ.Logic
         public void PlantSelect(int i)
         {
             CurrentlySelected = PlantsSelectionDay[i];
+        }
+        private int FirstPlantInSameRow(Zombie zombie) 
+        {
+            int n = zombie.PlaceGameMatrixX;
+            while (n>=0 && PlantsMatrix[zombie.PlaceGameMatrixY,n]==null)
+            {
+                n--;
+            }
+            if ( n >= 0)
+            {
+                return n;
+            }
+            return -1;
+
+        }
+        private void PlaceZombieInGamematrix(Zombie zombie) 
+        {
+            if (260 < zombie.PlaceX && zombie.PlaceX < 970 && 75 < zombie.PlaceY && zombie.PlaceY < 565)
+            {
+                int oldJ = zombie.PlaceGameMatrixX;
+                int oldI = zombie.PlaceGameMatrixY;
+                int temp = (int)(715 / 9);
+                int j = (zombie.PlaceX - 260) / temp;
+                int temp2 = (int)(490 / 5);
+                int i = ((zombie.PlaceY - 75) / temp2);
+                zombie.PlaceGameMatrixX = j;
+                zombie.PlaceGameMatrixY = i;
+
+                if (oldJ>-1)
+                {
+                    if (j!=oldJ)
+                    {
+                        ZombiesMatrix[i, oldJ].Remove(zombie);
+                        ZombiesMatrix[i, j].Add(zombie);
+                        ;
+                    }
+                }
+
+                
+            }
+            
         }
 
         public void PlantToPlant(int j, int i,int x, int y)
