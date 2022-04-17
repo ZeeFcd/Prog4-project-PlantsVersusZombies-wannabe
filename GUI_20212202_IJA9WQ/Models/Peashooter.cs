@@ -12,7 +12,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Peashooter : Plant
     {
-        public Peashooter()
+        public Peashooter(int displayWidth, int displayHeight) :base(displayWidth, displayHeight)
         {
             this.HP = 100;
             this.Damage = 20;
@@ -36,7 +36,7 @@ namespace GUI_20212202_IJA9WQ.Models
         }
         public override Plant GetCopy()
         {
-            return new Peashooter()
+            return new Peashooter(this.displayWidth, this.displayHeight)
             {
                 HP = this.HP,
                 Damage = this.Damage,

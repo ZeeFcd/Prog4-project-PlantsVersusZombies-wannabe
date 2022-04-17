@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GUI_20212202_IJA9WQ.Assets
+namespace GUI_20212202_IJA9WQ.Helpers
 {
-    public enum StateEnum
+    public enum AttackStateEnum
     {
         Normal, Attack, Dead,
     }

@@ -1,4 +1,5 @@
-﻿using GUI_20212202_IJA9WQ.Logic;
+﻿using GUI_20212202_IJA9WQ.Helpers;
+using GUI_20212202_IJA9WQ.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,8 @@ namespace GUI_20212202_IJA9WQ
     {
         DispatcherTimer dt;
         GameLogic logic;
+        CoordinateCalculator coordinateCalculator;
+        GeometryCalculator geometryCalculator;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,8 +35,14 @@ namespace GUI_20212202_IJA9WQ
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             logic = new GameLogic((int)grid.ActualWidth, (int)grid.ActualHeight);
+            coordinateCalculator = new CoordinateCalculator(grid.ActualWidth, grid.ActualHeight);
+            geometryCalculator = new GeometryCalculator();
+
             display.SetupLogic(logic);
+            display.SetupCoordinateCalculator(geometryCalculator);
+            display.Resize(grid.ActualWidth, grid.ActualHeight);
             display.InvalidateVisual();
+
             dt = new DispatcherTimer();
             dt.Interval = TimeSpan.FromMilliseconds(17);
             dt.Tick += (sender, eventargs) =>
@@ -50,24 +59,53 @@ namespace GUI_20212202_IJA9WQ
             int x = (int)e.GetPosition(grid).X;
             int y = (int)e.GetPosition(grid).Y;
 
-            if (10 < x && x < 114 && 10 < y && y < 415)
+            int leftMapBorder = (int)Math.Round(0.25 * grid.ActualWidth);
+            int rightMapBorder = (int)Math.Round(0.97 * grid.ActualWidth);
+            int upperMapBorder = (int)Math.Round(0.15 * grid.ActualHeight);
+            int lowerMapBorder = (int)Math.Round(0.95 * grid.ActualHeight);
+
+            int leftShopBorder = (int)Math.Round(0.01 * grid.ActualWidth);
+            int rightShopBorder = (int)Math.Round(0.11 * grid.ActualWidth);
+            int upperShopBorder = (int)Math.Round(0.02 * grid.ActualHeight);
+            int lowerShopBorder = (int)Math.Round(0.69 * grid.ActualHeight);
+
+            ;
+            if (leftShopBorder < x && x < rightShopBorder && upperShopBorder < y && y < lowerShopBorder)
             {
-                int z = y-10;
-                int cellnumber = z / (int)(410 / 6);
+                int z = y- upperShopBorder;
+                int cellnumber = z / (int)(lowerShopBorder / 6);
                 logic.PlantSelect(cellnumber);
             }
-            else if (logic.CurrentlySelected != null && 260 < x && x < 970 && 75 < y && y < 565)
+            else if (logic.CurrentlySelected != null && leftMapBorder < x && x < rightMapBorder && upperMapBorder < y && y < lowerMapBorder)
             {
-                int temp = (int)(715 / 9);
-                int i = (x-260) / temp;
+                int temp = (int)((rightMapBorder-leftMapBorder) / 9);
+                int i = (x- leftMapBorder) / temp;
                 
-                int temp2 = (int)(490 / 5);
-                int j = (y-75) / temp2;
-                ;
-                logic.PlantToPlant(i,j,temp * i +260, temp2 * j+99);
+                int temp2 = (int)((lowerMapBorder- upperMapBorder) / 5);
+                int j = (y- upperMapBorder) / temp2;
+                
+
+                logic.PlantToPlant(i,j,temp * i + leftMapBorder, temp2 * j+ upperMapBorder);
             }
 
             display.InvalidateVisual();
+        }
+
+        private void Window_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (logic!=null)
+            {
+                logic.NewSize((int)grid.ActualWidth, (int)grid.ActualHeight);
+                display.Resize(grid.ActualWidth, grid.ActualHeight);
+                display.InvalidateVisual();
+                
+            }
+           
         }
     }
 }

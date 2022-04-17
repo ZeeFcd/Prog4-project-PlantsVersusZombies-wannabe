@@ -6,8 +6,14 @@
         xmlns:local="clr-namespace:GUI_20212202_IJA9WQ"
         xmlns:renderer="clr-namespace:GUI_20212202_IJA9WQ.Renderer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="1050" ResizeMode="NoResize" Loaded="Window_Loaded" MouseLeftButtonDown="Window_MouseLeftButtonDown">
-    <Grid x:Name="grid" Height="600" Width="1025">
+        Title="MainWindow"
+        MinHeight="640"
+        MinWidth="1025"
+        Loaded="Window_Loaded"
+        SizeChanged="Window_SizeChanged"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        MouseLeftButtonUp="Window_MouseLeftButtonUp" Height="640" Width="1025" >
+    <Grid x:Name="grid">
         <renderer:Display x:Name="display" />
     </Grid>
 </Window>

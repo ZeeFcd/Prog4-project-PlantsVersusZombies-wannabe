@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GUI_20212202_IJA9WQ.Helpers;
 
 namespace GUI_20212202_IJA9WQ.Logic
 {
     public class GameLogic : IGameLogic
     {
+        CoordinateCalculator coordinateCalculator;
         int gameClock;
         int sunValue;
         private Plant[,] PlantsMatrix;
@@ -30,7 +32,10 @@ namespace GUI_20212202_IJA9WQ.Logic
             PlantsMatrix = new Plant[5,9];
             ZombiesMatrix = new List<Zombie>[5, 9];
             ZombiesMatrixInitialize();
-            PlantsSelectionDay = new Plant[] { new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower() };
+            // ideiglenes plant windth height
+            int plantWidth= (int)Math.Round(0.06 * areaWidth);
+            int plantHeight = (int)Math.Round(0.1 * areaHeight);
+            PlantsSelectionDay = new Plant[] { new Peashooter(plantWidth, plantHeight), new Sunflower(plantWidth, plantHeight), new Peashooter(plantWidth, plantHeight), new Sunflower(plantWidth, plantHeight), new Sunflower(plantWidth, plantHeight), new Sunflower(plantWidth, plantHeight) };
             for (int i = 1; i < 6; i++)
             {
                 LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 60, 75, 53, 20));
@@ -52,29 +57,29 @@ namespace GUI_20212202_IJA9WQ.Logic
             //   LawnMovers[i].Move();
             //}
             
-            foreach (var zombie in Zombies)
-            {
-                int firstplantXindex = FirstPlantInSameRow(zombie);
-                if (260 < zombie.PlaceX && zombie.PlaceX < 970 && 75 < zombie.PlaceY && zombie.PlaceY < 565 && firstplantXindex > -1)
-                {
-                    if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]))
-                    {
-                        zombie.Move();
-                        PlaceZombieInGamematrix(zombie);
-                    }  
-                }
-                else
-                {
-                    zombie.Move();
-                    PlaceZombieInGamematrix(zombie);
-                }
-            }
-            if (gameClock%170==0)
-            {
-                ;
-            }
+            //foreach (var zombie in Zombies)
+            //{
+            //    int firstplantXindex = FirstPlantInSameRow(zombie);
+            //    if (260 < zombie.PlaceX && zombie.PlaceX < 970 && 75 < zombie.PlaceY && zombie.PlaceY < 565 && firstplantXindex > -1)
+            //    {
+            //        if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]))
+            //        {
+            //            zombie.Move();
+            //            PlaceZombieInGamematrix(zombie);
+            //        }  
+            //    }
+            //    else
+            //    {
+            //        zombie.Move();
+            //        PlaceZombieInGamematrix(zombie);
+            //    }
+            //}
+            //if (gameClock%170==0)
+            //{
+            //    ;
+            //}
 
-            gameClock += 1;
+            //gameClock += 1;
         }
 
         public void ZombiesMatrixInitialize()
@@ -147,6 +152,21 @@ namespace GUI_20212202_IJA9WQ.Logic
             
         }
 
+
+        public void NewSize(int newAreaWidth, int newAreaHeight) 
+        {
+            int plantWidth = (int)Math.Round(0.06 * newAreaWidth);
+            int plantHeight = (int)Math.Round(0.1 * newAreaHeight);
+            int plantX = (int)Math.Round(0.06 * newAreaWidth);
+            int plantY = (int)Math.Round(0.1 * newAreaHeight);
+            foreach (var item in Plants)
+            {
+                item.DisplayWidth = plantWidth;
+                item.DisplayHeight = plantHeight;
+                
+            }
+
+        }
     }
 }
 

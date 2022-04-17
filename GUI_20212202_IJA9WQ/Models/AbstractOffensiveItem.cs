@@ -1,4 +1,4 @@
-﻿using GUI_20212202_IJA9WQ.Assets;
+﻿using GUI_20212202_IJA9WQ.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public abstract class OffensiveItem : GameItem
     {
-        protected StateEnum State { get; set; }
+        protected AttackStateEnum State { get; set; }
         public int Damage { get; set; }
         public int HP { get; set; }
         
