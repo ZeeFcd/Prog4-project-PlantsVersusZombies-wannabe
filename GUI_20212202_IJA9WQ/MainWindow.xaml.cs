@@ -1,4 +1,5 @@
 ﻿using GUI_20212202_IJA9WQ.Logic;
+using GUI_20212202_IJA9WQ.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,10 @@ namespace GUI_20212202_IJA9WQ
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.DataContext = new MainViewModel();
             logic = new GameLogic((int)grid.ActualWidth, (int)grid.ActualHeight);
             display.SetupLogic(logic);
+
             display.InvalidateVisual();
             dt = new DispatcherTimer();
             dt.Interval = TimeSpan.FromMilliseconds(17);

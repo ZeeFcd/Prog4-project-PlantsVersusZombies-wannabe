@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GUI_20212202_IJA9WQ.UserControlls;
 
 namespace GUI_20212202_IJA9WQ.Logic
 {
     public class GameLogic : IGameLogic
     {
+        public object View { get; set; }
         int gameClock;
         int sunValue;
         private Plant[,] PlantsMatrix;
@@ -147,6 +149,17 @@ namespace GUI_20212202_IJA9WQ.Logic
             
         }
 
+        public void ChangeView(string view)
+        {
+            switch (view)
+            {
+                case "menu":
+                    View = new MenuUC();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
 
