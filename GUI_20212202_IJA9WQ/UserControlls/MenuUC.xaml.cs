@@ -25,5 +25,11 @@ namespace GUI_20212202_IJA9WQ.UserControlls
             InitializeComponent();
             this.DataContext = new MenuUC();
         }
+
+        private void Button_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.Sleep(300);
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }
