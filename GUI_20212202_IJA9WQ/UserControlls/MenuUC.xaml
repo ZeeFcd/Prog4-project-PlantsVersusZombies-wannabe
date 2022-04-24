@@ -4,9 +4,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI_20212202_IJA9WQ.UserControlls"
+             xmlns:brushes="clr-namespace:GUI_20212202_IJA9WQ.Assets"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <UserControl.Resources>
+        <ImageBrush x:Key="background" ImageSource="\Images\menuBackground.png"/>
+        <Style x:Key="buttonText" TargetType="Button">
+            <Setter Property="FontFamily" Value="\Fonts\#SeriesOrbit"/>
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
+        <ImageBrush x:Key="muteButtonBrush" ImageSource="\Images\mute.png"/>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource background}" x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <!--<Label Content="Plants vs Zombies:OEdition"
+               Grid.Row="0" Grid.Column="1"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontSize="30" FontFamily="\Fonts\#SeriesOrbit"
+               />-->
+        <Viewbox Grid.Row="1" Grid.Column="1">
+            <Button Content="Start"  Padding="15" Margin="30" Style="{StaticResource buttonText}"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="1">
+            <Button Content="Load"  Padding="15" Margin="30" Style="{StaticResource buttonText}"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="1">
+            <Button Content="Exit"  Padding="15" Margin="30" Style="{StaticResource buttonText}"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="3">
+            <Button Content="" Padding="60" Margin="30" Background="{StaticResource muteButtonBrush}"/>
+        </Viewbox>
     </Grid>
 </UserControl>

@@ -23,6 +23,7 @@ namespace GUI_20212202_IJA9WQ.UserControlls
         public MenuUC()
         {
             InitializeComponent();
+            this.DataContext = new MenuUC();
         }
     }
 }
