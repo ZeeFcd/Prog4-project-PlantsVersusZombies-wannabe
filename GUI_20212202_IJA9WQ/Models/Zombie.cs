@@ -14,7 +14,7 @@ namespace GUI_20212202_IJA9WQ.Models
         bool ally;
         bool stunned;
         bool exploded;
-        bool isingamemap;
+        
         public Zombie(double placeX, double placeY, double displayWidth, double displayHeight, double speed)
         {
             this.placeX = placeX;
@@ -24,7 +24,6 @@ namespace GUI_20212202_IJA9WQ.Models
             this.speed = speed;
             this.ally=false;
             this.stunned =false;
-            isingamemap=false;
             this.PlaceGameMatrixX = -1;
             this.PlaceGameMatrixY = -1;
         }

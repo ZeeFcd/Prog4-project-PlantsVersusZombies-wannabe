@@ -197,7 +197,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public double LawMoverSpeed
         {
-            get { return 0.19 * displayWidth; }
+            get { return 0.055 * displayWidth; }
         }
         //---------------------
 

@@ -68,40 +68,22 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         public void TimeStep()
         {
-
             //for (int i = 0; i < LawnMovers.Count; i++)
             //{
-            //   LawnMovers[i].Move();
+            //    LawnMovers[i].Move();
             //}
 
             foreach (var zombie in Zombies)
             {
-                zombie.Move();
+                ZombieTimeStep(zombie);
+                
             }
-            
-            //foreach (var zombie in Zombies)
-            //{
-            //    int firstplantXindex = FirstPlantInSameRow(zombie);
-            //    if (260 < zombie.PlaceX && zombie.PlaceX < 970 && 75 < zombie.PlaceY && zombie.PlaceY < 565 && firstplantXindex > -1)
-            //    {
-            //        if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]))
-            //        {
-            //            zombie.Move();
-            //            PlaceZombieInGamematrix(zombie);
-            //        }  
-            //    }
-            //    else
-            //    {
-            //        zombie.Move();
-            //        PlaceZombieInGamematrix(zombie);
-            //    }
-            //}
-            //if (gameClock%170==0)
-            //{
-            //    ;
-            //}
+            if (gameClock > 1000 )
+            {
+                ;
+            }
 
-            //gameClock += 1;
+            gameClock += 1;
         }
 
         public void ZombiesMatrixInitialize()
@@ -133,28 +115,30 @@ namespace GUI_20212202_IJA9WQ.Logic
             return -1;
 
         }
-        private void PlaceZombieInGamematrix(Zombie zombie) 
+        private void PlaceZombieInGameMatrix(Zombie zombie) 
         {
-            if (260 < zombie.PlaceX && zombie.PlaceX < 970 && 75 < zombie.PlaceY && zombie.PlaceY < 565)
+            if (coordinateCalculator.IsInGameMap(zombie.PlaceX+coordinateCalculator.ZombieWidth/2,zombie.PlaceY+coordinateCalculator.ZombieHeight/2))
             {
                 int oldJ = zombie.PlaceGameMatrixX;
-                int oldI = zombie.PlaceGameMatrixY;
-                int temp = (int)(715 / 9);
-                int j = (int)((zombie.PlaceX - 260) / temp);
-                int temp2 = (int)(490 / 5);
-                int i = (int)((zombie.PlaceY - 75) / temp2);
-                zombie.PlaceGameMatrixX = j;
-                zombie.PlaceGameMatrixY = i;
+                (int,int) actualCellIndexes=coordinateCalculator.WhichCellInGameMap(
+                    zombie.PlaceX+coordinateCalculator.ZombieWidth/2,
+                    zombie.PlaceY+coordinateCalculator.ZombieHeight/2);
+                
+                zombie.PlaceGameMatrixX = actualCellIndexes.Item1;
+                zombie.PlaceGameMatrixY = actualCellIndexes.Item2;
 
                 if (oldJ>-1)
                 {
-                    if (j!=oldJ)
+                    if (zombie.PlaceGameMatrixX != oldJ)
                     {
-                        ZombiesMatrix[i, oldJ].Remove(zombie);
-                        ZombiesMatrix[i, j].Add(zombie);
-                        ;
+                        ZombiesMatrix[zombie.PlaceGameMatrixY, oldJ].Remove(zombie);
+                        ZombiesMatrix[zombie.PlaceGameMatrixY, zombie.PlaceGameMatrixX].Add(zombie);
                     }
-                }                   
+                }
+                else
+                {
+                    ZombiesMatrix[zombie.PlaceGameMatrixY, zombie.PlaceGameMatrixX].Add(zombie);
+                }
             }
         }
 
@@ -170,6 +154,38 @@ namespace GUI_20212202_IJA9WQ.Logic
                 CurrentlySelected = null;
             }
             
+        }
+
+        private void ZombieTimeStep(Zombie zombie) 
+        {
+            int firstplantXindex = 0;
+            if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
+            {
+                firstplantXindex = FirstPlantInSameRow(zombie);
+                if (firstplantXindex > -1)
+                {
+                    if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]))
+                    {
+                        zombie.Move();
+                        PlaceZombieInGameMatrix(zombie);
+                    }
+                    else
+                    {
+                        ;//to be continued, ATTACK THE PLANT
+                    }
+                }
+                else
+                {
+                    zombie.Move();
+                    PlaceZombieInGameMatrix(zombie);
+                }
+            }
+            else
+            {
+                zombie.Move();
+                PlaceZombieInGameMatrix(zombie);
+            }
+
         }
     }
 }
