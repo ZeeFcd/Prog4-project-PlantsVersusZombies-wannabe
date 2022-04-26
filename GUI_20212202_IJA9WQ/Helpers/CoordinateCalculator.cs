@@ -58,6 +58,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return displayHeight; }
         }
+        //---------------------
         public double LeftMapBorder
         {
             get { return 0.25 * displayWidth; }
@@ -74,6 +75,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.95 * displayHeight; }
         }
+        //---------------------
 
         public double GameMapCellWidth
         {
@@ -83,6 +85,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return (LowerMapBorder - UpperMapBorder) / 5; }
         }
+        //---------------------
 
         public double LeftShopBorder
         {
@@ -101,7 +104,38 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.69 * displayHeight; }
         }
-        
+
+        public double LowerShopBorderFull
+        {
+            get { return 0.83 * displayHeight; }
+        }
+        //---------------------
+
+        public double ShopItemPlaceX
+        {
+            get { return 0.03 * displayWidth; }
+
+        }
+
+        public double ShopItemPlaceY
+        {
+            get { return 0.12 * displayHeight; }
+
+        }
+
+        public double ShopItemWidth
+        {
+            get { return 0.058 * displayWidth; }
+            
+        }
+        public double ShopItemHeight
+        {
+            get { return 0.09 * displayHeight; }
+
+        }
+
+        //---------------------
+
         public double PlantWidth 
         {
             get { return 0.06 * displayWidth; }
@@ -144,6 +178,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.1 * displayHeight; }
         }
+        //---------------------
 
 
 

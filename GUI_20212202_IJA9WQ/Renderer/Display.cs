@@ -41,16 +41,16 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     coordinateCalculator.LeftShopBorder,
                     coordinateCalculator.UpperShopBorder,
                     coordinateCalculator.RightShopBorder - coordinateCalculator.LeftShopBorder,
-                    coordinateCalculator.LowerShopBorder - coordinateCalculator.UpperShopBorder));
+                    coordinateCalculator.LowerShopBorderFull - coordinateCalculator.UpperShopBorder));
 
                 for (int i = 0; i < logic.PlantsSelectionDay.Length; i++)
                 {
                     drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImageBrush, new Pen(Brushes.Black, 1),
                         new Rect(
-                            0.03* coordinateCalculator.DisplayWidth,
-                            0.02* coordinateCalculator.DisplayHeight + (i * 0.11* coordinateCalculator.DisplayHeight) + coordinateCalculator.UpperShopBorder,
-                            0.058* coordinateCalculator.DisplayWidth,
-                            0.09* coordinateCalculator.DisplayHeight));
+                            coordinateCalculator.ShopItemPlaceX,
+                            (i * coordinateCalculator.ShopItemPlaceY) + coordinateCalculator.UpperShopBorder,
+                            coordinateCalculator.ShopItemWidth,
+                            coordinateCalculator.ShopItemHeight));
                 }
                 
                 foreach (var item in logic.LawnMovers)
