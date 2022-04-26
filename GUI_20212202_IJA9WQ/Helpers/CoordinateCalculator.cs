@@ -105,7 +105,6 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.69 * displayHeight; }
         }
-
         public double LowerShopBorderFull
         {
             get { return 0.83 * displayHeight; }
@@ -117,13 +116,11 @@ namespace GUI_20212202_IJA9WQ.Helpers
             get { return 0.03 * displayWidth; }
 
         }
-
         public double ShopItemPlaceY
         {
             get { return 0.108 * displayHeight; }
            
         }
-
         public double ShopItemWidth
         {
             get { return 0.058 * displayWidth; }
@@ -139,7 +136,6 @@ namespace GUI_20212202_IJA9WQ.Helpers
             get { return UpperShopBorder + 0.023 * displayHeight; }
 
         }
-
         //---------------------
 
         public double PlantWidth 
@@ -150,7 +146,6 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.1 * displayHeight; }
         }
-
         public double ZombieWidth
         {
             get { return 0.07 * displayWidth; }
@@ -167,7 +162,6 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.09 * displayHeight; }
         }
-
         public double BulletWidth
         {
             get { return 0.06 * displayWidth; }
@@ -186,9 +180,6 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         //---------------------
 
-
-
-
         public bool IsInGameMap(double x, double y) 
         {
             return LeftMapBorder < x && x < RightMapBorder && UpperMapBorder < y && y < LowerMapBorder;
@@ -202,25 +193,20 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {            
             return (int)((y - UpperShopBorder) / (LowerShopBorder / 6));
         }
-
         public (int,int) WhichCellInGameMap(double x, double y) 
         {
             (int, int) gamecellcoords = 
                 ((int)((x - LeftMapBorder) / GameMapCellWidth),
                 (int)((y - UpperMapBorder) / GameMapCellHeight));
-            //gamecellcoords.Item1 = (int)((x - LeftMapBorder) / GameMapCellWidth); 
-            //gamecellcoords.Item2 = (int)((y - UpperMapBorder) / GameMapCellHeight);
 
             return gamecellcoords;
         }
-
         public (double, double) WhichCoordinateInGameMapPlant(int j, int i)
         {
             (double, double) coodinatesingamemap =
                 (GameMapCellWidth * j + LeftMapBorder,
                 GameMapCellHeight * i + UpperMapBorder + 0.2 * GameMapCellHeight);  
-            //coodinatesingamemap.Item1 = GameMapCellWidth * j + LeftMapBorder;
-            //coodinatesingamemap.Item2 = GameMapCellHeight * i + UpperMapBorder + 0.2 * GameMapCellHeight;
+      
             return coodinatesingamemap;
         }
 
@@ -230,7 +216,6 @@ namespace GUI_20212202_IJA9WQ.Helpers
             var oldplantcoords = WhichCellInGameMap(oldcoords.Item1, oldcoords.Item1);
             plantcoords.Item1= GameMapCellWidth* oldplantcoords.Item1 +LeftMapBorder;
             plantcoords.Item2=GameMapCellHeight*oldplantcoords.Item2 + UpperMapBorder;
-
 
             return plantcoords;
         }

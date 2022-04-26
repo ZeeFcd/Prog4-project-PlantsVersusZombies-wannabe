@@ -39,8 +39,7 @@ namespace GUI_20212202_IJA9WQ
             coordinateCalculator.SetUpLogic(logic);
 
             display.SetupLogic(logic);
-            display.SetupCoordinateCalculator(coordinateCalculator);
-                      
+            display.SetupCoordinateCalculator(coordinateCalculator);           
             display.InvalidateVisual();
 
             dt = new DispatcherTimer();
@@ -65,10 +64,7 @@ namespace GUI_20212202_IJA9WQ
             else if (coordinateCalculator.IsInGameMap(x,y))
             {
                 (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x,y);
-                (double, double) plantGameCoords =
-                    coordinateCalculator.WhichCoordinateInGameMapPlant(gameCellindexes.Item1,gameCellindexes.Item2);
-
-                logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2, plantGameCoords.Item1, plantGameCoords.Item2);
+                logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2);
             }
 
             display.InvalidateVisual();

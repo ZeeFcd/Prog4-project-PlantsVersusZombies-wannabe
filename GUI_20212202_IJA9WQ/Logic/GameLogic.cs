@@ -18,7 +18,9 @@ namespace GUI_20212202_IJA9WQ.Logic
         private List<Zombie>[,] ZombiesMatrix;
         public List<Plant> Plants { get; set; }
         public List<Zombie> Zombies { get; set; }
+        public List<Bullet> Bullets { get; set; }
         public List<LawnMover> LawnMovers { get; set; }
+        public List<Sun> Suns { get; set; }
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
         
@@ -27,7 +29,9 @@ namespace GUI_20212202_IJA9WQ.Logic
             this.coordinateCalculator = coordinateCalculator;
             Plants = new List<Plant>();
             Zombies = new List<Zombie>();
+            Bullets = new List<Bullet>();
             LawnMovers = new List<LawnMover>();
+            Suns = new List<Sun>();
             gameClock = 0;
             sunValue=50;
             PlantsMatrix = new Plant[5,9];
@@ -41,6 +45,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
                 new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
                 new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight) };
+
             for (int i = 1; i < 6; i++)
             {
                 LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 60, coordinateCalculator.LawMoverWidth, coordinateCalculator.LawMoverHeight, 20));
@@ -49,7 +54,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             for (int i = 1; i < 6; i++)
             {
                 
-                Zombies.Add(new Zombie(1050, 75 + (99 * i) -103, coordinateCalculator.ZombieWidth, coordinateCalculator.ZombieHeight, -0.4f));
+                Zombies.Add(new Zombie(1050, 75 + (99 * i) -103, coordinateCalculator.ZombieWidth, coordinateCalculator.ZombieHeight, -0.4));
             }
 
         }
@@ -137,40 +142,22 @@ namespace GUI_20212202_IJA9WQ.Logic
                         ZombiesMatrix[i, j].Add(zombie);
                         ;
                     }
-                }
-
-                
+                }                   
             }
-            
         }
 
-        public void PlantToPlant(int j, int i,double x, double y)
+        public void PlantToPlant(int j, int i)
         {
             if (PlantsMatrix[i,j]==null)
             {
-                CurrentlySelected.PlaceX = x;
-                CurrentlySelected.PlaceY = y;
+                (double, double) plantGameCoords = coordinateCalculator.WhichCoordinateInGameMapPlant(j, i);
+                CurrentlySelected.PlaceX = plantGameCoords.Item1;
+                CurrentlySelected.PlaceY = plantGameCoords.Item2;
                 Plants.Add(CurrentlySelected.GetCopy());
                 PlantsMatrix[i, j] = CurrentlySelected.GetCopy();
                 CurrentlySelected = null;
             }
             
-        }
-
-
-        public void NewSize(int newAreaWidth, int newAreaHeight) 
-        {
-            int plantWidth = (int)Math.Round(0.06 * newAreaWidth);
-            int plantHeight = (int)Math.Round(0.1 * newAreaHeight);
-            int plantX = (int)Math.Round(0.06 * newAreaWidth);
-            int plantY = (int)Math.Round(0.1 * newAreaHeight);
-            foreach (var item in Plants)
-            {
-                item.DisplayWidth = plantWidth;
-                item.DisplayHeight = plantHeight;
-                
-            }
-
         }
     }
 }

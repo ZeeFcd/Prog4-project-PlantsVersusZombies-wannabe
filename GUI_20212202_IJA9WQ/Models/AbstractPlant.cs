@@ -39,9 +39,6 @@ namespace GUI_20212202_IJA9WQ.Models
             set { displayHeight = value; }
         }
 
-
-
-
         public int Price { get; set; }
         public int Cooldown { get; set; }
         public int Range { get; set; }
