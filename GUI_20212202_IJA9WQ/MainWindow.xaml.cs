@@ -26,7 +26,7 @@ namespace GUI_20212202_IJA9WQ
         DispatcherTimer dt;
         GameLogic logic;
         CoordinateCalculator coordinateCalculator;
-        GeometryCalculator geometryCalculator;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -34,12 +34,12 @@ namespace GUI_20212202_IJA9WQ
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            logic = new GameLogic((int)grid.ActualWidth, (int)grid.ActualHeight);
-            coordinateCalculator = new CoordinateCalculator(grid.ActualWidth, grid.ActualHeight,logic);
-            geometryCalculator = new GeometryCalculator();
+            coordinateCalculator = new CoordinateCalculator(grid.ActualWidth, grid.ActualHeight);
+            logic = new GameLogic((int)grid.ActualWidth, (int)grid.ActualHeight, coordinateCalculator);
+            coordinateCalculator.SetUpLogic(logic);
 
             display.SetupLogic(logic);
-            display.SetupCoordinateCalculator(geometryCalculator);
+            
             display.Resize(grid.ActualWidth, grid.ActualHeight);
             display.InvalidateVisual();
 

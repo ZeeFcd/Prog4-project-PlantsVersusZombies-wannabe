@@ -14,9 +14,9 @@ namespace GUI_20212202_IJA9WQ.Helpers
         double displayWidth;
         double displayHeight;
         IGameLogic logic;
-        public CoordinateCalculator(double displayWidth, double displayHeight, IGameLogic logic)
+        public CoordinateCalculator(double displayWidth, double displayHeight)
         {
-            this.logic = logic;
+           
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
         }
@@ -25,16 +25,22 @@ namespace GUI_20212202_IJA9WQ.Helpers
             (int, int)[] oldcoords = new (int, int)[logic.Plants.Count]; 
             for (int i = 0; i < logic.Plants.Count; i++)
             {
-                oldcoords[i] = WhichCellInGameMap(logic.Plants[i].PlaceX+ GameMapCellWidth/2, logic.Plants[i].PlaceY+ GameMapCellHeight/2);
+                oldcoords[i] = WhichCellInGameMap(logic.Plants[i].PlaceX+ PlantWidth/2, logic.Plants[i].PlaceY+ PlantHeight/2);
             }
+
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
-            ;
             
+            foreach (var item in logic.PlantsSelectionDay)
+            {
+                item.DisplayWidth = PlantWidth;
+                item.DisplayHeight = PlantHeight;
+
+            }
             foreach (var item in logic.Plants)
             {
-                item.DisplayWidth = 0.06 * this.displayWidth;
-                item.DisplayHeight = 0.1 * this.displayHeight;
+                item.DisplayWidth = PlantWidth;
+                item.DisplayHeight = PlantHeight;
 
             }
 
@@ -44,6 +50,10 @@ namespace GUI_20212202_IJA9WQ.Helpers
                 logic.Plants[i].PlaceX = GameMapCellWidth * oldcoords[i].Item1 + LeftMapBorder;
                 logic.Plants[i].PlaceY = GameMapCellHeight * oldcoords[i].Item2 + UpperMapBorder;
             }
+        }
+        public void SetUpLogic(IGameLogic logic) 
+        {
+            this.logic = logic;
         }
 
         public double LeftMapBorder
@@ -89,7 +99,15 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.69 * displayHeight; }
         }
-
+        
+        public double PlantWidth 
+        {
+            get { return 0.06 * displayWidth; }
+        }
+        public double PlantHeight 
+        {
+            get { return 0.1 * displayHeight; }
+        }
 
         public bool IsInGameMap(double x, double y) 
         {
