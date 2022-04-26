@@ -12,7 +12,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Peashooter : Plant
     {
-        public Peashooter(int displayWidth, int displayHeight) :base(displayWidth, displayHeight)
+        public Peashooter(double displayWidth, double displayHeight) :base(displayWidth, displayHeight)
         {
             this.HP = 100;
             this.Damage = 20;

@@ -22,7 +22,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public void Resize(double displayWidth, double displayHeight) 
         {
-            (int, int)[] oldcoords = new (int, int)[logic.Plants.Count];
+            (int, int)[] oldcoords = new (int, int)[logic.Plants.Count]; 
             for (int i = 0; i < logic.Plants.Count; i++)
             {
                 oldcoords[i] = WhichCellInGameMap(logic.Plants[i].PlaceX, logic.Plants[i].PlaceY);
@@ -32,7 +32,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
 
             for (int i = 0; i < logic.Plants.Count; i++)
             {
-                logic.Plants[i].PlaceX = GameMapCellWidth * oldcoords[i].Item1 + LeftMapBorder; 
+                logic.Plants[i].PlaceX = GameMapCellWidth * oldcoords[i].Item1 + LeftMapBorder;
                 logic.Plants[i].PlaceY = GameMapCellHeight * oldcoords[i].Item2 + UpperMapBorder;
             }
         }

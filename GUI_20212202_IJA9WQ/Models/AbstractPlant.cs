@@ -10,30 +10,30 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public abstract class Plant : OffensiveItem
     {
-        public Plant(int displayWidth, int displayHeight) // ideiglenes paraméterek
+        public Plant(double displayWidth, double displayHeight) // ideiglenes paraméterek
         {
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
         }
 
-        public int PlaceX
+        public double PlaceX
         {
             get { return placeX; }
             set { placeX = value; }
         }
-        public int PlaceY
+        public double PlaceY
         {
             get { return placeY; }
             set { placeY = value; }
         }
                 
-        public int DisplayWidth
+        public double DisplayWidth
         {
             get { return displayWidth; }
             set { displayWidth = value; }
         }
 
-        public int DisplayHeight
+        public double DisplayHeight
         {
             get { return displayHeight; }
             set { displayHeight = value; }

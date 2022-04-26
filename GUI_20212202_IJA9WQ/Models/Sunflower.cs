@@ -12,7 +12,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Sunflower : Plant
     {
-        public Sunflower(int displayWidth, int displayHeight) : base(displayWidth, displayHeight)
+        public Sunflower(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
 
         }

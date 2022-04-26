@@ -27,12 +27,12 @@ namespace GUI_20212202_IJA9WQ.Models
             this.PlaceGameMatrixX = -1;
             this.PlaceGameMatrixY = -1;
         }
-        public int PlaceX
+        public double PlaceX
         {
             get { return placeX; }
             set { placeX = value; }
         }
-        public int PlaceY
+        public double PlaceY
         {
             get { return placeY; }
             set { placeY = value; }

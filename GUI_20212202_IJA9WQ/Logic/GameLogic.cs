@@ -118,9 +118,9 @@ namespace GUI_20212202_IJA9WQ.Logic
                 int oldJ = zombie.PlaceGameMatrixX;
                 int oldI = zombie.PlaceGameMatrixY;
                 int temp = (int)(715 / 9);
-                int j = (zombie.PlaceX - 260) / temp;
+                int j = (int)((zombie.PlaceX - 260) / temp);
                 int temp2 = (int)(490 / 5);
-                int i = ((zombie.PlaceY - 75) / temp2);
+                int i = (int)((zombie.PlaceY - 75) / temp2);
                 zombie.PlaceGameMatrixX = j;
                 zombie.PlaceGameMatrixY = i;
 
