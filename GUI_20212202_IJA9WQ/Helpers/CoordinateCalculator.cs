@@ -30,6 +30,15 @@ namespace GUI_20212202_IJA9WQ.Helpers
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
 
+            
+            foreach (var item in logic.Plants)
+            {
+                item.DisplayWidth = 0.06 * this.displayWidth;
+                item.DisplayHeight = 0.1 * this.displayHeight;
+
+            }
+
+
             for (int i = 0; i < logic.Plants.Count; i++)
             {
                 logic.Plants[i].PlaceX = GameMapCellWidth * oldcoords[i].Item1 + LeftMapBorder;

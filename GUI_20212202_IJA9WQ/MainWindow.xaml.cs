@@ -100,10 +100,14 @@ namespace GUI_20212202_IJA9WQ
         {
             if (logic!=null)
             {
-                logic.NewSize((int)grid.ActualWidth, (int)grid.ActualHeight);
+             //   logic.NewSize((int)grid.ActualWidth, (int)grid.ActualHeight);
                 display.Resize(grid.ActualWidth, grid.ActualHeight);
                 display.InvalidateVisual();
                 
+            }
+            if (coordinateCalculator!=null)
+            {
+                coordinateCalculator.Resize(grid.ActualWidth,grid.ActualHeight);
             }
            
         }
