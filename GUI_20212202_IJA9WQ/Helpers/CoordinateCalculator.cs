@@ -131,7 +131,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
             get { return 0.09 * displayHeight; }
             
         }
-        public double ShopItemShift
+        public double ShopItemYShift
         {
             get { return UpperShopBorder + 0.023 * displayHeight; }
 
@@ -146,6 +146,8 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.1 * displayHeight; }
         }
+        //---------------------
+
         public double ZombieWidth
         {
             get { return 0.07 * displayWidth; }
@@ -154,6 +156,24 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.16 * displayHeight; }
         }
+        public double ZombieStartX
+        {
+            get { return 1.024 * displayWidth; }
+        }
+        public double ZombieStartY
+        {
+            get { return 0.165 * displayHeight; }
+        }
+        public double ZombieStartYShift
+        {
+            get { return -0.044 * displayHeight; }
+        }
+        public double ZombieSpeed
+        {
+            get { return -0.0004 * displayWidth; }
+        }
+        //---------------------
+
         public double LawMoverWidth
         {
             get { return 0.07 * displayWidth; }
@@ -161,7 +181,26 @@ namespace GUI_20212202_IJA9WQ.Helpers
         public double LawMoverHeight
         {
             get { return 0.09 * displayHeight; }
+            
         }
+        public double LawMoverStartX
+        {
+            get { return 0.185 * displayWidth; }
+        }
+        public double LawMoverStartY
+        {
+            get { return 0.165 * displayHeight; }
+        }
+        public double LawMoverStartYShift
+        {
+            get { return 0.025 * displayHeight; }
+        }
+        public double LawMoverSpeed
+        {
+            get { return 0.19 * displayWidth; }
+        }
+        //---------------------
+
         public double BulletWidth
         {
             get { return 0.06 * displayWidth; }

@@ -47,7 +47,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImageBrush, new Pen(Brushes.Black, 1),
                         new Rect(
                             coordinateCalculator.ShopItemPlaceX,
-                            (i * coordinateCalculator.ShopItemPlaceY) + coordinateCalculator.ShopItemShift,
+                            i * coordinateCalculator.ShopItemPlaceY + coordinateCalculator.ShopItemYShift,
                             coordinateCalculator.ShopItemWidth,
                             coordinateCalculator.ShopItemHeight));
                 }

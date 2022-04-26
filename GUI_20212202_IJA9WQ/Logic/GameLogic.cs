@@ -48,13 +48,20 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             for (int i = 1; i < 6; i++)
             {
-                LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 60, coordinateCalculator.LawMoverWidth, coordinateCalculator.LawMoverHeight, 20));
+                LawnMovers.Add(new LawnMover(coordinateCalculator.LawMoverStartX,
+                    coordinateCalculator.LawMoverStartYShift + coordinateCalculator.LawMoverStartY * i,
+                    coordinateCalculator.LawMoverWidth,
+                    coordinateCalculator.LawMoverHeight,
+                    coordinateCalculator.LawMoverSpeed));
             }
 
             for (int i = 1; i < 6; i++)
             {
-                
-                Zombies.Add(new Zombie(1050, 75 + (99 * i) -103, coordinateCalculator.ZombieWidth, coordinateCalculator.ZombieHeight, -0.4));
+                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+                    coordinateCalculator.ZombieStartYShift+coordinateCalculator.ZombieStartY * i, 
+                    coordinateCalculator.ZombieWidth,
+                    coordinateCalculator.ZombieHeight,
+                    coordinateCalculator.ZombieSpeed));
             }
 
         }
@@ -66,6 +73,11 @@ namespace GUI_20212202_IJA9WQ.Logic
             //{
             //   LawnMovers[i].Move();
             //}
+
+            foreach (var zombie in Zombies)
+            {
+                zombie.Move();
+            }
             
             //foreach (var zombie in Zombies)
             //{
