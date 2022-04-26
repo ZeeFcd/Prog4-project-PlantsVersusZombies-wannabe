@@ -1,4 +1,5 @@
-﻿using GUI_20212202_IJA9WQ.Models;
+﻿using GUI_20212202_IJA9WQ.Logic;
+using GUI_20212202_IJA9WQ.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,16 +13,28 @@ namespace GUI_20212202_IJA9WQ.Helpers
     {
         double displayWidth;
         double displayHeight;
-
-        public CoordinateCalculator(double displayWidth, double displayHeight)
+        IGameLogic logic;
+        public CoordinateCalculator(double displayWidth, double displayHeight, IGameLogic logic)
         {
+            this.logic = logic;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
         }
         public void Resize(double displayWidth, double displayHeight) 
         {
+            (int, int)[] oldcoords = new (int, int)[logic.Plants.Count];
+            for (int i = 0; i < logic.Plants.Count; i++)
+            {
+                oldcoords[i] = WhichCellInGameMap(logic.Plants[i].PlaceX, logic.Plants[i].PlaceY);
+            }
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
+
+            for (int i = 0; i < logic.Plants.Count; i++)
+            {
+                logic.Plants[i].PlaceX = GameMapCellWidth * oldcoords[i].Item1 + LeftMapBorder; 
+                logic.Plants[i].PlaceY = GameMapCellHeight * oldcoords[i].Item2 + UpperMapBorder;
+            }
         }
 
         public double LeftMapBorder
@@ -93,10 +106,10 @@ namespace GUI_20212202_IJA9WQ.Helpers
             return gamecellcoords;
         }
 
-        public (double, double) PlantCoords(Plant plant) 
+        public (double, double) PlantCoords((double, double) oldcoords) 
         {
             (double, double) plantcoords;
-            var oldplantcoords = WhichCellInGameMap(plant.PlaceX,plant.PlaceY);
+            var oldplantcoords = WhichCellInGameMap(oldcoords.Item1, oldcoords.Item1);
             plantcoords.Item1= GameMapCellWidth* oldplantcoords.Item1 +LeftMapBorder;
             plantcoords.Item2=GameMapCellHeight*oldplantcoords.Item2 + UpperMapBorder;
 
