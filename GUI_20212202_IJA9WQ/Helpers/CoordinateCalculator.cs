@@ -22,10 +22,10 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public void Resize(double displayWidth, double displayHeight) 
         {
-            (int, int)[] oldcoords = new (int, int)[logic.Plants.Count]; 
+            (int, int)[] oldCoords = new (int, int)[logic.Plants.Count]; 
             for (int i = 0; i < logic.Plants.Count; i++)
             {
-                oldcoords[i] = WhichCellInGameMap(logic.Plants[i].PlaceX+ PlantWidth/2, logic.Plants[i].PlaceY+ PlantHeight/2);
+                oldCoords[i] = WhichCellInGameMap(logic.Plants[i].PlaceX+ PlantWidth/2, logic.Plants[i].PlaceY+ PlantHeight/2);
             }
 
             this.displayWidth = displayWidth;
@@ -41,8 +41,9 @@ namespace GUI_20212202_IJA9WQ.Helpers
             {
                 logic.Plants[i].DisplayWidth = PlantWidth;
                 logic.Plants[i].DisplayHeight = PlantHeight;
-                logic.Plants[i].PlaceX = GameMapCellWidth * oldcoords[i].Item1 + LeftMapBorder;
-                logic.Plants[i].PlaceY = GameMapCellHeight * oldcoords[i].Item2 + UpperMapBorder+0.2*GameMapCellHeight;
+                (double, double) plantCoordsInGameMap = WhichCoordinateInGameMapPlant(oldCoords[i].Item1, oldCoords[i].Item2);
+                logic.Plants[i].PlaceX = plantCoordsInGameMap.Item1;
+                logic.Plants[i].PlaceY = plantCoordsInGameMap.Item2;
             }
         }
         public void SetUpLogic(IGameLogic logic) 
@@ -197,7 +198,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
             return LeftShopBorder < x && x < RightShopBorder && UpperShopBorder < y && y < LowerShopBorder;
         }
         
-        public int WhichCellInShop(double x, double y) 
+        public int WhichCellInShop(double y) 
         {            
             return (int)((y - UpperShopBorder) / (LowerShopBorder / 6));
         }
@@ -211,6 +212,16 @@ namespace GUI_20212202_IJA9WQ.Helpers
             //gamecellcoords.Item2 = (int)((y - UpperMapBorder) / GameMapCellHeight);
 
             return gamecellcoords;
+        }
+
+        public (double, double) WhichCoordinateInGameMapPlant(int j, int i)
+        {
+            (double, double) coodinatesingamemap =
+                (GameMapCellWidth * j + LeftMapBorder,
+                GameMapCellHeight * i + UpperMapBorder + 0.2 * GameMapCellHeight);  
+            //coodinatesingamemap.Item1 = GameMapCellWidth * j + LeftMapBorder;
+            //coodinatesingamemap.Item2 = GameMapCellHeight * i + UpperMapBorder + 0.2 * GameMapCellHeight;
+            return coodinatesingamemap;
         }
 
         public (double, double) PlantCoords((double, double) oldcoords) 

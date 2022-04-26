@@ -51,65 +51,36 @@ namespace GUI_20212202_IJA9WQ
                 display.InvalidateVisual();
             };
             dt.Start();
-            
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            int x = (int)e.GetPosition(grid).X;
-            int y = (int)e.GetPosition(grid).Y;
+            double x = e.GetPosition(grid).X;
+            double y = e.GetPosition(grid).Y;
 
-            int leftMapBorder = (int)Math.Round(0.25 * grid.ActualWidth);
-            int rightMapBorder = (int)Math.Round(0.97 * grid.ActualWidth);
-            int upperMapBorder = (int)Math.Round(0.15 * grid.ActualHeight);
-            int lowerMapBorder = (int)Math.Round(0.95 * grid.ActualHeight);
-
-            int leftShopBorder = (int)Math.Round(0.01 * grid.ActualWidth);
-            int rightShopBorder = (int)Math.Round(0.11 * grid.ActualWidth);
-            int upperShopBorder = (int)Math.Round(0.02 * grid.ActualHeight);
-            int lowerShopBorder = (int)Math.Round(0.69 * grid.ActualHeight);
-
-            ;
-            if (leftShopBorder < x && x < rightShopBorder && upperShopBorder < y && y < lowerShopBorder)
+            if (coordinateCalculator.IsInShop(x,y))
             {
-                int z = y- upperShopBorder;
-                int cellnumber = z / (int)(lowerShopBorder / 6);
-                logic.PlantSelect(cellnumber);
+                logic.PlantSelect(coordinateCalculator.WhichCellInShop(y));
             }
-            else if (logic.CurrentlySelected != null && leftMapBorder < x && x < rightMapBorder && upperMapBorder < y && y < lowerMapBorder)
+            else if (coordinateCalculator.IsInGameMap(x,y))
             {
-                int temp = (int)((rightMapBorder-leftMapBorder) / 9);
-                int i = (x- leftMapBorder) / temp;
-                
-                double temp2 = (lowerMapBorder- upperMapBorder) / 5;
-                int j = (int)((y- upperMapBorder) / temp2);
-                
+                (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x,y);
+                (double, double) plantGameCoords =
+                    coordinateCalculator.WhichCoordinateInGameMapPlant(gameCellindexes.Item1,gameCellindexes.Item2);
 
-                logic.PlantToPlant(i,j,temp * i + leftMapBorder, temp2 * j+ upperMapBorder+temp2*0.2);
+                logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2, plantGameCoords.Item1, plantGameCoords.Item2);
             }
 
             display.InvalidateVisual();
         }
 
-        private void Window_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (logic!=null)
-            {
-             //   logic.NewSize((int)grid.ActualWidth, (int)grid.ActualHeight);
-                
-                display.InvalidateVisual();
-                
-            }
             if (coordinateCalculator!=null)
             {
                 coordinateCalculator.Resize(grid.ActualWidth,grid.ActualHeight);
+                display.InvalidateVisual();
             }
-           
         }
     }
 }
