@@ -22,7 +22,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
         
-        public GameLogic(int areaWidth, int areaHeight, CoordinateCalculator coordinateCalculator)
+        public GameLogic(CoordinateCalculator coordinateCalculator)
         {
             this.coordinateCalculator = coordinateCalculator;
             Plants = new List<Plant>();

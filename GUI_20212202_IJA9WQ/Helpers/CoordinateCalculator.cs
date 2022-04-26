@@ -119,8 +119,8 @@ namespace GUI_20212202_IJA9WQ.Helpers
 
         public double ShopItemPlaceY
         {
-            get { return 0.12 * displayHeight; }
-
+            get { return 0.108 * displayHeight; }
+           
         }
 
         public double ShopItemWidth
@@ -131,6 +131,11 @@ namespace GUI_20212202_IJA9WQ.Helpers
         public double ShopItemHeight
         {
             get { return 0.09 * displayHeight; }
+            
+        }
+        public double ShopItemShift
+        {
+            get { return UpperShopBorder + 0.023 * displayHeight; }
 
         }
 

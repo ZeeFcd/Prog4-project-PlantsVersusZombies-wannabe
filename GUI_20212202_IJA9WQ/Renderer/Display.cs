@@ -34,7 +34,6 @@ namespace GUI_20212202_IJA9WQ.Renderer
             {
                 drawingContext.DrawRectangle(GameBrushes.BackgroundDayBrush, null,
                     new Rect(0, 0,coordinateCalculator.DisplayWidth, coordinateCalculator.DisplayHeight));
-                ;
                 
                 drawingContext.DrawRectangle(GameBrushes.ItemShopBrush, null,
                     new Rect(
@@ -48,7 +47,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImageBrush, new Pen(Brushes.Black, 1),
                         new Rect(
                             coordinateCalculator.ShopItemPlaceX,
-                            (i * coordinateCalculator.ShopItemPlaceY) + coordinateCalculator.UpperShopBorder,
+                            (i * coordinateCalculator.ShopItemPlaceY) + coordinateCalculator.ShopItemShift,
                             coordinateCalculator.ShopItemWidth,
                             coordinateCalculator.ShopItemHeight));
                 }

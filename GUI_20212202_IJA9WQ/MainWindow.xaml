@@ -7,12 +7,12 @@
         xmlns:renderer="clr-namespace:GUI_20212202_IJA9WQ.Renderer"
         mc:Ignorable="d"
         Title="MainWindow"
-        MinHeight="640"
-        MinWidth="1025"
+        MinHeight="639"
+        MinWidth="1041"
         Loaded="Window_Loaded"
         SizeChanged="Window_SizeChanged"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
-        MouseLeftButtonUp="Window_MouseLeftButtonUp" Height="640" Width="1025" >
+        MouseLeftButtonUp="Window_MouseLeftButtonUp" Height="639" Width="1041" >
     <Grid x:Name="grid">
         <renderer:Display x:Name="display" />
     </Grid>

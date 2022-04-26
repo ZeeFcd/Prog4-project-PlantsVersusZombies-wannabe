@@ -35,7 +35,7 @@ namespace GUI_20212202_IJA9WQ
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             coordinateCalculator = new CoordinateCalculator(grid.ActualWidth, grid.ActualHeight);
-            logic = new GameLogic((int)grid.ActualWidth, (int)grid.ActualHeight, coordinateCalculator);
+            logic = new GameLogic(coordinateCalculator);
             coordinateCalculator.SetUpLogic(logic);
 
             display.SetupLogic(logic);
