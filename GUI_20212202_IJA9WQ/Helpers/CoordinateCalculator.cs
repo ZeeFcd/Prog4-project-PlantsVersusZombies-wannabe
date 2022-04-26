@@ -25,11 +25,11 @@ namespace GUI_20212202_IJA9WQ.Helpers
             (int, int)[] oldcoords = new (int, int)[logic.Plants.Count]; 
             for (int i = 0; i < logic.Plants.Count; i++)
             {
-                oldcoords[i] = WhichCellInGameMap(logic.Plants[i].PlaceX, logic.Plants[i].PlaceY);
+                oldcoords[i] = WhichCellInGameMap(logic.Plants[i].PlaceX+ GameMapCellWidth/2, logic.Plants[i].PlaceY+ GameMapCellHeight/2);
             }
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
-
+            ;
             
             foreach (var item in logic.Plants)
             {
@@ -78,6 +78,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public double RightShopBorder
         {
+            
             get { return 0.11 * displayWidth; }
         }
         public double UpperShopBorder

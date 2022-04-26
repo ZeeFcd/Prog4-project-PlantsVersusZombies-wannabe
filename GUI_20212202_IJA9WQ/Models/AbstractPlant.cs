@@ -49,7 +49,7 @@ namespace GUI_20212202_IJA9WQ.Models
         public abstract Brush GameImageBrush { get; }
         public override Geometry Area
         {
-            get { return new RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
+            get { return new  RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
         }
         protected abstract void Ability();
         public abstract Plant GetCopy();
