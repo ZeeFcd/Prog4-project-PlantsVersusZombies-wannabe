@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_20212202_IJA9WQ.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -92,6 +93,16 @@ namespace GUI_20212202_IJA9WQ.Helpers
             return gamecellcoords;
         }
 
+        public (double, double) PlantCoords(Plant plant) 
+        {
+            (double, double) plantcoords;
+            var oldplantcoords = WhichCellInGameMap(plant.PlaceX,plant.PlaceY);
+            plantcoords.Item1= GameMapCellWidth* oldplantcoords.Item1 +LeftMapBorder;
+            plantcoords.Item2=GameMapCellHeight*oldplantcoords.Item2 + UpperMapBorder;
+
+
+            return plantcoords;
+        }
 
 
     }
