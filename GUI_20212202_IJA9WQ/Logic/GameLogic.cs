@@ -33,9 +33,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             PlantsMatrix = new Plant[5,9];
             ZombiesMatrix = new List<Zombie>[5, 9];
             ZombiesMatrixInitialize();
-            // ideiglenes plant windth height
-            int plantWidth= (int)Math.Round(0.06 * areaWidth);
-            int plantHeight = (int)Math.Round(0.1 * areaHeight);
+            
             PlantsSelectionDay = new Plant[] { 
                 new Peashooter(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
                 new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
@@ -45,13 +43,13 @@ namespace GUI_20212202_IJA9WQ.Logic
                 new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight) };
             for (int i = 1; i < 6; i++)
             {
-                LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 60, 75, 53, 20));
+                LawnMovers.Add(new LawnMover(190, 75 + (99 * i) - 60, coordinateCalculator.LawMoverWidth, coordinateCalculator.LawMoverHeight, 20));
             }
 
             for (int i = 1; i < 6; i++)
             {
                 
-                Zombies.Add(new Zombie(1050, 75 + (99 * i) -103, 75, 101, -0.4f));
+                Zombies.Add(new Zombie(1050, 75 + (99 * i) -103, coordinateCalculator.ZombieWidth, coordinateCalculator.ZombieHeight, -0.4f));
             }
 
         }
@@ -146,7 +144,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             
         }
 
-        public void PlantToPlant(int j, int i,int x, int y)
+        public void PlantToPlant(int j, int i,double x, double y)
         {
             if (PlantsMatrix[i,j]==null)
             {

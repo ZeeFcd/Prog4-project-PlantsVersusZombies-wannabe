@@ -30,25 +30,19 @@ namespace GUI_20212202_IJA9WQ.Helpers
 
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
-            
+      
             foreach (var item in logic.PlantsSelectionDay)
             {
                 item.DisplayWidth = PlantWidth;
                 item.DisplayHeight = PlantHeight;
 
             }
-            foreach (var item in logic.Plants)
-            {
-                item.DisplayWidth = PlantWidth;
-                item.DisplayHeight = PlantHeight;
-
-            }
-
-
             for (int i = 0; i < logic.Plants.Count; i++)
             {
+                logic.Plants[i].DisplayWidth = PlantWidth;
+                logic.Plants[i].DisplayHeight = PlantHeight;
                 logic.Plants[i].PlaceX = GameMapCellWidth * oldcoords[i].Item1 + LeftMapBorder;
-                logic.Plants[i].PlaceY = GameMapCellHeight * oldcoords[i].Item2 + UpperMapBorder;
+                logic.Plants[i].PlaceY = GameMapCellHeight * oldcoords[i].Item2 + UpperMapBorder+0.2*GameMapCellHeight;
             }
         }
         public void SetUpLogic(IGameLogic logic) 
@@ -56,6 +50,14 @@ namespace GUI_20212202_IJA9WQ.Helpers
             this.logic = logic;
         }
 
+        public double DisplayWidth
+        {
+            get { return displayWidth; }
+        }
+        public double DisplayHeight
+        {
+            get { return displayHeight; }
+        }
         public double LeftMapBorder
         {
             get { return 0.25 * displayWidth; }
@@ -108,6 +110,43 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.1 * displayHeight; }
         }
+
+        public double ZombieWidth
+        {
+            get { return 0.07 * displayWidth; }
+        }
+        public double ZombieHeight
+        {
+            get { return 0.16 * displayHeight; }
+        }
+        public double LawMoverWidth
+        {
+            get { return 0.07 * displayWidth; }
+        }
+        public double LawMoverHeight
+        {
+            get { return 0.09 * displayHeight; }
+        }
+
+        public double BulletWidth
+        {
+            get { return 0.06 * displayWidth; }
+        }
+        public double BulletHeight
+        {
+            get { return 0.1 * displayHeight; }
+        }
+        public double SunWidth
+        {
+            get { return 0.06 * displayWidth; }
+        }
+        public double SunHeight
+        {
+            get { return 0.1 * displayHeight; }
+        }
+
+
+
 
         public bool IsInGameMap(double x, double y) 
         {

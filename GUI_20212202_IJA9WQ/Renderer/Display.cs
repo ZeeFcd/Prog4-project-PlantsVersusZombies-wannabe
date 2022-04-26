@@ -16,38 +16,41 @@ namespace GUI_20212202_IJA9WQ.Renderer
     public class Display : FrameworkElement
     {
         IGameLogic logic;
-        GeometryCalculator geometryCalculator;
-        double areaWidth;
-        double areaHeight;
+        CoordinateCalculator coordinateCalculator;
+        
         public void SetupLogic(IGameLogic logic)
         {
             this.logic = logic;
         }
-        public void SetupCoordinateCalculator(GeometryCalculator geometryCalculator)
+        public void SetupCoordinateCalculator(CoordinateCalculator coordinateCalculator)
         {
-            this.geometryCalculator = geometryCalculator;
+            this.coordinateCalculator = coordinateCalculator;
         }
-        public void Resize(double areaWidth, double areaHeight)
-        {
-            this.areaWidth = areaWidth;
-            this.areaHeight = areaHeight;
-            
-        }
+        
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
-            if (logic != null)
+            if (logic != null )
             {
-                drawingContext.DrawRectangle(GameBrushes.BackgroundDayBrush, null, new Rect(0, 0, areaWidth, areaHeight));
-                int leftShopBorder = (int)Math.Round(0.01 * areaWidth);
-                int rightShopBorder = (int)Math.Round(0.11 * areaWidth);
-                int upperShopBorder = (int)Math.Round(0.02 * areaHeight);
-                int lowerShopBorder = (int)Math.Round(0.83 * areaHeight);
-                drawingContext.DrawRectangle(GameBrushes.ItemShopBrush, null, new Rect(leftShopBorder, upperShopBorder, rightShopBorder- leftShopBorder, lowerShopBorder- upperShopBorder));
+                drawingContext.DrawRectangle(GameBrushes.BackgroundDayBrush, null,
+                    new Rect(0, 0,coordinateCalculator.DisplayWidth, coordinateCalculator.DisplayHeight));
+                ;
+                
+                drawingContext.DrawRectangle(GameBrushes.ItemShopBrush, null,
+                    new Rect(
+                    coordinateCalculator.LeftShopBorder,
+                    coordinateCalculator.UpperShopBorder,
+                    coordinateCalculator.RightShopBorder - coordinateCalculator.LeftShopBorder,
+                    coordinateCalculator.LowerShopBorder - coordinateCalculator.UpperShopBorder));
 
                 for (int i = 0; i < logic.PlantsSelectionDay.Length; i++)
                 {
-                    drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImageBrush, new Pen(Brushes.Black, 1), new Rect(0.03* areaWidth, 0.02* areaHeight + (i * 0.11* areaHeight)+ upperShopBorder, 0.058* areaWidth, 0.09* areaHeight));
+                    drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImageBrush, new Pen(Brushes.Black, 1),
+                        new Rect(
+                            0.03* coordinateCalculator.DisplayWidth,
+                            0.02* coordinateCalculator.DisplayHeight + (i * 0.11* coordinateCalculator.DisplayHeight) + coordinateCalculator.UpperShopBorder,
+                            0.058* coordinateCalculator.DisplayWidth,
+                            0.09* coordinateCalculator.DisplayHeight));
                 }
                 
                 foreach (var item in logic.LawnMovers)

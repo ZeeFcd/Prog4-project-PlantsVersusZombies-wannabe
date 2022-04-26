@@ -14,14 +14,14 @@ namespace GUI_20212202_IJA9WQ.Models
         bool ally;
         bool stunned;
         bool exploded;
-        public Zombie(int placeX, int placeY, int displayWidth, int displayHeight, float speed)
+        public Zombie(double placeX, double placeY, double displayWidth, double displayHeight, float speed)
         {
             this.placeX = placeX;
             this.placeY = placeY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
             this.speed = speed;
-            this.actualX = placeX;
+            this.actualX = (float)placeX;
             this.ally=false;
             this.stunned =false;
             this.PlaceGameMatrixX = -1;

@@ -39,8 +39,8 @@ namespace GUI_20212202_IJA9WQ
             coordinateCalculator.SetUpLogic(logic);
 
             display.SetupLogic(logic);
-            
-            display.Resize(grid.ActualWidth, grid.ActualHeight);
+            display.SetupCoordinateCalculator(coordinateCalculator);
+                      
             display.InvalidateVisual();
 
             dt = new DispatcherTimer();
@@ -81,11 +81,11 @@ namespace GUI_20212202_IJA9WQ
                 int temp = (int)((rightMapBorder-leftMapBorder) / 9);
                 int i = (x- leftMapBorder) / temp;
                 
-                int temp2 = (int)((lowerMapBorder- upperMapBorder) / 5);
-                int j = (y- upperMapBorder) / temp2;
+                double temp2 = (lowerMapBorder- upperMapBorder) / 5;
+                int j = (int)((y- upperMapBorder) / temp2);
                 
 
-                logic.PlantToPlant(i,j,temp * i + leftMapBorder, temp2 * j+ upperMapBorder);
+                logic.PlantToPlant(i,j,temp * i + leftMapBorder, temp2 * j+ upperMapBorder+temp2*0.2);
             }
 
             display.InvalidateVisual();
@@ -101,7 +101,7 @@ namespace GUI_20212202_IJA9WQ
             if (logic!=null)
             {
              //   logic.NewSize((int)grid.ActualWidth, (int)grid.ActualHeight);
-                display.Resize(grid.ActualWidth, grid.ActualHeight);
+                
                 display.InvalidateVisual();
                 
             }
