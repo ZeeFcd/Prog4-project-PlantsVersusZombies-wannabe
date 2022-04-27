@@ -1,4 +1,5 @@
 ﻿using GUI_20212202_IJA9WQ.Assets;
+using GUI_20212202_IJA9WQ.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,8 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Zombie : Moveable
     {
-        bool ally;
-        bool stunned;
-        bool exploded;
-        
+        ZombieStateEnum zombieState;
+
         public Zombie(double placeX, double placeY, double displayWidth, double displayHeight, double speed)
         {
             this.placeX = placeX;
@@ -22,8 +21,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
             this.speed = speed;
-            this.ally=false;
-            this.stunned =false;
+            this.zombieState = ZombieStateEnum.Normal;
             this.PlaceGameMatrixX = -1;
             this.PlaceGameMatrixY = -1;
         }

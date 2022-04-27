@@ -16,11 +16,11 @@ namespace GUI_20212202_IJA9WQ.Logic
         int sunValue;
         private Plant[,] PlantsMatrix;
         private List<Zombie>[,] ZombiesMatrix;
-        public List<Plant> Plants { get; set; }
-        public List<Zombie> Zombies { get; set; }
-        public List<Bullet> Bullets { get; set; }
-        public List<LawnMover> LawnMovers { get; set; }
-        public List<Sun> Suns { get; set; }
+        public List<Plant> Plants { get;  }
+        public List<Zombie> Zombies { get;  }
+        public List<Bullet> Bullets { get;  }
+        public List<LawnMover> LawnMovers { get;  }
+        public List<Sun> Suns { get;  }
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
         
@@ -78,10 +78,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 ZombieTimeStep(zombie);
                 
             }
-            if (gameClock > 1000 )
-            {
-                ;
-            }
+            
 
             gameClock += 1;
         }

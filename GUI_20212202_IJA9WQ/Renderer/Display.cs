@@ -51,20 +51,30 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             coordinateCalculator.ShopItemWidth,
                             coordinateCalculator.ShopItemHeight));
                 }
-                
-                foreach (var item in logic.LawnMovers)
+                               
+                foreach (var plant in logic.Plants)
                 {
-                    drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, new Pen(Brushes.Black,1), item.Area);
+                    drawingContext.DrawGeometry(plant.GameImageBrush, new Pen(Brushes.Black, 1), plant.Area);
                 }
 
-                foreach (var item in logic.Zombies)
+                foreach (var zombie in logic.Zombies)
                 {
-                    drawingContext.DrawGeometry(GameBrushes.ZombieBrush, new Pen(Brushes.Black, 1), item.Area);
+                    drawingContext.DrawGeometry(GameBrushes.ZombieBrush, new Pen(Brushes.Black, 1), zombie.Area);
                 }
 
-                foreach (var item in logic.Plants)
+                foreach (var lawnMover in logic.LawnMovers)
                 {
-                    drawingContext.DrawGeometry(item.GameImageBrush, new Pen(Brushes.Black, 1), item.Area);
+                    drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, new Pen(Brushes.Black, 1), lawnMover.Area);
+                }
+
+                foreach (var bullet in logic.Bullets)
+                {
+
+                }
+
+                foreach (var sun in logic.Suns)
+                {
+
                 }
                 
             }

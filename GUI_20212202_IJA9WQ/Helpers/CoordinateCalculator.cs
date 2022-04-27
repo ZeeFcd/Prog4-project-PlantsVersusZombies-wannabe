@@ -45,6 +45,8 @@ namespace GUI_20212202_IJA9WQ.Helpers
                 logic.Plants[i].PlaceX = plantCoordsInGameMap.Item1;
                 logic.Plants[i].PlaceY = plantCoordsInGameMap.Item2;
             }
+
+           
         }
         public void SetUpLogic(IGameLogic logic) 
         {
