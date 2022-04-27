@@ -13,8 +13,11 @@
     <None Remove="Images\itemShop1.png" />
     <None Remove="Images\lawn_mover.png" />
     <None Remove="Images\lawn_mover2.png" />
+    <None Remove="Images\pea.png" />
     <None Remove="Images\peashooter.png" />
     <None Remove="Images\peashooterItem.png" />
+    <None Remove="Images\sun1.png" />
+    <None Remove="Images\sun2.png" />
     <None Remove="Images\sunflower.png" />
     <None Remove="Images\sunflowerAnim.gif" />
     <None Remove="Images\sunflowerItem.png" />
@@ -32,10 +35,19 @@
     <Content Include="Images\lawn_mover.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\pea.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\peashooter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\peashooterItem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sun1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sun2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sunflower.png">

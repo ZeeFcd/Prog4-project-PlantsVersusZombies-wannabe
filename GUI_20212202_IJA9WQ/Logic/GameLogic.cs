@@ -46,6 +46,19 @@ namespace GUI_20212202_IJA9WQ.Logic
                 new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
                 new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight) };
 
+            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder,
+                coordinateCalculator.UpperMapBorder,
+                coordinateCalculator.SunWidth,
+                coordinateCalculator.SunHeight,
+                (5,5)
+                ));
+            Bullets.Add(new Bullet(coordinateCalculator.GameMapCellWidth*3,
+                coordinateCalculator.GameMapCellHeight*3,
+                coordinateCalculator.BulletWidth,
+                coordinateCalculator.BulletHeight,
+                2
+                ));
+
             for (int i = 1; i < 6; i++)
             {
                 LawnMovers.Add(new LawnMover(coordinateCalculator.LawMoverStartX,

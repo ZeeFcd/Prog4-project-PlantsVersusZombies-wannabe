@@ -205,19 +205,19 @@ namespace GUI_20212202_IJA9WQ.Helpers
 
         public double BulletWidth
         {
-            get { return 0.06 * displayWidth; }
+            get { return 0.025 * displayWidth; }
         }
         public double BulletHeight
         {
-            get { return 0.1 * displayHeight; }
+            get { return 0.04 * displayHeight; }
         }
         public double SunWidth
         {
-            get { return 0.06 * displayWidth; }
+            get { return 0.05 * displayWidth; }
         }
         public double SunHeight
         {
-            get { return 0.1 * displayHeight; }
+            get { return 0.08 * displayHeight; }
         }
         //---------------------
 

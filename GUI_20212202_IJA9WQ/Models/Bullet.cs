@@ -11,6 +11,14 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Bullet : Moveable
     {
+        public Bullet(double placeX, double placeY, double displayWidth, double displayHeight, double speed)
+        {
+            this.placeX = placeX;
+            this.placeY = placeY;
+            this.displayWidth = displayWidth;
+            this.displayHeight = displayHeight;
+            this.speed = speed;
+        }
         public override Geometry Area
         {
             get { return new EllipseGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }

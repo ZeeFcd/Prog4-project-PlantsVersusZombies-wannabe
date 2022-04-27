@@ -69,12 +69,12 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 foreach (var bullet in logic.Bullets)
                 {
-
+                    drawingContext.DrawGeometry(GameBrushes.PeaBrush, new Pen(Brushes.Black, 1), bullet.Area);
                 }
 
                 foreach (var sun in logic.Suns)
                 {
-
+                    drawingContext.DrawGeometry(GameBrushes.SunBrush, new Pen(Brushes.Black, 1), sun.Area);
                 }
                 
             }
