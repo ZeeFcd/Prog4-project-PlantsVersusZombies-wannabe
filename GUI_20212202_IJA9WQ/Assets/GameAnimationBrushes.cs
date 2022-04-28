@@ -29,9 +29,11 @@ namespace GUI_20212202_IJA9WQ.Assets
         {
             List<Brush> brushes = new List<Brush>();
             string[] files = Directory.GetFiles(Path.Combine("Images", path));
-            foreach (string file in files)
+            string filename = Path.GetFileName(files[0]).Substring(0, 11);
+            string format = Path.GetFileName(files[0]).Substring(14);
+            for (int i = 1; i < files.Length + 1; i++)
             {
-                brushes.Add(new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", Path.GetFileName(file)), UriKind.RelativeOrAbsolute))));
+                brushes.Add(new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", filename + "(" + i + ")" + format), UriKind.RelativeOrAbsolute))));
             }
             return brushes;
         }

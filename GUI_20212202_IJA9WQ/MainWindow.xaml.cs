@@ -1,4 +1,5 @@
-﻿using GUI_20212202_IJA9WQ.Helpers;
+﻿using GUI_20212202_IJA9WQ.Assets;
+using GUI_20212202_IJA9WQ.Helpers;
 using GUI_20212202_IJA9WQ.Logic;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,8 @@ namespace GUI_20212202_IJA9WQ
         DispatcherTimer dt;
         GameLogic logic;
         CoordinateCalculator coordinateCalculator;
-        
+        GameAnimationBrushes brushes;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,10 +38,12 @@ namespace GUI_20212202_IJA9WQ
         {
             coordinateCalculator = new CoordinateCalculator(grid.ActualWidth, grid.ActualHeight);
             logic = new GameLogic(coordinateCalculator);
+            brushes = new GameAnimationBrushes();
             coordinateCalculator.SetUpLogic(logic);
 
             display.SetupLogic(logic);
-            display.SetupCoordinateCalculator(coordinateCalculator);           
+            display.SetupCoordinateCalculator(coordinateCalculator);
+            display.SetupBrushes(brushes);
             display.InvalidateVisual();
 
             dt = new DispatcherTimer();
@@ -57,13 +61,13 @@ namespace GUI_20212202_IJA9WQ
             double x = e.GetPosition(grid).X;
             double y = e.GetPosition(grid).Y;
 
-            if (coordinateCalculator.IsInShop(x,y))
+            if (coordinateCalculator.IsInShop(x, y))
             {
                 logic.PlantSelect(coordinateCalculator.WhichCellInShop(y));
             }
-            else if (logic.CurrentlySelected!=null && coordinateCalculator.IsInGameMap(x,y))
+            else if (logic.CurrentlySelected != null && coordinateCalculator.IsInGameMap(x, y))
             {
-                (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x,y);
+                (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
                 logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2);
             }
 
@@ -72,9 +76,9 @@ namespace GUI_20212202_IJA9WQ
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (coordinateCalculator!=null)
+            if (coordinateCalculator != null)
             {
-                coordinateCalculator.Resize(grid.ActualWidth,grid.ActualHeight);
+                coordinateCalculator.Resize(grid.ActualWidth, grid.ActualHeight);
                 display.InvalidateVisual();
             }
         }

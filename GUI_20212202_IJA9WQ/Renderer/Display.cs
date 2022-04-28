@@ -17,7 +17,12 @@ namespace GUI_20212202_IJA9WQ.Renderer
     {
         IGameLogic logic;
         CoordinateCalculator coordinateCalculator;
-        
+        GameAnimationBrushes brushes;
+
+        public void SetupBrushes(GameAnimationBrushes brushes)
+        {
+            this.brushes = brushes;
+        }
         public void SetupLogic(IGameLogic logic)
         {
             this.logic = logic;
@@ -26,15 +31,15 @@ namespace GUI_20212202_IJA9WQ.Renderer
         {
             this.coordinateCalculator = coordinateCalculator;
         }
-        
+
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
-            if (logic != null )
+            if (logic != null)
             {
                 drawingContext.DrawRectangle(GameBrushes.BackgroundDayBrush, null,
-                    new Rect(0, 0,coordinateCalculator.DisplayWidth, coordinateCalculator.DisplayHeight));
-                
+                    new Rect(0, 0, coordinateCalculator.DisplayWidth, coordinateCalculator.DisplayHeight));
+
                 drawingContext.DrawRectangle(GameBrushes.ItemShopBrush, null,
                     new Rect(
                     coordinateCalculator.LeftShopBorder,
@@ -51,7 +56,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             coordinateCalculator.ShopItemWidth,
                             coordinateCalculator.ShopItemHeight));
                 }
-                               
+
                 foreach (var plant in logic.Plants)
                 {
                     drawingContext.DrawGeometry(plant.GameImageBrush, new Pen(Brushes.Black, 1), plant.Area);
@@ -76,7 +81,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     drawingContext.DrawGeometry(GameBrushes.SunBrush, new Pen(Brushes.Black, 1), sun.Area);
                 }
-                
+
             }
         }
 

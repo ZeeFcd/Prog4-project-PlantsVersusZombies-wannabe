@@ -15,14 +15,216 @@
     <None Remove="Images\lawn_mover2.png" />
     <None Remove="Images\pea.png" />
     <None Remove="Images\peashooter.png" />
+    <None Remove="Images\peashooterAnimation\peashooter %281%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2810%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2811%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2812%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2813%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2814%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2815%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2816%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2817%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2818%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2819%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %282%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2820%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2821%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2822%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2823%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2824%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2825%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2826%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2827%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2828%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2829%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %283%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2830%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2831%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2832%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2833%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2834%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2835%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2836%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2837%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2838%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2839%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %284%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2840%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2841%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2842%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2843%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2844%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2845%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2846%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2847%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2848%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %2849%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %285%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %286%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %287%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %288%29.gif" />
+    <None Remove="Images\peashooterAnimation\peashooter %289%29.gif" />
     <None Remove="Images\peashooterItem.png" />
+    <None Remove="Images\potatomineAnimation\potatomine %281%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2810%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2811%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2812%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2813%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2814%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2815%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2816%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2817%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2818%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2819%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %282%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2820%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2821%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2822%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2823%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2824%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2825%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2826%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2827%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2828%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %2829%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %283%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %284%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %285%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %286%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %287%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %288%29.gif" />
+    <None Remove="Images\potatomineAnimation\potatomine %289%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %281%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2810%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2811%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2812%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2813%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2814%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2815%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2816%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2817%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2818%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2819%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %282%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2820%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2821%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2822%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2823%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2824%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2825%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %283%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %284%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %285%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %286%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %287%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %288%29.gif" />
+    <None Remove="Images\snowpeashooterAnimation\snowpeashooter %289%29.gif" />
     <None Remove="Images\sun1.png" />
     <None Remove="Images\sun2.png" />
     <None Remove="Images\sunflower.png" />
     <None Remove="Images\sunflowerAnim.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %281%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2810%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2811%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2812%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2813%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2814%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2815%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2816%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2817%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2818%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2819%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %282%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2820%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2821%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2822%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2823%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2824%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2825%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2826%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2827%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2828%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2829%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %283%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2830%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2831%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2832%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2833%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2834%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2835%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2836%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2837%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2838%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2839%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %284%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2840%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2841%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2842%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2843%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2844%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2845%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2846%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2847%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2848%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2849%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %285%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2850%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2851%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2852%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2853%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2854%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %2855%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %286%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %287%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %288%29.gif" />
+    <None Remove="Images\sunflowerAnimation\sunflower %289%29.gif" />
     <None Remove="Images\sunflowerItem.png" />
     <None Remove="Images\test.png" />
     <None Remove="Images\thiller.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %281%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2810%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2811%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2812%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2813%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2814%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2815%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2816%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2817%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2818%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2819%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %282%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2820%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2821%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2822%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2823%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2824%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2825%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2826%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2827%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2828%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2829%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %283%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2830%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2831%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2832%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2833%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2834%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2835%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2836%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2837%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2838%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2839%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %284%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2840%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2841%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2842%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2843%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %2844%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %285%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %286%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %287%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %288%29.gif" />
+    <None Remove="Images\wallnutAnimation\wallnut %289%29.gif" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,7 +243,316 @@
     <Content Include="Images\peashooter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (1).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (10).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (11).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (12).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (13).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (14).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (15).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (16).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (17).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (18).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (19).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (2).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (20).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (21).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (22).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (23).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (24).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (25).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (26).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (27).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (28).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (29).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (3).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (30).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (31).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (32).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (33).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (34).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (35).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (36).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (37).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (38).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (39).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (4).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (40).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (41).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (42).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (43).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (44).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (45).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (46).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (47).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (48).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (49).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (5).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (6).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (7).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (8).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\peashooterAnimation\peashooter (9).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\peashooterItem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (1).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (10).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (11).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (12).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (13).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (14).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (15).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (16).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (17).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (18).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (19).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (2).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (20).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (21).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (22).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (23).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (24).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (25).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (26).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (27).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (28).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (29).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (3).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (4).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (5).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (6).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (7).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (8).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\potatomineAnimation\potatomine (9).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (1).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (10).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (11).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (12).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (13).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (14).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (15).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (16).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (17).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (18).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (19).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (2).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (20).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (21).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (22).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (23).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (24).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (25).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (3).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (4).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (5).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (6).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (7).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (8).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpeashooterAnimation\snowpeashooter (9).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sun1.png">
@@ -56,10 +567,307 @@
     <Content Include="Images\sunflowerAnim.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (1).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (10).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (11).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (12).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (13).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (14).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (15).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (16).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (17).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (18).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (19).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (2).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (20).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (21).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (22).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (23).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (24).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (25).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (26).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (27).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (28).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (29).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (3).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (30).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (31).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (32).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (33).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (34).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (35).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (36).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (37).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (38).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (39).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (4).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (40).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (41).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (42).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (43).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (44).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (45).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (46).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (47).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (48).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (49).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (5).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (50).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (51).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (52).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (53).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (54).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (55).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (6).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (7).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (8).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflowerAnimation\sunflower (9).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\sunflowerItem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\thiller.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (1).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (10).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (11).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (12).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (13).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (14).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (15).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (16).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (17).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (18).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (19).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (2).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (20).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (21).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (22).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (23).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (24).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (25).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (26).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (27).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (28).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (29).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (3).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (30).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (31).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (32).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (33).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (34).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (35).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (36).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (37).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (38).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (39).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (4).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (40).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (41).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (42).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (43).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (44).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (5).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (6).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (7).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (8).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnutAnimation\wallnut (9).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
