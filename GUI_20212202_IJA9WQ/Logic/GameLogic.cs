@@ -52,7 +52,36 @@ namespace GUI_20212202_IJA9WQ.Logic
                 coordinateCalculator.SunWidth,
                 coordinateCalculator.SunHeight,
                 coordinateCalculator.SunSpeed(coordinateCalculator.LeftMapBorder, coordinateCalculator.UpperMapBorder)
-                )); 
+                ));
+
+            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder+3*coordinateCalculator.GameMapCellWidth,
+               coordinateCalculator.UpperMapBorder+3*coordinateCalculator.GameMapCellHeight,
+               coordinateCalculator.SunWidth,
+               coordinateCalculator.SunHeight,
+               coordinateCalculator.SunSpeed(
+                   coordinateCalculator.LeftMapBorder + 3 * coordinateCalculator.GameMapCellWidth,
+                   coordinateCalculator.UpperMapBorder + 3 * coordinateCalculator.GameMapCellHeight)
+               ));
+            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 4 * coordinateCalculator.GameMapCellWidth,
+                coordinateCalculator.UpperMapBorder + 5 * coordinateCalculator.GameMapCellHeight,
+                coordinateCalculator.SunWidth,
+                coordinateCalculator.SunHeight,
+                coordinateCalculator.SunSpeed(
+                    coordinateCalculator.LeftMapBorder + 4 * coordinateCalculator.GameMapCellWidth,
+                     coordinateCalculator.UpperMapBorder + 5 * coordinateCalculator.GameMapCellHeight)
+                ));
+            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 7 * coordinateCalculator.GameMapCellWidth,
+                coordinateCalculator.UpperMapBorder + 4 * coordinateCalculator.GameMapCellHeight,
+                coordinateCalculator.SunWidth,
+                coordinateCalculator.SunHeight,
+                coordinateCalculator.SunSpeed(
+                   coordinateCalculator.LeftMapBorder + 7 * coordinateCalculator.GameMapCellWidth,
+                   coordinateCalculator.UpperMapBorder + 4 * coordinateCalculator.GameMapCellHeight)
+                ));
+
+
+
+
             Bullets.Add(new Bullet(coordinateCalculator.GameMapCellWidth*3,
                 coordinateCalculator.GameMapCellHeight*3,
                 coordinateCalculator.BulletWidth,

@@ -322,7 +322,10 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public bool IsSunReachedShop(double x, double y)
         {
-            return ShopSunX - ShopSunX * 0.25 < x && x < ShopSunX + ShopSunX * 0.25 && ShopSunY - ShopSunY * 0.25 < y && y < ShopSunY + ShopSunY * 0.25;
+            return ShopSunX - SunWidth * 0.4 < x &&
+                x < ShopSunX  + SunWidth * 0.4 &&
+                ShopSunY - SunHeight * 0.4 < y &&
+                y < ShopSunY + SunHeight * 0.4;
         }
 
 
@@ -349,9 +352,9 @@ namespace GUI_20212202_IJA9WQ.Helpers
         public (double, double) SunSpeed(double x, double y) 
         {
             (double, double) speed =
-                ((ShopSunX-x)/ (displayWidth * 0.015),
-                (ShopSunY - y)/ (displayWidth* 0.015));
-           
+                ((ShopSunX - x) / (displayWidth * 0.015),
+                (ShopSunY - y) / (displayWidth * 0.015));
+
             return speed;
         }
 
