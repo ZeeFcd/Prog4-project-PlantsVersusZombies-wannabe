@@ -23,7 +23,8 @@ namespace GUI_20212202_IJA9WQ.Logic
         public List<Sun> Suns { get;  }
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
-        
+        public int SunValue { get => sunValue; }
+
         public GameLogic(CoordinateCalculator coordinateCalculator)
         {
             this.coordinateCalculator = coordinateCalculator;

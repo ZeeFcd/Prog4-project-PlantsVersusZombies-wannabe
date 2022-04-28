@@ -151,15 +151,15 @@ namespace GUI_20212202_IJA9WQ.Helpers
 
         public double SunCounterWidth
         {
-            get { return 0.079*displayWidth ; }
+            get { return 0.079 * displayWidth; }
         }
         public double SunCounterHeight
         {
-            get { return 0.042*displayHeight; }
+            get { return 0.042 * displayHeight; }
         }
         public double SunCounterX 
         {
-            get { return 0; }
+            get { return LeftShopBorder+(RightShopBorder - LeftShopBorder)/3; }
         }
         public double SunCounterY
         {

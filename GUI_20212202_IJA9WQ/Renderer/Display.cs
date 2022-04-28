@@ -42,6 +42,17 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     coordinateCalculator.RightShopBorder - coordinateCalculator.LeftShopBorder,
                     coordinateCalculator.LowerShopBorderFull - coordinateCalculator.UpperShopBorder));
 
+                var text = new FormattedText(
+                    logic.SunValue.ToString(), System.Globalization.CultureInfo.CurrentCulture,
+                    FlowDirection.LeftToRight,
+                    new Typeface(new FontFamily("SeriesOrbit"), FontStyles.Normal, FontWeights.Bold, FontStretches.Normal),
+                    20, Brushes.Black,10);
+
+                var origin = new Point(coordinateCalculator.SunCounterX,coordinateCalculator.SunCounterY);
+                drawingContext.DrawText(text,origin);
+                    
+                   
+
                 for (int i = 0; i < logic.PlantsSelectionDay.Length; i++)
                 {
                     drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImageBrush, new Pen(Brushes.Black, 1),
