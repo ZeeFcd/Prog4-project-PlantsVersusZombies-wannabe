@@ -24,6 +24,7 @@ namespace GUI_20212202_IJA9WQ
     {
         DispatcherTimer dt;
         GameLogic logic;
+        IViewLogic viewLogic;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,18 +32,9 @@ namespace GUI_20212202_IJA9WQ
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            logic = new GameLogic((int)grid.ActualWidth, (int)grid.ActualHeight);
-            display.SetupLogic(logic);
-            display.InvalidateVisual();
-            dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromMilliseconds(17);
-            dt.Tick += (sender, eventargs) =>
-            {
-                logic.TimeStep();
-                display.InvalidateVisual();
-            };
-            dt.Start();
-            
+            viewLogic = new ViewLogic();
+            viewLogic.ChangeView("menu");
+
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
