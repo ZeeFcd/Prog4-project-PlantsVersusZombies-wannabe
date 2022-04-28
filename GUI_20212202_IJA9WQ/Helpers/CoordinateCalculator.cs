@@ -240,11 +240,11 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public double BulletWidth
         {
-            get { return 0.025 * displayWidth; }
+            get { return 0.022 * displayWidth; }
         }
         public double BulletHeight
         {
-            get { return 0.04 * displayHeight; }
+            get { return 0.035 * displayHeight; }
         }
         public double BulletSpeed
         {

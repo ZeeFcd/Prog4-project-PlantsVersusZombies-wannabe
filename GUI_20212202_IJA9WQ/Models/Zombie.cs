@@ -24,7 +24,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.zombieState = ZombieStateEnum.Normal;
             this.PlaceGameMatrixX = -1;
             this.PlaceGameMatrixY = -1;
-            this.State = AttackStateEnum.Attack;
+            this.State = AttackStateEnum.Normal;
         }
         public double PlaceX
         {

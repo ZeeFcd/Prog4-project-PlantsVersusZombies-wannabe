@@ -142,10 +142,10 @@ namespace GUI_20212202_IJA9WQ.Logic
             //    LawnMovers[i].Move();
             //}
 
-            foreach (var bullet in Bullets)
-            {
-                bullet.Move();
-            }
+            //foreach (var bullet in Bullets)
+            //{
+            //    bullet.Move();
+            //}
 
             foreach (var zombie in Zombies)
             {
