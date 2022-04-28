@@ -265,6 +265,46 @@
     <None Remove="Images\zombieeatAnimation\frame_172_delay-0.07s.gif" />
     <None Remove="Images\zombieeatAnimation\frame_173_delay-0.07s.gif" />
     <None Remove="Images\zombieeatAnimation\frame_174_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %281%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2810%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2811%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2812%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2813%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2814%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2815%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2816%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2817%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2818%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2819%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %282%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2820%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2821%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2822%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2823%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2824%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2825%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2826%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2827%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2828%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2829%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %283%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2830%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2831%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2832%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2833%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2834%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2835%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2836%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2837%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2838%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2839%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %284%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %2840%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %285%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %286%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %287%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %288%29.gif" />
+    <None Remove="Images\zombieeatAnimation\zombieeat %289%29.gif" />
     <None Remove="Images\zombiewalkAnimation\zombiewalk %281%29.gif" />
     <None Remove="Images\zombiewalkAnimation\zombiewalk %2810%29.gif" />
     <None Remove="Images\zombiewalkAnimation\zombiewalk %2811%29.gif" />
@@ -1003,124 +1043,124 @@
     <Content Include="Images\wallnutAnimation\wallnut (9).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_135_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (1).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_136_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (10).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_137_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (11).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_138_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (12).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_139_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (13).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_140_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (14).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_141_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (15).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_142_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (16).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_143_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (17).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_144_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (18).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_145_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (19).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_146_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (2).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_147_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (20).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_148_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (21).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_149_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (22).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_150_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (23).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_151_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (24).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_152_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (25).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_153_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (26).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_154_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (27).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_155_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (28).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_156_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (29).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_157_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (3).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_158_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (30).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_159_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (31).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_160_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (32).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_161_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (33).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_162_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (34).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_163_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (35).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_164_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (36).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_165_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (37).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_166_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (38).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_167_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (39).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_168_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (4).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_169_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (40).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_170_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (5).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_171_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (6).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_172_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (7).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_173_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (8).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\zombieeatAnimation\frame_174_delay-0.07s.gif">
+    <Content Include="Images\zombieeatAnimation\zombieeat (9).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\zombiewalkAnimation\zombiewalk (1).gif">

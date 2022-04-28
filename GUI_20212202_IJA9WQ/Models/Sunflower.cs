@@ -14,7 +14,7 @@ namespace GUI_20212202_IJA9WQ.Models
     {
         public Sunflower(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
-
+            Type = Helpers.PlantEnum.Sunflower;
         }
         public override Brush ShopImageBrush
         {
@@ -32,7 +32,7 @@ namespace GUI_20212202_IJA9WQ.Models
         }
         public override Plant GetCopy()
         {
-            return new Sunflower(this.displayWidth,this.displayHeight)
+            return new Sunflower(this.displayWidth, this.displayHeight)
             {
                 HP = this.HP,
                 Damage = this.Damage,

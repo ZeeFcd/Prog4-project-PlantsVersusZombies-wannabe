@@ -73,6 +73,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                         case PlantEnum.Cherrybomb:
                             break;
                         case PlantEnum.Sunflower:
+                            drawingContext.DrawGeometry(brushes.SunfloowerGIF[logic.GameClock % brushes.SunfloowerGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         default:
                             break;
