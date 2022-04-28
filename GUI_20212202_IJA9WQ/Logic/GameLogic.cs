@@ -93,9 +93,9 @@ namespace GUI_20212202_IJA9WQ.Logic
                 
             }
 
-            foreach (var Sun in Suns)
+            foreach (var sun in Suns)
             {
-                Sun.Move(coordinateCalculator.ShopSunX,coordinateCalculator.ShopSunY);
+                sun.Move(coordinateCalculator.IsSunReachedShop(sun.PlaceX,sun.PlaceY));
             }
 
 

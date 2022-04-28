@@ -25,19 +25,24 @@ namespace GUI_20212202_IJA9WQ.Models
         }
 
         public (double, double) Speed { get => speed; set => speed = value; }
-
-        public void Move(double x, double y)
+        public double PlaceX
         {
-            if (x - x * 0.25<placeX && placeX < x + x * 0.25 && y - y * 0.25 < placeY && placeY < y + y * 0.25)
-            {
-               
-            }
-            else
+            get { return placeX; }
+            set { placeX = value; }
+        }
+        public double PlaceY
+        {
+            get { return placeY; }
+            set { placeY = value; }
+        }
+        public void Move(bool stopCondition)
+        {
+            if (!stopCondition)
             {
                 placeX += speed.Item1;
                 placeY += speed.Item2;
             }
-            
+           
         }
 
         public bool IsInSun(double x,double y)

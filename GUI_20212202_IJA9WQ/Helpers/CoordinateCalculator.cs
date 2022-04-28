@@ -142,11 +142,11 @@ namespace GUI_20212202_IJA9WQ.Helpers
 
         public double ShopSunX 
         {
-            get { return LeftShopBorder+ (RightShopBorder-LeftShopBorder)/2; }
+            get { return LeftShopBorder+ (RightShopBorder-LeftShopBorder)/2-SunWidth/2; }
         }
         public double ShopSunY
         {
-            get { return LowerShopBorder+(LowerShopBorderFull - LowerShopBorder)*0.36; }
+            get { return LowerShopBorder+(LowerShopBorderFull - LowerShopBorder)*0.36-SunHeight/2; }
         }
 
         public double SunCounterWidth
@@ -320,7 +320,12 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             return LeftShopBorder < x && x < RightShopBorder && UpperShopBorder < y && y < LowerShopBorder;
         }
-        
+        public bool IsSunReachedShop(double x, double y)
+        {
+            return ShopSunX - ShopSunX * 0.25 < x && x < ShopSunX + ShopSunX * 0.25 && ShopSunY - ShopSunY * 0.25 < y && y < ShopSunY + ShopSunY * 0.25;
+        }
+
+
         public int WhichCellInShop(double y) 
         {            
             return (int)((y - UpperShopBorder) / (LowerShopBorder / 6));
