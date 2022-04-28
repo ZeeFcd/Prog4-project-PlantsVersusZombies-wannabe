@@ -11,7 +11,6 @@ namespace GUI_20212202_IJA9WQ.Logic
 {
     public class GameLogic : IGameLogic
     {
-        static object lockObject = new object();
 
         CoordinateCalculator coordinateCalculator;
         int gameClock;
