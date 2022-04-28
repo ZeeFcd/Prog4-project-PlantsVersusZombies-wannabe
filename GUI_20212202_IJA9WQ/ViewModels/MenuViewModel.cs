@@ -11,8 +11,8 @@ namespace GUI_20212202_IJA9WQ.ViewModels
     public class MenuViewModel : ObservableRecipient
     {
         public ICommand StartCommand { get; set; }
-        //public ICommand StartCommand { get; set; }
-        //public ICommand StartCommand { get; set; }
+        public ICommand MuteCommand { get; set; }
+        
 
 
     }
