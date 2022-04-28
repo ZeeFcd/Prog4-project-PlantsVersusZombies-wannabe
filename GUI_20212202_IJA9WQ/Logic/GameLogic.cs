@@ -16,9 +16,6 @@ namespace GUI_20212202_IJA9WQ.Logic
         int gameClock;
         public int GameClock { get { return gameClock; } }
 
-        int wallnutClock;
-        public int WallNutClock { get { return wallnutClock; } }
-
         int sunValue;
         private Plant[,] PlantsMatrix;
         private List<Zombie>[,] ZombiesMatrix;
@@ -40,7 +37,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             LawnMovers = new LawnMover[5];
             Suns = new List<Sun>();
             gameClock = 0;
-            wallnutClock = 0;
+            
             sunValue = 50;
             PlantsMatrix = new Plant[5, 9];
             ZombiesMatrix = new List<Zombie>[5, 9];
@@ -244,10 +241,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
 
             gameClock += 1;
-            if (gameClock % 2 == 0)
-            {
-                wallnutClock++;
-            }
+            
         }
 
         public void ZombiesMatrixInitialize()
@@ -363,16 +357,19 @@ namespace GUI_20212202_IJA9WQ.Logic
                     {
                         if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]))
                         {
+                            zombie.State = AttackStateEnum.Normal;
                             zombie.Move();
                             PlaceZombieInGameMatrix(zombie);
                         }
                         else
                         {
+                            zombie.State = AttackStateEnum.Attack;
                             ;//to be continued, ATTACK THE PLANT
                         }
                     }
                     else
                     {
+                        zombie.State = AttackStateEnum.Normal;
                         zombie.Move();
                         PlaceZombieInGameMatrix(zombie);
                     }

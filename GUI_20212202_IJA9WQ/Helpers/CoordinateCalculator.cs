@@ -199,7 +199,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public double ZombieSpeed
         {
-            get { return -0.0004 * displayWidth; }
+            get { return -0.0005 * displayWidth; }
         }
         //---------------------
 

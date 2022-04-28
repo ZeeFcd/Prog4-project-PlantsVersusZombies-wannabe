@@ -84,7 +84,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             drawingContext.DrawGeometry(brushes.PeashooterGIF[logic.GameClock % brushes.PeashooterGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         case PlantEnum.Wallnut:
-                            drawingContext.DrawGeometry(brushes.WallnutGIF[logic.WallNutClock % brushes.WallnutGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                            drawingContext.DrawGeometry(brushes.WallnutGIF[logic.GameClock % brushes.WallnutGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         case PlantEnum.Potatomine:
                             drawingContext.DrawGeometry(brushes.PotatomineGIF[logic.GameClock % brushes.PotatomineGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
@@ -108,11 +108,11 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     if (zombie.State == AttackStateEnum.Attack)
                     {
-                        drawingContext.DrawGeometry(brushes.ZombieEatGIF[logic.GameClock % brushes.ZombieEatGIF.Count], new Pen(Brushes.Black, 1), zombie.Area);
+                        drawingContext.DrawGeometry(brushes.ZombieEatGIF[logic.GameClock % brushes.ZombieEatGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
                     }
                     else
                     {
-                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[logic.GameClock % brushes.ZombieWalkGIF.Count], new Pen(Brushes.Black, 1), zombie.Area);
+                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[logic.GameClock % brushes.ZombieWalkGIF.Count],null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
                     }
                     
                 }

@@ -9,7 +9,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public abstract class OffensiveItem : GameItem
     {
-        public AttackStateEnum State { get; protected set; }
+        public AttackStateEnum State { get;set; }
         public int Damage { get; set; }
         public int HP { get; set; }
         public double PlaceX
