@@ -62,15 +62,19 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     switch (plant.Type)
                     {
                         case PlantEnum.Peashooter:
-                            drawingContext.DrawGeometry(brushes.PeashooterGIF[logic.GameClock%brushes.PeashooterGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                            drawingContext.DrawGeometry(brushes.PeashooterGIF[logic.GameClock % brushes.PeashooterGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         case PlantEnum.Wallnut:
+                            drawingContext.DrawGeometry(brushes.WallnutGIF[logic.WallNutClock % brushes.WallnutGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         case PlantEnum.Potatomine:
+                            drawingContext.DrawGeometry(brushes.PotatomineGIF[logic.GameClock % brushes.PotatomineGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         case PlantEnum.Snowpeashooter:
+                            drawingContext.DrawGeometry(brushes.SnowpeashooterGIF[logic.GameClock % brushes.SnowpeashooterGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         case PlantEnum.Cherrybomb:
+                            drawingContext.DrawGeometry(GameBrushes.CherryBrush, new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         case PlantEnum.Sunflower:
                             drawingContext.DrawGeometry(brushes.SunfloowerGIF[logic.GameClock % brushes.SunfloowerGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
@@ -78,7 +82,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                         default:
                             break;
                     }
-                    
+
                 }
 
                 foreach (var zombie in logic.Zombies)

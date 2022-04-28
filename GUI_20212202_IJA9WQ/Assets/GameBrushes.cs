@@ -17,9 +17,23 @@ namespace GUI_20212202_IJA9WQ.Assets
         public static readonly Brush PeashooterBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "peashooter.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush SunflowerBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "sunflower.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush ZombieBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "thiller.gif"), UriKind.RelativeOrAbsolute)));
-        public static readonly Brush SunflowerItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "sunflowerItem.png"), UriKind.RelativeOrAbsolute)));
-        public static readonly Brush PeashooterItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "peashooterItem.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush SunBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "sun1.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush PeaBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "pea.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush CherryBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "cherrybomb.png"), UriKind.RelativeOrAbsolute)));
+
+
+        public static readonly Brush SunflowerItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "sunflowerItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush PeashooterItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "peashooterItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush WallnutItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "wallnutItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush CherryBombItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "cherrybombItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush SnowPeaItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "snowpeashooterItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush PotatoMineItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "potatomineItem.png"), UriKind.RelativeOrAbsolute)));
+
+        public static readonly Brush Dea_SunflowerItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "dea_sunflowerItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush Dea_PeashooterItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "dea_peashooterItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush Dea_WallnutItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "dea_wallnutItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush Dea_CherryBombItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "dea_cherrybombItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush Dea_SnowPeaItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "dea_snowpeashooterItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush Dea_PotatoMineItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "dea_potatomineItem.png"), UriKind.RelativeOrAbsolute)));
     }
 }

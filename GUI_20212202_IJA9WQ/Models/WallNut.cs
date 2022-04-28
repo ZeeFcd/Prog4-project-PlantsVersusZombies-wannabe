@@ -1,48 +1,39 @@
 ﻿using GUI_20212202_IJA9WQ.Assets;
-using GUI_20212202_IJA9WQ.Helpers;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace GUI_20212202_IJA9WQ.Models
 {
-    public class Peashooter : Plant
+    public class WallNut : Plant
     {
-        public Peashooter(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
-        {
-            this.HP = 100;
-            this.Damage = 20;
-            this.Price = 100;
-            this.Cooldown = 10;
-            Type = PlantEnum.Peashooter;
-        }
-
         public override Brush ShopImageBrush
         {
-            get { return GameBrushes.PeashooterItemBrush; }
+            get { return GameBrushes.WallnutItemBrush; }
         }
 
-
-        protected override void Ability()
+        public WallNut(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
-
+            this.HP = 100;
+            this.Damage = 0;
+            this.Price = 50;
+            this.Cooldown = 10;
+            Type = Helpers.PlantEnum.Wallnut;
         }
+
         public override Plant GetCopy()
         {
-            return new Peashooter(this.displayWidth, this.displayHeight)
+            return new WallNut(this.displayWidth, this.displayHeight)
             {
                 HP = this.HP,
                 Damage = this.Damage,
                 Price = this.Price,
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
-                placeY = this.placeY,
-
+                placeY = this.placeY
             };
         }
 
@@ -50,6 +41,10 @@ namespace GUI_20212202_IJA9WQ.Models
         {
             throw new NotImplementedException();
         }
+
+        protected override void Ability()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
-

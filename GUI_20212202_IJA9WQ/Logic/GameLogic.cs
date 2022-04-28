@@ -15,6 +15,9 @@ namespace GUI_20212202_IJA9WQ.Logic
         int gameClock;
         public int GameClock { get { return gameClock; } }
 
+        int wallnutClock;
+        public int WallNutClock { get { return wallnutClock; } }
+
         int sunValue;
         private Plant[,] PlantsMatrix;
         private List<Zombie>[,] ZombiesMatrix;
@@ -26,6 +29,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
 
+
         public GameLogic(CoordinateCalculator coordinateCalculator)
         {
             this.coordinateCalculator = coordinateCalculator;
@@ -35,6 +39,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             LawnMovers = new List<LawnMover>();
             Suns = new List<Sun>();
             gameClock = 0;
+            wallnutClock = 0;
             sunValue = 50;
             PlantsMatrix = new Plant[5, 9];
             ZombiesMatrix = new List<Zombie>[5, 9];
@@ -43,10 +48,11 @@ namespace GUI_20212202_IJA9WQ.Logic
             PlantsSelectionDay = new Plant[] {
                 new Peashooter(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
                 new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
-                new Peashooter(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
-                new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
-                new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
-                new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight) };
+                new CherryBomb(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
+                new WallNut(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
+                new PotatoMine(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
+                new SnowPea(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight)
+            };
 
             Suns.Add(new Sun(coordinateCalculator.LeftMapBorder,
                 coordinateCalculator.UpperMapBorder,
@@ -95,6 +101,10 @@ namespace GUI_20212202_IJA9WQ.Logic
 
 
             gameClock += 1;
+            if (gameClock % 2 == 0)
+            {
+                wallnutClock++;
+            }
         }
 
         public void ZombiesMatrixInitialize()

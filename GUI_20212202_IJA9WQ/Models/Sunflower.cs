@@ -1,4 +1,5 @@
 ﻿using GUI_20212202_IJA9WQ.Assets;
+using GUI_20212202_IJA9WQ.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,22 +15,16 @@ namespace GUI_20212202_IJA9WQ.Models
     {
         public Sunflower(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
-            Type = Helpers.PlantEnum.Sunflower;
+            this.HP = 100;
+            this.Price = 50;
+            this.Cooldown = 10;
+            Type = PlantEnum.Sunflower;
         }
         public override Brush ShopImageBrush
         {
             get { return GameBrushes.SunflowerItemBrush; }
         }
-
-        public override Brush GameImageBrush
-        {
-            get { return GameBrushes.SunflowerBrush; }
-        }
-
-        protected override void Ability()
-        {
-
-        }
+       
         public override Plant GetCopy()
         {
             return new Sunflower(this.displayWidth, this.displayHeight)
@@ -37,12 +32,16 @@ namespace GUI_20212202_IJA9WQ.Models
                 HP = this.HP,
                 Damage = this.Damage,
                 Price = this.Price,
-                Cooldown = 10,
+                Cooldown = this.Cooldown,
                 placeX = this.placeX,
                 placeY = this.placeY
             };
         }
 
+        protected override void Ability()
+        {
+
+        }
         public override void Terminated()
         {
             throw new NotImplementedException();

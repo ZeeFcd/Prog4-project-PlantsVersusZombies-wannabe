@@ -9,6 +9,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         List<LawnMover> LawnMovers { get; }
 
         int GameClock { get; }
+        int WallNutClock { get; }
         List<Plant> Plants { get; }
         Plant[] PlantsSelectionDay { get; }
         List<Zombie> Zombies { get;  }
