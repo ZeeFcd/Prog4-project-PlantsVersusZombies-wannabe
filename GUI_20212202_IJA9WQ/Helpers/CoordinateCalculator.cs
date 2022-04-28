@@ -230,6 +230,14 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         //---------------------
 
+        public double BulletX
+        {
+            get { return 0.3 * displayWidth; }
+        }
+        public double BulletY
+        {
+            get { return 0.19 * displayHeight; }
+        }
         public double BulletWidth
         {
             get { return 0.025 * displayWidth; }
@@ -240,8 +248,10 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public double BulletSpeed
         {
-            get { return 0.04 * displayWidth; }
+            get { return 0.015 * displayWidth; }
         }
+        //---------------------
+
         public double SunWidth
         {
             get { return 0.05 * displayWidth; }
@@ -259,6 +269,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
             get { return 0; }
         }
         //---------------------
+
         public double ShovelWidth
         {
             get { return RightShopBorder-LeftShopBorder; }
@@ -327,7 +338,10 @@ namespace GUI_20212202_IJA9WQ.Helpers
                 ShopSunY - SunHeight * 0.4 < y &&
                 y < ShopSunY + SunHeight * 0.4;
         }
-
+        public bool IsInShovel(double x, double y)
+        {
+            return ShovelX < x && x < ShovelX+ShovelWidth && ShovelY < y && y < ShovelY+ShovelHeight;
+        }
 
         public int WhichCellInShop(double y) 
         {            

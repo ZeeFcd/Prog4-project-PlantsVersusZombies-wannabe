@@ -80,14 +80,33 @@ namespace GUI_20212202_IJA9WQ.Logic
                 ));
 
 
+           
+           Bullets.Add(new Bullet(
+                    coordinateCalculator.BulletX,
+                    coordinateCalculator.BulletY,
+                    coordinateCalculator.BulletWidth,
+                    coordinateCalculator.BulletHeight,
+                    coordinateCalculator.BulletSpeed
+               ));
+
+           Bullets.Add(new Bullet(
+                    coordinateCalculator.BulletX+2*coordinateCalculator.GameMapCellWidth,
+                    coordinateCalculator.BulletY,
+                    coordinateCalculator.BulletWidth,
+                    coordinateCalculator.BulletHeight,
+                    coordinateCalculator.BulletSpeed
+               ));
+
+            Bullets.Add(new Bullet(
+                   coordinateCalculator.BulletX ,
+                   coordinateCalculator.BulletY +2*coordinateCalculator.GameMapCellHeight,
+                   coordinateCalculator.BulletWidth,
+                   coordinateCalculator.BulletHeight,
+                   coordinateCalculator.BulletSpeed
+              ));
 
 
-            Bullets.Add(new Bullet(coordinateCalculator.GameMapCellWidth*3,
-                coordinateCalculator.GameMapCellHeight*3,
-                coordinateCalculator.BulletWidth,
-                coordinateCalculator.BulletHeight,
-                2
-                ));
+
 
             for (int i = 1; i < 6; i++)
             {
@@ -115,6 +134,11 @@ namespace GUI_20212202_IJA9WQ.Logic
             //{
             //    LawnMovers[i].Move();
             //}
+
+            foreach (var bullet in Bullets)
+            {
+                bullet.Move();
+            }
 
             foreach (var zombie in Zombies)
             {
