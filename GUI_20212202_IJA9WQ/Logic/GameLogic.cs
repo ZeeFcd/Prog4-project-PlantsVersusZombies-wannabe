@@ -61,8 +61,8 @@ namespace GUI_20212202_IJA9WQ.Logic
                 coordinateCalculator.SunSpeed(coordinateCalculator.LeftMapBorder, coordinateCalculator.UpperMapBorder)
                 ));
 
-            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder+3*coordinateCalculator.GameMapCellWidth,
-               coordinateCalculator.UpperMapBorder+3*coordinateCalculator.GameMapCellHeight,
+            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 3 * coordinateCalculator.GameMapCellWidth,
+               coordinateCalculator.UpperMapBorder + 3 * coordinateCalculator.GameMapCellHeight,
                coordinateCalculator.SunWidth,
                coordinateCalculator.SunHeight,
                coordinateCalculator.SunSpeed(
@@ -87,30 +87,30 @@ namespace GUI_20212202_IJA9WQ.Logic
                 ));
 
 
-           
-           Bullets.Add(new Bullet(
-                    coordinateCalculator.BulletX,
-                    coordinateCalculator.BulletY,
-                    coordinateCalculator.BulletWidth,
-                    coordinateCalculator.BulletHeight,
-                    coordinateCalculator.BulletSpeed
-               ));
 
-           Bullets.Add(new Bullet(
-                    coordinateCalculator.BulletX+2*coordinateCalculator.GameMapCellWidth,
-                    coordinateCalculator.BulletY,
-                    coordinateCalculator.BulletWidth,
-                    coordinateCalculator.BulletHeight,
-                    coordinateCalculator.BulletSpeed
-               ));
+            //Bullets.Add(new Bullet(
+            //         coordinateCalculator.BulletX,
+            //         coordinateCalculator.BulletY,
+            //         coordinateCalculator.BulletWidth,
+            //         coordinateCalculator.BulletHeight,
+            //         coordinateCalculator.BulletSpeed
+            //    ));
 
-            Bullets.Add(new Bullet(
-                   coordinateCalculator.BulletX ,
-                   coordinateCalculator.BulletY +2*coordinateCalculator.GameMapCellHeight,
-                   coordinateCalculator.BulletWidth,
-                   coordinateCalculator.BulletHeight,
-                   coordinateCalculator.BulletSpeed
-              ));
+            //Bullets.Add(new Bullet(
+            //         coordinateCalculator.BulletX + 2 * coordinateCalculator.GameMapCellWidth,
+            //         coordinateCalculator.BulletY,
+            //         coordinateCalculator.BulletWidth,
+            //         coordinateCalculator.BulletHeight,
+            //         coordinateCalculator.BulletSpeed
+            //    ));
+
+            //Bullets.Add(new Bullet(
+            //       coordinateCalculator.BulletX,
+            //       coordinateCalculator.BulletY + 2 * coordinateCalculator.GameMapCellHeight,
+            //       coordinateCalculator.BulletWidth,
+            //       coordinateCalculator.BulletHeight,
+            //       coordinateCalculator.BulletSpeed
+            //  ));
 
 
 
@@ -142,24 +142,32 @@ namespace GUI_20212202_IJA9WQ.Logic
             //    LawnMovers[i].Move();
             //}
 
-            //foreach (var bullet in Bullets)
-            //{
-            //    bullet.Move();
-            //}
+            foreach (var bullet in Bullets)
+            {
+                bullet.Move();
+            }
 
             foreach (var zombie in Zombies)
             {
                 ZombieTimeStep(zombie);
+            }
+
+            foreach (var plant in Plants)
+            {
+                if (gameClock % 10 == 0)
+                {
+                    ShootTimeStep(plant);
+                }
                 
             }
 
             foreach (var sun in Suns)
             {
-                sun.Move(coordinateCalculator.IsSunReachedShop(sun.PlaceX,sun.PlaceY));
+                sun.Move(coordinateCalculator.IsSunReachedShop(sun.PlaceX, sun.PlaceY));
             }
 
 
-            if (gameClock==800)
+            if (gameClock == 800)
             {
                 ;
             }
@@ -197,8 +205,23 @@ namespace GUI_20212202_IJA9WQ.Logic
                 return n;
             }
             return -1;
-
         }
+
+        private bool IsZombieInSameRow(Plant plant)
+        {
+            (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX, plant.PlaceY);
+            int n = coordinates.Item1;
+            while (n < ZombiesMatrix.GetLength(1) && ZombiesMatrix[coordinates.Item2, n].Count == 0)
+            {
+                n++;
+            }
+            if (n < ZombiesMatrix.GetLength(1))
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void PlaceZombieInGameMatrix(Zombie zombie)
         {
             if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
@@ -237,7 +260,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                 PlantsMatrix[i, j] = CurrentlySelected.GetCopy();
                 CurrentlySelected = null;
             }
-
         }
 
         private void ZombieTimeStep(Zombie zombie)
@@ -270,6 +292,21 @@ namespace GUI_20212202_IJA9WQ.Logic
                 PlaceZombieInGameMatrix(zombie);
             }
 
+        }
+
+        private void ShootTimeStep(Plant plant)
+        {
+            if (IsZombieInSameRow(plant))
+            {
+                (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX, plant.PlaceY);
+                Bullets.Add(new Bullet(
+                    coordinateCalculator.BulletX + coordinates.Item1 * coordinateCalculator.GameMapCellWidth,
+                    coordinateCalculator.BulletY + coordinates.Item2 * coordinateCalculator.GameMapCellHeight,
+                    coordinateCalculator.BulletWidth,
+                    coordinateCalculator.BulletHeight,
+                    coordinateCalculator.BulletSpeed
+               ));
+            }
         }
     }
 }

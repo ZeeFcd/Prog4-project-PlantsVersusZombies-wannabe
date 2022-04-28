@@ -26,8 +26,6 @@ namespace GUI_20212202_IJA9WQ.Models
         {
             get { return GameBrushes.PeashooterItemBrush; }
         }
-
-
         protected override void Ability()
         {
 
