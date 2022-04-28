@@ -49,8 +49,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             Suns.Add(new Sun(coordinateCalculator.LeftMapBorder,
                 coordinateCalculator.UpperMapBorder,
                 coordinateCalculator.SunWidth,
-                coordinateCalculator.SunHeight,
-                (5,5)
+                coordinateCalculator.SunHeight
                 ));
             Bullets.Add(new Bullet(coordinateCalculator.GameMapCellWidth*3,
                 coordinateCalculator.GameMapCellHeight*3,
@@ -181,7 +180,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     }
                     else
                     {
-                        ;//to be continued, ATTACK THE PLANT
+                       ;//to be continued, ATTACK THE PLANT
                     }
                 }
                 else

@@ -140,6 +140,33 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         //---------------------
 
+        public double ShopSunX 
+        {
+            get { return LeftShopBorder+ (RightShopBorder-LeftShopBorder)/2; }
+        }
+        public double ShopSunY
+        {
+            get { return (LowerShopBorderFull - LowerShopBorder)*0.36; }
+        }
+
+        public double SunCounterWidth
+        {
+            get { return 0.079*displayWidth ; }
+        }
+        public double SunCounterHeight
+        {
+            get { return 0.042*displayHeight; }
+        }
+        public double SunCounterX 
+        {
+            get { return 0; }
+        }
+        public double SunCounterY
+        {
+            get { return LowerShopBorderFull-SunCounterHeight; }
+        }
+        //---------------------
+
         public double PlantWidth 
         {
             get { return 0.06 * displayWidth; }
@@ -211,6 +238,10 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             get { return 0.04 * displayHeight; }
         }
+        public double BulletSpeed
+        {
+            get { return 0.04 * displayWidth; }
+        }
         public double SunWidth
         {
             get { return 0.05 * displayWidth; }
@@ -218,6 +249,14 @@ namespace GUI_20212202_IJA9WQ.Helpers
         public double SunHeight
         {
             get { return 0.08 * displayHeight; }
+        }
+        public double SunSpeedX
+        {
+            get { return 0; }
+        }
+        public double SunSpeedY
+        {
+            get { return 0; }
         }
         //---------------------
 
