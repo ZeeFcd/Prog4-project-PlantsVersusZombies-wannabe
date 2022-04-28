@@ -50,8 +50,9 @@ namespace GUI_20212202_IJA9WQ.Logic
             Suns.Add(new Sun(coordinateCalculator.LeftMapBorder,
                 coordinateCalculator.UpperMapBorder,
                 coordinateCalculator.SunWidth,
-                coordinateCalculator.SunHeight
-                ));
+                coordinateCalculator.SunHeight,
+                coordinateCalculator.SunSpeed(coordinateCalculator.LeftMapBorder, coordinateCalculator.UpperMapBorder)
+                )); 
             Bullets.Add(new Bullet(coordinateCalculator.GameMapCellWidth*3,
                 coordinateCalculator.GameMapCellHeight*3,
                 coordinateCalculator.BulletWidth,
@@ -91,8 +92,17 @@ namespace GUI_20212202_IJA9WQ.Logic
                 ZombieTimeStep(zombie);
                 
             }
-            
 
+            foreach (var Sun in Suns)
+            {
+                Sun.Move(coordinateCalculator.ShopSunX,coordinateCalculator.ShopSunY);
+            }
+
+
+            if (gameClock==800)
+            {
+                ;
+            }
             gameClock += 1;
         }
 

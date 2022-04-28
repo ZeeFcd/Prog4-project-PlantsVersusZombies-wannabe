@@ -146,7 +146,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public double ShopSunY
         {
-            get { return (LowerShopBorderFull - LowerShopBorder)*0.36; }
+            get { return LowerShopBorder+(LowerShopBorderFull - LowerShopBorder)*0.36; }
         }
 
         public double SunCounterWidth
@@ -344,9 +344,9 @@ namespace GUI_20212202_IJA9WQ.Helpers
         public (double, double) SunSpeed(double x, double y) 
         {
             (double, double) speed =
-                (ShopSunX-x,
-                ShopSunY - y);
-
+                ((ShopSunX-x)/ (displayWidth * 0.015),
+                (ShopSunY - y)/ (displayWidth* 0.015));
+           
             return speed;
         }
 
