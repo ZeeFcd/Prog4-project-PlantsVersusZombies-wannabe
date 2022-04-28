@@ -87,7 +87,15 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 foreach (var zombie in logic.Zombies)
                 {
-                    drawingContext.DrawGeometry(brushes.ZombieWalkGIF[logic.GameClock % brushes.ZombieWalkGIF.Count], new Pen(Brushes.Black, 1), zombie.Area);
+                    if (zombie.State == AttackStateEnum.Attack)
+                    {
+                        drawingContext.DrawGeometry(brushes.ZombieEatGIF[logic.GameClock % brushes.ZombieEatGIF.Count], new Pen(Brushes.Black, 1), zombie.Area);
+                    }
+                    else
+                    {
+                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[logic.GameClock % brushes.ZombieWalkGIF.Count], new Pen(Brushes.Black, 1), zombie.Area);
+                    }
+                    
                 }
 
                 foreach (var lawnMover in logic.LawnMovers)
