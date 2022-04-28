@@ -45,7 +45,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 var text = new FormattedText(
                     logic.SunValue.ToString(), System.Globalization.CultureInfo.CurrentCulture,
                     FlowDirection.LeftToRight,
-                    new Typeface(new FontFamily("SeriesOrbit"), FontStyles.Normal, FontWeights.Bold, FontStretches.Normal),
+                    new Typeface(new FontFamily("Arial"), FontStyles.Normal, FontWeights.ExtraBold, FontStretches.Normal),
                     20, Brushes.Black,10);
 
                 var origin = new Point(coordinateCalculator.SunCounterX,coordinateCalculator.SunCounterY);
