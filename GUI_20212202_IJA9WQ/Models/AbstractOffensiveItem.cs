@@ -12,6 +12,8 @@ namespace GUI_20212202_IJA9WQ.Models
         protected AttackStateEnum State { get; set; }
         public int Damage { get; set; }
         public int HP { get; set; }
+
+
         
         public void DamagedBy(OffensiveItem attacker) 
         {

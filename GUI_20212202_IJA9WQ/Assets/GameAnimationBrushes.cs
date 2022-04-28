@@ -33,10 +33,11 @@ namespace GUI_20212202_IJA9WQ.Assets
         {
             List<Brush> brushes = new List<Brush>();
             string[] files = Directory.GetFiles(Path.Combine("Images", path));
-            string[] filenameandtype = Path.GetFileName(files[0]).Split(" ");
+            string[] filenameandtype = new string[files.Length];
             for (int i = 1; i < files.Length + 1; i++)
             {
-                brushes.Add(new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", path, filenameandtype[0] + "(" + i + ")" + filenameandtype[1]), UriKind.RelativeOrAbsolute))));
+              filenameandtype = Path.GetFileName(files[0]).Split(" ");
+                brushes.Add(new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", path, filenameandtype[0] + " (" + i + ")" + filenameandtype[1].Substring(3)), UriKind.RelativeOrAbsolute))));
             }
             return brushes;
         }
