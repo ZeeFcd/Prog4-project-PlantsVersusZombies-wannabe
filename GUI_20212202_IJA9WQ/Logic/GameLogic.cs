@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GUI_20212202_IJA9WQ.UserControlls;
 
 namespace GUI_20212202_IJA9WQ.Logic
 {
@@ -19,6 +20,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public List<LawnMover> LawnMovers { get; set; }
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
+        public Object View { get; set; }
         
         public GameLogic(int areaWidth, int areaHeight)
         {
@@ -143,6 +145,18 @@ namespace GUI_20212202_IJA9WQ.Logic
                 Plants.Add(CurrentlySelected.GetCopy());
                 PlantsMatrix[i, j] = CurrentlySelected.GetCopy();
                 CurrentlySelected = null;
+            }
+            
+        }
+        public void ChangeView(string view)
+        {
+            if (view.Equals("game"))
+            {
+                View = new GameUC();
+            }
+            else if (view.Equals("menu"))
+            {
+                View = new MenuUC();
             }
             
         }
