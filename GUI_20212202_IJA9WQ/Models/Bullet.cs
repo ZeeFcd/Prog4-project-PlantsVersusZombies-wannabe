@@ -11,13 +11,16 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Bullet : Moveable
     {
-        public Bullet(double placeX, double placeY, double displayWidth, double displayHeight, double speed)
+        public bool IsFrozen { get; set; }
+        public Bullet(double placeX, double placeY, double displayWidth, double displayHeight, double speed, bool isfrozen, int damage)
         {
             this.placeX = placeX;
             this.placeY = placeY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
             this.speed = speed;
+            this.IsFrozen = isfrozen;
+            this.Damage = damage;
         }
         public override Geometry Area
         {

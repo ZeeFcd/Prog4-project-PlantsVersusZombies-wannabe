@@ -156,9 +156,15 @@ namespace GUI_20212202_IJA9WQ.Logic
             {
                 if (gameClock % 10 == 0)
                 {
-                    ShootTimeStep(plant);
+                    if (plant.Type == PlantEnum.Peashooter)
+                    {
+                        ShootTimeStep(plant);
+                    }
+                    else if (plant.Type == PlantEnum.Snowpeashooter)
+                    {
+                        ShootTimeStep(plant);
+                    }
                 }
-                
             }
 
             foreach (var sun in Suns)
@@ -299,13 +305,31 @@ namespace GUI_20212202_IJA9WQ.Logic
             if (IsZombieInSameRow(plant))
             {
                 (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX, plant.PlaceY);
-                Bullets.Add(new Bullet(
-                    coordinateCalculator.BulletX + coordinates.Item1 * coordinateCalculator.GameMapCellWidth,
-                    coordinateCalculator.BulletY + coordinates.Item2 * coordinateCalculator.GameMapCellHeight,
-                    coordinateCalculator.BulletWidth,
-                    coordinateCalculator.BulletHeight,
-                    coordinateCalculator.BulletSpeed
-               ));
+                if (plant.Type == PlantEnum.Peashooter)
+                {
+                    Bullets.Add(new Bullet(
+                                        coordinateCalculator.BulletX + coordinates.Item1 * coordinateCalculator.GameMapCellWidth,
+                                        coordinateCalculator.BulletY + coordinates.Item2 * coordinateCalculator.GameMapCellHeight,
+                                        coordinateCalculator.BulletWidth,
+                                        coordinateCalculator.BulletHeight,
+                                        coordinateCalculator.BulletSpeed,
+                                        false,
+                                        plant.Damage
+                                   ));
+                }
+                else if (plant.Type == PlantEnum.Snowpeashooter)
+                {
+                    Bullets.Add(new Bullet(
+                                        coordinateCalculator.BulletX + coordinates.Item1 * coordinateCalculator.GameMapCellWidth,
+                                        coordinateCalculator.BulletY + coordinates.Item2 * coordinateCalculator.GameMapCellHeight,
+                                        coordinateCalculator.BulletWidth,
+                                        coordinateCalculator.BulletHeight,
+                                        coordinateCalculator.BulletSpeed,
+                                        true,
+                                        plant.Damage
+                                   )); 
+                }
+
             }
         }
     }
