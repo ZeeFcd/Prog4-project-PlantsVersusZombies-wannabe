@@ -13,17 +13,19 @@ namespace GUI_20212202_IJA9WQ.Logic
     {
         CoordinateCalculator coordinateCalculator;
         int gameClock;
+        public int GameClock { get { return gameClock; } }
+
         int sunValue;
         private Plant[,] PlantsMatrix;
         private List<Zombie>[,] ZombiesMatrix;
-        public List<Plant> Plants { get;  }
-        public List<Zombie> Zombies { get;  }
-        public List<Bullet> Bullets { get;  }
-        public List<LawnMover> LawnMovers { get;  }
-        public List<Sun> Suns { get;  }
+        public List<Plant> Plants { get; }
+        public List<Zombie> Zombies { get; }
+        public List<Bullet> Bullets { get; }
+        public List<LawnMover> LawnMovers { get; }
+        public List<Sun> Suns { get; }
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
-        
+
         public GameLogic(CoordinateCalculator coordinateCalculator)
         {
             this.coordinateCalculator = coordinateCalculator;
@@ -33,12 +35,12 @@ namespace GUI_20212202_IJA9WQ.Logic
             LawnMovers = new List<LawnMover>();
             Suns = new List<Sun>();
             gameClock = 0;
-            sunValue=50;
-            PlantsMatrix = new Plant[5,9];
+            sunValue = 50;
+            PlantsMatrix = new Plant[5, 9];
             ZombiesMatrix = new List<Zombie>[5, 9];
             ZombiesMatrixInitialize();
-            
-            PlantsSelectionDay = new Plant[] { 
+
+            PlantsSelectionDay = new Plant[] {
                 new Peashooter(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
                 new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
                 new Peashooter(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
@@ -51,8 +53,8 @@ namespace GUI_20212202_IJA9WQ.Logic
                 coordinateCalculator.SunWidth,
                 coordinateCalculator.SunHeight
                 ));
-            Bullets.Add(new Bullet(coordinateCalculator.GameMapCellWidth*3,
-                coordinateCalculator.GameMapCellHeight*3,
+            Bullets.Add(new Bullet(coordinateCalculator.GameMapCellWidth * 3,
+                coordinateCalculator.GameMapCellHeight * 3,
                 coordinateCalculator.BulletWidth,
                 coordinateCalculator.BulletHeight,
                 2
@@ -70,7 +72,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             for (int i = 1; i < 6; i++)
             {
                 Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
-                    coordinateCalculator.ZombieStartYShift+coordinateCalculator.ZombieStartY * i, 
+                    coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * i,
                     coordinateCalculator.ZombieWidth,
                     coordinateCalculator.ZombieHeight,
                     coordinateCalculator.ZombieSpeed));
@@ -88,9 +90,9 @@ namespace GUI_20212202_IJA9WQ.Logic
             foreach (var zombie in Zombies)
             {
                 ZombieTimeStep(zombie);
-                
+
             }
-            
+
 
             gameClock += 1;
         }
@@ -110,33 +112,33 @@ namespace GUI_20212202_IJA9WQ.Logic
         {
             CurrentlySelected = PlantsSelectionDay[i];
         }
-        private int FirstPlantInSameRow(Zombie zombie) 
+        private int FirstPlantInSameRow(Zombie zombie)
         {
             int n = zombie.PlaceGameMatrixX;
-            while (n>=0 && PlantsMatrix[zombie.PlaceGameMatrixY,n]==null)
+            while (n >= 0 && PlantsMatrix[zombie.PlaceGameMatrixY, n] == null)
             {
                 n--;
             }
-            if ( n >= 0)
+            if (n >= 0)
             {
                 return n;
             }
             return -1;
 
         }
-        private void PlaceZombieInGameMatrix(Zombie zombie) 
+        private void PlaceZombieInGameMatrix(Zombie zombie)
         {
-            if (coordinateCalculator.IsInGameMap(zombie.PlaceX+coordinateCalculator.ZombieWidth/2,zombie.PlaceY+coordinateCalculator.ZombieHeight/2))
+            if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
             {
                 int oldJ = zombie.PlaceGameMatrixX;
-                (int,int) actualCellIndexes=coordinateCalculator.WhichCellInGameMap(
-                    zombie.PlaceX+coordinateCalculator.ZombieWidth/2,
-                    zombie.PlaceY+coordinateCalculator.ZombieHeight/2);
-                
+                (int, int) actualCellIndexes = coordinateCalculator.WhichCellInGameMap(
+                    zombie.PlaceX + coordinateCalculator.ZombieWidth / 2,
+                    zombie.PlaceY + coordinateCalculator.ZombieHeight / 2);
+
                 zombie.PlaceGameMatrixX = actualCellIndexes.Item1;
                 zombie.PlaceGameMatrixY = actualCellIndexes.Item2;
 
-                if (oldJ>-1)
+                if (oldJ > -1)
                 {
                     if (zombie.PlaceGameMatrixX != oldJ)
                     {
@@ -153,7 +155,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         public void PlantToPlant(int j, int i)
         {
-            if (PlantsMatrix[i,j]==null)
+            if (PlantsMatrix[i, j] == null)
             {
                 (double, double) plantGameCoords = coordinateCalculator.WhichCoordinateInGameMapPlant(j, i);
                 CurrentlySelected.PlaceX = plantGameCoords.Item1;
@@ -162,10 +164,10 @@ namespace GUI_20212202_IJA9WQ.Logic
                 PlantsMatrix[i, j] = CurrentlySelected.GetCopy();
                 CurrentlySelected = null;
             }
-            
+
         }
 
-        private void ZombieTimeStep(Zombie zombie) 
+        private void ZombieTimeStep(Zombie zombie)
         {
             int firstplantXindex = 0;
             if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
@@ -180,7 +182,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     }
                     else
                     {
-                       ;//to be continued, ATTACK THE PLANT
+                        ;//to be continued, ATTACK THE PLANT
                     }
                 }
                 else

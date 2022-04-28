@@ -59,7 +59,25 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 foreach (var plant in logic.Plants)
                 {
-                    drawingContext.DrawGeometry(plant.GameImageBrush, new Pen(Brushes.Black, 1), plant.Area);
+                    switch (plant.Type)
+                    {
+                        case PlantEnum.Peashooter:
+                            drawingContext.DrawGeometry(brushes.PeashooterGIF[logic.GameClock%brushes.PeashooterGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                            break;
+                        case PlantEnum.Wallnut:
+                            break;
+                        case PlantEnum.Potatomine:
+                            break;
+                        case PlantEnum.Snowpeashooter:
+                            break;
+                        case PlantEnum.Cherrybomb:
+                            break;
+                        case PlantEnum.Sunflower:
+                            break;
+                        default:
+                            break;
+                    }
+                    
                 }
 
                 foreach (var zombie in logic.Zombies)

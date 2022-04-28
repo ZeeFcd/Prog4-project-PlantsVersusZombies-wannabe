@@ -225,6 +225,139 @@
     <None Remove="Images\wallnutAnimation\wallnut %287%29.gif" />
     <None Remove="Images\wallnutAnimation\wallnut %288%29.gif" />
     <None Remove="Images\wallnutAnimation\wallnut %289%29.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_135_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_136_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_137_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_138_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_139_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_140_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_141_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_142_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_143_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_144_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_145_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_146_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_147_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_148_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_149_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_150_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_151_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_152_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_153_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_154_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_155_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_156_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_157_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_158_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_159_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_160_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_161_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_162_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_163_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_164_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_165_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_166_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_167_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_168_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_169_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_170_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_171_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_172_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_173_delay-0.07s.gif" />
+    <None Remove="Images\zombieeatAnimation\frame_174_delay-0.07s.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %281%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2810%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2811%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2812%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2813%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2814%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2815%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2816%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2817%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2818%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2819%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %282%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2820%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2821%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2822%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2823%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2824%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2825%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2826%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2827%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2828%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2829%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %283%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2830%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2831%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2832%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2833%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2834%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2835%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2836%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2837%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2838%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2839%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %284%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2840%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2841%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2842%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2843%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2844%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2845%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2846%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2847%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2848%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2849%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %285%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2850%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2851%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2852%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2853%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2854%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2855%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2856%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2857%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2858%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2859%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %286%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2860%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2861%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2862%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2863%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2864%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2865%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2866%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2867%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2868%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2869%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %287%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2870%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2871%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2872%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2873%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2874%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2875%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2876%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2877%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2878%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2879%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %288%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2880%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2881%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2882%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2883%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2884%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2885%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2886%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2887%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2888%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2889%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %289%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2890%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2891%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2892%29.gif" />
+    <None Remove="Images\zombiewalkAnimation\zombiewalk %2893%29.gif" />
   </ItemGroup>
 
   <ItemGroup>
@@ -868,6 +1001,405 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\wallnutAnimation\wallnut (9).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_135_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_136_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_137_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_138_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_139_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_140_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_141_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_142_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_143_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_144_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_145_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_146_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_147_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_148_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_149_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_150_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_151_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_152_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_153_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_154_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_155_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_156_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_157_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_158_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_159_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_160_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_161_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_162_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_163_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_164_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_165_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_166_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_167_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_168_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_169_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_170_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_171_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_172_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_173_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieeatAnimation\frame_174_delay-0.07s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (1).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (10).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (11).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (12).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (13).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (14).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (15).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (16).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (17).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (18).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (19).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (2).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (20).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (21).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (22).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (23).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (24).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (25).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (26).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (27).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (28).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (29).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (3).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (30).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (31).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (32).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (33).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (34).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (35).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (36).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (37).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (38).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (39).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (4).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (40).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (41).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (42).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (43).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (44).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (45).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (46).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (47).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (48).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (49).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (5).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (50).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (51).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (52).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (53).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (54).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (55).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (56).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (57).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (58).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (59).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (6).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (60).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (61).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (62).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (63).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (64).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (65).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (66).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (67).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (68).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (69).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (7).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (70).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (71).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (72).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (73).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (74).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (75).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (76).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (77).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (78).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (79).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (8).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (80).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (81).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (82).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (83).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (84).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (85).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (86).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (87).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (88).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (89).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (9).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (90).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (91).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (92).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiewalkAnimation\zombiewalk (93).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

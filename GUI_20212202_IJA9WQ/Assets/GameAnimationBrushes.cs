@@ -11,19 +11,23 @@ namespace GUI_20212202_IJA9WQ.Assets
 {
     public class GameAnimationBrushes
     {
-        public List<Brush> PeashooterGIFS;
-        public List<Brush> SunfloowerGIFS;
-        public List<Brush> SnowpeashooterGIFS;
-        public List<Brush> PotatomineGIFS;
-        public List<Brush> WallnutGIFS;
+        public List<Brush> PeashooterGIF;
+        public List<Brush> SunfloowerGIF;
+        public List<Brush> SnowpeashooterGIF;
+        public List<Brush> PotatomineGIF;
+        public List<Brush> WallnutGIF;
+        public List<Brush> ZombieWalkGIF;
+        public List<Brush> ZombieEatGIF;
 
         public GameAnimationBrushes()
         {
-            PeashooterGIFS = BrushesReader("peashooterAnimation");
-            SunfloowerGIFS = BrushesReader("sunflowerAnimation");
-            SnowpeashooterGIFS = BrushesReader("snowpeashooterAnimation");
-            PotatomineGIFS = BrushesReader("potatomineAnimation");
-            WallnutGIFS = BrushesReader("wallnutAnimation");
+            PeashooterGIF = BrushesReader("peashooterAnimation");
+            SunfloowerGIF = BrushesReader("sunflowerAnimation");
+            SnowpeashooterGIF = BrushesReader("snowpeashooterAnimation");
+            PotatomineGIF = BrushesReader("potatomineAnimation");
+            WallnutGIF = BrushesReader("wallnutAnimation");
+            ZombieWalkGIF = BrushesReader("zombiewalkAnimation");
+            ZombieEatGIF = BrushesReader("zombieeatAnimation");
         }
         public List<Brush> BrushesReader(string path)
         {
@@ -33,7 +37,7 @@ namespace GUI_20212202_IJA9WQ.Assets
             string format = Path.GetFileName(files[0]).Substring(14);
             for (int i = 1; i < files.Length + 1; i++)
             {
-                brushes.Add(new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", filename + "(" + i + ")" + format), UriKind.RelativeOrAbsolute))));
+                brushes.Add(new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", path, filename + "(" + i + ")" + format), UriKind.RelativeOrAbsolute))));
             }
             return brushes;
         }

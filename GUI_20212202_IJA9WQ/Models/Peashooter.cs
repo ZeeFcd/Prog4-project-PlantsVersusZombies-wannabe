@@ -1,4 +1,5 @@
 ﻿using GUI_20212202_IJA9WQ.Assets;
+using GUI_20212202_IJA9WQ.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,13 +13,16 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Peashooter : Plant
     {
-        public Peashooter(double displayWidth, double displayHeight) :base(displayWidth, displayHeight)
+        public Peashooter(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
             this.HP = 100;
             this.Damage = 20;
             this.Price = 100;
             this.Cooldown = 10;
+            Type = PlantEnum.Peashooter;
         }
+
+
 
         public override Brush ShopImageBrush
         {
@@ -44,7 +48,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 Cooldown = 10,
                 placeX = this.placeX,
                 placeY = this.placeY,
-                
+
             };
         }
 

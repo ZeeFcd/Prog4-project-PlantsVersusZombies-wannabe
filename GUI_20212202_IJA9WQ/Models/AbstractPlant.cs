@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_20212202_IJA9WQ.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,7 @@ namespace GUI_20212202_IJA9WQ.Models
         public int Range { get; set; }
         public abstract Brush ShopImageBrush { get; }
         public abstract Brush GameImageBrush { get; }
+        public PlantEnum Type { get; protected set; }
         public override Geometry Area
         {
             get { return new  RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
