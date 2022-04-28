@@ -261,19 +261,19 @@ namespace GUI_20212202_IJA9WQ.Helpers
         //---------------------
         public double ShovelWidth
         {
-            get { return 0; }
+            get { return RightShopBorder-LeftShopBorder; }
         }
         public double ShovelHeight
         {
-            get { return 0; }
+            get { return LowerShopBorderFull-LowerShopBorder; }
         }
         public double ShovelX
         {
-            get { return 0; }
+            get { return LeftShopBorder; }
         }
         public double ShovelY
         {
-            get { return 0; }
+            get { return LowerShopBorderFull+UpperShopBorder; }
         }
 
         //---------------------

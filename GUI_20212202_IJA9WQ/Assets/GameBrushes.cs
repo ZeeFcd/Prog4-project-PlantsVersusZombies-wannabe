@@ -21,5 +21,6 @@ namespace GUI_20212202_IJA9WQ.Assets
         public static readonly Brush PeashooterItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "peashooterItem.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush SunBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "sun1.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush PeaBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "pea.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush ShovelBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "shovel.png"), UriKind.RelativeOrAbsolute)));
     }
 }

@@ -42,6 +42,14 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     coordinateCalculator.RightShopBorder - coordinateCalculator.LeftShopBorder,
                     coordinateCalculator.LowerShopBorderFull - coordinateCalculator.UpperShopBorder));
 
+                drawingContext.DrawRectangle(GameBrushes.ShovelBrush,null,
+                    new Rect(
+                        coordinateCalculator.ShovelX,
+                        coordinateCalculator.ShovelY,
+                        coordinateCalculator.ShovelWidth,
+                        coordinateCalculator.ShovelHeight
+                        ));
+
                 var text = new FormattedText(
                     logic.SunValue.ToString(), System.Globalization.CultureInfo.CurrentCulture,
                     FlowDirection.LeftToRight,

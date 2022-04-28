@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\Animations\**" />
+    <EmbeddedResource Remove="Images\Animations\**" />
+    <None Remove="Images\Animations\**" />
+    <Page Remove="Images\Animations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Images\background_day.png" />
     <None Remove="Images\background_night.png" />
     <None Remove="Images\itemShop.png" />
@@ -16,6 +23,7 @@
     <None Remove="Images\pea.png" />
     <None Remove="Images\peashooter.png" />
     <None Remove="Images\peashooterItem.png" />
+    <None Remove="Images\shovel.png" />
     <None Remove="Images\sun1.png" />
     <None Remove="Images\sun2.png" />
     <None Remove="Images\sunflower.png" />
@@ -44,6 +52,9 @@
     <Content Include="Images\peashooterItem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\shovel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\sun1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -62,10 +73,6 @@
     <Content Include="Images\thiller.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Images\Animations\" />
   </ItemGroup>
 
   <ItemGroup>
