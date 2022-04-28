@@ -55,37 +55,10 @@ namespace GUI_20212202_IJA9WQ.Logic
                 new SnowPea(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight)
             };
 
-            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder,
-                coordinateCalculator.UpperMapBorder,
-                coordinateCalculator.SunWidth,
-                coordinateCalculator.SunHeight,
-                coordinateCalculator.SunSpeed(coordinateCalculator.LeftMapBorder, coordinateCalculator.UpperMapBorder)
-                ));
+          
 
-            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 3 * coordinateCalculator.GameMapCellWidth,
-               coordinateCalculator.UpperMapBorder + 3 * coordinateCalculator.GameMapCellHeight,
-               coordinateCalculator.SunWidth,
-               coordinateCalculator.SunHeight,
-               coordinateCalculator.SunSpeed(
-                   coordinateCalculator.LeftMapBorder + 3 * coordinateCalculator.GameMapCellWidth,
-                   coordinateCalculator.UpperMapBorder + 3 * coordinateCalculator.GameMapCellHeight)
-               ));
-            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 4 * coordinateCalculator.GameMapCellWidth,
-                coordinateCalculator.UpperMapBorder + 5 * coordinateCalculator.GameMapCellHeight,
-                coordinateCalculator.SunWidth,
-                coordinateCalculator.SunHeight,
-                coordinateCalculator.SunSpeed(
-                    coordinateCalculator.LeftMapBorder + 4 * coordinateCalculator.GameMapCellWidth,
-                     coordinateCalculator.UpperMapBorder + 5 * coordinateCalculator.GameMapCellHeight)
-                ));
-            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 7 * coordinateCalculator.GameMapCellWidth,
-                coordinateCalculator.UpperMapBorder + 4 * coordinateCalculator.GameMapCellHeight,
-                coordinateCalculator.SunWidth,
-                coordinateCalculator.SunHeight,
-                coordinateCalculator.SunSpeed(
-                   coordinateCalculator.LeftMapBorder + 7 * coordinateCalculator.GameMapCellWidth,
-                   coordinateCalculator.UpperMapBorder + 4 * coordinateCalculator.GameMapCellHeight)
-                ));
+           
+           
 
 
 
@@ -172,10 +145,26 @@ namespace GUI_20212202_IJA9WQ.Logic
                 }
             }
 
+            List<Sun> sunstoremove = new List<Sun>();
             foreach (var sun in Suns)
             {
-                sun.Move(coordinateCalculator.IsSunReachedShop(sun.PlaceX, sun.PlaceY));
+                if (coordinateCalculator.IsSunReachedShop(sun.PlaceX, sun.PlaceY))
+                {
+                    sunValue += 25;
+                    sunstoremove.Add(sun);
+                }
+                else
+                {
+                    sun.Move(coordinateCalculator.IsSunReachedShop(sun.PlaceX, sun.PlaceY));
+                }
+                
             }
+            for (int k = 0; k < sunstoremove.Count; k++)
+            {
+                Suns.Remove(sunstoremove[k]);
+            }
+            
+
 
 
             if (gameClock == 50)
@@ -185,6 +174,13 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieWidth,
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed)); ;
+
+                Suns.Add(new Sun(coordinateCalculator.LeftMapBorder,
+              coordinateCalculator.UpperMapBorder,
+              coordinateCalculator.SunWidth,
+              coordinateCalculator.SunHeight,
+              coordinateCalculator.SunSpeed(coordinateCalculator.LeftMapBorder, coordinateCalculator.UpperMapBorder)
+              ));
             }
             if (gameClock == 100)
             {
@@ -197,7 +193,15 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
                    coordinateCalculator.ZombieWidth,
                    coordinateCalculator.ZombieHeight,
-                   coordinateCalculator.ZombieSpeed)); 
+                   coordinateCalculator.ZombieSpeed));
+                Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 3 * coordinateCalculator.GameMapCellWidth,
+              coordinateCalculator.UpperMapBorder + 3 * coordinateCalculator.GameMapCellHeight,
+              coordinateCalculator.SunWidth,
+              coordinateCalculator.SunHeight,
+              coordinateCalculator.SunSpeed(
+                  coordinateCalculator.LeftMapBorder + 3 * coordinateCalculator.GameMapCellWidth,
+                  coordinateCalculator.UpperMapBorder + 3 * coordinateCalculator.GameMapCellHeight)
+              ));
             }
             if (gameClock == 110)
             {
@@ -211,6 +215,15 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieWidth,
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed));
+
+                Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 4 * coordinateCalculator.GameMapCellWidth,
+                    coordinateCalculator.UpperMapBorder + 5 * coordinateCalculator.GameMapCellHeight,
+                    coordinateCalculator.SunWidth,
+                    coordinateCalculator.SunHeight,
+                    coordinateCalculator.SunSpeed(
+                        coordinateCalculator.LeftMapBorder + 4 * coordinateCalculator.GameMapCellWidth,
+                         coordinateCalculator.UpperMapBorder + 5 * coordinateCalculator.GameMapCellHeight)
+                    ));
             }
             if (gameClock == 150)
             {
@@ -218,7 +231,15 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
                    coordinateCalculator.ZombieWidth,
                    coordinateCalculator.ZombieHeight,
-                   coordinateCalculator.ZombieSpeed)); ;
+                   coordinateCalculator.ZombieSpeed));
+                Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 7 * coordinateCalculator.GameMapCellWidth,
+               coordinateCalculator.UpperMapBorder + 4 * coordinateCalculator.GameMapCellHeight,
+               coordinateCalculator.SunWidth,
+               coordinateCalculator.SunHeight,
+               coordinateCalculator.SunSpeed(
+                  coordinateCalculator.LeftMapBorder + 7 * coordinateCalculator.GameMapCellWidth,
+                  coordinateCalculator.UpperMapBorder + 4 * coordinateCalculator.GameMapCellHeight)
+               ));
             }
 
 
