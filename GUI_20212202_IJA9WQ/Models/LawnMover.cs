@@ -11,6 +11,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class LawnMover : Moveable
     {
+        public bool IsStarted { get; set; }
         public LawnMover(double placeX, double placeY, double displayWidth, double displayHeight, double speed)
         {
             this.placeX = placeX;

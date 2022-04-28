@@ -119,7 +119,10 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 foreach (var lawnMover in logic.LawnMovers)
                 {
-                    drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, new Pen(Brushes.Black, 1), lawnMover.Area);
+                    if (lawnMover != null)
+                    {
+                        drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, new Pen(Brushes.Black, 1), lawnMover.Area);
+                    }
                 }
 
                 foreach (var bullet in logic.Bullets)

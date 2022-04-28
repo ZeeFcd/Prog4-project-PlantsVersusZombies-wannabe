@@ -16,17 +16,6 @@ namespace GUI_20212202_IJA9WQ.Models
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
         }
-
-        public double PlaceX
-        {
-            get { return placeX; }
-            set { placeX = value; }
-        }
-        public double PlaceY
-        {
-            get { return placeY; }
-            set { placeY = value; }
-        }
                 
         public double DisplayWidth
         {

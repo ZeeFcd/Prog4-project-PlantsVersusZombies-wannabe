@@ -7,7 +7,7 @@ namespace GUI_20212202_IJA9WQ.Logic
     {
         int SunValue { get; }
         Plant CurrentlySelected { get; }
-        List<LawnMover> LawnMovers { get; }
+        LawnMover[] LawnMovers { get; }
 
         int GameClock { get; }
         int WallNutClock { get; }

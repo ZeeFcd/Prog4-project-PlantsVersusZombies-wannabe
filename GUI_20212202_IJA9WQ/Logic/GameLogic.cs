@@ -11,6 +11,8 @@ namespace GUI_20212202_IJA9WQ.Logic
 {
     public class GameLogic : IGameLogic
     {
+        static object lockObject = new object();
+
         CoordinateCalculator coordinateCalculator;
         int gameClock;
         public int GameClock { get { return gameClock; } }
@@ -24,7 +26,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public List<Plant> Plants { get; }
         public List<Zombie> Zombies { get; }
         public List<Bullet> Bullets { get; }
-        public List<LawnMover> LawnMovers { get; }
+        public LawnMover[] LawnMovers { get; }
         public List<Sun> Suns { get; }
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
@@ -36,7 +38,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             Plants = new List<Plant>();
             Zombies = new List<Zombie>();
             Bullets = new List<Bullet>();
-            LawnMovers = new List<LawnMover>();
+            LawnMovers = new LawnMover[5];
             Suns = new List<Sun>();
             gameClock = 0;
             wallnutClock = 0;
@@ -115,13 +117,13 @@ namespace GUI_20212202_IJA9WQ.Logic
 
 
 
-            for (int i = 1; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
-                LawnMovers.Add(new LawnMover(coordinateCalculator.LawMoverStartX,
-                    coordinateCalculator.LawMoverStartYShift + coordinateCalculator.LawMoverStartY * i,
+                LawnMovers[i]=new LawnMover(coordinateCalculator.LawMoverStartX,
+                    coordinateCalculator.LawMoverStartYShift + coordinateCalculator.LawMoverStartY * (i+1),
                     coordinateCalculator.LawMoverWidth,
                     coordinateCalculator.LawMoverHeight,
-                    coordinateCalculator.LawMoverSpeed));
+                    coordinateCalculator.LawMoverSpeed);
             }
 
             for (int i = 1; i < 6; i++)
@@ -137,10 +139,40 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         public void TimeStep()
         {
-            //for (int i = 0; i < LawnMovers.Count; i++)
-            //{
-            //    LawnMovers[i].Move();
-            //}
+            for (int i = 0; i < LawnMovers.Length; i++)
+            {
+                if (LawnMovers[i]!=null && LawnMovers[i].IsStarted)
+                {
+                    if (LawnMovers[i].PlaceX>coordinateCalculator.DisplayWidth+coordinateCalculator.LawMoverWidth)
+                    {
+                        LawnMovers[i] = null;
+                    }
+                    else
+                    {
+                        LawnMovers[i].Move();
+                        int firstzombieindex = IsZombieInSameRow(LawnMovers[i]);
+                        if (firstzombieindex > -1)
+                        {
+                            List<Zombie> diedzombies = new List<Zombie>();
+                            foreach (var zombie in ZombiesMatrix[i, firstzombieindex])
+                            {
+                                if (LawnMovers[i].IsCollision(zombie))
+                                {
+                                    diedzombies.Add(zombie);
+
+                                    Zombies.Remove(zombie);
+
+                                }
+                            }
+                            for (int k = 0; k < diedzombies.Count; k++)
+                            {
+                                ZombiesMatrix[i, firstzombieindex].Remove(diedzombies[k]);
+                            }
+                        }
+                    }
+                    
+                }
+            }
 
             foreach (var bullet in Bullets)
             {
@@ -154,7 +186,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             foreach (var plant in Plants)
             {
-                if (gameClock % 10 == 0)
+                if (gameClock % 45 == 0)
                 {
                     if (plant.Type == PlantEnum.Peashooter)
                     {
@@ -173,9 +205,13 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
 
 
-            if (gameClock == 800)
+            if (gameClock == 300)
             {
-                ;
+                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(0,5),
+                   coordinateCalculator.ZombieWidth,
+                   coordinateCalculator.ZombieHeight,
+                   coordinateCalculator.ZombieSpeed)); ;
             }
             gameClock += 1;
             if (gameClock % 2 == 0)
@@ -193,6 +229,17 @@ namespace GUI_20212202_IJA9WQ.Logic
                     ZombiesMatrix[i, j] = new List<Zombie>();
                 }
             }
+        }
+        public bool LawMoverIscollision(LawnMover lawnMover)
+        {
+
+            //coordinateCalculator.IsInGameMap()
+            return false;
+        }
+        public void LawMoverStart(int i)
+        {
+            LawnMovers[i].IsStarted = true;
+                        
         }
 
         public void PlantSelect(int i)
@@ -213,9 +260,9 @@ namespace GUI_20212202_IJA9WQ.Logic
             return -1;
         }
 
-        private bool IsZombieInSameRow(Plant plant)
+        private int IsZombieInSameRow(OffensiveItem offensiveItem)
         {
-            (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX, plant.PlaceY);
+            (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(offensiveItem.PlaceX, offensiveItem.PlaceY);
             int n = coordinates.Item1;
             while (n < ZombiesMatrix.GetLength(1) && ZombiesMatrix[coordinates.Item2, n].Count == 0)
             {
@@ -223,9 +270,9 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
             if (n < ZombiesMatrix.GetLength(1))
             {
-                return true;
+                return n;
             }
-            return false;
+            return -1;
         }
 
         private void PlaceZombieInGameMatrix(Zombie zombie)
@@ -270,20 +317,39 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         private void ZombieTimeStep(Zombie zombie)
         {
-            int firstplantXindex = 0;
-            if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
+            if (zombie.PlaceX<coordinateCalculator.LeftMapBorder)
             {
-                firstplantXindex = FirstPlantInSameRow(zombie);
-                if (firstplantXindex > -1)
+                if (LawnMovers[zombie.PlaceGameMatrixY]!=null)
                 {
-                    if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]))
+                    LawMoverStart(zombie.PlaceGameMatrixY);
+                }
+                else
+                {
+                    ;//játék vége
+                }
+            }
+            else
+            {
+                int firstplantXindex = 0;
+                if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
+                {
+                    firstplantXindex = FirstPlantInSameRow(zombie);
+                    if (firstplantXindex > -1)
                     {
-                        zombie.Move();
-                        PlaceZombieInGameMatrix(zombie);
+                        if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]))
+                        {
+                            zombie.Move();
+                            PlaceZombieInGameMatrix(zombie);
+                        }
+                        else
+                        {
+                            ;//to be continued, ATTACK THE PLANT
+                        }
                     }
                     else
                     {
-                        ;//to be continued, ATTACK THE PLANT
+                        zombie.Move();
+                        PlaceZombieInGameMatrix(zombie);
                     }
                 }
                 else
@@ -292,17 +358,16 @@ namespace GUI_20212202_IJA9WQ.Logic
                     PlaceZombieInGameMatrix(zombie);
                 }
             }
-            else
-            {
-                zombie.Move();
-                PlaceZombieInGameMatrix(zombie);
-            }
-
+            
         }
+        //public void LawMoverStep(LawnMover lawnMover)
+        //{
+        //    LawnMovers[i].IsStarted = true;
 
+        //}
         private void ShootTimeStep(Plant plant)
         {
-            if (IsZombieInSameRow(plant))
+            if (IsZombieInSameRow(plant)>-1)
             {
                 (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX, plant.PlaceY);
                 if (plant.Type == PlantEnum.Peashooter)

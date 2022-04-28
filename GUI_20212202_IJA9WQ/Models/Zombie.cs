@@ -20,21 +20,11 @@ namespace GUI_20212202_IJA9WQ.Models
             this.placeY = placeY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
-            this.speed = speed*5;
+            this.speed = speed*10;
             this.zombieState = ZombieStateEnum.Normal;
             this.PlaceGameMatrixX = -1;
             this.PlaceGameMatrixY = -1;
             this.State = AttackStateEnum.Normal;
-        }
-        public double PlaceX
-        {
-            get { return placeX; }
-            set { placeX = value; }
-        }
-        public double PlaceY
-        {
-            get { return placeY; }
-            set { placeY = value; }
         }
 
         public int PlaceGameMatrixX { get; set; }
