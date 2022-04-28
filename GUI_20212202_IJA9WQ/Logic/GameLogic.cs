@@ -127,11 +127,15 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             for (int i = 1; i < 6; i++)
             {
-                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+                if (i%2==1)
+                {
+                    Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
                     coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * i,
                     coordinateCalculator.ZombieWidth,
                     coordinateCalculator.ZombieHeight,
                     coordinateCalculator.ZombieSpeed));
+                }
+                
             }
 
         }
@@ -140,37 +144,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         {
             for (int i = 0; i < LawnMovers.Length; i++)
             {
-                if (LawnMovers[i]!=null && LawnMovers[i].IsStarted)
-                {
-                    if (LawnMovers[i].PlaceX>coordinateCalculator.DisplayWidth+coordinateCalculator.LawMoverWidth)
-                    {
-                        LawnMovers[i] = null;
-                    }
-                    else
-                    {
-                        LawnMovers[i].Move();
-                        int firstzombieindex = IsZombieInSameRow(LawnMovers[i]);
-                        if (firstzombieindex > -1)
-                        {
-                            List<Zombie> diedzombies = new List<Zombie>();
-                            foreach (var zombie in ZombiesMatrix[i, firstzombieindex])
-                            {
-                                if (LawnMovers[i].IsCollision(zombie))
-                                {
-                                    diedzombies.Add(zombie);
-
-                                    Zombies.Remove(zombie);
-
-                                }
-                            }
-                            for (int k = 0; k < diedzombies.Count; k++)
-                            {
-                                ZombiesMatrix[i, firstzombieindex].Remove(diedzombies[k]);
-                            }
-                        }
-                    }
-                    
-                }
+                LawMoverStep(i);
             }
 
             foreach (var bullet in Bullets)
@@ -204,14 +178,50 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
 
 
-            if (gameClock == 300)
+            if (gameClock == 50)
             {
                 Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
-                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(0,5),
+                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
                    coordinateCalculator.ZombieWidth,
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed)); ;
             }
+            if (gameClock == 100)
+            {
+                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
+                   coordinateCalculator.ZombieWidth,
+                   coordinateCalculator.ZombieHeight,
+                   coordinateCalculator.ZombieSpeed)); ;
+                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
+                   coordinateCalculator.ZombieWidth,
+                   coordinateCalculator.ZombieHeight,
+                   coordinateCalculator.ZombieSpeed)); 
+            }
+            if (gameClock == 110)
+            {
+                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
+                   coordinateCalculator.ZombieWidth,
+                   coordinateCalculator.ZombieHeight,
+                   coordinateCalculator.ZombieSpeed)); ;
+                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
+                   coordinateCalculator.ZombieWidth,
+                   coordinateCalculator.ZombieHeight,
+                   coordinateCalculator.ZombieSpeed));
+            }
+            if (gameClock == 150)
+            {
+                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
+                   coordinateCalculator.ZombieWidth,
+                   coordinateCalculator.ZombieHeight,
+                   coordinateCalculator.ZombieSpeed)); ;
+            }
+
+
             gameClock += 1;
             if (gameClock % 2 == 0)
             {
@@ -229,12 +239,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 }
             }
         }
-        public bool LawMoverIscollision(LawnMover lawnMover)
-        {
-
-            //coordinateCalculator.IsInGameMap()
-            return false;
-        }
+        
         public void LawMoverStart(int i)
         {
             LawnMovers[i].IsStarted = true;
@@ -359,11 +364,41 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
             
         }
-        //public void LawMoverStep(LawnMover lawnMover)
-        //{
-        //    LawnMovers[i].IsStarted = true;
+        public void LawMoverStep(int i)
+        {
+            if (LawnMovers[i] != null && LawnMovers[i].IsStarted)
+            {
+                if (LawnMovers[i].PlaceX > coordinateCalculator.DisplayWidth + coordinateCalculator.LawMoverWidth)
+                {
+                    LawnMovers[i] = null;
+                }
+                else
+                {
+                    LawnMovers[i].Move();
+                    int firstzombieindex = IsZombieInSameRow(LawnMovers[i]);
+                    if (firstzombieindex > -1)
+                    {
+                        List<Zombie> diedzombies = new List<Zombie>();
+                        foreach (var zombie in ZombiesMatrix[i, firstzombieindex])
+                        {
+                            if (LawnMovers[i].IsCollision(zombie))
+                            {
+                                diedzombies.Add(zombie);
 
-        //}
+                                Zombies.Remove(zombie);
+
+                            }
+                        }
+                        for (int k = 0; k < diedzombies.Count; k++)
+                        {
+                            ZombiesMatrix[i, firstzombieindex].Remove(diedzombies[k]);
+                        }
+                    }
+                }
+
+            }
+
+        }
         private void ShootTimeStep(Plant plant)
         {
             if (IsZombieInSameRow(plant)>-1)

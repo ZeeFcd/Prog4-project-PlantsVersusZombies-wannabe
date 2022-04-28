@@ -20,7 +20,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.placeY = placeY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
-            this.speed = speed*10;
+            this.speed = speed;
             this.zombieState = ZombieStateEnum.Normal;
             this.PlaceGameMatrixX = -1;
             this.PlaceGameMatrixY = -1;
