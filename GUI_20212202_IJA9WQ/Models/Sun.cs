@@ -10,7 +10,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Sun : GameItem
     {
-        (double, double) speed; 
+        (double, double) speed;
         public Sun(double placeX, double placeY, double displayWidth, double displayHeight /*(double, double) speed*/)
         {
             this.placeX = placeX;
@@ -26,9 +26,23 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public (double, double) Speed { get => speed; set => speed = value; }
 
-        public void Move() 
+        public void Move()
         {
+            placeX += speed.Item1;
+            placeY += speed.Item2;
+        }
 
+        public bool IsInSun(double x,double y)
+        {
+            
+            if (placeX<x && x<placeX+displayWidth && placeY<y &&y<placeY+displayHeight )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override void Terminated()

@@ -259,6 +259,58 @@ namespace GUI_20212202_IJA9WQ.Helpers
             get { return 0; }
         }
         //---------------------
+        public double ShovelWidth
+        {
+            get { return 0; }
+        }
+        public double ShovelHeight
+        {
+            get { return 0; }
+        }
+        public double ShovelX
+        {
+            get { return 0; }
+        }
+        public double ShovelY
+        {
+            get { return 0; }
+        }
+
+        //---------------------
+
+        public double ProgressBarWidth
+        {
+            get { return 0; }
+        }
+        public double ProgressBarHeight
+        {
+            get { return 0; }
+        }
+        public double ProgressBarX
+        {
+            get { return 0; }
+        }
+        public double ProgressBarY
+        {
+            get { return 0; }
+        }
+        public double ProgressIndicatorWidth
+        {
+            get { return 0; }
+        }
+        public double ProgressIndicatorHeight
+        {
+            get { return 0; }
+        }
+        public double ProgressIndicatorX
+        {
+            get { return 0; }
+        }
+        public double ProgressIndicatorY 
+        {
+            get { return 0; }
+        }
+        //---------------------
 
         public bool IsInGameMap(double x, double y) 
         {
@@ -289,15 +341,13 @@ namespace GUI_20212202_IJA9WQ.Helpers
       
             return coodinatesingamemap;
         }
-
-        public (double, double) PlantCoords((double, double) oldcoords) 
+        public (double, double) SunSpeed(double x, double y) 
         {
-            (double, double) plantcoords;
-            var oldplantcoords = WhichCellInGameMap(oldcoords.Item1, oldcoords.Item1);
-            plantcoords.Item1= GameMapCellWidth* oldplantcoords.Item1 +LeftMapBorder;
-            plantcoords.Item2=GameMapCellHeight*oldplantcoords.Item2 + UpperMapBorder;
+            (double, double) speed =
+                (ShopSunX-x,
+                ShopSunY - y);
 
-            return plantcoords;
+            return speed;
         }
 
 
