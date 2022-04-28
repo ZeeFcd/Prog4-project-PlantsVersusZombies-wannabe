@@ -35,5 +35,6 @@ namespace GUI_20212202_IJA9WQ.Assets
         public static readonly Brush Dea_CherryBombItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "dea_cherrybombItem.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush Dea_SnowPeaItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "dea_snowpeashooterItem.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush Dea_PotatoMineItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "dea_potatomineItem.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush ShovelBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "shovel.png"), UriKind.RelativeOrAbsolute)));
     }
 }

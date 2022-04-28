@@ -10,14 +10,14 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Sun : GameItem
     {
-        (double, double) speed; 
-        public Sun(double placeX, double placeY, double displayWidth, double displayHeight /*(double, double) speed*/)
+        (double, double) speed;
+        public Sun(double placeX, double placeY, double displayWidth, double displayHeight,(double, double) speed)
         {
             this.placeX = placeX;
             this.placeY = placeY;
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
-            //this.speed = speed;
+            this.speed = speed;
         }
         public override Geometry Area
         {
@@ -25,10 +25,37 @@ namespace GUI_20212202_IJA9WQ.Models
         }
 
         public (double, double) Speed { get => speed; set => speed = value; }
-
-        public void Move() 
+        public double PlaceX
         {
+            get { return placeX; }
+            set { placeX = value; }
+        }
+        public double PlaceY
+        {
+            get { return placeY; }
+            set { placeY = value; }
+        }
+        public void Move(bool stopCondition)
+        {
+            if (!stopCondition)
+            {
+                placeX += speed.Item1;
+                placeY += speed.Item2;
+            }
+           
+        }
 
+        public bool IsInSun(double x,double y)
+        {
+            
+            if (placeX<x && x<placeX+displayWidth && placeY<y &&y<placeY+displayHeight )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override void Terminated()

@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\Animations\**" />
+    <EmbeddedResource Remove="Images\Animations\**" />
+    <None Remove="Images\Animations\**" />
+    <Page Remove="Images\Animations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Images\background_day.png" />
     <None Remove="Images\background_night.png" />
     <None Remove="Images\cherrybomb.png" />
@@ -1486,10 +1493,6 @@
     <Content Include="Images\zombiewalkAnimation\zombiewalk (93).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Images\Animations\" />
   </ItemGroup>
 
   <ItemGroup>

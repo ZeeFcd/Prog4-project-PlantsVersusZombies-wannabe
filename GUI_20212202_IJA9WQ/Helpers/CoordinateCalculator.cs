@@ -142,24 +142,24 @@ namespace GUI_20212202_IJA9WQ.Helpers
 
         public double ShopSunX 
         {
-            get { return LeftShopBorder+ (RightShopBorder-LeftShopBorder)/2; }
+            get { return LeftShopBorder+ (RightShopBorder-LeftShopBorder)/2-SunWidth/2; }
         }
         public double ShopSunY
         {
-            get { return (LowerShopBorderFull - LowerShopBorder)*0.36; }
+            get { return LowerShopBorder+(LowerShopBorderFull - LowerShopBorder)*0.36-SunHeight/2; }
         }
 
         public double SunCounterWidth
         {
-            get { return 0.079*displayWidth ; }
+            get { return 0.079 * displayWidth; }
         }
         public double SunCounterHeight
         {
-            get { return 0.042*displayHeight; }
+            get { return 0.042 * displayHeight; }
         }
         public double SunCounterX 
         {
-            get { return 0; }
+            get { return LeftShopBorder+(RightShopBorder - LeftShopBorder)/3; }
         }
         public double SunCounterY
         {
@@ -230,6 +230,14 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         //---------------------
 
+        public double BulletX
+        {
+            get { return 0.3 * displayWidth; }
+        }
+        public double BulletY
+        {
+            get { return 0.19 * displayHeight; }
+        }
         public double BulletWidth
         {
             get { return 0.025 * displayWidth; }
@@ -240,8 +248,10 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public double BulletSpeed
         {
-            get { return 0.04 * displayWidth; }
+            get { return 0.015 * displayWidth; }
         }
+        //---------------------
+
         public double SunWidth
         {
             get { return 0.05 * displayWidth; }
@@ -260,6 +270,59 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         //---------------------
 
+        public double ShovelWidth
+        {
+            get { return RightShopBorder-LeftShopBorder; }
+        }
+        public double ShovelHeight
+        {
+            get { return LowerShopBorderFull-LowerShopBorder; }
+        }
+        public double ShovelX
+        {
+            get { return LeftShopBorder; }
+        }
+        public double ShovelY
+        {
+            get { return LowerShopBorderFull+UpperShopBorder; }
+        }
+
+        //---------------------
+
+        public double ProgressBarWidth
+        {
+            get { return 0; }
+        }
+        public double ProgressBarHeight
+        {
+            get { return 0; }
+        }
+        public double ProgressBarX
+        {
+            get { return 0; }
+        }
+        public double ProgressBarY
+        {
+            get { return 0; }
+        }
+        public double ProgressIndicatorWidth
+        {
+            get { return 0; }
+        }
+        public double ProgressIndicatorHeight
+        {
+            get { return 0; }
+        }
+        public double ProgressIndicatorX
+        {
+            get { return 0; }
+        }
+        public double ProgressIndicatorY 
+        {
+            get { return 0; }
+        }
+        //---------------------
+
         public bool IsInGameMap(double x, double y) 
         {
             return LeftMapBorder < x && x < RightMapBorder && UpperMapBorder < y && y < LowerMapBorder;
@@ -268,7 +331,18 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             return LeftShopBorder < x && x < RightShopBorder && UpperShopBorder < y && y < LowerShopBorder;
         }
-        
+        public bool IsSunReachedShop(double x, double y)
+        {
+            return ShopSunX - SunWidth * 0.4 < x &&
+                x < ShopSunX  + SunWidth * 0.4 &&
+                ShopSunY - SunHeight * 0.4 < y &&
+                y < ShopSunY + SunHeight * 0.4;
+        }
+        public bool IsInShovel(double x, double y)
+        {
+            return ShovelX < x && x < ShovelX+ShovelWidth && ShovelY < y && y < ShovelY+ShovelHeight;
+        }
+
         public int WhichCellInShop(double y) 
         {            
             return (int)((y - UpperShopBorder) / (LowerShopBorder / 6));
@@ -289,15 +363,13 @@ namespace GUI_20212202_IJA9WQ.Helpers
       
             return coodinatesingamemap;
         }
-
-        public (double, double) PlantCoords((double, double) oldcoords) 
+        public (double, double) SunSpeed(double x, double y) 
         {
-            (double, double) plantcoords;
-            var oldplantcoords = WhichCellInGameMap(oldcoords.Item1, oldcoords.Item1);
-            plantcoords.Item1= GameMapCellWidth* oldplantcoords.Item1 +LeftMapBorder;
-            plantcoords.Item2=GameMapCellHeight*oldplantcoords.Item2 + UpperMapBorder;
+            (double, double) speed =
+                ((ShopSunX - x) / (displayWidth * 0.015),
+                (ShopSunY - y) / (displayWidth * 0.015));
 
-            return plantcoords;
+            return speed;
         }
 
 

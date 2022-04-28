@@ -28,7 +28,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public List<Sun> Suns { get; }
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
-
+        public int SunValue { get => sunValue; }
 
         public GameLogic(CoordinateCalculator coordinateCalculator)
         {
@@ -57,14 +57,63 @@ namespace GUI_20212202_IJA9WQ.Logic
             Suns.Add(new Sun(coordinateCalculator.LeftMapBorder,
                 coordinateCalculator.UpperMapBorder,
                 coordinateCalculator.SunWidth,
-                coordinateCalculator.SunHeight
+                coordinateCalculator.SunHeight,
+                coordinateCalculator.SunSpeed(coordinateCalculator.LeftMapBorder, coordinateCalculator.UpperMapBorder)
                 ));
-            Bullets.Add(new Bullet(coordinateCalculator.GameMapCellWidth * 3,
-                coordinateCalculator.GameMapCellHeight * 3,
-                coordinateCalculator.BulletWidth,
-                coordinateCalculator.BulletHeight,
-                2
+
+            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder+3*coordinateCalculator.GameMapCellWidth,
+               coordinateCalculator.UpperMapBorder+3*coordinateCalculator.GameMapCellHeight,
+               coordinateCalculator.SunWidth,
+               coordinateCalculator.SunHeight,
+               coordinateCalculator.SunSpeed(
+                   coordinateCalculator.LeftMapBorder + 3 * coordinateCalculator.GameMapCellWidth,
+                   coordinateCalculator.UpperMapBorder + 3 * coordinateCalculator.GameMapCellHeight)
+               ));
+            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 4 * coordinateCalculator.GameMapCellWidth,
+                coordinateCalculator.UpperMapBorder + 5 * coordinateCalculator.GameMapCellHeight,
+                coordinateCalculator.SunWidth,
+                coordinateCalculator.SunHeight,
+                coordinateCalculator.SunSpeed(
+                    coordinateCalculator.LeftMapBorder + 4 * coordinateCalculator.GameMapCellWidth,
+                     coordinateCalculator.UpperMapBorder + 5 * coordinateCalculator.GameMapCellHeight)
                 ));
+            Suns.Add(new Sun(coordinateCalculator.LeftMapBorder + 7 * coordinateCalculator.GameMapCellWidth,
+                coordinateCalculator.UpperMapBorder + 4 * coordinateCalculator.GameMapCellHeight,
+                coordinateCalculator.SunWidth,
+                coordinateCalculator.SunHeight,
+                coordinateCalculator.SunSpeed(
+                   coordinateCalculator.LeftMapBorder + 7 * coordinateCalculator.GameMapCellWidth,
+                   coordinateCalculator.UpperMapBorder + 4 * coordinateCalculator.GameMapCellHeight)
+                ));
+
+
+           
+           Bullets.Add(new Bullet(
+                    coordinateCalculator.BulletX,
+                    coordinateCalculator.BulletY,
+                    coordinateCalculator.BulletWidth,
+                    coordinateCalculator.BulletHeight,
+                    coordinateCalculator.BulletSpeed
+               ));
+
+           Bullets.Add(new Bullet(
+                    coordinateCalculator.BulletX+2*coordinateCalculator.GameMapCellWidth,
+                    coordinateCalculator.BulletY,
+                    coordinateCalculator.BulletWidth,
+                    coordinateCalculator.BulletHeight,
+                    coordinateCalculator.BulletSpeed
+               ));
+
+            Bullets.Add(new Bullet(
+                   coordinateCalculator.BulletX ,
+                   coordinateCalculator.BulletY +2*coordinateCalculator.GameMapCellHeight,
+                   coordinateCalculator.BulletWidth,
+                   coordinateCalculator.BulletHeight,
+                   coordinateCalculator.BulletSpeed
+              ));
+
+
+
 
             for (int i = 1; i < 6; i++)
             {
@@ -93,13 +142,27 @@ namespace GUI_20212202_IJA9WQ.Logic
             //    LawnMovers[i].Move();
             //}
 
+            foreach (var bullet in Bullets)
+            {
+                bullet.Move();
+            }
+
             foreach (var zombie in Zombies)
             {
                 ZombieTimeStep(zombie);
+                
+            }
 
+            foreach (var sun in Suns)
+            {
+                sun.Move(coordinateCalculator.IsSunReachedShop(sun.PlaceX,sun.PlaceY));
             }
 
 
+            if (gameClock==800)
+            {
+                ;
+            }
             gameClock += 1;
             if (gameClock % 2 == 0)
             {
