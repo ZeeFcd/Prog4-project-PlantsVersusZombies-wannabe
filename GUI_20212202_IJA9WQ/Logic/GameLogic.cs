@@ -52,39 +52,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                 new SnowPea(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight)
             };
 
-          
-
-           
-           
-
-
-
-            //Bullets.Add(new Bullet(
-            //         coordinateCalculator.BulletX,
-            //         coordinateCalculator.BulletY,
-            //         coordinateCalculator.BulletWidth,
-            //         coordinateCalculator.BulletHeight,
-            //         coordinateCalculator.BulletSpeed
-            //    ));
-
-            //Bullets.Add(new Bullet(
-            //         coordinateCalculator.BulletX + 2 * coordinateCalculator.GameMapCellWidth,
-            //         coordinateCalculator.BulletY,
-            //         coordinateCalculator.BulletWidth,
-            //         coordinateCalculator.BulletHeight,
-            //         coordinateCalculator.BulletSpeed
-            //    ));
-
-            //Bullets.Add(new Bullet(
-            //       coordinateCalculator.BulletX,
-            //       coordinateCalculator.BulletY + 2 * coordinateCalculator.GameMapCellHeight,
-            //       coordinateCalculator.BulletWidth,
-            //       coordinateCalculator.BulletHeight,
-            //       coordinateCalculator.BulletSpeed
-            //  ));
-
-
-
 
             for (int i = 0; i < 5; i++)
             {
@@ -421,7 +388,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         {
             if (IsZombieInSameRow(plant)>-1)
             {
-                (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX, plant.PlaceY);
+                (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX+plant.DisplayWidth/2, plant.PlaceY+plant.DisplayHeight/2);
                 if (plant.Type == PlantEnum.Peashooter)
                 {
                     Bullets.Add(new Bullet(
