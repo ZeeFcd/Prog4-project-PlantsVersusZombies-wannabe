@@ -207,8 +207,16 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
 
 
+           
+            foreach (var plant in Plants)
+            {
+                plant.TimeChanged();
+            }
+            foreach (var zombie in Zombies)
+            {
+                zombie.TimeChanged();
+            }
             gameClock += 1;
-            
         }
 
         public void ZombiesMatrixInitialize()

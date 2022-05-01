@@ -20,6 +20,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Price = 100;
             this.Cooldown = 10;
             Type = PlantEnum.Peashooter;
+            innerClock = 0;
         }
 
         public override Brush ShopImageBrush

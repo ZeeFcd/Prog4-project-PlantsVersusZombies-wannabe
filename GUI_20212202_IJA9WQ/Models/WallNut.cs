@@ -22,6 +22,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Price = 50;
             this.Cooldown = 10;
             Type = Helpers.PlantEnum.Wallnut;
+            innerClock = 0;
         }
 
         public override Plant GetCopy()

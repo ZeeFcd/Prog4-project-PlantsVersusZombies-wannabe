@@ -23,6 +23,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Price = 25;
             this.Cooldown = 10;
             Type = PlantEnum.Potatomine;
+            innerClock = 0;
         }
 
         public override Plant GetCopy()

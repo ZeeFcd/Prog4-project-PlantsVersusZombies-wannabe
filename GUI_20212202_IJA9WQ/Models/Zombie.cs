@@ -25,6 +25,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.PlaceGameMatrixX = -1;
             this.PlaceGameMatrixY = -1;
             this.State = AttackStateEnum.Normal;
+            innerClock = 0;
         }
 
         public int PlaceGameMatrixX { get; set; }

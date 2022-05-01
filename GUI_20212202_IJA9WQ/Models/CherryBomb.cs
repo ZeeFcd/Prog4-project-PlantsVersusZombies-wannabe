@@ -23,6 +23,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Price = 150;
             this.Cooldown = 10;
             Type = PlantEnum.Cherrybomb;
+            innerClock = 0;
         }
 
         public override Plant GetCopy()
