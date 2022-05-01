@@ -97,7 +97,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             }
                             else
                             {
-
+                                drawingContext.DrawGeometry(GameBrushes.PotatoMineExplodedBrush, null, plant.Area);
                             }
                            
                             break;

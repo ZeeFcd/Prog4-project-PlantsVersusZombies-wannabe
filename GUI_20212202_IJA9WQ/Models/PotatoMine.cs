@@ -54,5 +54,10 @@ namespace GUI_20212202_IJA9WQ.Models
                 AbilityEvent?.Invoke(this, null);
             }
         }
+        public override void DamagedBy(OffensiveItem attacker)
+        {
+            base.DamagedBy(attacker);
+            State= AttackStateEnum.Attack;
+        }
     }
 }

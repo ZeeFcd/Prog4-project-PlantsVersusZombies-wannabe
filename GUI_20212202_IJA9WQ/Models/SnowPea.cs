@@ -45,7 +45,11 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void Ability()
         {
-            throw new NotImplementedException();
+            if (innerClock % 88 == 0)
+            {
+                //shoot
+                AbilityEvent?.Invoke(this, null);
+            }
         }
     }
 }

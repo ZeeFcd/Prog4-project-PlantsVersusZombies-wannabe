@@ -41,7 +41,11 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void Ability()
         {
-
+            if (innerClock % 1176 == 0)
+            {
+                //produce sun
+                AbilityEvent?.Invoke(this, null);
+            }
         }
         public override void Terminated()
         {

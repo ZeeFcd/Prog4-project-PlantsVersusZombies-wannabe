@@ -29,7 +29,7 @@ namespace GUI_20212202_IJA9WQ.Models
             get { return innerClock; }
         }
 
-        public void DamagedBy(OffensiveItem attacker) 
+        public virtual void DamagedBy(OffensiveItem attacker) 
         {
             this.HP -= attacker.Damage;
             if (HP<1)
