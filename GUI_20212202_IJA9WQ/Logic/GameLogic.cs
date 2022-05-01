@@ -14,6 +14,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         CoordinateCalculator coordinateCalculator;
         int gameClock;
+        int currentlySelectedIndex;
         public int GameClock { get { return gameClock; } }
 
         int sunValue;
@@ -190,6 +191,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public void PlantSelect(int i)
         {
             CurrentlySelected = PlantsSelectionDay[i];
+            currentlySelectedIndex = i;
         }
         private int FirstPlantInSameRow(Zombie zombie)
         {
@@ -251,6 +253,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         {
             if (PlantsMatrix[i, j] == null)
             {
+                PlantsSelectionDay[currentlySelectedIndex].Buy();
                 (double, double) plantGameCoords = coordinateCalculator.WhichCoordinateInGameMapPlant(j, i);
                 CurrentlySelected.PlaceX = plantGameCoords.Item1;
                 CurrentlySelected.PlaceY = plantGameCoords.Item2;

@@ -65,10 +65,6 @@ namespace GUI_20212202_IJA9WQ.Models
             throw new NotImplementedException();
         }
 
-        public override void Buy()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

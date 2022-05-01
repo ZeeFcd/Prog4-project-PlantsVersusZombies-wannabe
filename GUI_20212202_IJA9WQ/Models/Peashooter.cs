@@ -48,11 +48,6 @@ namespace GUI_20212202_IJA9WQ.Models
             }
         }
 
-        public override void Buy()
-        {
-            throw new NotImplementedException();
-        }
-
         public override Plant GetCopy()
         {
             return new Peashooter(this.displayWidth, this.displayHeight)

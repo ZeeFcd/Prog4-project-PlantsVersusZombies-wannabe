@@ -73,9 +73,5 @@ namespace GUI_20212202_IJA9WQ.Models
             State= AttackStateEnum.Attack;
         }
 
-        public override void Buy()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
