@@ -307,8 +307,9 @@ namespace GUI_20212202_IJA9WQ.Logic
                 (double, double) plantGameCoords = coordinateCalculator.WhichCoordinateInGameMapPlant(j, i);
                 CurrentlySelected.PlaceX = plantGameCoords.Item1;
                 CurrentlySelected.PlaceY = plantGameCoords.Item2;
-                Plants.Add(CurrentlySelected.GetCopy());
-                PlantsMatrix[i, j] = CurrentlySelected.GetCopy();
+                Plant plantToplace = CurrentlySelected.GetCopy();
+                Plants.Add(plantToplace);
+                PlantsMatrix[i, j] = plantToplace;
                 CurrentlySelected = null;
             }
         }
@@ -334,7 +335,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     firstplantXindex = FirstPlantInSameRow(zombie);
                     if (firstplantXindex > -1)
                     {
-                        if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]))
+                        if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex])|| PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].State == AttackStateEnum.InActive)
                         {
                             zombie.State = AttackStateEnum.Normal;
                             zombie.Move();
@@ -342,8 +343,9 @@ namespace GUI_20212202_IJA9WQ.Logic
                         }
                         else
                         {
+
                             zombie.State = AttackStateEnum.Attack;
-                            ;//to be continued, ATTACK THE PLANT
+                            ;// ATTACK THE PLANT
                         }
                     }
                     else

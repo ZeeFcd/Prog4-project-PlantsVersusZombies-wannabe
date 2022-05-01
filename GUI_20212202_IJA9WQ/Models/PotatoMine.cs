@@ -47,10 +47,10 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void Ability()
         {
-            if (innerClock == 100)
+            if (innerClock == 588)
             {
                 State = AttackStateEnum.Normal;
-                //explode
+                //Active
                 AbilityEvent?.Invoke(this, null);
             }
         }
