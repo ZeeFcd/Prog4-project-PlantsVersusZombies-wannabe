@@ -24,6 +24,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Cooldown = 10;
             Type = PlantEnum.Potatomine;
             innerClock = 0;
+            State = AttackStateEnum.InActive;
         }
 
         public override Plant GetCopy()
@@ -44,9 +45,14 @@ namespace GUI_20212202_IJA9WQ.Models
             throw new NotImplementedException();
         }
 
-        protected override void Ability()
+        public override void Ability()
         {
-            throw new NotImplementedException();
+            if (innerClock == 100)
+            {
+                State = AttackStateEnum.Normal;
+                //explode
+                AbilityEvent?.Invoke(this, null);
+            }
         }
     }
 }

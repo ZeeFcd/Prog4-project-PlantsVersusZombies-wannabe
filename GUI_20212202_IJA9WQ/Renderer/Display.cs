@@ -87,13 +87,32 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             drawingContext.DrawGeometry(brushes.WallnutGIF[plant.InnerClock % brushes.WallnutGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         case PlantEnum.Potatomine:
-                            drawingContext.DrawGeometry(brushes.PotatomineGIF[plant.InnerClock % brushes.PotatomineGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                            if (plant.State==AttackStateEnum.InActive)
+                            {
+                                drawingContext.DrawGeometry(GameBrushes.InActivePotatoMineBrush, null, plant.Area);
+                            }
+                            else if (plant.State == AttackStateEnum.Normal)
+                            {
+                                drawingContext.DrawGeometry(brushes.PotatomineGIF[plant.InnerClock % brushes.PotatomineGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                            }
+                            else
+                            {
+
+                            }
+                           
                             break;
                         case PlantEnum.Snowpeashooter:
                             drawingContext.DrawGeometry(brushes.SnowpeashooterGIF[plant.InnerClock % brushes.SnowpeashooterGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
                             break;
                         case PlantEnum.Cherrybomb:
-                            drawingContext.DrawGeometry(GameBrushes.CherryBrush, new Pen(Brushes.Black, 1), plant.Area);
+                            if (plant.State==AttackStateEnum.Normal)
+                            {
+                                drawingContext.DrawGeometry(GameBrushes.CherryBrush, new Pen(Brushes.Black, 1), plant.Area);
+                            }
+                            else
+                            {
+                                drawingContext.DrawGeometry(GameBrushes.PowieBrush, new Pen(Brushes.Black, 1), plant.Area);
+                            }
                             break;
                         case PlantEnum.Sunflower:
                             drawingContext.DrawGeometry(brushes.SunfloowerGIF[plant.InnerClock % brushes.SunfloowerGIF.Count], new Pen(Brushes.Black, 1), plant.Area);

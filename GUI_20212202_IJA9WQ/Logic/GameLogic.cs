@@ -107,6 +107,10 @@ namespace GUI_20212202_IJA9WQ.Logic
                         ShootTimeStep(plant);
                     }
                 }
+                if (plant.Type==PlantEnum.Cherrybomb || plant.Type==PlantEnum.Potatomine)
+                {
+                    plant.Ability();
+                }
             }
 
             List<Sun> sunstoremove = new List<Sun>();

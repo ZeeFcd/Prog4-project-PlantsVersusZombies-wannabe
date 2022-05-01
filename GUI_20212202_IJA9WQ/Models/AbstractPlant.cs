@@ -11,6 +11,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public abstract class Plant : OffensiveItem
     {
+        public EventHandler AbilityEvent;
         public Plant(double displayWidth, double displayHeight) // ideiglenes paraméterek
         {
             this.displayWidth = displayWidth;
@@ -22,7 +23,7 @@ namespace GUI_20212202_IJA9WQ.Models
             get { return displayWidth; }
             set { displayWidth = value; }
         }
-
+    
         public double DisplayHeight
         {
             get { return displayHeight; }
@@ -38,7 +39,7 @@ namespace GUI_20212202_IJA9WQ.Models
         {
             get { return new  RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
         }
-        protected abstract void Ability();
+        public abstract void Ability();
         public abstract Plant GetCopy();
     }
 }

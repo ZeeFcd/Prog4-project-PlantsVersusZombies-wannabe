@@ -24,10 +24,13 @@
     <None Remove="Images\dea_snowpeashooterItem.png" />
     <None Remove="Images\dea_sunflowerItem.png" />
     <None Remove="Images\dea_wallnutItem.png" />
+    <None Remove="Images\exploded.png" />
+    <None Remove="Images\hole.png" />
     <None Remove="Images\itemShop.png" />
     <None Remove="Images\itemShop1.png" />
     <None Remove="Images\lawn_mover.png" />
     <None Remove="Images\lawn_mover2.png" />
+    <None Remove="Images\notactivatec.png" />
     <None Remove="Images\pea.png" />
     <None Remove="Images\peashooter.png" />
     <None Remove="Images\peashooterAnimation\peashooter %281%29.gif" />
@@ -110,6 +113,7 @@
     <None Remove="Images\potatomineAnimation\potatomine %288%29.gif" />
     <None Remove="Images\potatomineAnimation\potatomine %289%29.gif" />
     <None Remove="Images\potatomineItem.png" />
+    <None Remove="Images\powie.png" />
     <None Remove="Images\shovel.png" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %281%29.gif" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2810%29.gif" />
@@ -450,7 +454,13 @@
     <Content Include="Images\dea_wallnutItem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\hole.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\lawn_mover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\notactivatec.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pea.png">
@@ -697,6 +707,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\potatomineItem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\powie.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\shovel.png">
@@ -1501,6 +1514,12 @@
 
   <ItemGroup>
     <Content Include="Images\itemShop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\exploded.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

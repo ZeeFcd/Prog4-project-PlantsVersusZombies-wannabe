@@ -8,6 +8,6 @@ namespace GUI_20212202_IJA9WQ.Helpers
 {
     public enum AttackStateEnum
     {
-        Normal, Attack, Dead,
+        Normal, Attack, Dead, InActive
     }
 }

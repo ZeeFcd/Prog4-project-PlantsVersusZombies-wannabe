@@ -44,9 +44,14 @@ namespace GUI_20212202_IJA9WQ.Models
             throw new NotImplementedException();
         }
 
-        protected override void Ability()
+        public override void Ability()
         {
-            throw new NotImplementedException();
+            if (innerClock == 70 )
+            {
+                State = AttackStateEnum.Attack;
+                //explode
+                AbilityEvent?.Invoke(this, null);
+            }
         }
     }
 }

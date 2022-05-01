@@ -27,10 +27,16 @@ namespace GUI_20212202_IJA9WQ.Models
         {
             get { return GameBrushes.PeashooterItemBrush; }
         }
-        protected override void Ability()
+        public override void Ability()
         {
-
+            if (innerClock%88==0)
+            {
+                //shoot
+                AbilityEvent?.Invoke(this,null);
+            }
         }
+        
+
         public override Plant GetCopy()
         {
             return new Peashooter(this.displayWidth, this.displayHeight)
