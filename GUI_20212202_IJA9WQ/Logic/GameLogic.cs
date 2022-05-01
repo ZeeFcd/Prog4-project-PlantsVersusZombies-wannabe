@@ -43,15 +43,20 @@ namespace GUI_20212202_IJA9WQ.Logic
             ZombiesMatrix = new List<Zombie>[5, 9];
             ZombiesMatrixInitialize();
 
-            PlantsSelectionDay = new Plant[] {
-                new Peashooter(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
-                new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
-                new CherryBomb(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
-                new WallNut(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
-                new PotatoMine(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight),
-                new SnowPea(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight)
-            };
+            Plant peashooter = new Peashooter(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight);
+            Plant sunflower = new Sunflower(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight);
+            Plant cherrybomb = new CherryBomb(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight);
+            Plant wallNut = new WallNut(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight);
+            Plant potatoMine = new PotatoMine(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight);
+            Plant snowPea = new SnowPea(coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight);
 
+            peashooter.AbilityEvent += ShooterShoot;
+            sunflower.AbilityEvent += SunFlowerProduce;
+            cherrybomb.AbilityEvent += CherryBombExplode;
+            potatoMine.AbilityEvent += PotatoMineExplode;
+            snowPea.AbilityEvent+= ShooterShoot;
+
+            PlantsSelectionDay = new Plant[] { peashooter, sunflower, cherrybomb, wallNut, potatoMine, snowPea };
 
             for (int i = 0; i < 5; i++)
             {
@@ -223,7 +228,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             gameClock += 1;
         }
 
-        public void ZombiesMatrixInitialize()
+        private void ZombiesMatrixInitialize()
         {
             for (int i = 0; i < ZombiesMatrix.GetLength(0); i++)
             {
@@ -234,7 +239,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
         }
         
-        public void LawMoverStart(int i)
+        private void LawMoverStart(int i)
         {
             LawnMovers[i].IsStarted = true;
                         
@@ -363,7 +368,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
             
         }
-        public void LawMoverStep(int i)
+        private void LawMoverStep(int i)
         {
             if (LawnMovers[i] != null && LawnMovers[i].IsStarted)
             {
@@ -430,6 +435,37 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             }
         }
+
+        private void ShooterShoot(object sender, System.EventArgs e) 
+        {
+            Plant plant = sender as Plant;
+            if (IsZombieInSameRow(plant) > -1)
+            {
+                (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
+                Bullets.Add(new Bullet(
+                                 coordinateCalculator.BulletX + coordinates.Item1 * coordinateCalculator.GameMapCellWidth,
+                                 coordinateCalculator.BulletY + coordinates.Item2 * coordinateCalculator.GameMapCellHeight,
+                                 coordinateCalculator.BulletWidth,
+                                 coordinateCalculator.BulletHeight,
+                                 coordinateCalculator.BulletSpeed,
+                                 false,
+                                 plant.Damage
+                                 ));
+                
+               
+            }
+        }
+
+        private void SunFlowerProduce(object sender, System.EventArgs e)
+        {
+        }
+        private void CherryBombExplode(object sender, System.EventArgs e)
+        {
+        }
+        private void PotatoMineExplode(object sender, System.EventArgs e)
+        {
+        }
+
     }
 }
 
