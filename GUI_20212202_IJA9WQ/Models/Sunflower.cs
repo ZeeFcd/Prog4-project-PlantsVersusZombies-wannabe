@@ -48,7 +48,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 placeX = this.placeX,
                 placeY = this.placeY,
                 AbilityEvent = this.AbilityEvent,
-                innerClock = 0
+                innerClock = 1
             };
         }
 
