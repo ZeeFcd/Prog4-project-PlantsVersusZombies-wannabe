@@ -13,7 +13,17 @@ namespace GUI_20212202_IJA9WQ.Models
     {
         public override Brush ShopImageBrush
         {
-            get { return GameBrushes.CherryBombItemBrush; }
+            get
+            {
+                if (ispurchaseable)
+                {
+                    return GameBrushes.CherryBombItemBrush;
+                }
+                else
+                {
+                    return GameBrushes.Dea_CherryBombItemBrush;
+                } 
+            }
         }
 
         public CherryBomb(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
@@ -24,6 +34,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Cooldown = 10;
             Type = PlantEnum.Cherrybomb;
             innerClock = 0;
+            ispurchaseable = true;
         }
 
         public override Plant GetCopy()
@@ -36,6 +47,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
                 placeY = this.placeY,
+                AbilityEvent=this.AbilityEvent
             };
         }
 
@@ -52,6 +64,11 @@ namespace GUI_20212202_IJA9WQ.Models
                 //explode
                 AbilityEvent?.Invoke(this, null);
             }
+        }
+
+        public override void Buy()
+        {
+            throw new NotImplementedException();
         }
     }
 }

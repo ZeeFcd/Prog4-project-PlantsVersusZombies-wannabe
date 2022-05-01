@@ -21,11 +21,23 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Cooldown = 10;
             Type = PlantEnum.Peashooter;
             innerClock = 0;
+            hasfrozenbullet = false;
+            ispurchaseable = true;
         }
 
         public override Brush ShopImageBrush
         {
-            get { return GameBrushes.PeashooterItemBrush; }
+            get
+            {
+                if (ispurchaseable)
+                {
+                    return GameBrushes.PeashooterItemBrush;
+                }
+                else
+                {
+                    return GameBrushes.Dea_PeashooterItemBrush;
+                }
+            }
         }
         public override void Ability()
         {
@@ -35,7 +47,11 @@ namespace GUI_20212202_IJA9WQ.Models
                 AbilityEvent?.Invoke(this,null);
             }
         }
-        
+
+        public override void Buy()
+        {
+            throw new NotImplementedException();
+        }
 
         public override Plant GetCopy()
         {
@@ -47,6 +63,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
                 placeY = this.placeY,
+                AbilityEvent = this.AbilityEvent
 
             };
         }

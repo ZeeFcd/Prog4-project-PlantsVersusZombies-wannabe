@@ -20,12 +20,23 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Cooldown = 10;
             Type = PlantEnum.Sunflower;
             innerClock = 0;
+            ispurchaseable = true;
         }
         public override Brush ShopImageBrush
         {
-            get { return GameBrushes.SunflowerItemBrush; }
+            get
+            {
+                if (ispurchaseable)
+                {
+                    return GameBrushes.SunflowerItemBrush;
+                }
+                else
+                {
+                    return GameBrushes.Dea_SunflowerItemBrush;
+                }
+            }
         }
-       
+
         public override Plant GetCopy()
         {
             return new Sunflower(this.displayWidth, this.displayHeight)
@@ -35,7 +46,8 @@ namespace GUI_20212202_IJA9WQ.Models
                 Price = this.Price,
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
-                placeY = this.placeY
+                placeY = this.placeY,
+                AbilityEvent = this.AbilityEvent
             };
         }
 
@@ -48,6 +60,11 @@ namespace GUI_20212202_IJA9WQ.Models
             }
         }
         public override void Terminated()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Buy()
         {
             throw new NotImplementedException();
         }

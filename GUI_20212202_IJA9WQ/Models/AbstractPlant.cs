@@ -12,6 +12,8 @@ namespace GUI_20212202_IJA9WQ.Models
     public abstract class Plant : OffensiveItem
     {
         public EventHandler AbilityEvent;
+        protected bool hasfrozenbullet;
+        protected bool ispurchaseable;
         public Plant(double displayWidth, double displayHeight) // ideiglenes paraméterek
         {
             this.displayWidth = displayWidth;
@@ -30,6 +32,9 @@ namespace GUI_20212202_IJA9WQ.Models
             set { displayHeight = value; }
         }
 
+        public bool Hasfrozenbullet { get => hasfrozenbullet; }
+        public bool Ispurchaseable { get => ispurchaseable; }
+
         public int Price { get; set; }
         public int Cooldown { get; set; }
         public int Range { get; set; }
@@ -39,7 +44,10 @@ namespace GUI_20212202_IJA9WQ.Models
         {
             get { return new  RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
         }
+
+
         public abstract void Ability();
         public abstract Plant GetCopy();
+        public abstract void Buy();
     }
 }

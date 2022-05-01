@@ -13,7 +13,17 @@ namespace GUI_20212202_IJA9WQ.Models
     {
         public override Brush ShopImageBrush
         {
-            get { return GameBrushes.SnowPeaItemBrush; }
+            get
+            {
+                if (ispurchaseable)
+                {
+                    return GameBrushes.SnowPeaItemBrush;
+                }
+                else
+                {
+                    return GameBrushes.Dea_SnowPeaItemBrush;
+                }
+            }
         }
 
         public SnowPea(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
@@ -24,6 +34,8 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Cooldown = 10;
             Type = PlantEnum.Snowpeashooter;
             innerClock = 0;
+            hasfrozenbullet = true;
+            ispurchaseable = true;
         }
         public override Plant GetCopy()
         {
@@ -35,6 +47,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
                 placeY = this.placeY,
+                AbilityEvent = this.AbilityEvent
             };
         }
 
@@ -50,6 +63,11 @@ namespace GUI_20212202_IJA9WQ.Models
                 //shoot
                 AbilityEvent?.Invoke(this, null);
             }
+        }
+
+        public override void Buy()
+        {
+            throw new NotImplementedException();
         }
     }
 }

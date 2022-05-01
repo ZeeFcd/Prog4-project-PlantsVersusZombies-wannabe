@@ -12,7 +12,17 @@ namespace GUI_20212202_IJA9WQ.Models
     {
         public override Brush ShopImageBrush
         {
-            get { return GameBrushes.WallnutItemBrush; }
+            get
+            {
+                if (ispurchaseable)
+                {
+                    return GameBrushes.WallnutItemBrush;
+                }
+                else
+                {
+                    return GameBrushes.Dea_WallnutItemBrush;
+                }
+            }
         }
 
         public WallNut(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
@@ -23,6 +33,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.Cooldown = 10;
             Type = Helpers.PlantEnum.Wallnut;
             innerClock = 0;
+            ispurchaseable = true;
         }
 
         public override Plant GetCopy()
@@ -44,6 +55,11 @@ namespace GUI_20212202_IJA9WQ.Models
         }
 
         public override void Ability()
+        {
+            
+        }
+
+        public override void Buy()
         {
             throw new NotImplementedException();
         }

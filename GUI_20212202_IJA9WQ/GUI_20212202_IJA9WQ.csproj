@@ -115,6 +115,7 @@
     <None Remove="Images\potatomineItem.png" />
     <None Remove="Images\powie.png" />
     <None Remove="Images\shovel.png" />
+    <None Remove="Images\snowpea.png" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %281%29.gif" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2810%29.gif" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2811%29.gif" />
@@ -713,6 +714,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\shovel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\snowpea.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\snowpeashooterAnimation\snowpeashooter (1).gif">

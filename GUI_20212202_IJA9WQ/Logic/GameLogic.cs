@@ -101,21 +101,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             foreach (var plant in Plants)
             {
-                if (gameClock % 45 == 0)
-                {
-                    if (plant.Type == PlantEnum.Peashooter)
-                    {
-                        ShootTimeStep(plant);
-                    }
-                    else if (plant.Type == PlantEnum.Snowpeashooter)
-                    {
-                        ShootTimeStep(plant);
-                    }
-                }
-                if (plant.Type==PlantEnum.Cherrybomb || plant.Type==PlantEnum.Potatomine)
-                {
-                    plant.Ability();
-                }
+                plant.Ability();
             }
 
             List<Sun> sunstoremove = new List<Sun>();
@@ -448,11 +434,10 @@ namespace GUI_20212202_IJA9WQ.Logic
                                  coordinateCalculator.BulletWidth,
                                  coordinateCalculator.BulletHeight,
                                  coordinateCalculator.BulletSpeed,
-                                 false,
+                                 plant.Hasfrozenbullet,
                                  plant.Damage
                                  ));
                 
-               
             }
         }
 
