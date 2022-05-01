@@ -11,6 +11,7 @@ namespace GUI_20212202_IJA9WQ.Models
     public class Sun : GameItem
     {
         (double, double) speed;
+        bool ismoving;
         public Sun(double placeX, double placeY, double displayWidth, double displayHeight,(double, double) speed)
         {
             this.placeX = placeX;
@@ -18,6 +19,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
             this.speed = speed;
+            ismoving = false;
         }
         public override Geometry Area
         {
@@ -35,6 +37,9 @@ namespace GUI_20212202_IJA9WQ.Models
             get { return placeY; }
             set { placeY = value; }
         }
+
+        public bool Ismoving { get => ismoving; }
+
         public void Move(bool stopCondition)
         {
             if (!stopCondition)
@@ -45,17 +50,14 @@ namespace GUI_20212202_IJA9WQ.Models
            
         }
 
-        public bool IsInSun(double x,double y)
+        public void IsInSun(double x,double y)
         {
             
             if (placeX<x && x<placeX+displayWidth && placeY<y &&y<placeY+displayHeight )
             {
-                return true;
+                ismoving = true;
             }
-            else
-            {
-                return false;
-            }
+           
         }
 
         public override void Terminated()

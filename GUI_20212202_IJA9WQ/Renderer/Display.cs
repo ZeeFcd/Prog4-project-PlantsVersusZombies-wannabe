@@ -81,10 +81,10 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     switch (plant.Type)
                     {
                         case PlantEnum.Peashooter:
-                            drawingContext.DrawGeometry(brushes.PeashooterGIF[plant.InnerClock % brushes.PeashooterGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                            drawingContext.DrawGeometry(brushes.PeashooterGIF[plant.InnerClock % brushes.PeashooterGIF.Count],null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             break;
                         case PlantEnum.Wallnut:
-                            drawingContext.DrawGeometry(brushes.WallnutGIF[plant.InnerClock % brushes.WallnutGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                            drawingContext.DrawGeometry(brushes.WallnutGIF[plant.InnerClock % brushes.WallnutGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             break;
                         case PlantEnum.Potatomine:
                             if (plant.State==AttackStateEnum.InActive)
@@ -93,7 +93,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             }
                             else if (plant.State == AttackStateEnum.Normal)
                             {
-                                drawingContext.DrawGeometry(brushes.PotatomineGIF[plant.InnerClock % brushes.PotatomineGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                                drawingContext.DrawGeometry(brushes.PotatomineGIF[plant.InnerClock % brushes.PotatomineGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             }
                             else
                             {
@@ -102,20 +102,20 @@ namespace GUI_20212202_IJA9WQ.Renderer
                            
                             break;
                         case PlantEnum.Snowpeashooter:
-                            drawingContext.DrawGeometry(brushes.SnowpeashooterGIF[plant.InnerClock % brushes.SnowpeashooterGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                            drawingContext.DrawGeometry(brushes.SnowpeashooterGIF[plant.InnerClock % brushes.SnowpeashooterGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             break;
                         case PlantEnum.Cherrybomb:
                             if (plant.State==AttackStateEnum.Normal)
                             {
-                                drawingContext.DrawGeometry(GameBrushes.CherryBrush, new Pen(Brushes.Black, 1), plant.Area);
+                                drawingContext.DrawGeometry(GameBrushes.CherryBrush, null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             }
                             else
                             {
-                                drawingContext.DrawGeometry(GameBrushes.PowieBrush, new Pen(Brushes.Black, 1), plant.Area);
+                                drawingContext.DrawGeometry(GameBrushes.PowieBrush, null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             }
                             break;
                         case PlantEnum.Sunflower:
-                            drawingContext.DrawGeometry(brushes.SunfloowerGIF[plant.InnerClock % brushes.SunfloowerGIF.Count], new Pen(Brushes.Black, 1), plant.Area);
+                            drawingContext.DrawGeometry(brushes.SunfloowerGIF[plant.InnerClock % brushes.SunfloowerGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             break;
                         default:
                             break;
@@ -131,7 +131,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     }
                     else
                     {
-                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[zombie.InnerClock % brushes.ZombieWalkGIF.Count],null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
+                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[zombie.InnerClock % brushes.ZombieWalkGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
                     }
                     
                 }
@@ -140,7 +140,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     if (lawnMover != null)
                     {
-                        drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, new Pen(Brushes.Black, 1), lawnMover.Area);
+                        drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, null /*new Pen(Brushes.Black, 1)*/, lawnMover.Area);
                     }
                 }
 
@@ -148,18 +148,18 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     if (bullet.IsFrozen)
                     {
-                        drawingContext.DrawGeometry(GameBrushes.SnowPeaBrush, new Pen(Brushes.Black, 1), bullet.Area);
+                        drawingContext.DrawGeometry(GameBrushes.SnowPeaBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
                     }
                     else
                     {
-                        drawingContext.DrawGeometry(GameBrushes.PeaBrush, new Pen(Brushes.Black, 1), bullet.Area);
+                        drawingContext.DrawGeometry(GameBrushes.PeaBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
                     }
                     
                 }
 
                 foreach (var sun in logic.Suns)
                 {
-                    drawingContext.DrawGeometry(GameBrushes.SunBrush, new Pen(Brushes.Black, 1), sun.Area);
+                    drawingContext.DrawGeometry(GameBrushes.SunBrush, null /*new Pen(Brushes.Black, 1)*/, sun.Area);
                 }
 
             }

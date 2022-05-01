@@ -248,7 +248,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public double BulletSpeed
         {
-            get { return 0.015 * displayWidth; }
+            get { return 0.013 * displayWidth; }
         }
         //---------------------
 
@@ -333,10 +333,10 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public bool IsSunReachedShop(double x, double y)
         {
-            return ShopSunX - SunWidth * 0.4 < x &&
-                x < ShopSunX  + SunWidth * 0.4 &&
-                ShopSunY - SunHeight * 0.4 < y &&
-                y < ShopSunY + SunHeight * 0.4;
+            return ShopSunX - SunWidth * 0.6 < x &&
+                x < ShopSunX  + SunWidth * 0.6 &&
+                ShopSunY - SunHeight * 0.6 < y &&
+                y < ShopSunY + SunHeight*0.6;
         }
         public bool IsInShovel(double x, double y)
         {
@@ -366,8 +366,8 @@ namespace GUI_20212202_IJA9WQ.Helpers
         public (double, double) SunSpeed(double x, double y) 
         {
             (double, double) speed =
-                ((ShopSunX - x) / (displayWidth * 0.015),
-                (ShopSunY - y) / (displayWidth * 0.015));
+                ((ShopSunX - x) / (displayWidth * 0.01),
+                (ShopSunY - y) / (displayWidth * 0.01));
 
             return speed;
         }

@@ -60,15 +60,21 @@ namespace GUI_20212202_IJA9WQ
         {
             double x = e.GetPosition(grid).X;
             double y = e.GetPosition(grid).Y;
+            bool isingamemap = coordinateCalculator.IsInGameMap(x, y);
 
             if (coordinateCalculator.IsInShop(x, y))
             {
                 logic.PlantSelect(coordinateCalculator.WhichCellInShop(y));
             }
-            else if (logic.CurrentlySelected != null && coordinateCalculator.IsInGameMap(x, y))
+            else if (logic.CurrentlySelected != null && isingamemap)
             {
                 (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
                 logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2);
+                logic.IsSunSelected(x, y);
+            }
+            else if (isingamemap)
+            {
+                logic.IsSunSelected(x, y);
             }
 
             display.InvalidateVisual();
