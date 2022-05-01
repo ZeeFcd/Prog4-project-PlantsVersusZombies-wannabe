@@ -45,7 +45,8 @@ namespace GUI_20212202_IJA9WQ.Models
                 Price = this.Price,
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
-                placeY = this.placeY
+                placeY = this.placeY,
+                innerClock = 0
             };
         }
 

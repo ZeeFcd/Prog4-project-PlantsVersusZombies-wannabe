@@ -47,7 +47,9 @@ namespace GUI_20212202_IJA9WQ.Models
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
                 placeY = this.placeY,
-                AbilityEvent=this.AbilityEvent
+                AbilityEvent=this.AbilityEvent,
+                innerClock=0
+                
             };
         }
 
@@ -62,7 +64,7 @@ namespace GUI_20212202_IJA9WQ.Models
             {
                 State = AttackStateEnum.Attack;
                 //explode
-                AbilityEvent?.Invoke(this, null);
+                AbilityEvent?.Invoke(this);
             }
         }
 

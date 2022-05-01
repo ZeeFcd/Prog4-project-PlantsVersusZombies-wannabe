@@ -47,7 +47,8 @@ namespace GUI_20212202_IJA9WQ.Models
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
                 placeY = this.placeY,
-                AbilityEvent = this.AbilityEvent
+                AbilityEvent = this.AbilityEvent,
+                innerClock = 0
             };
         }
 
@@ -61,7 +62,7 @@ namespace GUI_20212202_IJA9WQ.Models
             if (innerClock % 88 == 0)
             {
                 //shoot
-                AbilityEvent?.Invoke(this, null);
+                AbilityEvent?.Invoke(this);
             }
         }
 

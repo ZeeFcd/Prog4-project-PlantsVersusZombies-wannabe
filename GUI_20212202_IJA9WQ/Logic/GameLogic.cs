@@ -202,7 +202,6 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
 
 
-           
             foreach (var plant in Plants)
             {
                 plant.TimeChanged();
@@ -422,9 +421,8 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
         }
 
-        private void ShooterShoot(object sender, System.EventArgs e) 
+        private void ShooterShoot(Plant plant) 
         {
-            Plant plant = sender as Plant;
             if (IsZombieInSameRow(plant) > -1)
             {
                 (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
@@ -441,13 +439,13 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
         }
 
-        private void SunFlowerProduce(object sender, System.EventArgs e)
+        private void SunFlowerProduce(Plant plant)
         {
         }
-        private void CherryBombExplode(object sender, System.EventArgs e)
+        private void CherryBombExplode(Plant plant)
         {
         }
-        private void PotatoMineExplode(object sender, System.EventArgs e)
+        private void PotatoMineExplode(Plant plant)
         {
         }
 

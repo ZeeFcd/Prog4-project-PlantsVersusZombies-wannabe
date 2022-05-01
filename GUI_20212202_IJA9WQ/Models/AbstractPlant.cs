@@ -11,7 +11,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public abstract class Plant : OffensiveItem
     {
-        public EventHandler AbilityEvent;
+        public Action<Plant> AbilityEvent;
         protected bool hasfrozenbullet;
         protected bool ispurchaseable;
         public Plant(double displayWidth, double displayHeight) // ideiglenes paraméterek
