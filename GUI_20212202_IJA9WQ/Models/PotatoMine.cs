@@ -63,14 +63,14 @@ namespace GUI_20212202_IJA9WQ.Models
             if (innerClock == 588)
             {
                 State = AttackStateEnum.Normal;
-                //Active
-                AbilityEvent?.Invoke(this);
+                
             }
         }
         public override void DamagedBy(OffensiveItem attacker)
         {
             base.DamagedBy(attacker);
             State= AttackStateEnum.Attack;
+            AbilityEvent?.Invoke(this);
         }
 
         public override void TimeChanged()
