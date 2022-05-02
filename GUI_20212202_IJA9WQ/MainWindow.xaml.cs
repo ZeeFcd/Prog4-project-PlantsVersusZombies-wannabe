@@ -66,7 +66,7 @@ namespace GUI_20212202_IJA9WQ
             {
                 logic.PlantSelect(coordinateCalculator.WhichCellInShop(y));
             }
-            else if (logic.CurrentlySelected != null && isingamemap)
+            else if (logic.CurrentlySelectedIndex != -1 && isingamemap)
             {
                 (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
                 logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2);

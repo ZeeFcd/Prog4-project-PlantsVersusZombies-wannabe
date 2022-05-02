@@ -65,6 +65,16 @@ namespace GUI_20212202_IJA9WQ.Models
             throw new NotImplementedException();
         }
 
+
+        public override void TimeChanged()
+        {
+            if (!ispurchaseable && innerClock - timeWhenBought == 100)
+            {
+                ispurchaseable = true;
+                timeWhenBought = 0;
+            }
+            base.TimeChanged();
+        }
     }
 }
 

@@ -26,12 +26,13 @@ namespace GUI_20212202_IJA9WQ.Logic
         public LawnMover[] LawnMovers { get; }
         public List<Sun> Suns { get; }
         public Plant[] PlantsSelectionDay { get; }
-        public Plant CurrentlySelected { get; set; }
+        public int CurrentlySelectedIndex { get => currentlySelectedIndex; }
         public int SunValue { get => sunValue; }
 
         public GameLogic(CoordinateCalculator coordinateCalculator)
         {
             this.coordinateCalculator = coordinateCalculator;
+            currentlySelectedIndex = -1;
             Plants = new List<Plant>();
             Zombies = new List<Zombie>();
             Bullets = new List<Bullet>();
@@ -190,8 +191,11 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         public void PlantSelect(int i)
         {
-            CurrentlySelected = PlantsSelectionDay[i];
-            currentlySelectedIndex = i;
+            if (PlantsSelectionDay[i].Ispurchaseable)
+            {
+                currentlySelectedIndex = i;
+            }
+            ;
         }
         private int FirstPlantInSameRow(Zombie zombie)
         {
@@ -254,13 +258,13 @@ namespace GUI_20212202_IJA9WQ.Logic
             if (PlantsMatrix[i, j] == null)
             {
                 PlantsSelectionDay[currentlySelectedIndex].Buy();
-                (double, double) plantGameCoords = coordinateCalculator.WhichCoordinateInGameMapPlant(j, i);
-                CurrentlySelected.PlaceX = plantGameCoords.Item1;
-                CurrentlySelected.PlaceY = plantGameCoords.Item2;
-                Plant plantToplace = CurrentlySelected.GetCopy();
+                (double, double) plantGameCoords = coordinateCalculator.WhichCoordinateInGameMapPlant(j, i);                
+                Plant plantToplace = PlantsSelectionDay[currentlySelectedIndex].GetCopy();
+                plantToplace.PlaceX = plantGameCoords.Item1;
+                plantToplace.PlaceY = plantGameCoords.Item2;
                 Plants.Add(plantToplace);
                 PlantsMatrix[i, j] = plantToplace;
-                CurrentlySelected = null;
+                currentlySelectedIndex = -1;
             }
         }
 

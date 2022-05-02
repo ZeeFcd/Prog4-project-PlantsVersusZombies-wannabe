@@ -6,7 +6,7 @@ namespace GUI_20212202_IJA9WQ.Logic
     public interface IGameLogic
     {
         int SunValue { get; }
-        Plant CurrentlySelected { get; }
+        int CurrentlySelectedIndex { get; }
         LawnMover[] LawnMovers { get; }
 
         int GameClock { get; }
