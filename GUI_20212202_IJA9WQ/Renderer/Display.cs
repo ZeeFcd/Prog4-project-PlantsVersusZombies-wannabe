@@ -101,7 +101,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                                 var shiftY = coordinateCalculator.GameMapCellHeight * 0.17;
                                 Geometry explosion = new RectangleGeometry(
                                     new Rect(plant.PlaceX - shiftX, plant.PlaceY, coordinateCalculator.GameMapCellWidth + shiftX, coordinateCalculator.GameMapCellHeight - shiftY));
-                                drawingContext.DrawGeometry(GameBrushes.PotatoMineExplodedBrush, new Pen(Brushes.Black, 1), explosion);
+                                drawingContext.DrawGeometry(GameBrushes.PotatoMineExplodedBrush, null, explosion);
                             }
                            
                             break;
@@ -119,7 +119,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                                 var shiftY = coordinateCalculator.GameMapCellHeight;
                                 Geometry explosion = new RectangleGeometry(
                                     new Rect(plant.PlaceX - shiftX, plant.PlaceY- shiftY- 0.2 * coordinateCalculator.GameMapCellHeight, coordinateCalculator.GameMapCellWidth + 2*shiftX, coordinateCalculator.GameMapCellHeight +2* shiftY));
-                                drawingContext.DrawGeometry(GameBrushes.PowieBrush, new Pen(Brushes.Black, 1), explosion);
+                                drawingContext.DrawGeometry(GameBrushes.PowieBrush, null, explosion);
                             }
                             break;
                         case PlantEnum.Sunflower:
