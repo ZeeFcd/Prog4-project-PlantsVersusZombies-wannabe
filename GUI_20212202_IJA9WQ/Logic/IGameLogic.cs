@@ -8,6 +8,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         int SunValue { get; }
         int CurrentlySelectedIndex { get; }
         LawnMover[] LawnMovers { get; }
+        bool ShovelSelected { get; }
 
         int GameClock { get; }
         List<Plant> Plants { get; }
@@ -17,6 +18,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         List<Sun> Suns { get;  }
 
         void PlantSelect(int i);
+        void ShovelSelect();
         void PlantToPlant(int j, int i);
         void TimeStep();
     }

@@ -69,8 +69,16 @@ namespace GUI_20212202_IJA9WQ
             else if (logic.CurrentlySelectedIndex != -1 && isingamemap)
             {
                 (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
-                logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2);
-                logic.IsSunSelected(x, y);
+                logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2); 
+            }         
+            else if (!logic.ShovelSelected&&coordinateCalculator.IsShovel(x,y))
+            {
+                logic.ShovelSelect();
+            }
+            else if (logic.ShovelSelected&& isingamemap)
+            {
+                (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
+                logic.PlantDelete(gameCellindexes.Item1, gameCellindexes.Item2);
             }
             else if (isingamemap)
             {

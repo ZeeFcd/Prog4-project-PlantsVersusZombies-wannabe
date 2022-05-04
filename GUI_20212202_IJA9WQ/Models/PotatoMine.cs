@@ -28,7 +28,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public PotatoMine(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
-            this.HP = 100;
+            this.HP = 1;
             this.Damage = 20;
             this.Price = 25;
             this.Cooldown = 10;
@@ -55,7 +55,8 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void Terminated()
         {
-            throw new NotImplementedException();
+            State = AttackStateEnum.Attack;
+            AbilityEvent?.Invoke(this);
         }
 
         public override void Ability()
@@ -63,16 +64,9 @@ namespace GUI_20212202_IJA9WQ.Models
             if (innerClock == 588)
             {
                 State = AttackStateEnum.Normal;
-                
             }
         }
-        public override void DamagedBy(OffensiveItem attacker)
-        {
-            base.DamagedBy(attacker);
-            State= AttackStateEnum.Attack;
-            AbilityEvent?.Invoke(this);
-        }
-
+       
         public override void TimeChanged()
         {
             if (!ispurchaseable && innerClock - timeWhenBought == 100)

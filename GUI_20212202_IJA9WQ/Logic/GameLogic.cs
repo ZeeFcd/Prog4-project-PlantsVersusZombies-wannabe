@@ -15,6 +15,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         CoordinateCalculator coordinateCalculator;
         int gameClock;
         int currentlySelectedIndex;
+        bool shovelSelected;
         public int GameClock { get { return gameClock; } }
 
         int sunValue;
@@ -28,6 +29,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public Plant[] PlantsSelectionDay { get; }
         public int CurrentlySelectedIndex { get => currentlySelectedIndex; }
         public int SunValue { get => sunValue; }
+        public bool ShovelSelected { get => shovelSelected;}
 
         public GameLogic(CoordinateCalculator coordinateCalculator)
         {
@@ -156,7 +158,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieSpeed));
             }
 
-
+            
             foreach (var plant in PlantsSelectionDay)
             {
                 plant.TimeChanged();
@@ -191,12 +193,27 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         public void PlantSelect(int i)
         {
+            shovelSelected = false;
             if (PlantsSelectionDay[i].Ispurchaseable)
             {
                 currentlySelectedIndex = i;
             }
-            ;
+            
         }
+        public void ShovelSelect()
+        {
+            currentlySelectedIndex = -1;
+            shovelSelected = true;
+        }
+
+        public void PlantDelete(int j, int i)
+        {
+            Plants.Remove(PlantsMatrix[i,j]);
+            PlantsMatrix[i, j] = null;
+            shovelSelected = false;
+        }
+
+
         private int FirstPlantInSameRow(Zombie zombie)
         {
             int n = zombie.PlaceGameMatrixX;
@@ -299,6 +316,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                         {
 
                             zombie.State = AttackStateEnum.Attack;
+                            PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].DamagedBy(zombie);
                             ;// ATTACK THE PLANT
                         }
                     }
@@ -452,9 +470,72 @@ namespace GUI_20212202_IJA9WQ.Logic
         }
         private void CherryBombExplode(Plant plant)
         {
+            (int, int) cellindexes = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
+            if (false)
+            {
+
+            }
+            else
+            {
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1 - 1])
+                {
+                    Zombies.Remove(zombie);
+                }
+                ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1 - 1].Clear();
+
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1])
+                {
+                    Zombies.Remove(zombie);
+                }
+                ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1].Clear();
+
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1 + 1])
+                {
+                    Zombies.Remove(zombie);
+                }
+                ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1 + 1].Clear();
+
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1 - 1])
+                {
+                    Zombies.Remove(zombie);
+                }
+                ZombiesMatrix[cellindexes.Item2, cellindexes.Item1 - 1].Clear();
+
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
+                {
+                    Zombies.Remove(zombie);
+                }
+                ZombiesMatrix[cellindexes.Item2, cellindexes.Item1].Clear();
+
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1 + 1])
+                {
+                    Zombies.Remove(zombie);
+                }
+                ZombiesMatrix[cellindexes.Item2, cellindexes.Item1 + 1].Clear();
+
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1 - 1])
+                {
+                    Zombies.Remove(zombie);
+                }
+                ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1 - 1].Clear();
+
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1])
+                {
+                    Zombies.Remove(zombie);
+                }
+                ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1].Clear();
+
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1 + 1])
+                {
+                    Zombies.Remove(zombie);
+                }
+                ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1 + 1].Clear();
+            }
         }
+
         private void PotatoMineExplode(Plant plant)
         {
+
         }
 
     }

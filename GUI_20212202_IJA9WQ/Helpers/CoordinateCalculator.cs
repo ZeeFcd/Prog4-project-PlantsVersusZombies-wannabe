@@ -331,6 +331,11 @@ namespace GUI_20212202_IJA9WQ.Helpers
         {
             return LeftShopBorder < x && x < RightShopBorder && UpperShopBorder < y && y < LowerShopBorder;
         }
+
+        public bool IsShovel(double x, double y)
+        {
+            return LeftShopBorder < x && x < RightShopBorder && ShovelY < y && y < ShovelY+ShopItemHeight;
+        }
         public bool IsSunReachedShop(double x, double y)
         {
             return ShopSunX - SunWidth * 0.6 < x &&
