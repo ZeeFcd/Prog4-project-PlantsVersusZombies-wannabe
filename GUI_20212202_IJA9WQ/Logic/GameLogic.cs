@@ -29,7 +29,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public Plant[] PlantsSelectionDay { get; }
         public int CurrentlySelectedIndex { get => currentlySelectedIndex; }
         public int SunValue { get => sunValue; }
-        public bool ShovelSelected { get => shovelSelected;}
+        public bool ShovelSelected { get => shovelSelected; }
 
         public GameLogic(CoordinateCalculator coordinateCalculator)
         {
@@ -41,7 +41,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             LawnMovers = new LawnMover[5];
             Suns = new List<Sun>();
             gameClock = 0;
-            
+
             sunValue = 50;
             PlantsMatrix = new Plant[5, 9];
             ZombiesMatrix = new List<Zombie>[5, 9];
@@ -58,14 +58,14 @@ namespace GUI_20212202_IJA9WQ.Logic
             sunflower.AbilityEvent += SunFlowerProduce;
             cherrybomb.AbilityEvent += CherryBombExplode;
             potatoMine.AbilityEvent += PotatoMineExplode;
-            snowPea.AbilityEvent+= ShooterShoot;
+            snowPea.AbilityEvent += ShooterShoot;
 
             PlantsSelectionDay = new Plant[] { peashooter, sunflower, cherrybomb, wallNut, potatoMine, snowPea };
 
             for (int i = 0; i < 5; i++)
             {
-                LawnMovers[i]=new LawnMover(coordinateCalculator.LawMoverStartX,
-                    coordinateCalculator.LawMoverStartYShift + coordinateCalculator.LawMoverStartY * (i+1),
+                LawnMovers[i] = new LawnMover(coordinateCalculator.LawMoverStartX,
+                    coordinateCalculator.LawMoverStartYShift + coordinateCalculator.LawMoverStartY * (i + 1),
                     coordinateCalculator.LawMoverWidth,
                     coordinateCalculator.LawMoverHeight,
                     coordinateCalculator.LawMoverSpeed);
@@ -73,7 +73,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             for (int i = 1; i < 6; i++)
             {
-                if (i%2==1)
+                if (i % 2 == 1)
                 {
                     Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
                     coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * i,
@@ -81,7 +81,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     coordinateCalculator.ZombieHeight,
                     coordinateCalculator.ZombieSpeed));
                 }
-                
+
             }
 
         }
@@ -119,7 +119,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed)); ;
 
-             
+
             }
             if (gameClock == 100)
             {
@@ -133,7 +133,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieWidth,
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed));
-            
+
             }
             if (gameClock == 110)
             {
@@ -158,7 +158,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieSpeed));
             }
 
-            
+
             foreach (var plant in PlantsSelectionDay)
             {
                 plant.TimeChanged();
@@ -184,11 +184,11 @@ namespace GUI_20212202_IJA9WQ.Logic
                 }
             }
         }
-        
+
         private void LawMoverStart(int i)
         {
             LawnMovers[i].IsStarted = true;
-                        
+
         }
 
         public void PlantSelect(int i)
@@ -198,7 +198,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             {
                 currentlySelectedIndex = i;
             }
-            
+
         }
         public void ShovelSelect()
         {
@@ -208,7 +208,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         public void PlantDelete(int j, int i)
         {
-            Plants.Remove(PlantsMatrix[i,j]);
+            Plants.Remove(PlantsMatrix[i, j]);
             PlantsMatrix[i, j] = null;
             shovelSelected = false;
         }
@@ -275,7 +275,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             if (PlantsMatrix[i, j] == null)
             {
                 PlantsSelectionDay[currentlySelectedIndex].Buy();
-                (double, double) plantGameCoords = coordinateCalculator.WhichCoordinateInGameMapPlant(j, i);                
+                (double, double) plantGameCoords = coordinateCalculator.WhichCoordinateInGameMapPlant(j, i);
                 Plant plantToplace = PlantsSelectionDay[currentlySelectedIndex].GetCopy();
                 plantToplace.PlaceX = plantGameCoords.Item1;
                 plantToplace.PlaceY = plantGameCoords.Item2;
@@ -287,9 +287,9 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         private void ZombieTimeStep(Zombie zombie)
         {
-            if (zombie.PlaceX<coordinateCalculator.LeftMapBorder)
+            if (zombie.PlaceX < coordinateCalculator.LeftMapBorder)
             {
-                if (LawnMovers[zombie.PlaceGameMatrixY]!=null)
+                if (LawnMovers[zombie.PlaceGameMatrixY] != null)
                 {
                     LawMoverStart(zombie.PlaceGameMatrixY);
                 }
@@ -306,7 +306,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     firstplantXindex = FirstPlantInSameRow(zombie);
                     if (firstplantXindex > -1)
                     {
-                        if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex])|| PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].State == AttackStateEnum.InActive)
+                        if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]) || PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].State == AttackStateEnum.InActive)
                         {
                             zombie.State = AttackStateEnum.Normal;
                             zombie.Move();
@@ -333,7 +333,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     PlaceZombieInGameMatrix(zombie);
                 }
             }
-            
+
         }
         private void LawMoverStep(int i)
         {
@@ -372,9 +372,9 @@ namespace GUI_20212202_IJA9WQ.Logic
         }
         private void ShootTimeStep(Plant plant)
         {
-            if (IsZombieInSameRow(plant)>-1)
+            if (IsZombieInSameRow(plant) > -1)
             {
-                (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX+plant.DisplayWidth/2, plant.PlaceY+plant.DisplayHeight/2);
+                (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
                 if (plant.Type == PlantEnum.Peashooter)
                 {
                     Bullets.Add(new Bullet(
@@ -397,7 +397,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                                         coordinateCalculator.BulletSpeed,
                                         true,
                                         plant.Damage
-                                   )); 
+                                   ));
                 }
 
             }
@@ -407,8 +407,8 @@ namespace GUI_20212202_IJA9WQ.Logic
         {
             foreach (var sun in Suns)
             {
-                sun.IsInSun(x,y);
-            }   
+                sun.IsInSun(x, y);
+            }
         }
 
         public void SunMoving()
@@ -429,7 +429,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                         sun.Move(stopCondition);
                     }
                 }
-               
+
             }
             for (int k = 0; k < sunstoremove.Count; k++)
             {
@@ -437,7 +437,14 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
         }
 
-
+        public void ClearZombieCell(List<Zombie> zombiecell)
+        {
+            foreach (var zombie in zombiecell)
+            {
+                Zombies.Remove(zombie);
+            }
+            zombiecell.Clear();
+        }
         private void ShooterShoot(Plant plant) 
         {
             if (IsZombieInSameRow(plant) > -1)
@@ -455,7 +462,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                 
             }
         }
-
         private void SunFlowerProduce(Plant plant)
         {
             (int, int) cellindexes = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
@@ -535,7 +541,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         private void PotatoMineExplode(Plant plant)
         {
-
+            
         }
 
     }
