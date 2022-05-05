@@ -29,7 +29,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public PotatoMine(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
-            this.HP = 1;
+            this.HP = 50;
             this.Damage = 20;
             this.Price = 25;
             this.Cooldown = 10;
@@ -61,16 +61,24 @@ namespace GUI_20212202_IJA9WQ.Models
             {
                 State = AttackStateEnum.Normal;
             }           
-            else if (deathStartTime != 0 && innerClock - deathStartTime == 20)
+            else if (deathStartTime != 0 && innerClock - deathStartTime == 30)
             {
                 State = AttackStateEnum.Dead;
             }
-            else
+            
+        }
+
+        public override void DamagedBy(OffensiveItem attacker)
+        {
+            if (deathStartTime==0)
             {
+                deathStartTime = innerClock;
+                State = AttackStateEnum.Attack;
                 AbilityEvent?.Invoke(this);
             }
         }
-       
+
+
         public override void TimeChanged()
         {
             if (!ispurchaseable && innerClock - timeWhenBought == 100)

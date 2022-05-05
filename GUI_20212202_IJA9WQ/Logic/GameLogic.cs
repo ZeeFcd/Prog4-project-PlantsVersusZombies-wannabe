@@ -162,17 +162,17 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed));
             }
-
+            if (gameClock == 500)
+            {
+                ;
+            }
 
             foreach (var plant in PlantsSelectionDay)
             {
                 plant.TimeChanged();
             }
-            foreach (var zombie in Zombies)
-            {
-                zombie.TimeChanged();
-            }
-            PlantsTimChanged();
+            ZombieTimeChanged();
+            PlantsTimeChanged();
 
 
             gameClock += 1;
@@ -188,7 +188,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 }
             }
         }
-        private void PlantsTimChanged() 
+        private void PlantsTimeChanged() 
         {
             List<Plant> deadplants = new List<Plant>();
             foreach (var plant in Plants)
@@ -208,6 +208,26 @@ namespace GUI_20212202_IJA9WQ.Logic
                 PlantTerminated(deadplant);
             }
 
+        }
+        private void ZombieTimeChanged()
+        {
+            List<Zombie> deadzombies = new List<Zombie>();
+            foreach (var zombie in Zombies)
+            {
+                if (zombie.State == AttackStateEnum.Dead)
+                {
+                    deadzombies.Add(zombie);
+                }
+                else
+                {
+                    zombie.TimeChanged();
+                }
+
+            }
+            foreach (var deadzombie in deadzombies)
+            {
+                ZombieTerminated(deadzombie);
+            }
         }
         private void LawMoverStart(int i)
         {
@@ -385,38 +405,6 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
 
         }
-        private void ShootTimeStep(Plant plant)
-        {
-            if (IsZombieInSameRow(plant) > -1)
-            {
-                (int, int) coordinates = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
-                if (plant.Type == PlantEnum.Peashooter)
-                {
-                    Bullets.Add(new Bullet(
-                                        coordinateCalculator.BulletX + coordinates.Item1 * coordinateCalculator.GameMapCellWidth,
-                                        coordinateCalculator.BulletY + coordinates.Item2 * coordinateCalculator.GameMapCellHeight,
-                                        coordinateCalculator.BulletWidth,
-                                        coordinateCalculator.BulletHeight,
-                                        coordinateCalculator.BulletSpeed,
-                                        false,
-                                        plant.Damage
-                                   ));
-                }
-                else if (plant.Type == PlantEnum.Snowpeashooter)
-                {
-                    Bullets.Add(new Bullet(
-                                        coordinateCalculator.BulletX + coordinates.Item1 * coordinateCalculator.GameMapCellWidth,
-                                        coordinateCalculator.BulletY + coordinates.Item2 * coordinateCalculator.GameMapCellHeight,
-                                        coordinateCalculator.BulletWidth,
-                                        coordinateCalculator.BulletHeight,
-                                        coordinateCalculator.BulletSpeed,
-                                        true,
-                                        plant.Damage
-                                   ));
-                }
-
-            }
-        }
         public void IsSunSelected(double x, double y)
         {
             foreach (var sun in Suns)
@@ -506,12 +494,36 @@ namespace GUI_20212202_IJA9WQ.Logic
         {
             Plant plant = gameitem as Plant;
             (int, int) cellindexes = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
-            Plants.Remove(PlantsMatrix[cellindexes.Item2, cellindexes.Item1]);
+            Plants.Remove(plant);
             PlantsMatrix[cellindexes.Item2, cellindexes.Item1] = null;
+        }
+        private void ZombieTerminated(Zombie zombie) 
+        {
+            Zombies.Remove(zombie);
+            ZombiesMatrix[zombie.PlaceGameMatrixY, zombie.PlaceGameMatrixX].Remove(zombie);
         }
         private void PotatoMineExplode(Plant plant)
         {
-            
+            (int, int) cellindexes = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
+            if (cellindexes.Item1!=8)
+            {
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
+                {
+                    zombie.Die();
+                }
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1+1])
+                {
+                    zombie.Die();
+                }   
+            }
+            else
+            {
+                foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
+                {
+                    zombie.Die();
+                }
+            }
+
         }
 
     }

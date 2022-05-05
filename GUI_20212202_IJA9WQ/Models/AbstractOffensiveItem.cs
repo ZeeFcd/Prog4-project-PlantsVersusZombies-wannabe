@@ -10,6 +10,7 @@ namespace GUI_20212202_IJA9WQ.Models
     public abstract class OffensiveItem : GameItem
     {
         protected int innerClock;
+        protected int deathStartTime;
         public AttackStateEnum State { get;set; }
         public int Damage { get; set; }
         public int HP { get; set; }
@@ -24,7 +25,8 @@ namespace GUI_20212202_IJA9WQ.Models
             this.HP -= attacker.Damage;
             if (HP<1)
             {
-                Terminated?.Invoke(this);
+                State = AttackStateEnum.Dead;
+                //Terminated?.Invoke(this);
             }
         }
 

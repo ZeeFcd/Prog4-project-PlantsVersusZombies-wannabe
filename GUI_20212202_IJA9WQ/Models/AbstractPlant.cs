@@ -15,7 +15,7 @@ namespace GUI_20212202_IJA9WQ.Models
         protected bool hasfrozenbullet;
         protected bool ispurchaseable;
         protected int timeWhenBought;
-        protected int deathStartTime;
+        
       
         public Plant(double displayWidth, double displayHeight) // ideiglenes paraméterek
         {
