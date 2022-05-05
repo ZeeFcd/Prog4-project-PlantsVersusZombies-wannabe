@@ -48,10 +48,6 @@ namespace GUI_20212202_IJA9WQ.Models
             get { return new  RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
         }
 
-        public void TerminateIfDead() 
-        {
-           
-        }
         public abstract void Ability();
         public abstract Plant GetCopy();
         public void Buy() 

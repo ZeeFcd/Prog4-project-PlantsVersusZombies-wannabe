@@ -424,7 +424,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 sun.IsInSun(x, y);
             }
         }
-        public void SunMoving()
+        private void SunMoving()
         {
             List<Sun> sunstoremove = new List<Sun>();
             foreach (var sun in Suns)
@@ -449,7 +449,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 Suns.Remove(sunstoremove[k]);
             }
         }
-        public void ClearZombieCell(List<Zombie> zombiecell)
+        private void ClearZombieCell(List<Zombie> zombiecell)
         {
             foreach (var zombie in zombiecell)
             {

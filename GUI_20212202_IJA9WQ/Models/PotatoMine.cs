@@ -55,13 +55,19 @@ namespace GUI_20212202_IJA9WQ.Models
             };
         }
 
-       
-
         public override void Ability()
         {
             if (innerClock == 588)
             {
                 State = AttackStateEnum.Normal;
+            }           
+            else if (deathStartTime != 0 && innerClock - deathStartTime == 20)
+            {
+                State = AttackStateEnum.Dead;
+            }
+            else
+            {
+                AbilityEvent?.Invoke(this);
             }
         }
        

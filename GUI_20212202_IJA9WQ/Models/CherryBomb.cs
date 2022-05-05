@@ -52,7 +52,6 @@ namespace GUI_20212202_IJA9WQ.Models
                 innerClock=0,
                 Terminated=this.Terminated
                 
-                
             };
         }
 
