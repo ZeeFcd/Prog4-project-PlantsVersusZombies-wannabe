@@ -57,7 +57,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void Ability()
         {
-            if (innerClock == 588)
+            if (innerClock == 30) // 588
             {
                 State = AttackStateEnum.Normal;
             }           

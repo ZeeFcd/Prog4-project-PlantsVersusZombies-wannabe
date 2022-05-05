@@ -162,11 +162,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed));
             }
-            if (gameClock == 500)
-            {
-                ;
-            }
-
+   
             foreach (var plant in PlantsSelectionDay)
             {
                 plant.TimeChanged();
@@ -177,7 +173,6 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             gameClock += 1;
         }
-
         private void ZombiesMatrixInitialize()
         {
             for (int i = 0; i < ZombiesMatrix.GetLength(0); i++)
@@ -510,10 +505,12 @@ namespace GUI_20212202_IJA9WQ.Logic
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
                 {
                     zombie.Die();
+                    ;
                 }
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1+1])
                 {
                     zombie.Die();
+                    ;
                 }   
             }
             else
@@ -521,6 +518,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
                 {
                     zombie.Die();
+                    ;
                 }
             }
 
