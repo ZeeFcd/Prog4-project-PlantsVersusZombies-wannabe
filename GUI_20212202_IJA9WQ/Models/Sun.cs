@@ -27,17 +27,7 @@ namespace GUI_20212202_IJA9WQ.Models
         }
 
         public (double, double) Speed { get => speed; set => speed = value; }
-        public double PlaceX
-        {
-            get { return placeX; }
-            set { placeX = value; }
-        }
-        public double PlaceY
-        {
-            get { return placeY; }
-            set { placeY = value; }
-        }
-
+       
         public bool Ismoving { get => ismoving; }
 
         public void Move(bool stopCondition)
@@ -60,9 +50,6 @@ namespace GUI_20212202_IJA9WQ.Models
            
         }
 
-        public override void Terminated()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

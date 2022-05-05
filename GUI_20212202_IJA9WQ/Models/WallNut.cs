@@ -46,13 +46,9 @@ namespace GUI_20212202_IJA9WQ.Models
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
                 placeY = this.placeY,
-                innerClock = 0
+                innerClock = 0,
+                Terminated = this.Terminated
             };
-        }
-
-        public override void Terminated()
-        {
-            throw new NotImplementedException();
         }
 
         public override void Ability()

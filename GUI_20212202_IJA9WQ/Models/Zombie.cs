@@ -40,9 +40,5 @@ namespace GUI_20212202_IJA9WQ.Models
             }
         }
 
-        public override void Terminated()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

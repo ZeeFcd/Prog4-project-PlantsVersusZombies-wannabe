@@ -14,8 +14,19 @@ namespace GUI_20212202_IJA9WQ.Models
         protected double displayWidth;
         protected double displayHeight;
         public abstract Geometry Area { get; }
-        public abstract void Terminated();
-        
+        public Action<GameItem> Terminated;
+
+        public double PlaceX
+        {
+            get { return placeX; }
+            set { placeX = value; }
+        }
+        public double PlaceY
+        {
+            get { return placeY; }
+            set { placeY = value; }
+        }
+
         public bool IsCollision(GameItem other)
         {
             return Geometry.Combine(

@@ -11,6 +11,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class CherryBomb : Plant
     {
+        
         public override Brush ShopImageBrush
         {
             get
@@ -31,7 +32,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.HP = 100;
             this.Damage = 20;
             this.Price = 150;
-            this.Cooldown = 10;
+            this.Cooldown = 20;
             Type = PlantEnum.Cherrybomb;
             innerClock = 0;
             ispurchaseable = true;
@@ -48,14 +49,11 @@ namespace GUI_20212202_IJA9WQ.Models
                 placeX = this.placeX,
                 placeY = this.placeY,
                 AbilityEvent=this.AbilityEvent,
-                innerClock=0
+                innerClock=0,
+                Terminated=this.Terminated
+                
                 
             };
-        }
-
-        public override void Terminated()
-        {
-            throw new NotImplementedException();
         }
 
         public override void Ability()
@@ -63,18 +61,24 @@ namespace GUI_20212202_IJA9WQ.Models
             if (innerClock == 70 )
             {
                 State = AttackStateEnum.Attack;
+                deathStartTime = innerClock;
                 //explode
                 AbilityEvent?.Invoke(this);
             }
+            else if (deathStartTime != 0 && innerClock - deathStartTime == 20)
+            {
+                State = AttackStateEnum.Dead;
+            }            
         }
 
         public override void TimeChanged()
         {
-            if (!ispurchaseable && innerClock-timeWhenBought==300)
+            if (!ispurchaseable && innerClock-timeWhenBought==20)
             {
                 ispurchaseable = true;
                 timeWhenBought = 0;
             }
+          
             base.TimeChanged();
         }
     }

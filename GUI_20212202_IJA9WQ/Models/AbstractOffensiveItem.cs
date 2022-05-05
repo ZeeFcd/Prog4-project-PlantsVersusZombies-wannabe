@@ -13,16 +13,6 @@ namespace GUI_20212202_IJA9WQ.Models
         public AttackStateEnum State { get;set; }
         public int Damage { get; set; }
         public int HP { get; set; }
-        public double PlaceX
-        {
-            get { return placeX; }
-            set { placeX = value; }
-        }
-        public double PlaceY
-        {
-            get { return placeY; }
-            set { placeY = value; }
-        }
 
         public int InnerClock
         {
@@ -34,7 +24,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.HP -= attacker.Damage;
             if (HP<1)
             {
-                Terminated();
+                Terminated?.Invoke(this);
             }
         }
 

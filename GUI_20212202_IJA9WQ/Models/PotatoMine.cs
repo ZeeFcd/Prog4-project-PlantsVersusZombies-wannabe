@@ -11,6 +11,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class PotatoMine : Plant
     {
+       
         public override Brush ShopImageBrush
         {
             get
@@ -49,15 +50,12 @@ namespace GUI_20212202_IJA9WQ.Models
                 placeX = this.placeX,
                 placeY = this.placeY,
                 AbilityEvent = this.AbilityEvent,
-                innerClock = 0
+                innerClock = 0,
+                Terminated = this.Terminated
             };
         }
 
-        public override void Terminated()
-        {
-            State = AttackStateEnum.Attack;
-            AbilityEvent?.Invoke(this);
-        }
+       
 
         public override void Ability()
         {

@@ -25,9 +25,6 @@ namespace GUI_20212202_IJA9WQ.Models
         {
             get { return new RectangleGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
         }
-        public override void Terminated()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

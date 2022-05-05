@@ -48,7 +48,8 @@ namespace GUI_20212202_IJA9WQ.Models
                 placeX = this.placeX,
                 placeY = this.placeY,
                 AbilityEvent = this.AbilityEvent,
-                innerClock = 1
+                innerClock = 1,
+                Terminated = this.Terminated
             };
         }
 
@@ -60,11 +61,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 AbilityEvent?.Invoke(this);
             }
         }
-        public override void Terminated()
-        {
-            throw new NotImplementedException();
-        }
-
+      
 
         public override void TimeChanged()
         {

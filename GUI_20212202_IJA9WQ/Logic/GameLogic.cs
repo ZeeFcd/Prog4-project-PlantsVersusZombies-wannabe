@@ -62,6 +62,11 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             PlantsSelectionDay = new Plant[] { peashooter, sunflower, cherrybomb, wallNut, potatoMine, snowPea };
 
+            foreach (var plant in PlantsSelectionDay)
+            {
+                plant.Terminated = PlantTerminated;
+            }
+
             for (int i = 0; i < 5; i++)
             {
                 LawnMovers[i] = new LawnMover(coordinateCalculator.LawMoverStartX,
@@ -163,14 +168,13 @@ namespace GUI_20212202_IJA9WQ.Logic
             {
                 plant.TimeChanged();
             }
-            foreach (var plant in Plants)
-            {
-                plant.TimeChanged();
-            }
             foreach (var zombie in Zombies)
             {
                 zombie.TimeChanged();
             }
+            PlantsTimChanged();
+
+
             gameClock += 1;
         }
 
@@ -184,13 +188,32 @@ namespace GUI_20212202_IJA9WQ.Logic
                 }
             }
         }
+        private void PlantsTimChanged() 
+        {
+            List<Plant> deadplants = new List<Plant>();
+            foreach (var plant in Plants)
+            {
+                if (plant.State == AttackStateEnum.Dead)
+                {
+                    deadplants.Add(plant);
+                }
+                else
+                {
+                    plant.TimeChanged();
+                }
 
+            }
+            foreach (var deadplant in deadplants)
+            {
+                PlantTerminated(deadplant);
+            }
+
+        }
         private void LawMoverStart(int i)
         {
             LawnMovers[i].IsStarted = true;
 
         }
-
         public void PlantSelect(int i)
         {
             shovelSelected = false;
@@ -205,15 +228,12 @@ namespace GUI_20212202_IJA9WQ.Logic
             currentlySelectedIndex = -1;
             shovelSelected = true;
         }
-
         public void PlantDelete(int j, int i)
         {
             Plants.Remove(PlantsMatrix[i, j]);
             PlantsMatrix[i, j] = null;
             shovelSelected = false;
         }
-
-
         private int FirstPlantInSameRow(Zombie zombie)
         {
             int n = zombie.PlaceGameMatrixX;
@@ -227,7 +247,6 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
             return -1;
         }
-
         private int IsZombieInSameRow(OffensiveItem offensiveItem)
         {
             (int, int) cellindexes = coordinateCalculator.WhichCellInGameMap(offensiveItem.PlaceX, offensiveItem.PlaceY);
@@ -242,7 +261,6 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
             return -1;
         }
-
         private void PlaceZombieInGameMatrix(Zombie zombie)
         {
             if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
@@ -269,7 +287,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                 }
             }
         }
-
         public void PlantToPlant(int j, int i)
         {
             if (PlantsMatrix[i, j] == null)
@@ -284,7 +301,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                 currentlySelectedIndex = -1;
             }
         }
-
         private void ZombieTimeStep(Zombie zombie)
         {
             if (zombie.PlaceX < coordinateCalculator.LeftMapBorder)
@@ -333,7 +349,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                     PlaceZombieInGameMatrix(zombie);
                 }
             }
-
         }
         private void LawMoverStep(int i)
         {
@@ -402,7 +417,6 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             }
         }
-
         public void IsSunSelected(double x, double y)
         {
             foreach (var sun in Suns)
@@ -410,7 +424,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                 sun.IsInSun(x, y);
             }
         }
-
         public void SunMoving()
         {
             List<Sun> sunstoremove = new List<Sun>();
@@ -436,7 +449,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                 Suns.Remove(sunstoremove[k]);
             }
         }
-
         public void ClearZombieCell(List<Zombie> zombiecell)
         {
             foreach (var zombie in zombiecell)
@@ -477,68 +489,26 @@ namespace GUI_20212202_IJA9WQ.Logic
         private void CherryBombExplode(Plant plant)
         {
             (int, int) cellindexes = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
-            if (false)
+
+            for (int i = cellindexes.Item2-1; i < cellindexes.Item2 +2; i++)
             {
-
+                for (int j = cellindexes.Item1 - 1; j < cellindexes.Item1 + 2; j++)
+                {
+                    if (!(j < 0 || j > PlantsMatrix.GetLength(1) - 1 || i < 0 || i > PlantsMatrix.GetLength(0) - 1))
+                    {
+                        ClearZombieCell(ZombiesMatrix[i, j]);
+                    }
+                }
             }
-            else
-            {
-                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1 - 1])
-                {
-                    Zombies.Remove(zombie);
-                }
-                ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1 - 1].Clear();
-
-                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1])
-                {
-                    Zombies.Remove(zombie);
-                }
-                ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1].Clear();
-
-                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1 + 1])
-                {
-                    Zombies.Remove(zombie);
-                }
-                ZombiesMatrix[cellindexes.Item2 - 1, cellindexes.Item1 + 1].Clear();
-
-                foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1 - 1])
-                {
-                    Zombies.Remove(zombie);
-                }
-                ZombiesMatrix[cellindexes.Item2, cellindexes.Item1 - 1].Clear();
-
-                foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
-                {
-                    Zombies.Remove(zombie);
-                }
-                ZombiesMatrix[cellindexes.Item2, cellindexes.Item1].Clear();
-
-                foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1 + 1])
-                {
-                    Zombies.Remove(zombie);
-                }
-                ZombiesMatrix[cellindexes.Item2, cellindexes.Item1 + 1].Clear();
-
-                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1 - 1])
-                {
-                    Zombies.Remove(zombie);
-                }
-                ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1 - 1].Clear();
-
-                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1])
-                {
-                    Zombies.Remove(zombie);
-                }
-                ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1].Clear();
-
-                foreach (var zombie in ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1 + 1])
-                {
-                    Zombies.Remove(zombie);
-                }
-                ZombiesMatrix[cellindexes.Item2 + 1, cellindexes.Item1 + 1].Clear();
-            }
+          
         }
-
+        private void PlantTerminated(GameItem gameitem) 
+        {
+            Plant plant = gameitem as Plant;
+            (int, int) cellindexes = coordinateCalculator.WhichCellInGameMap(plant.PlaceX + plant.DisplayWidth / 2, plant.PlaceY + plant.DisplayHeight / 2);
+            Plants.Remove(PlantsMatrix[cellindexes.Item2, cellindexes.Item1]);
+            PlantsMatrix[cellindexes.Item2, cellindexes.Item1] = null;
+        }
         private void PotatoMineExplode(Plant plant)
         {
             
