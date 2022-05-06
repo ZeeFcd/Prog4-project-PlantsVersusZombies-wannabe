@@ -100,7 +100,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                                 var shiftX = coordinateCalculator.GameMapCellWidth * 0.17;
                                 var shiftY = coordinateCalculator.GameMapCellHeight * 0.17;
                                 Geometry explosion = new RectangleGeometry(
-                                    new Rect(plant.PlaceX - shiftX, plant.PlaceY, coordinateCalculator.GameMapCellWidth *2+ shiftX, coordinateCalculator.GameMapCellHeight - shiftY));
+                                    new Rect(plant.PlaceX - shiftX, plant.PlaceY, coordinateCalculator.GameMapCellWidth + shiftX, coordinateCalculator.GameMapCellHeight - shiftY));
                                 drawingContext.DrawGeometry(GameBrushes.PotatoMineExplodedBrush, null, explosion);
                             }
                            

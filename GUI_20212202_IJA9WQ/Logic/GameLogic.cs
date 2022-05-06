@@ -508,12 +508,13 @@ namespace GUI_20212202_IJA9WQ.Logic
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
                 {
                     zombie.Die();
-                    ;
                 }
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1+1])
                 {
-                    zombie.Die();
-                    ;
+                    if (zombie.PlaceX- (plant.PlaceX+plant.DisplayWidth)<plant.DisplayWidth/3)
+                    {
+                        zombie.Die();
+                    } 
                 }   
             }
             else
@@ -521,7 +522,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
                 {
                     zombie.Die();
-                    ;
                 }
             }
          
