@@ -331,37 +331,40 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
             else
             {
-                int firstplantXindex = 0;
-                if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
+                if (zombie.State!=AttackStateEnum.Dead)
                 {
-                    firstplantXindex = FirstPlantInSameRow(zombie);
-                    if (firstplantXindex > -1)
+                    int firstplantXindex = 0;
+                    if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
                     {
-                        if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]) || PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].State == AttackStateEnum.InActive)
+                        firstplantXindex = FirstPlantInSameRow(zombie);
+                        if (firstplantXindex > -1)
+                        {
+                            if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]) || PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].State == AttackStateEnum.InActive)
+                            {
+                                zombie.State = AttackStateEnum.Normal;
+                                zombie.Move();
+                                PlaceZombieInGameMatrix(zombie);
+                            }
+                            else
+                            {
+
+                                zombie.State = AttackStateEnum.Attack;
+                                PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].DamagedBy(zombie);
+                                ;// ATTACK THE PLANT
+                            }
+                        }
+                        else
                         {
                             zombie.State = AttackStateEnum.Normal;
                             zombie.Move();
                             PlaceZombieInGameMatrix(zombie);
                         }
-                        else
-                        {
-
-                            zombie.State = AttackStateEnum.Attack;
-                            PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].DamagedBy(zombie);
-                            ;// ATTACK THE PLANT
-                        }
                     }
                     else
                     {
-                        zombie.State = AttackStateEnum.Normal;
                         zombie.Move();
                         PlaceZombieInGameMatrix(zombie);
                     }
-                }
-                else
-                {
-                    zombie.Move();
-                    PlaceZombieInGameMatrix(zombie);
                 }
             }
         }
@@ -521,7 +524,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     ;
                 }
             }
-
+         
         }
 
     }
