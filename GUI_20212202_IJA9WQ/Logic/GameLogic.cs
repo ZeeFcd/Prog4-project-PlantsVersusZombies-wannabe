@@ -511,7 +511,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 }
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1+1])
                 {
-                    if (zombie.PlaceX- (plant.PlaceX+plant.DisplayWidth)<plant.DisplayWidth/3)
+                    if (zombie.PlaceX- (plant.PlaceX+plant.DisplayWidth/3)<plant.DisplayWidth/8)
                     {
                         zombie.Die();
                     } 

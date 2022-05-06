@@ -32,7 +32,7 @@ namespace GUI_20212202_IJA9WQ.Models
             return Geometry.Combine(
                 this.Area,
                 other.Area,
-                GeometryCombineMode.Intersect, null).GetArea() > 0;
+                GeometryCombineMode.Intersect, null).GetArea() > other.Area.GetArea()/3;
         }
 
     }

@@ -97,7 +97,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             }
                             else
                             {
-                                var shiftX = coordinateCalculator.GameMapCellWidth * 0.17;
+                                var shiftX = coordinateCalculator.GameMapCellWidth * 0.2;
                                 var shiftY = coordinateCalculator.GameMapCellHeight * 0.17;
                                 Geometry explosion = new RectangleGeometry(
                                     new Rect(plant.PlaceX - shiftX, plant.PlaceY, coordinateCalculator.GameMapCellWidth + shiftX, coordinateCalculator.GameMapCellHeight - shiftY));
