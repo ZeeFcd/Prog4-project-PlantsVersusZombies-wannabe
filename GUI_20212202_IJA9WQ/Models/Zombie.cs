@@ -12,8 +12,6 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Zombie : Moveable
     {
-        ZombieStateEnum zombieState;
-
         public Zombie(double placeX, double placeY, double displayWidth, double displayHeight, double speed)
         {
             this.placeX = placeX;
@@ -21,7 +19,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
             this.speed = speed;
-            this.zombieState = ZombieStateEnum.Normal;
+            this.ZombieState = ZombieStateEnum.Normal;
             this.PlaceGameMatrixX = -1;
             this.PlaceGameMatrixY = -1;
             this.State = AttackStateEnum.Normal;
@@ -40,9 +38,28 @@ namespace GUI_20212202_IJA9WQ.Models
             }
         }
 
+        public ZombieStateEnum ZombieState { get; private set; }
+
         public void Die() 
         {
             State = AttackStateEnum.Dead;
+        }
+        public void Slowed()
+        {
+            ZombieState = ZombieStateEnum.Slowed;
+        }
+
+        public override void Move()
+        {
+            if (ZombieState==ZombieStateEnum.Slowed)
+            {
+                placeX += speed/2;
+            }
+            else
+            {
+                base.Move();
+            }
+           
         }
 
     }

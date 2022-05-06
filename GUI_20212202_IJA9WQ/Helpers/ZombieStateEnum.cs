@@ -8,6 +8,6 @@ namespace GUI_20212202_IJA9WQ.Helpers
 {
     public enum ZombieStateEnum
     {
-        Normal, Ally, Stunned,Exploded
+        Normal,Slowed, Ally, Stunned,Exploded
     }
 }
