@@ -12,6 +12,7 @@
         Loaded="Window_Loaded"
         SizeChanged="Window_SizeChanged"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        MouseMove="Window_MouseMove"
         WindowState="Maximized"
         Height="639" Width="1041" >
     <Grid x:Name="grid">

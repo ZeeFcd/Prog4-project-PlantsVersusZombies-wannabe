@@ -18,6 +18,8 @@ namespace GUI_20212202_IJA9WQ.Renderer
         IGameLogic logic;
         CoordinateCalculator coordinateCalculator;
         GameAnimationBrushes brushes;
+        double mouseX;
+        double mouseY;
 
         public void SetupBrushes(GameAnimationBrushes brushes)
         {
@@ -26,6 +28,11 @@ namespace GUI_20212202_IJA9WQ.Renderer
         public void SetupLogic(IGameLogic logic)
         {
             this.logic = logic;
+        }
+        public void SetMouse(double x, double y) 
+        {
+            mouseX = x;
+            mouseY = y;
         }
         public void SetupCoordinateCalculator(CoordinateCalculator coordinateCalculator)
         {
@@ -170,8 +177,20 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     drawingContext.DrawGeometry(GameBrushes.SunBrush, null /*new Pen(Brushes.Black, 1)*/, sun.Area);
                 }
 
+                if (logic.ShovelSelected)
+                {
+                    Geometry shovel = new RectangleGeometry(
+                                   new Rect(mouseX - coordinateCalculator.PlantWidth / 2, mouseY - coordinateCalculator.PlantHeight / 2, coordinateCalculator.PlantWidth,coordinateCalculator.PlantHeight));
+                    drawingContext.DrawGeometry(GameBrushes.CherryBrush, null /*new Pen(Brushes.Black, 1)*/, shovel);
+                }
+                else if (logic.CurrentlySelectedIndex>-1)
+                {
+                    Geometry shovel = new RectangleGeometry(
+                                   new Rect(mouseX-coordinateCalculator.PlantWidth/2, mouseY-coordinateCalculator.PlantHeight/2, coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight));
+                    drawingContext.DrawGeometry(GameBrushes.CherryBrush, null /*new Pen(Brushes.Black, 1)*/, shovel);
+                }
+               
             }
         }
-
     }
 }

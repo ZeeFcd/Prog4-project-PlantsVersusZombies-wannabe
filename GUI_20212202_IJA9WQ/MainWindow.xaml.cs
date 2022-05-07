@@ -28,6 +28,8 @@ namespace GUI_20212202_IJA9WQ
         GameLogic logic;
         CoordinateCalculator coordinateCalculator;
         GameAnimationBrushes brushes;
+        double mouseX;
+        double mouseY;
 
         public MainWindow()
         {
@@ -65,6 +67,7 @@ namespace GUI_20212202_IJA9WQ
             if (coordinateCalculator.IsInShop(x, y))
             {
                 logic.PlantSelect(coordinateCalculator.WhichCellInShop(y));
+                display.SetMouse(mouseX, mouseY);
             }
             else if (logic.CurrentlySelectedIndex != -1 && isingamemap)
             {
@@ -74,6 +77,7 @@ namespace GUI_20212202_IJA9WQ
             else if (!logic.ShovelSelected&&coordinateCalculator.IsShovel(x,y))
             {
                 logic.ShovelSelect();
+                display.SetMouse(mouseX, mouseY);
             }
             else if (logic.ShovelSelected&& isingamemap)
             {
@@ -95,6 +99,14 @@ namespace GUI_20212202_IJA9WQ
                 coordinateCalculator.Resize(grid.ActualWidth, grid.ActualHeight);
                 display.InvalidateVisual();
             }
+        }
+
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+            mouseX = e.GetPosition(grid).X;
+            mouseY = e.GetPosition(grid).Y;
+            display.SetMouse(mouseX, mouseY);
+            display.InvalidateVisual();
         }
     }
 }
