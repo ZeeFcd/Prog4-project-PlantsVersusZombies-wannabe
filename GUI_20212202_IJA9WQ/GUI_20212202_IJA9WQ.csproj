@@ -16,6 +16,7 @@
   <ItemGroup>
     <None Remove="Images\background_day.png" />
     <None Remove="Images\background_night.png" />
+    <None Remove="Images\backtomenu.png" />
     <None Remove="Images\back_button.jpg" />
     <None Remove="Images\cherrybomb.png" />
     <None Remove="Images\cherrybombItem.png" />
@@ -442,7 +443,7 @@
     <Content Include="Images\background_night.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\back_button.jpg">
+    <Content Include="Images\backtomenu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\cherrybomb.png">
