@@ -92,50 +92,16 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             break;
                         case PlantEnum.Wallnut:
                             drawingContext.DrawGeometry(brushes.WallnutGIF[plant.InnerClock % brushes.WallnutGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
-                            break;
-                        case PlantEnum.Potatomine:
-                            if (plant.State==AttackStateEnum.InActive)
-                            {
-                                drawingContext.DrawGeometry(GameBrushes.InActivePotatoMineBrush, null, plant.Area);
-                            }
-                            else if (plant.State == AttackStateEnum.Normal)
-                            {
-                                drawingContext.DrawGeometry(brushes.PotatomineGIF[plant.InnerClock % brushes.PotatomineGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
-                            }
-                            else
-                            {
-                                var shiftX = coordinateCalculator.GameMapCellWidth * 0.2;
-                                var shiftY = coordinateCalculator.GameMapCellHeight * 0.17;
-                                Geometry explosion = new RectangleGeometry(
-                                    new Rect(plant.PlaceX - shiftX, plant.PlaceY, coordinateCalculator.GameMapCellWidth + shiftX, coordinateCalculator.GameMapCellHeight - shiftY));
-                                drawingContext.DrawGeometry(GameBrushes.PotatoMineExplodedBrush, null, explosion);
-                            }
-                           
-                            break;
+                            break;                           
+                          
                         case PlantEnum.Snowpeashooter:
                             drawingContext.DrawGeometry(brushes.SnowpeashooterGIF[plant.InnerClock % brushes.SnowpeashooterGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             break;
-                        case PlantEnum.Cherrybomb:
-                            if (plant.State==AttackStateEnum.Normal)
-                            {
-                                drawingContext.DrawGeometry(brushes.CherryGIF[(plant.InnerClock-plant.DeathStartTime) % brushes.CherryGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
-                            }
-                            else
-                            {
-                                var shiftX = coordinateCalculator.GameMapCellWidth;
-                                var shiftY = coordinateCalculator.GameMapCellHeight;
-                                Geometry explosion = new RectangleGeometry(
-                                    new Rect(plant.PlaceX - shiftX, plant.PlaceY- shiftY- 0.2 * coordinateCalculator.GameMapCellHeight, coordinateCalculator.GameMapCellWidth + 2*shiftX, coordinateCalculator.GameMapCellHeight +2* shiftY));
-                                drawingContext.DrawGeometry(brushes.PowieGIF[plant.InnerClock % brushes.PowieGIF.Count], null /*new Pen(Brushes.Black, 1)*/,explosion);
-                            }
-                            break;
+                       
                         case PlantEnum.Sunflower:
                             drawingContext.DrawGeometry(brushes.SunfloowerGIF[plant.InnerClock % brushes.SunfloowerGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             break;
-                        default:
-                            break;
                     }
-
                 }
 
                 foreach (var zombie in logic.Zombies)
@@ -152,7 +118,11 @@ namespace GUI_20212202_IJA9WQ.Renderer
                         }
                         else
                         {
-                            drawingContext.DrawGeometry(brushes.ZombieDeathGIF[(zombie.InnerClock - zombie.DeathStartTime) % brushes.ZombieDeathGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
+                            var shiftX = coordinateCalculator.ZombieWidth*0.15;
+                            var shiftY = coordinateCalculator.GameMapCellHeight*0.07;
+                            Geometry dead = new RectangleGeometry(
+                                    new Rect(zombie.PlaceX - shiftX, zombie.PlaceY - shiftY , coordinateCalculator.ZombieWidth + shiftX, coordinateCalculator.ZombieHeight + shiftY));
+                            drawingContext.DrawGeometry(brushes.ZombieDeathGIF[(zombie.InnerClock - zombie.DeathStartTime) % brushes.ZombieDeathGIF.Count], null /*new Pen(Brushes.Black, 1)*/, dead);
                         }
                     }
                     else if (zombie.State == AttackStateEnum.Normal)
@@ -197,6 +167,46 @@ namespace GUI_20212202_IJA9WQ.Renderer
                         
                     }
                     
+                }
+                foreach (var plant in logic.Plants)
+                {
+                    switch (plant.Type)
+                    {
+                        case PlantEnum.Potatomine:
+                            if (plant.State == AttackStateEnum.InActive)
+                            {
+                                drawingContext.DrawGeometry(GameBrushes.InActivePotatoMineBrush, null, plant.Area);
+                            }
+                            else if (plant.State == AttackStateEnum.Normal)
+                            {
+                                drawingContext.DrawGeometry(brushes.PotatomineGIF[plant.InnerClock % brushes.PotatomineGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
+                            }
+                            else
+                            {
+                                var shiftX = coordinateCalculator.GameMapCellWidth * 0.2;
+                                var shiftY = coordinateCalculator.GameMapCellHeight * 0.17;
+                                Geometry explosion = new RectangleGeometry(
+                                    new Rect(plant.PlaceX - shiftX, plant.PlaceY, coordinateCalculator.GameMapCellWidth + shiftX, coordinateCalculator.GameMapCellHeight - shiftY));
+                                drawingContext.DrawGeometry(GameBrushes.PotatoMineExplodedBrush, null, explosion);
+                            }
+                            break;
+                     
+                        case PlantEnum.Cherrybomb:
+                            if (plant.State == AttackStateEnum.Normal)
+                            {
+                                drawingContext.DrawGeometry(brushes.CherryGIF[(plant.InnerClock - plant.DeathStartTime) % brushes.CherryGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
+                            }
+                            else
+                            {
+                                var shiftX = coordinateCalculator.GameMapCellWidth;
+                                var shiftY = coordinateCalculator.GameMapCellHeight;
+                                Geometry explosion = new RectangleGeometry(
+                                    new Rect(plant.PlaceX - shiftX, plant.PlaceY - shiftY - 0.2 * coordinateCalculator.GameMapCellHeight, coordinateCalculator.GameMapCellWidth + 2 * shiftX, coordinateCalculator.GameMapCellHeight + 2 * shiftY));
+                                drawingContext.DrawGeometry(brushes.PowieGIF[plant.InnerClock % brushes.PowieGIF.Count], null /*new Pen(Brushes.Black, 1)*/, explosion);
+                            }
+                            break;
+                        
+                    }
                 }
 
                 foreach (var sun in logic.Suns)
