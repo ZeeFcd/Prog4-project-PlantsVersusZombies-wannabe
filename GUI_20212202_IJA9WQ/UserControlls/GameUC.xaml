@@ -12,10 +12,10 @@
              MouseLeftButtonDown="Window_MouseLeftButtonDown"
              MouseMove="Window_MouseMove"
              >
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <renderer:Display x:Name="display" />
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <Grid x:Name="grid">
-            
+        <renderer:Display x:Name="display" />
     </Grid>
 </UserControl>

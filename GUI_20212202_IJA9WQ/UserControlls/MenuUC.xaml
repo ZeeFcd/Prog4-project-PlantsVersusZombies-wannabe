@@ -33,7 +33,7 @@
                FontSize="30" FontFamily="\Fonts\#SeriesOrbit"
                />-->
         <Viewbox Grid.Row="1" Grid.Column="1">
-            <Button Content="Start"  Padding="15" Margin="30" Style="{StaticResource buttonText}" Command=""/>
+            <Button Content="Start"  Padding="15" Margin="30" Style="{StaticResource buttonText}" Command="{Binding StartGameCommand}"/>
         </Viewbox>
         <Viewbox Grid.Row="2" Grid.Column="1">
             <Button Content="Load"  Padding="15" Margin="30" Style="{StaticResource buttonText}"/>
