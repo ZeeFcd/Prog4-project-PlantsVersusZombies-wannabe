@@ -16,6 +16,7 @@
   <ItemGroup>
     <None Remove="Images\background_day.png" />
     <None Remove="Images\background_night.png" />
+    <None Remove="Images\back_button.jpg" />
     <None Remove="Images\cherrybomb.png" />
     <None Remove="Images\cherrybombItem.png" />
     <None Remove="Images\dea_cherrybombItem.png" />
@@ -25,6 +26,8 @@
     <None Remove="Images\dea_sunflowerItem.png" />
     <None Remove="Images\dea_wallnutItem.png" />
     <None Remove="Images\exploded.png" />
+    <None Remove="Images\highscores_background.png" />
+    <None Remove="Images\highscores_background2.jpeg" />
     <None Remove="Images\hole.png" />
     <None Remove="Images\itemShop.png" />
     <None Remove="Images\itemShop1.png" />
@@ -439,6 +442,9 @@
     <Content Include="Images\background_night.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\back_button.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\cherrybomb.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -461,6 +467,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\dea_wallnutItem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\highscores_background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\highscores_background2.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\hole.png">

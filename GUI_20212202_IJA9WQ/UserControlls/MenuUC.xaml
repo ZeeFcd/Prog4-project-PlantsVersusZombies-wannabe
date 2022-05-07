@@ -36,7 +36,7 @@
             <Button Content="Start"  Padding="15" Margin="30" Style="{StaticResource buttonText}" Command="{Binding StartGameCommand}"/>
         </Viewbox>
         <Viewbox Grid.Row="2" Grid.Column="1">
-            <Button Content="Load"  Padding="15" Margin="30" Style="{StaticResource buttonText}"/>
+            <Button Content="Highscores"  Padding="15" Margin="30" Style="{StaticResource buttonText}" Command="{Binding Highscore}"/>
         </Viewbox>
         <Viewbox Grid.Row="3" Grid.Column="1">
             <Button Content="Exit"  Padding="15" Margin="30" Style="{StaticResource buttonText}" Click="Button_Exit_Click"/>

@@ -2,6 +2,7 @@
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.Input;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
@@ -13,6 +14,7 @@ namespace GUI_20212202_IJA9WQ.ViewModels
         public ICommand StartGameCommand { get; set; }
         public ICommand MuteCommand { get; set; }
         public IViewLogic viewLogic { get; set; }
+        public ICommand Highscore { get; set; }
         public static bool IsInDesignMode
         {
             get
@@ -30,6 +32,7 @@ namespace GUI_20212202_IJA9WQ.ViewModels
         {
             this.viewLogic = viewLogic;
             StartGameCommand = new RelayCommand(() => viewLogic.ChangeView("game"));
+            Highscore = new RelayCommand(()=> viewLogic.ChangeView("highscores"));
         }
 
 

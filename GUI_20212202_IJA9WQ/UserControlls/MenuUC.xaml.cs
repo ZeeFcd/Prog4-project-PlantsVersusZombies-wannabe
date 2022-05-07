@@ -12,7 +12,6 @@ namespace GUI_20212202_IJA9WQ.UserControlls
     public partial class MenuUC : UserControl
     {
         IViewLogic viewLogic;
-        //public ICommand StartGameCommand { get; set; }
 
         public MenuUC()
         {
