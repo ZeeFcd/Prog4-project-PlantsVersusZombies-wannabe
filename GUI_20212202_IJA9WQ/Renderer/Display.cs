@@ -181,7 +181,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     Geometry shovel = new RectangleGeometry(
                                    new Rect(mouseX - coordinateCalculator.PlantWidth / 2, mouseY - coordinateCalculator.PlantHeight / 2, coordinateCalculator.PlantWidth,coordinateCalculator.PlantHeight));
-                    drawingContext.DrawGeometry(GameBrushes.CherryBrush, null /*new Pen(Brushes.Black, 1)*/, shovel);
+                    drawingContext.DrawGeometry(GameBrushes.ShovelSelectedBrush, null /*new Pen(Brushes.Black, 1)*/, shovel);
                 }
                 else if (logic.CurrentlySelectedIndex>-1)
                 {

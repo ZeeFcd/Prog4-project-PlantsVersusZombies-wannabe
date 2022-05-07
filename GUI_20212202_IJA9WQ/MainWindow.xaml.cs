@@ -68,25 +68,30 @@ namespace GUI_20212202_IJA9WQ
             {
                 logic.PlantSelect(coordinateCalculator.WhichCellInShop(y));
                 display.SetMouse(mouseX, mouseY);
+                display.InvalidateVisual();
             }
             else if (logic.CurrentlySelectedIndex != -1 && isingamemap)
             {
                 (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
-                logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2); 
+                logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2);
+                display.InvalidateVisual();
             }         
             else if (!logic.ShovelSelected&&coordinateCalculator.IsShovel(x,y))
             {
                 logic.ShovelSelect();
                 display.SetMouse(mouseX, mouseY);
+                display.InvalidateVisual();
             }
             else if (logic.ShovelSelected&& isingamemap)
             {
                 (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
                 logic.PlantDelete(gameCellindexes.Item1, gameCellindexes.Item2);
+                display.InvalidateVisual();
             }
             else if (isingamemap)
             {
                 logic.IsSunSelected(x, y);
+                display.InvalidateVisual();
             }
 
             display.InvalidateVisual();

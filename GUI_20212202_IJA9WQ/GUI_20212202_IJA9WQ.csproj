@@ -115,6 +115,7 @@
     <None Remove="Images\potatomineItem.png" />
     <None Remove="Images\powie.png" />
     <None Remove="Images\shovel.png" />
+    <None Remove="Images\shovelitem.png" />
     <None Remove="Images\snowpea.png" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %281%29.gif" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2810%29.gif" />
@@ -461,13 +462,7 @@
     <Content Include="Images\lawn_mover.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\notactivatec.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\pea.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\peashooter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\peashooterAnimation\peashooter (1).gif">
@@ -716,6 +711,9 @@
     <Content Include="Images\shovel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\shovelitem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\snowpea.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -798,15 +796,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sun1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\sun2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\sunflower.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\sunflowerAnim.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sunflowerAnimation\sunflower (1).gif">
@@ -975,9 +964,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sunflowerItem.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\thiller.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\wallnutAnimation\wallnut (1).gif">
