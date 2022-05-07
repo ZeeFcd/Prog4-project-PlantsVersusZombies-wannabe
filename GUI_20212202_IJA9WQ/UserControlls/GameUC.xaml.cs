@@ -18,6 +18,7 @@ namespace GUI_20212202_IJA9WQ.UserControlls
         DispatcherTimer gamestepDT;
         DispatcherTimer displayDT;
         GameLogic logic;
+        ViewLogic viewLogic;
         CoordinateCalculator coordinateCalculator;
         GameAnimationBrushes brushes;
         double mouseX;
@@ -112,6 +113,14 @@ namespace GUI_20212202_IJA9WQ.UserControlls
             mouseY = e.GetPosition(grid).Y;
             display.SetMouse(mouseX, mouseY);
             display.InvalidateVisual();
+        }
+        private void Pause()
+        {
+
+        }
+        private void BackToMenu()
+        {
+            
         }
     }
 }
