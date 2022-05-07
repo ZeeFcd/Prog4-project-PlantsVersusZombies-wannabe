@@ -250,7 +250,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public void PlantSelect(int i)
         {
             shovelSelected = false;
-            if (PlantsSelectionDay[i].Ispurchaseable)
+            if (PlantsSelectionDay[i].Ispurchaseable && sunValue>= PlantsSelectionDay[i].Price)
             {
                 currentlySelectedIndex = i;
             }
@@ -258,6 +258,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         }
         public void ShovelSelect()
         {
+
             currentlySelectedIndex = -1;
             shovelSelected = true;
         }
@@ -331,6 +332,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 plantToplace.PlaceY = plantGameCoords.Item2;
                 Plants.Add(plantToplace);
                 PlantsMatrix[i, j] = plantToplace;
+                sunValue -= PlantsSelectionDay[currentlySelectedIndex].Price;
                 currentlySelectedIndex = -1;
             }
         }
