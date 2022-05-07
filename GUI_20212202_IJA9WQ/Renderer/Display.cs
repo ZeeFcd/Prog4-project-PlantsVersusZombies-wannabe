@@ -146,7 +146,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     }
                     else
                     {
-                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[zombie.InnerClock % brushes.ZombieWalkGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
+                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[zombie.InnerClock % brushes.ZombieWalkGIF.Count],new Pen(Brushes.Black, 1), zombie.Area);
                     }
                     
                 }
@@ -167,7 +167,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     }
                     else
                     {
-                        drawingContext.DrawGeometry(GameBrushes.PeaBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
+                        drawingContext.DrawGeometry(GameBrushes.PeaBrush,new Pen(Brushes.Black, 1), bullet.Area);
                     }
                     
                 }

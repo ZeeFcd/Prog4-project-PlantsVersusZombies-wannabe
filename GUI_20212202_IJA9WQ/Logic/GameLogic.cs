@@ -42,7 +42,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             Suns = new List<Sun>();
             gameClock = 0;
 
-            sunValue = 50;
+            sunValue = 999999;
             PlantsMatrix = new Plant[5, 9];
             ZombiesMatrix = new List<Zombie>[5, 9];
             ZombiesMatrixInitialize();
@@ -102,12 +102,12 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             foreach (var bullet in Bullets)
             {
-                bullet.Move();
+               BulletStep(bullet);
             }
 
             foreach (var zombie in Zombies)
             {
-                ZombieTimeStep(zombie);
+                ZombieStep(zombie);
             }
 
             foreach (var plant in Plants)
@@ -124,7 +124,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed)); ;
 
-
             }
             if (gameClock == 100)
             {
@@ -138,7 +137,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieWidth,
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed));
-
             }
             if (gameClock == 110)
             {
@@ -152,7 +150,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                    coordinateCalculator.ZombieWidth,
                    coordinateCalculator.ZombieHeight,
                    coordinateCalculator.ZombieSpeed));
-
             }
             if (gameClock == 150)
             {
@@ -167,9 +164,10 @@ namespace GUI_20212202_IJA9WQ.Logic
             {
                 plant.TimeChanged();
             }
+           
             ZombieTimeChanged();
             PlantsTimeChanged();
-
+            BulletTimeChanged();
 
             gameClock += 1;
         }
@@ -222,6 +220,22 @@ namespace GUI_20212202_IJA9WQ.Logic
             foreach (var deadzombie in deadzombies)
             {
                 ZombieTerminated(deadzombie);
+            }
+        }
+        private void BulletTimeChanged() 
+        {
+            List<Bullet> deadbullets = new List<Bullet>();
+            foreach (var bullet in Bullets)
+            {
+                if (bullet.State == AttackStateEnum.Dead)
+                {
+                    deadbullets.Add(bullet);
+                }
+      
+            }
+            foreach (var deadbullet in deadbullets)
+            {
+                Bullets.Remove(deadbullet);
             }
         }
         private void LawMoverStart(int i)
@@ -316,7 +330,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 currentlySelectedIndex = -1;
             }
         }
-        private void ZombieTimeStep(Zombie zombie)
+        private void ZombieStep(Zombie zombie)
         {
             if (zombie.PlaceX < coordinateCalculator.LeftMapBorder)
             {
@@ -527,6 +541,50 @@ namespace GUI_20212202_IJA9WQ.Logic
          
         }
 
+        private void BulletStep(Bullet bullet)
+        {
+            if (bullet.PlaceX > coordinateCalculator.DisplayWidth + coordinateCalculator.BulletWidth)
+            {
+                bullet.State = AttackStateEnum.Dead;
+            }
+            else
+            {
+                bullet.Move();
+                (int,int) cellindexes = coordinateCalculator.WhichCellInGameMap(bullet.PlaceX, bullet.PlaceY);
+                int firstzombieindex = IsZombieInSameRow(bullet);
+                if (firstzombieindex > -1)
+                {
+                    Zombie closest= ZombiesMatrix[cellindexes.Item2, firstzombieindex].First();
+                    bool foundCollision=false;
+                    foreach (var zombie in ZombiesMatrix[cellindexes.Item2, firstzombieindex])
+                    {
+                        if (bullet.IsCollision(zombie))
+                        {
+                            foundCollision = true;
+                            if (zombie.PlaceX - bullet.PlaceX < closest.PlaceX - bullet.PlaceX)
+                            {
+                                closest = zombie;
+                            }
+                        }
+                    }
+                    if (foundCollision)
+                    {
+                        if (bullet.IsFrozen)
+                        {
+                            closest.Slowed();
+                            closest.DamagedBy(bullet);
+                            bullet.State = AttackStateEnum.Dead;
+                            
+                        }
+                        else
+                        {
+                            closest.DamagedBy(bullet);
+                            bullet.State = AttackStateEnum.Dead;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

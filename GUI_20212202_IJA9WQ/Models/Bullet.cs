@@ -27,6 +27,11 @@ namespace GUI_20212202_IJA9WQ.Models
             get { return new EllipseGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
         }
 
-       
+        public override bool IsCollision(GameItem other)
+        {
+            return this.Area.Bounds.IntersectsWith(new Rect(other.PlaceX+ this.displayHeight * 2, other.PlaceY,4,this.displayHeight* this.displayHeight)); 
+
+        }
+
     }
 }

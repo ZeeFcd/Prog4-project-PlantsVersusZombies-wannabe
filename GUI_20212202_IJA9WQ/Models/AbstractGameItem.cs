@@ -27,7 +27,7 @@ namespace GUI_20212202_IJA9WQ.Models
             set { placeY = value; }
         }
 
-        public bool IsCollision(GameItem other)
+        public virtual bool IsCollision(GameItem other)
         {
             return Geometry.Combine(
                 this.Area,

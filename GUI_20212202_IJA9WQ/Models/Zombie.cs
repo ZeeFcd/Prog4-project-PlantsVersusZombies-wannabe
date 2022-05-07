@@ -25,6 +25,7 @@ namespace GUI_20212202_IJA9WQ.Models
             this.State = AttackStateEnum.Normal;
             innerClock = 0;
             Damage = 1;
+            HP = 100;
         }
 
         public int PlaceGameMatrixX { get; set; }
@@ -40,7 +41,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public ZombieStateEnum ZombieState { get; private set; }
 
-        public void Die() 
+        public void Die()
         {
             State = AttackStateEnum.Dead;
         }

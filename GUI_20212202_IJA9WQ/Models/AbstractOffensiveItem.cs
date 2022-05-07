@@ -29,7 +29,6 @@ namespace GUI_20212202_IJA9WQ.Models
                 //Terminated?.Invoke(this);
             }
         }
-
         public virtual void TimeChanged()
         {
             innerClock++;
