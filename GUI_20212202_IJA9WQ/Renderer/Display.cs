@@ -118,7 +118,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                         case PlantEnum.Cherrybomb:
                             if (plant.State==AttackStateEnum.Normal)
                             {
-                                drawingContext.DrawGeometry(brushes.CherryGIF[plant.InnerClock % brushes.CherryGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
+                                drawingContext.DrawGeometry(brushes.CherryGIF[(plant.InnerClock-plant.DeathStartTime) % brushes.CherryGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             }
                             else
                             {

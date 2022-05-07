@@ -57,14 +57,14 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void Ability()
         {
-            if (innerClock == 70 )
+            if (innerClock == 11 )
             {
                 State = AttackStateEnum.Attack;
                 deathStartTime = innerClock;
                 //explode
                 AbilityEvent?.Invoke(this);
             }
-            else if (deathStartTime != 0 && innerClock - deathStartTime == 20)
+            else if (deathStartTime != 0 && innerClock - deathStartTime == 7)
             {
                 State = AttackStateEnum.Dead;
             }            

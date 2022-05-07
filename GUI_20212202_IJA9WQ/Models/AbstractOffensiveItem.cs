@@ -20,6 +20,8 @@ namespace GUI_20212202_IJA9WQ.Models
             get { return innerClock; }
         }
 
+        public int DeathStartTime { get => deathStartTime;  }
+
         public virtual void DamagedBy(OffensiveItem attacker) 
         {
             this.HP -= attacker.Damage;
@@ -29,6 +31,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 //Terminated?.Invoke(this);
             }
         }
+
         public virtual void TimeChanged()
         {
             innerClock++;
