@@ -64,7 +64,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 //explode
                 AbilityEvent?.Invoke(this);
             }
-            else if (deathStartTime != 0 && innerClock - deathStartTime == 7)
+            else if (deathStartTime != 0 && innerClock - deathStartTime == 14)
             {
                 State = AttackStateEnum.Dead;
             }            

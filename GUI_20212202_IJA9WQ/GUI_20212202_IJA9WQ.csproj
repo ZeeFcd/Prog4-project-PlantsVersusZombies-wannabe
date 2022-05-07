@@ -129,12 +129,19 @@
     <None Remove="Images\potatomineItem.png" />
     <None Remove="Images\powie.png" />
     <None Remove="Images\powieAnimation\powie %281%29.gif" />
+    <None Remove="Images\powieAnimation\powie %2810%29.gif" />
+    <None Remove="Images\powieAnimation\powie %2811%29.gif" />
+    <None Remove="Images\powieAnimation\powie %2812%29.gif" />
+    <None Remove="Images\powieAnimation\powie %2813%29.gif" />
+    <None Remove="Images\powieAnimation\powie %2814%29.gif" />
     <None Remove="Images\powieAnimation\powie %282%29.gif" />
     <None Remove="Images\powieAnimation\powie %283%29.gif" />
     <None Remove="Images\powieAnimation\powie %284%29.gif" />
     <None Remove="Images\powieAnimation\powie %285%29.gif" />
     <None Remove="Images\powieAnimation\powie %286%29.gif" />
     <None Remove="Images\powieAnimation\powie %287%29.gif" />
+    <None Remove="Images\powieAnimation\powie %288%29.gif" />
+    <None Remove="Images\powieAnimation\powie %289%29.gif" />
     <None Remove="Images\shovel.png" />
     <None Remove="Images\shovelitem.png" />
     <None Remove="Images\snowpea.png" />
@@ -837,6 +844,21 @@
     <Content Include="Images\powieAnimation\powie (1).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\powieAnimation\powie (10).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\powieAnimation\powie (11).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\powieAnimation\powie (12).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\powieAnimation\powie (13).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\powieAnimation\powie (14).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\powieAnimation\powie (2).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -853,6 +875,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\powieAnimation\powie (7).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\powieAnimation\powie (8).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\powieAnimation\powie (9).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\shovel.png">
