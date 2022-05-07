@@ -20,6 +20,8 @@ namespace GUI_20212202_IJA9WQ.Assets
         public List<Brush> ZombieEatGIF;
         public List<Brush> ZombieDeathGIF;
         public List<Brush> ZombieAshGIF;
+        public List<Brush> CherryGIF;
+        public List<Brush> PowieGIF;
 
         public GameAnimationBrushes()
         {
@@ -32,6 +34,8 @@ namespace GUI_20212202_IJA9WQ.Assets
             ZombieEatGIF = BrushesReader("zombieeatAnimation");
             ZombieDeathGIF = BrushesReader("zombiedeathAnimation");
             ZombieAshGIF = BrushesReader("zombieashAnimation");
+            CherryGIF = BrushesReader("cherryAnimation");
+            PowieGIF = BrushesReader("powieAnimation");
         }
         public List<Brush> BrushesReader(string path)
         {
@@ -40,7 +44,7 @@ namespace GUI_20212202_IJA9WQ.Assets
             string[] filenameandtype = new string[files.Length];
             for (int i = 1; i < files.Length + 1; i++)
             {
-              filenameandtype = Path.GetFileName(files[0]).Split(" ");
+                filenameandtype = Path.GetFileName(files[0]).Split(" ");
                 brushes.Add(new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", path, filenameandtype[0] + " (" + i + ")" + filenameandtype[1].Substring(3)), UriKind.RelativeOrAbsolute))));
             }
             return brushes;

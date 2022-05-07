@@ -118,7 +118,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                         case PlantEnum.Cherrybomb:
                             if (plant.State==AttackStateEnum.Normal)
                             {
-                                drawingContext.DrawGeometry(GameBrushes.CherryBrush, null /*new Pen(Brushes.Black, 1)*/, plant.Area);
+                                drawingContext.DrawGeometry(brushes.CherryGIF[plant.InnerClock % brushes.CherryGIF.Count], null /*new Pen(Brushes.Black, 1)*/, plant.Area);
                             }
                             else
                             {
@@ -126,7 +126,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                                 var shiftY = coordinateCalculator.GameMapCellHeight;
                                 Geometry explosion = new RectangleGeometry(
                                     new Rect(plant.PlaceX - shiftX, plant.PlaceY- shiftY- 0.2 * coordinateCalculator.GameMapCellHeight, coordinateCalculator.GameMapCellWidth + 2*shiftX, coordinateCalculator.GameMapCellHeight +2* shiftY));
-                                drawingContext.DrawGeometry(GameBrushes.PowieBrush, null, explosion);
+                                drawingContext.DrawGeometry(brushes.PowieGIF[plant.InnerClock % brushes.PowieGIF.Count], null /*new Pen(Brushes.Black, 1)*/,explosion);
                             }
                             break;
                         case PlantEnum.Sunflower:
