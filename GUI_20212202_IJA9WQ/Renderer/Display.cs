@@ -146,7 +146,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     }
                     else
                     {
-                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[zombie.InnerClock % brushes.ZombieWalkGIF.Count],new Pen(Brushes.Black, 1), zombie.Area);
+                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[zombie.InnerClock % brushes.ZombieWalkGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
                     }
                     
                 }
@@ -163,7 +163,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     if (bullet.IsFrozen)
                     {
-                        if (bullet.State==AttackStateEnum.InActive)
+                        if (bullet.State == AttackStateEnum.InActive || bullet.State == AttackStateEnum.Dead)
                         {
                             drawingContext.DrawGeometry(GameBrushes.FrozenSplashBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
                         }
@@ -175,7 +175,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     }
                     else
                     {
-                        if (bullet.State == AttackStateEnum.InActive)
+                        if (bullet.State == AttackStateEnum.InActive|| bullet.State == AttackStateEnum.Dead)
                         {
                             drawingContext.DrawGeometry(GameBrushes.SplashBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
                         }

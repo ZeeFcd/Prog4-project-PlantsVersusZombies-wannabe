@@ -46,7 +46,7 @@ namespace GUI_20212202_IJA9WQ.Models
         
         public override bool IsCollision(GameItem other)
         {
-            return this.Area.Bounds.IntersectsWith(new Rect(other.PlaceX+ this.displayHeight * 2, other.PlaceY,4,this.displayHeight* this.displayHeight)); 
+            return this.Area.Bounds.IntersectsWith(new Rect(other.PlaceX+ this.displayHeight * 1.8, other.PlaceY,4,this.displayHeight* this.displayHeight)); 
 
         }
 

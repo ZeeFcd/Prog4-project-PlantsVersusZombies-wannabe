@@ -58,7 +58,7 @@ namespace GUI_20212202_IJA9WQ
             };
 
             displayDT = new DispatcherTimer();
-            displayDT.Interval = TimeSpan.FromMilliseconds(10);
+            displayDT.Interval = TimeSpan.FromMilliseconds(5);
             displayDT.Tick += (sender, eventargs) =>
             {
                 display.InvalidateVisual();
