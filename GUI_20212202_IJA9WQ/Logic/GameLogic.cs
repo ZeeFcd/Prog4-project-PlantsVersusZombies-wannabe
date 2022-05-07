@@ -546,7 +546,6 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
          
         }
-
         private void BulletStep(Bullet bullet)
         {
             if (bullet.State != AttackStateEnum.InActive && bullet.State != AttackStateEnum.Dead)
