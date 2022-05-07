@@ -260,6 +260,65 @@
     <None Remove="Images\wallnutAnimation\wallnut %288%29.gif" />
     <None Remove="Images\wallnutAnimation\wallnut %289%29.gif" />
     <None Remove="Images\wallnutItem.png" />
+    <None Remove="Images\zombieashAnimation\zombieash %281%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2810%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2811%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2812%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2813%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2814%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2815%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2816%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2817%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2818%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2819%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %282%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %2820%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %283%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %284%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %285%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %286%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %287%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %288%29.gif" />
+    <None Remove="Images\zombieashAnimation\zombieash %289%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %281%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2810%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2811%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2812%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2813%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2814%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2815%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2816%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2817%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2818%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2819%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %282%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2820%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2821%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2822%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2823%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2824%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2825%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2826%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2827%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2828%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2829%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %283%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2830%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2831%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2832%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2833%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2834%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2835%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2836%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2837%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2838%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %2839%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %284%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %285%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %286%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %287%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %288%29.gif" />
+    <None Remove="Images\zombiedeathAnimation\zombiedeath %289%29.gif" />
     <None Remove="Images\zombieeatAnimation\frame_135_delay-0.07s.gif" />
     <None Remove="Images\zombieeatAnimation\frame_136_delay-0.07s.gif" />
     <None Remove="Images\zombieeatAnimation\frame_137_delay-0.07s.gif" />
@@ -1130,6 +1189,183 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\wallnutItem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (1).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (10).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (11).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (12).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (13).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (14).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (15).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (16).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (17).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (18).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (19).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (2).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (20).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (3).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (4).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (5).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (6).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (7).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (8).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombieashAnimation\zombieash (9).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (1).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (10).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (11).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (12).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (13).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (14).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (15).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (16).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (17).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (18).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (19).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (2).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (20).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (21).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (22).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (23).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (24).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (25).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (26).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (27).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (28).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (29).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (3).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (30).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (31).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (32).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (33).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (34).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (35).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (36).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (37).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (38).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (39).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (4).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (5).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (6).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (7).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (8).gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zombiedeathAnimation\zombiedeath (9).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\zombieeatAnimation\zombieeat (1).gif">

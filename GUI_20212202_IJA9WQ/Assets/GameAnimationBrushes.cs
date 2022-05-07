@@ -18,6 +18,8 @@ namespace GUI_20212202_IJA9WQ.Assets
         public List<Brush> WallnutGIF;
         public List<Brush> ZombieWalkGIF;
         public List<Brush> ZombieEatGIF;
+        public List<Brush> ZombieDeathGIF;
+        public List<Brush> ZombieAshGIF;
 
         public GameAnimationBrushes()
         {
@@ -28,6 +30,8 @@ namespace GUI_20212202_IJA9WQ.Assets
             WallnutGIF = BrushesReader("wallnutAnimation");
             ZombieWalkGIF = BrushesReader("zombiewalkAnimation");
             ZombieEatGIF = BrushesReader("zombieeatAnimation");
+            ZombieDeathGIF = BrushesReader("zombiedeathAnimation");
+            ZombieAshGIF = BrushesReader("zombieashAnimation");
         }
         public List<Brush> BrushesReader(string path)
         {
