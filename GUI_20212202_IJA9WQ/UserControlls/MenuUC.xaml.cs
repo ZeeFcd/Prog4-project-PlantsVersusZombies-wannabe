@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_20212202_IJA9WQ.Logic;
+using Microsoft.Toolkit.Mvvm.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +22,14 @@ namespace GUI_20212202_IJA9WQ.UserControlls
     /// </summary>
     public partial class MenuUC : UserControl
     {
+        IViewLogic viewLogic;
+        public ICommand StartGameCommand { get; set; }
+
         public MenuUC()
         {
             InitializeComponent();
-            this.DataContext = new MenuUC();
+            //this.DataContext = new MenuUC();
+            StartGameCommand = new RelayCommand(() => viewLogic.ChangeView("game"));
         }
 
         private void Button_Exit_Click(object sender, RoutedEventArgs e)

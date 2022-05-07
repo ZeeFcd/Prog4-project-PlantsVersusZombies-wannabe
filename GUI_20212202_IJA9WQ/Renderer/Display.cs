@@ -24,7 +24,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
         {
             base.OnRender(drawingContext);
             if (logic != null)
-            {
+            {  
                 drawingContext.DrawRectangle(GameBrushes.BackgroundDayBrush, null, new Rect(0, 0, 1025, 600));
                 drawingContext.DrawRectangle(GameBrushes.ItemShopBrush, null, new Rect(10, 10, 104, 495));
 
