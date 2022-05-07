@@ -351,7 +351,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
             else
             {
-                if (zombie.State!=AttackStateEnum.Dead)
+                if (zombie.State!=AttackStateEnum.Dead && zombie.State != AttackStateEnum.InActive)
                 {
                     int firstplantXindex = 0;
                     if (coordinateCalculator.IsInGameMap(zombie.PlaceX + coordinateCalculator.ZombieWidth / 2, zombie.PlaceY + coordinateCalculator.ZombieHeight / 2))
@@ -359,7 +359,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                         firstplantXindex = FirstPlantInSameRow(zombie);
                         if (firstplantXindex > -1)
                         {
-                            if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]) || PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].State == AttackStateEnum.InActive)
+                            if (!zombie.IsCollision(PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex]) || PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].State == AttackStateEnum.InActive|| PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].State == AttackStateEnum.Attack)
                             {
                                 zombie.State = AttackStateEnum.Normal;
                                 zombie.Move();
@@ -502,7 +502,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 {
                     if (!(j < 0 || j > PlantsMatrix.GetLength(1) - 1 || i < 0 || i > PlantsMatrix.GetLength(0) - 1))
                     {
-                        ClearZombieCell(ZombiesMatrix[i, j]);
+                        ZombiesMatrix[i, j].ForEach(x => x.Explode());
                     }
                 }
             }
@@ -527,13 +527,13 @@ namespace GUI_20212202_IJA9WQ.Logic
             {
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
                 {
-                    zombie.Die();
+                    zombie.Explode();
                 }
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1+1])
                 {
                     if (zombie.PlaceX- (plant.PlaceX+plant.DisplayWidth/3)<plant.DisplayWidth/8)
                     {
-                        zombie.Die();
+                        zombie.Explode();
                     } 
                 }   
             }
@@ -541,7 +541,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             {
                 foreach (var zombie in ZombiesMatrix[cellindexes.Item2, cellindexes.Item1])
                 {
-                    zombie.Die();
+                    zombie.Explode();
                 }
             }
          

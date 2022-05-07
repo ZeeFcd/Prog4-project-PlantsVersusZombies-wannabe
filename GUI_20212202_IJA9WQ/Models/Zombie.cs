@@ -43,13 +43,46 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public void Die()
         {
-            State = AttackStateEnum.Dead;
+            State = AttackStateEnum.InActive;
+            deathStartTime = innerClock;
+        }
+        public void Explode()
+        {
+            State = AttackStateEnum.InActive;
+            ZombieState = ZombieStateEnum.Exploded;
+            deathStartTime = innerClock;
         }
         public void Slowed()
         {
             ZombieState = ZombieStateEnum.Slowed;
         }
 
+        public override void TimeChanged()
+        {
+            if (deathStartTime != 0 && ZombieState == ZombieStateEnum.Exploded && innerClock - deathStartTime == 19)
+            {
+                State = AttackStateEnum.Dead;
+            }
+            else if (deathStartTime != 0 && innerClock - deathStartTime == 38)
+            {
+                State = AttackStateEnum.Dead;
+            }
+            else
+            {
+                base.TimeChanged();
+            }
+            
+        }
+
+        public override void DamagedBy(OffensiveItem attacker)
+        {
+            this.HP -= attacker.Damage;
+            if (HP < 1)
+            {
+                State = AttackStateEnum.InActive;
+                Die();
+            }
+        }
         public override void Move()
         {
             if (ZombieState==ZombieStateEnum.Slowed)

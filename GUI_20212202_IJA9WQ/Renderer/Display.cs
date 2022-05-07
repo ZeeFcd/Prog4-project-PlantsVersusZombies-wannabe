@@ -144,7 +144,18 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     {
                         drawingContext.DrawGeometry(brushes.ZombieEatGIF[zombie.InnerClock % brushes.ZombieEatGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
                     }
-                    else
+                    else if (zombie.State == AttackStateEnum.InActive)
+                    {
+                        if (zombie.ZombieState==ZombieStateEnum.Exploded)
+                        {
+                            drawingContext.DrawGeometry(brushes.ZombieAshGIF[(zombie.InnerClock-zombie.DeathStartTime) % brushes.ZombieAshGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
+                        }
+                        else
+                        {
+                            drawingContext.DrawGeometry(brushes.ZombieDeathGIF[(zombie.InnerClock - zombie.DeathStartTime) % brushes.ZombieDeathGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
+                        }
+                    }
+                    else if (zombie.State == AttackStateEnum.Normal)
                     {
                         drawingContext.DrawGeometry(brushes.ZombieWalkGIF[zombie.InnerClock % brushes.ZombieWalkGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
                     }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GUI_20212202_IJA9WQ"
         xmlns:renderer="clr-namespace:GUI_20212202_IJA9WQ.Renderer"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="Plants vs Zombies: OEdition"
         MinHeight="639"
         MinWidth="1041"
         Loaded="Window_Loaded"
