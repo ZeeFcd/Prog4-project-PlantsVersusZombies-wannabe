@@ -32,6 +32,7 @@
     <None Remove="Images\lawn_mover2.png" />
     <None Remove="Images\notactivatec.png" />
     <None Remove="Images\pea.png" />
+    <None Remove="Images\peashooter.gif" />
     <None Remove="Images\peashooter.png" />
     <None Remove="Images\peashooterAnimation\peashooter %281%29.gif" />
     <None Remove="Images\peashooterAnimation\peashooter %2810%29.gif" />
@@ -83,6 +84,7 @@
     <None Remove="Images\peashooterAnimation\peashooter %288%29.gif" />
     <None Remove="Images\peashooterAnimation\peashooter %289%29.gif" />
     <None Remove="Images\peashooterItem.png" />
+    <None Remove="Images\potatomine.gif" />
     <None Remove="Images\potatomineAnimation\potatomine %281%29.gif" />
     <None Remove="Images\potatomineAnimation\potatomine %2810%29.gif" />
     <None Remove="Images\potatomineAnimation\potatomine %2811%29.gif" />
@@ -117,6 +119,7 @@
     <None Remove="Images\shovel.png" />
     <None Remove="Images\shovelitem.png" />
     <None Remove="Images\snowpea.png" />
+    <None Remove="Images\snowpeashooter.gif" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %281%29.gif" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2810%29.gif" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %2811%29.gif" />
@@ -145,6 +148,7 @@
     <None Remove="Images\snowpeashooterItem.png" />
     <None Remove="Images\sun1.png" />
     <None Remove="Images\sun2.png" />
+    <None Remove="Images\sunflower.gif" />
     <None Remove="Images\sunflower.png" />
     <None Remove="Images\sunflowerAnim.gif" />
     <None Remove="Images\sunflowerAnimation\sunflower %281%29.gif" />
@@ -205,6 +209,7 @@
     <None Remove="Images\sunflowerItem.png" />
     <None Remove="Images\test.png" />
     <None Remove="Images\thiller.gif" />
+    <None Remove="Images\wallnut.gif" />
     <None Remove="Images\wallnutAnimation\wallnut %281%29.gif" />
     <None Remove="Images\wallnutAnimation\wallnut %2810%29.gif" />
     <None Remove="Images\wallnutAnimation\wallnut %2811%29.gif" />
@@ -465,6 +470,9 @@
     <Content Include="Images\pea.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\peashooter.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\peashooterAnimation\peashooter (1).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -615,6 +623,9 @@
     <Content Include="Images\peashooterItem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\potatomine.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\potatomineAnimation\potatomine (1).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -717,6 +728,9 @@
     <Content Include="Images\snowpea.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\snowpeashooter.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\snowpeashooterAnimation\snowpeashooter (1).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -796,6 +810,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sun1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sunflower.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sunflowerAnimation\sunflower (1).gif">
@@ -964,6 +981,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sunflowerItem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wallnut.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\wallnutAnimation\wallnut (1).gif">

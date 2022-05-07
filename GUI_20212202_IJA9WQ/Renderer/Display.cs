@@ -185,9 +185,30 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 }
                 else if (logic.CurrentlySelectedIndex>-1)
                 {
-                    Geometry shovel = new RectangleGeometry(
-                                   new Rect(mouseX-coordinateCalculator.PlantWidth/2, mouseY-coordinateCalculator.PlantHeight/2, coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight));
-                    drawingContext.DrawGeometry(GameBrushes.CherryBrush, null /*new Pen(Brushes.Black, 1)*/, shovel);
+                    Geometry plant = new RectangleGeometry(
+                                  new Rect(mouseX - coordinateCalculator.PlantWidth / 2, mouseY - coordinateCalculator.PlantHeight / 2, coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight));
+                    switch (logic.PlantsSelectionDay[logic.CurrentlySelectedIndex].Type)
+                    {
+                        case PlantEnum.Peashooter:
+                            drawingContext.DrawGeometry(GameBrushes.PeashooterBrush, null /*new Pen(Brushes.Black, 1)*/, plant);
+                            break;
+                        case PlantEnum.Wallnut:
+                            drawingContext.DrawGeometry(GameBrushes.WallnutBrush, null /*new Pen(Brushes.Black, 1)*/, plant);
+                            break;
+                        case PlantEnum.Potatomine:
+                            drawingContext.DrawGeometry(GameBrushes.PotatomineBrush, null /*new Pen(Brushes.Black, 1)*/, plant);
+                            break;
+                        case PlantEnum.Snowpeashooter:
+                            drawingContext.DrawGeometry(GameBrushes.SnowPeashooterBrush, null /*new Pen(Brushes.Black, 1)*/, plant);
+                            break;
+                        case PlantEnum.Cherrybomb:
+                            drawingContext.DrawGeometry(GameBrushes.CherryBrush, null /*new Pen(Brushes.Black, 1)*/, plant);
+                            break;
+                        case PlantEnum.Sunflower:
+                            drawingContext.DrawGeometry(GameBrushes.SunflowerBrush, null /*new Pen(Brushes.Black, 1)*/, plant);
+                            break;
+                    }
+                    
                 }
                
             }
