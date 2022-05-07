@@ -70,8 +70,6 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 var origin = new Point(coordinateCalculator.SunCounterX,coordinateCalculator.SunCounterY);
                 drawingContext.DrawText(text,origin);
-                    
-                   
 
                 for (int i = 0; i < logic.PlantsSelectionDay.Length; i++)
                 {
@@ -81,6 +79,37 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             i * coordinateCalculator.ShopItemPlaceY + coordinateCalculator.ShopItemYShift,
                             coordinateCalculator.ShopItemWidth,
                             coordinateCalculator.ShopItemHeight));
+                }
+
+                if (logic.CurrentlySelectedIndex != -1 && coordinateCalculator.IsInGameMap(mouseX, mouseY))
+                {
+                    (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(mouseX, mouseY);
+                    (double, double) plantGameCoords = coordinateCalculator.WhichCoordinateInGameMapPlant(gameCellindexes.Item1, gameCellindexes.Item2);
+                    drawingContext.PushOpacity(0.5);
+                    Geometry showcase= new RectangleGeometry(new Rect(plantGameCoords.Item1, plantGameCoords.Item2, coordinateCalculator.PlantWidth, coordinateCalculator.PlantHeight));
+                    switch (logic.PlantsSelectionDay[logic.CurrentlySelectedIndex].Type)
+                    {
+                        case PlantEnum.Peashooter:
+                            drawingContext.DrawGeometry(GameBrushes.PeashooterBrush, null, showcase);
+                            break;
+                        case PlantEnum.Wallnut:
+                            drawingContext.DrawGeometry(GameBrushes.WallnutBrush, null, showcase);
+                            break;
+                        case PlantEnum.Potatomine:
+                            drawingContext.DrawGeometry(GameBrushes.PotatomineBrush, null, showcase);
+                            break;
+                        case PlantEnum.Snowpeashooter:
+                            drawingContext.DrawGeometry(GameBrushes.SnowPeashooterBrush, null, showcase);
+                            break;
+                        case PlantEnum.Cherrybomb:
+                            drawingContext.DrawGeometry(GameBrushes.CherryBrush, null, showcase);
+                            break;
+                        case PlantEnum.Sunflower:
+                            drawingContext.DrawGeometry(GameBrushes.SunflowerBrush, null, showcase);
+                            break;
+                     
+                    }
+                    drawingContext.Pop();
                 }
 
                 foreach (var plant in logic.Plants)

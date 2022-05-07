@@ -119,7 +119,7 @@ namespace GUI_20212202_IJA9WQ
             mouseX = e.GetPosition(grid).X;
             mouseY = e.GetPosition(grid).Y;
             display.SetMouse(mouseX, mouseY);
-            display.InvalidateVisual();
+            display.InvalidateVisual();   
         }
     }
 }

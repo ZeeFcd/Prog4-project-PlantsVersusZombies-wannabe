@@ -61,7 +61,7 @@ namespace GUI_20212202_IJA9WQ.Models
             {
                 State = AttackStateEnum.Normal;
             }           
-            else if (deathStartTime != 0 && innerClock - deathStartTime == 50)
+            else if (deathStartTime != 0 && innerClock - deathStartTime == 40)
             {
                 State = AttackStateEnum.Dead;
             }
