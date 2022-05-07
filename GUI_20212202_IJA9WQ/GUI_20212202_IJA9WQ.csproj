@@ -30,6 +30,8 @@
     <None Remove="Images\itemShop1.png" />
     <None Remove="Images\lawn_mover.png" />
     <None Remove="Images\lawn_mover2.png" />
+    <None Remove="Images\menuBackground.png" />
+    <None Remove="Images\mute.png" />
     <None Remove="Images\notactivatec.png" />
     <None Remove="Images\pea.png" />
     <None Remove="Images\peashooter.gif" />
@@ -465,6 +467,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\lawn_mover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\menuBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mute.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pea.png">
@@ -1533,5 +1541,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+	</ItemGroup>
 
+	<ItemGroup>
+		<Content Include="Fonts\SeriesOrbit.TTF">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 </Project>

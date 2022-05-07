@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:GUI_20212202_IJA9WQ.UserControlls"
              xmlns:renderer="clr-namespace:GUI_20212202_IJA9WQ.Renderer"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="Window_Loaded"
+             SizeChanged="Window_SizeChanged"
+             MouseLeftButtonDown="Window_MouseLeftButtonDown"
+             MouseMove="Window_MouseMove"
+             >
     <UserControl.DataContext>
         <renderer:Display x:Name="display" />
     </UserControl.DataContext>

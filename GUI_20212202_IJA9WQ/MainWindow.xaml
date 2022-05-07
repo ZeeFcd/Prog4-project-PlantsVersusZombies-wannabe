@@ -9,13 +9,9 @@
         Title="MainWindow"
         MinHeight="639"
         MinWidth="1041"
-        Loaded="Window_Loaded"
-        SizeChanged="Window_SizeChanged"
-        MouseLeftButtonDown="Window_MouseLeftButtonDown"
-        MouseMove="Window_MouseMove"
         WindowState="Maximized"
         Height="639" Width="1041" >
     <Grid x:Name="grid">
-        <renderer:Display x:Name="display" />
+        <ContentControl x:Name="cc" Content="{Binding View}"></ContentControl>
     </Grid>
 </Window>
