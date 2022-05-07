@@ -24,7 +24,8 @@ namespace GUI_20212202_IJA9WQ
     /// </summary>
     public partial class MainWindow : Window
     {
-        DispatcherTimer dt;
+        DispatcherTimer gamestepDT;
+        DispatcherTimer displayDT;
         GameLogic logic;
         CoordinateCalculator coordinateCalculator;
         GameAnimationBrushes brushes;
@@ -48,14 +49,25 @@ namespace GUI_20212202_IJA9WQ
             display.SetupBrushes(brushes);
             display.InvalidateVisual();
 
-            dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromMilliseconds(17);
-            dt.Tick += (sender, eventargs) =>
+            gamestepDT = new DispatcherTimer();
+            gamestepDT.Interval = TimeSpan.FromMilliseconds(17);
+            gamestepDT.Tick += (sender, eventargs) =>
             {
                 logic.TimeStep();
                 display.InvalidateVisual();
             };
-            dt.Start();
+
+            displayDT = new DispatcherTimer();
+            displayDT.Interval = TimeSpan.FromMilliseconds(10);
+            displayDT.Tick += (sender, eventargs) =>
+            {
+                display.InvalidateVisual();
+            };
+
+
+
+            gamestepDT.Start();
+            displayDT.Start();
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -79,7 +91,6 @@ namespace GUI_20212202_IJA9WQ
             else if (!logic.ShovelSelected&&coordinateCalculator.IsShovel(x,y))
             {
                 logic.ShovelSelect();
-                display.SetMouse(mouseX, mouseY);
                 display.InvalidateVisual();
             }
             else if (logic.ShovelSelected&& isingamemap)
@@ -93,7 +104,6 @@ namespace GUI_20212202_IJA9WQ
                 logic.IsSunSelected(x, y);
                 display.InvalidateVisual();
             }
-
             display.InvalidateVisual();
         }
 
@@ -102,7 +112,6 @@ namespace GUI_20212202_IJA9WQ
             if (coordinateCalculator != null)
             {
                 coordinateCalculator.Resize(grid.ActualWidth, grid.ActualHeight);
-                display.InvalidateVisual();
             }
         }
 
