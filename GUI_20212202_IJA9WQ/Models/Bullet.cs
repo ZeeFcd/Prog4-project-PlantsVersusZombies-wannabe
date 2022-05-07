@@ -1,4 +1,5 @@
 ﻿using GUI_20212202_IJA9WQ.Assets;
+using GUI_20212202_IJA9WQ.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,22 @@ namespace GUI_20212202_IJA9WQ.Models
             get { return new EllipseGeometry(new Rect(placeX, placeY, displayWidth, displayHeight)); }
         }
 
+        public void Hit() 
+        {
+            State = AttackStateEnum.InActive;
+            deathStartTime = innerClock;
+        }
+
+        public override void TimeChanged()
+        {
+            if (deathStartTime != 0 && innerClock - deathStartTime == 5)
+            {
+                State = AttackStateEnum.Dead;
+            }
+            base.TimeChanged();
+        }
+
+        
         public override bool IsCollision(GameItem other)
         {
             return this.Area.Bounds.IntersectsWith(new Rect(other.PlaceX+ this.displayHeight * 2, other.PlaceY,4,this.displayHeight* this.displayHeight)); 

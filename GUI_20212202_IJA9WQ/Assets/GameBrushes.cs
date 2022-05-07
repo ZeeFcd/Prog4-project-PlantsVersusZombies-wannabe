@@ -29,6 +29,9 @@ namespace GUI_20212202_IJA9WQ.Assets
         public static readonly Brush PotatomineBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "potatomine.gif"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush WallnutBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "wallnut.gif"), UriKind.RelativeOrAbsolute)));
 
+        public static readonly Brush FrozenSplashBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "splashblue.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush SplashBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "splashgreen2.png"), UriKind.RelativeOrAbsolute)));
+
         public static readonly Brush SunflowerItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "sunflowerItem.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush PeashooterItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "peashooterItem.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush WallnutItemBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "wallnutItem.png"), UriKind.RelativeOrAbsolute)));

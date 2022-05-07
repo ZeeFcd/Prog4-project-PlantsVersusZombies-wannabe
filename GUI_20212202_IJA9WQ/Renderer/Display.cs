@@ -163,11 +163,27 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     if (bullet.IsFrozen)
                     {
-                        drawingContext.DrawGeometry(GameBrushes.SnowPeaBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
+                        if (bullet.State==AttackStateEnum.InActive)
+                        {
+                            drawingContext.DrawGeometry(GameBrushes.FrozenSplashBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
+                        }
+                        else
+                        {
+                            drawingContext.DrawGeometry(GameBrushes.SnowPeaBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
+                        }
+                        
                     }
                     else
                     {
-                        drawingContext.DrawGeometry(GameBrushes.PeaBrush,new Pen(Brushes.Black, 1), bullet.Area);
+                        if (bullet.State == AttackStateEnum.InActive)
+                        {
+                            drawingContext.DrawGeometry(GameBrushes.SplashBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
+                        }
+                        else
+                        {
+                            drawingContext.DrawGeometry(GameBrushes.PeaBrush, null /*new Pen(Brushes.Black, 1)*/, bullet.Area);
+                        }
+                        
                     }
                     
                 }

@@ -231,7 +231,11 @@ namespace GUI_20212202_IJA9WQ.Logic
                 {
                     deadbullets.Add(bullet);
                 }
-      
+                else
+                {
+                    bullet.TimeChanged();
+                }
+
             }
             foreach (var deadbullet in deadbullets)
             {
@@ -543,47 +547,51 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         private void BulletStep(Bullet bullet)
         {
-            if (bullet.PlaceX > coordinateCalculator.DisplayWidth + coordinateCalculator.BulletWidth)
+            if (bullet.State != AttackStateEnum.InActive && bullet.State != AttackStateEnum.Dead)
             {
-                bullet.State = AttackStateEnum.Dead;
-            }
-            else
-            {
-                bullet.Move();
-                (int,int) cellindexes = coordinateCalculator.WhichCellInGameMap(bullet.PlaceX, bullet.PlaceY);
-                int firstzombieindex = IsZombieInSameRow(bullet);
-                if (firstzombieindex > -1)
+                if (bullet.PlaceX > coordinateCalculator.DisplayWidth + coordinateCalculator.BulletWidth)
                 {
-                    Zombie closest= ZombiesMatrix[cellindexes.Item2, firstzombieindex].First();
-                    bool foundCollision=false;
-                    foreach (var zombie in ZombiesMatrix[cellindexes.Item2, firstzombieindex])
+                    bullet.State = AttackStateEnum.Dead;
+                }
+                else 
+                {
+                    bullet.Move();
+                    (int, int) cellindexes = coordinateCalculator.WhichCellInGameMap(bullet.PlaceX, bullet.PlaceY);
+                    int firstzombieindex = IsZombieInSameRow(bullet);
+                    if (firstzombieindex > -1)
                     {
-                        if (bullet.IsCollision(zombie))
+                        Zombie closest = ZombiesMatrix[cellindexes.Item2, firstzombieindex].First();
+                        bool foundCollision = false;
+                        foreach (var zombie in ZombiesMatrix[cellindexes.Item2, firstzombieindex])
                         {
-                            foundCollision = true;
-                            if (zombie.PlaceX - bullet.PlaceX < closest.PlaceX - bullet.PlaceX)
+                            if (bullet.IsCollision(zombie))
                             {
-                                closest = zombie;
+                                foundCollision = true;
+                                if (zombie.PlaceX - bullet.PlaceX < closest.PlaceX - bullet.PlaceX)
+                                {
+                                    closest = zombie;
+                                }
                             }
                         }
-                    }
-                    if (foundCollision)
-                    {
-                        if (bullet.IsFrozen)
+                        if (foundCollision)
                         {
-                            closest.Slowed();
-                            closest.DamagedBy(bullet);
-                            bullet.State = AttackStateEnum.Dead;
-                            
-                        }
-                        else
-                        {
-                            closest.DamagedBy(bullet);
-                            bullet.State = AttackStateEnum.Dead;
+                            if (bullet.IsFrozen)
+                            {
+                                closest.Slowed();
+                                closest.DamagedBy(bullet);
+                                bullet.Hit();
+
+                            }
+                            else
+                            {
+                                closest.DamagedBy(bullet);
+                                bullet.Hit();
+                            }
                         }
                     }
                 }
             }
+ 
         }
     }
 }

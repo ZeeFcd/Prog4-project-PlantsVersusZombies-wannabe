@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -146,6 +147,10 @@
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %288%29.gif" />
     <None Remove="Images\snowpeashooterAnimation\snowpeashooter %289%29.gif" />
     <None Remove="Images\snowpeashooterItem.png" />
+    <None Remove="Images\splashblue.png" />
+    <None Remove="Images\splashblueT.png" />
+    <None Remove="Images\splashgreen.png" />
+    <None Remove="Images\splashgreen2.png" />
     <None Remove="Images\sun1.png" />
     <None Remove="Images\sun2.png" />
     <None Remove="Images\sunflower.gif" />
@@ -807,6 +812,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\snowpeashooterItem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\splashblue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\splashblueT.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\splashgreen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\splashgreen2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sun1.png">
