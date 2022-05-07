@@ -1,18 +1,16 @@
 ﻿using GUI_20212202_IJA9WQ.UserControlls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Toolkit.Mvvm.Messaging;
 
 namespace GUI_20212202_IJA9WQ.Logic
 {
     public class ViewLogic : IViewLogic
     {
         public object View { get; set; }
-        public ViewLogic()
+        IMessenger messenger;
+        public ViewLogic(IMessenger messenger)
         {
-            View = new MenuUC();
+            
+            this.messenger = messenger;
         }
         public void ChangeView(string view)
         {
@@ -27,6 +25,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 default:
                     break;
             }
+            messenger.Send("viewChanged", "Base");
         }
     }
 }

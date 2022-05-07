@@ -1,9 +1,4 @@
 ﻿using GUI_20212202_IJA9WQ.Assets;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GUI_20212202_IJA9WQ.Models
 {
@@ -12,11 +7,11 @@ namespace GUI_20212202_IJA9WQ.Models
         protected StateEnum State { get; set; }
         public int Damage { get; set; }
         public int HP { get; set; }
-        
-        public void DamagedBy(OffensiveItem attacker) 
+
+        public void DamagedBy(OffensiveItem attacker)
         {
             this.HP -= attacker.Damage;
-            if (HP<1)
+            if (HP < 1)
             {
                 Terminated();
             }

@@ -1,14 +1,7 @@
-﻿using GUI_20212202_IJA9WQ.Logic;
-using GUI_20212202_IJA9WQ.Assets;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GUI_20212202_IJA9WQ.Assets;
+using GUI_20212202_IJA9WQ.Logic;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace GUI_20212202_IJA9WQ.Renderer
 {
@@ -24,7 +17,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
         {
             base.OnRender(drawingContext);
             if (logic != null)
-            {  
+            {
                 drawingContext.DrawRectangle(GameBrushes.BackgroundDayBrush, null, new Rect(0, 0, 1025, 600));
                 drawingContext.DrawRectangle(GameBrushes.ItemShopBrush, null, new Rect(10, 10, 104, 495));
 
@@ -35,7 +28,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 foreach (var item in logic.LawnMovers)
                 {
-                    drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, new Pen(Brushes.Black,1), item.Area);
+                    drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, new Pen(Brushes.Black, 1), item.Area);
                 }
 
                 foreach (var item in logic.Zombies)
@@ -47,7 +40,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     drawingContext.DrawGeometry(item.GameImageBrush, new Pen(Brushes.Black, 1), item.Area);
                 }
-                
+
             }
         }
 

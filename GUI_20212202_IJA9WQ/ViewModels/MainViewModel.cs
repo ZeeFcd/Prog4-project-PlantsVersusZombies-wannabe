@@ -1,22 +1,17 @@
 ﻿using GUI_20212202_IJA9WQ.Logic;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace GUI_20212202_IJA9WQ.ViewModels
 {
     public class MainViewModel : ObservableRecipient
     {
-        public IGameLogic gameLogic { get; set; }
+        public IViewLogic viewLogic { get; set; }
         public object View
         {
-            get { return gameLogic.View; }
+            get { return viewLogic.View; }
         }
         public static bool IsInDesignMode
         {
@@ -30,12 +25,18 @@ namespace GUI_20212202_IJA9WQ.ViewModels
                     .Metadata.DefaultValue;
             }
         }
-        public MainViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<IGameLogic>()) { }
-        public MainViewModel(IGameLogic gameLogic)
+        public MainViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<IViewLogic>()) { }
+        public MainViewModel(IViewLogic viewLogic)
         {
-            this.gameLogic = gameLogic;
-            gameLogic.ChangeView("menu");
+            this.viewLogic = viewLogic;
 
+            viewLogic.ChangeView("menu");
+
+            Messenger.Register<MainViewModel, string, string>(this, "Base", (recipient, msg) =>
+            {
+                OnPropertyChanged("View");
+            });
         }
+
     }
 }

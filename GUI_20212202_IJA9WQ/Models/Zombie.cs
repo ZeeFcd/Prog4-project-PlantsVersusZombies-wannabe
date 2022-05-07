@@ -1,9 +1,4 @@
-﻿using GUI_20212202_IJA9WQ.Assets;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows;
 using System.Windows.Media;
 
@@ -22,8 +17,8 @@ namespace GUI_20212202_IJA9WQ.Models
             this.displayHeight = displayHeight;
             this.speed = speed;
             this.actualX = placeX;
-            this.ally=false;
-            this.stunned =false;
+            this.ally = false;
+            this.stunned = false;
             this.PlaceGameMatrixX = -1;
             this.PlaceGameMatrixY = -1;
         }

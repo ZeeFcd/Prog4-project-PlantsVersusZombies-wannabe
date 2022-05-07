@@ -1,17 +1,10 @@
 ﻿using GUI_20212202_IJA9WQ.Models;
-using GUI_20212202_IJA9WQ.Assets;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GUI_20212202_IJA9WQ.UserControlls;
 
 namespace GUI_20212202_IJA9WQ.Logic
 {
     public class GameLogic : IGameLogic
     {
-        public object View { get; set; }
         int gameClock;
         int sunValue;
         private Plant[,] PlantsMatrix;
@@ -21,16 +14,15 @@ namespace GUI_20212202_IJA9WQ.Logic
         public List<LawnMover> LawnMovers { get; set; }
         public Plant[] PlantsSelectionDay { get; }
         public Plant CurrentlySelected { get; set; }
-        public Object View { get; set; }
-        
+
         public GameLogic(int areaWidth, int areaHeight)
         {
             Plants = new List<Plant>();
             Zombies = new List<Zombie>();
             LawnMovers = new List<LawnMover>();
             gameClock = 0;
-            sunValue=50;
-            PlantsMatrix = new Plant[5,9];
+            sunValue = 50;
+            PlantsMatrix = new Plant[5, 9];
             ZombiesMatrix = new List<Zombie>[5, 9];
             ZombiesMatrixInitialize();
             PlantsSelectionDay = new Plant[] { new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower(), new Peashooter(), new Sunflower() };
@@ -41,8 +33,8 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             for (int i = 1; i < 6; i++)
             {
-                
-                Zombies.Add(new Zombie(1050, 75 + (99 * i) -103, 75, 101, -0.4f));
+
+                Zombies.Add(new Zombie(1050, 75 + (99 * i) - 103, 75, 101, -0.4f));
             }
 
         }
@@ -54,7 +46,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             //{
             //   LawnMovers[i].Move();
             //}
-            
+
             foreach (var zombie in Zombies)
             {
                 int firstplantXindex = FirstPlantInSameRow(zombie);
@@ -64,7 +56,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     {
                         zombie.Move();
                         PlaceZombieInGamematrix(zombie);
-                    }  
+                    }
                 }
                 else
                 {
@@ -72,7 +64,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     PlaceZombieInGamematrix(zombie);
                 }
             }
-            if (gameClock%170==0)
+            if (gameClock % 170 == 0)
             {
                 ;
             }
@@ -95,21 +87,21 @@ namespace GUI_20212202_IJA9WQ.Logic
         {
             CurrentlySelected = PlantsSelectionDay[i];
         }
-        private int FirstPlantInSameRow(Zombie zombie) 
+        private int FirstPlantInSameRow(Zombie zombie)
         {
             int n = zombie.PlaceGameMatrixX;
-            while (n>=0 && PlantsMatrix[zombie.PlaceGameMatrixY,n]==null)
+            while (n >= 0 && PlantsMatrix[zombie.PlaceGameMatrixY, n] == null)
             {
                 n--;
             }
-            if ( n >= 0)
+            if (n >= 0)
             {
                 return n;
             }
             return -1;
 
         }
-        private void PlaceZombieInGamematrix(Zombie zombie) 
+        private void PlaceZombieInGamematrix(Zombie zombie)
         {
             if (260 < zombie.PlaceX && zombie.PlaceX < 970 && 75 < zombie.PlaceY && zombie.PlaceY < 565)
             {
@@ -122,9 +114,9 @@ namespace GUI_20212202_IJA9WQ.Logic
                 zombie.PlaceGameMatrixX = j;
                 zombie.PlaceGameMatrixY = i;
 
-                if (oldJ>-1)
+                if (oldJ > -1)
                 {
-                    if (j!=oldJ)
+                    if (j != oldJ)
                     {
                         ZombiesMatrix[i, oldJ].Remove(zombie);
                         ZombiesMatrix[i, j].Add(zombie);
@@ -132,14 +124,14 @@ namespace GUI_20212202_IJA9WQ.Logic
                     }
                 }
 
-                
+
             }
-            
+
         }
 
-        public void PlantToPlant(int j, int i,int x, int y)
+        public void PlantToPlant(int j, int i, int x, int y)
         {
-            if (PlantsMatrix[i,j]==null)
+            if (PlantsMatrix[i, j] == null)
             {
                 CurrentlySelected.PlaceX = x;
                 CurrentlySelected.PlaceY = y;
@@ -147,31 +139,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 PlantsMatrix[i, j] = CurrentlySelected.GetCopy();
                 CurrentlySelected = null;
             }
-            
-        }
-        public void ChangeView(string view)
-        {
-            if (view.Equals("game"))
-            {
-                View = new GameUC();
-            }
-            else if (view.Equals("menu"))
-            {
-                View = new MenuUC();
-            }
-            
-        }
 
-        public void ChangeView(string view)
-        {
-            switch (view)
-            {
-                case "menu":
-                    View = new MenuUC();
-                    break;
-                default:
-                    break;
-            }
         }
     }
 }

@@ -14,6 +14,8 @@
     <None Remove="Images\itemShop1.png" />
     <None Remove="Images\lawn_mover.png" />
     <None Remove="Images\lawn_mover2.png" />
+    <None Remove="Images\menuBackground.png" />
+    <None Remove="Images\mute.png" />
     <None Remove="Images\peashooter.png" />
     <None Remove="Images\peashooterItem.png" />
     <None Remove="Images\sunflower.png" />
@@ -32,6 +34,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\lawn_mover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\menuBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mute.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\peashooter.png">
