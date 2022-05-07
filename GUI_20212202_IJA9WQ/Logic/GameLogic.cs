@@ -407,19 +407,22 @@ namespace GUI_20212202_IJA9WQ.Logic
                         {
                             if (LawnMovers[i].IsCollision(zombie))
                             {
-                                diedzombies.Add(zombie);
-
-                                Zombies.Remove(zombie);
+                                zombie.Die();
 
                             }
                         }
-                        for (int k = 0; k < diedzombies.Count; k++)
+                        if (firstzombieindex<8)
                         {
-                            ZombiesMatrix[i, firstzombieindex].Remove(diedzombies[k]);
+                            foreach (var zombie in ZombiesMatrix[i, firstzombieindex+1])
+                            {
+                                if (LawnMovers[i].IsCollision(zombie))
+                                {
+                                    zombie.Die();
+                                }
+                            }
                         }
                     }
                 }
-
             }
 
         }
@@ -574,7 +577,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                                 }
                             }
                         }
-                        if (foundCollision)
+                        if (foundCollision&& closest.State!=AttackStateEnum.InActive)
                         {
                             if (bullet.IsFrozen)
                             {
