@@ -26,14 +26,11 @@ namespace GUI_20212202_IJA9WQ.UserControlls
     {
         IViewLogic viewLogic;
 
-        public List<string> Highscores { get; set; }
         public HighscoresUC()
         {
             InitializeComponent();
-            Highscores = new List<string>();
             this.DataContext = new HighscoresViewModel();
             viewLogic = (this.DataContext as HighscoresViewModel).viewLogic;
-            lb.DataContext = Highscores;
         }
     }
 }
