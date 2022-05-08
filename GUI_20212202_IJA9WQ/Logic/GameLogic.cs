@@ -398,7 +398,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
                                 zombie.State = AttackStateEnum.Attack;
                                 PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].DamagedBy(zombie);
-                                if (gameClock%50==0)
+                                if (gameClock%35==0)
                                 {
                                     ZombieBiteSound?.Invoke();
                                 }

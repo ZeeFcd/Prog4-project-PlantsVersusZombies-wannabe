@@ -14,6 +14,8 @@
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         MouseMove="Window_MouseMove"
         WindowState="Maximized"
+        ResizeMode="NoResize"
+        WindowStyle="None"
         Height="639" Width="1041" >
     <Grid x:Name="grid">
         <renderer:Display x:Name="display" />

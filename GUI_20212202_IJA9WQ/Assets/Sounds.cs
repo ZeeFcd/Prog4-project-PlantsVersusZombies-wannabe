@@ -15,13 +15,10 @@ namespace GUI_20212202_IJA9WQ.Assets
         MediaPlayer seedlift;
         MediaPlayer plant;
         MediaPlayer zombiebite;
-        MediaPlayer throw1;
         MediaPlayer snowpeasparkles;
         MediaPlayer startwave;
         MediaPlayer siren;
         MediaPlayer sun;
-        MediaPlayer groan1;
-        MediaPlayer splat1;
         MediaPlayer potatomine;
         MediaPlayer lawnmover;
         MediaPlayer hugewave;
@@ -39,47 +36,50 @@ namespace GUI_20212202_IJA9WQ.Assets
         {
             menumuted=false;
             seedlift = new MediaPlayer();
+         
             seedlift.Open(new Uri(Path.Combine("Sound", "seedlift.wav"), UriKind.RelativeOrAbsolute));
             seedlift.MediaEnded += Media_Ended;
+
             plant = new MediaPlayer();
             plant.Open(new Uri(Path.Combine("Sound", "Plant.wav"), UriKind.RelativeOrAbsolute));
             plant.MediaEnded += Media_Ended;
+       
             zombiebite = new MediaPlayer();
             zombiebite.Open(new Uri(Path.Combine("Sound", "ZombieBite.wav"), UriKind.RelativeOrAbsolute));
             zombiebite.MediaEnded += Media_Ended;
-            throw1 = new MediaPlayer();
-            throw1.Open(new Uri(Path.Combine("Sound", "Throw.wav"), UriKind.RelativeOrAbsolute));
-            throw1.MediaEnded += Media_Ended;
+
             snowpeasparkles = new MediaPlayer();
             snowpeasparkles.Open(new Uri(Path.Combine("Sound", "Snow_pea_sparkles.wav"), UriKind.RelativeOrAbsolute));
             snowpeasparkles.MediaEnded += Media_Ended;
+
             startwave = new MediaPlayer();
             startwave.Open(new Uri(Path.Combine("Sound", "startwave.wav"), UriKind.RelativeOrAbsolute));
             startwave.MediaEnded += Media_Ended;
+
             siren = new MediaPlayer();
             siren.Open(new Uri(Path.Combine("Sound", "siren.wav"), UriKind.RelativeOrAbsolute));
             siren.MediaEnded += Media_Ended;
+
             sun = new MediaPlayer();
             sun.Open(new Uri(Path.Combine("Sound", "Sun.wav"), UriKind.RelativeOrAbsolute));
             sun.MediaEnded += Media_Ended;
-            groan1 = new MediaPlayer();
-            groan1.Open(new Uri(Path.Combine("Sound", "Groan.wav"), UriKind.RelativeOrAbsolute));
-            groan1.MediaEnded += Media_Ended;
-            splat1 = new MediaPlayer();
-            splat1.Open(new Uri(Path.Combine("Sound", "Splat.wav"), UriKind.RelativeOrAbsolute));
-            splat1.MediaEnded += Media_Ended;
+
             potatomine = new MediaPlayer();
             potatomine.Open(new Uri(Path.Combine("Sound", "Potato_mine.wav"), UriKind.RelativeOrAbsolute));
             potatomine.MediaEnded += Media_Ended;
+
             lawnmover = new MediaPlayer();
             lawnmover.Open(new Uri(Path.Combine("Sound", "Lawnmower.wav"), UriKind.RelativeOrAbsolute));
             lawnmover.MediaEnded += Media_Ended;
+
             hugewave = new MediaPlayer();
             hugewave.Open(new Uri(Path.Combine("Sound", "hugewave.wav"), UriKind.RelativeOrAbsolute));
             hugewave.MediaEnded += Media_Ended;
+
             gulp = new MediaPlayer();
             gulp.Open(new Uri(Path.Combine("Sound", "Gulp.wav"), UriKind.RelativeOrAbsolute));
             gulp.MediaEnded += Media_Ended;
+
             cherrybomb = new MediaPlayer();
             cherrybomb.Open(new Uri(Path.Combine("Sound", "Cherrybomb.wav"), UriKind.RelativeOrAbsolute));
             cherrybomb.MediaEnded += Media_Ended;
@@ -115,8 +115,10 @@ namespace GUI_20212202_IJA9WQ.Assets
             for (int i = 0; i < files.Length ; i++)
             {
                 MediaPlayer sound = new MediaPlayer();
+                sound.Volume = 0;
                 sound.Open(new Uri(files[i], UriKind.RelativeOrAbsolute));
                 sound.MediaEnded += Media_Ended;
+                sound.Volume = 1;
                 sounds.Add(sound);
             }
             return sounds;
