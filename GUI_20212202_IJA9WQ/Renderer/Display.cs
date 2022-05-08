@@ -66,7 +66,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     logic.SunValue.ToString(), System.Globalization.CultureInfo.CurrentCulture,
                     FlowDirection.LeftToRight,
                     new Typeface(new FontFamily("Arial"), FontStyles.Normal, FontWeights.ExtraBold, FontStretches.Normal),
-                   coordinateCalculator.DisplayHeight*0.025, Brushes.Black,10);
+                   coordinateCalculator.DisplayHeight*0.023, Brushes.Black,10);
                 
                 var origin = new Point(coordinateCalculator.SunCounterX,coordinateCalculator.SunCounterY);
                 drawingContext.DrawText(text,origin);
