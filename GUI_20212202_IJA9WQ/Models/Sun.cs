@@ -40,14 +40,18 @@ namespace GUI_20212202_IJA9WQ.Models
            
         }
 
-        public void IsInSun(double x,double y)
+        public bool IsInSun(double x,double y)
         {
-            
+            if (ismoving)
+            {
+                return false;
+            }
             if (placeX<x && x<placeX+displayWidth && placeY<y &&y<placeY+displayHeight )
             {
                 ismoving = true;
             }
-           
+
+            return ismoving;
         }
 
         

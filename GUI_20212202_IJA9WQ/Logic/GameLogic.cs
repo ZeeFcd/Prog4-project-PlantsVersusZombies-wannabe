@@ -16,6 +16,24 @@ namespace GUI_20212202_IJA9WQ.Logic
         int gameClock;
         int currentlySelectedIndex;
         bool shovelSelected;
+        public Action ZombieBiteSound;
+        public Action ShootSound;
+        public Action SnowShootSound;
+        public Action ZombiesStartedSound;
+        public Action WaveSound;
+        public Action SunCollectedSound;
+        public Action ZombieGroanSound;
+        public Action BulletHitSound;
+        public Action ShovelSound;
+        public Action PlantSelectedSound;
+        public Action PotatoMineExploisonSound;
+        public Action PlantPlacedSound;
+        public Action LawMoverSound;
+        public Action HugeWaveSound;
+        public Action ZombieGulpSound;
+        public Action CherrybombSound;
+
+        public Action GameOver;
         public int GameClock { get { return gameClock; } }
 
         int sunValue;
@@ -199,6 +217,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             foreach (var deadplant in deadplants)
             {
                 PlantTerminated(deadplant);
+                ZombieGulpSound?.Invoke();
             }
 
         }
@@ -245,7 +264,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         private void LawMoverStart(int i)
         {
             LawnMovers[i].IsStarted = true;
-
+            LawMoverSound?.Invoke();
         }
         public void PlantSelect(int i)
         {
@@ -253,6 +272,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             if (PlantsSelectionDay[i].Ispurchaseable && sunValue>= PlantsSelectionDay[i].Price)
             {
                 currentlySelectedIndex = i;
+                PlantSelectedSound?.Invoke();
             }
 
         }
@@ -334,6 +354,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 PlantsMatrix[i, j] = plantToplace;
                 sunValue -= PlantsSelectionDay[currentlySelectedIndex].Price;
                 currentlySelectedIndex = -1;
+                PlantPlacedSound?.Invoke();
             }
         }
         private void ZombieStep(Zombie zombie)
@@ -370,6 +391,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
                                 zombie.State = AttackStateEnum.Attack;
                                 PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].DamagedBy(zombie);
+                                ZombieBiteSound?.Invoke();
                                 ;// ATTACK THE PLANT
                             }
                         }
@@ -428,9 +450,14 @@ namespace GUI_20212202_IJA9WQ.Logic
         }
         public void IsSunSelected(double x, double y)
         {
+            bool isclicked = false;
             foreach (var sun in Suns)
             {
-                sun.IsInSun(x, y);
+                isclicked=sun.IsInSun(x, y);
+                if (isclicked)
+                {
+                    SunCollectedSound?.Invoke();
+                }
             }
         }
         private void SunMoving()
@@ -458,14 +485,6 @@ namespace GUI_20212202_IJA9WQ.Logic
                 Suns.Remove(sunstoremove[k]);
             }
         }
-        private void ClearZombieCell(List<Zombie> zombiecell)
-        {
-            foreach (var zombie in zombiecell)
-            {
-                Zombies.Remove(zombie);
-            }
-            zombiecell.Clear();
-        }
         private void ShooterShoot(Plant plant) 
         {
             if (IsZombieInSameRow(plant) > -1)
@@ -480,7 +499,14 @@ namespace GUI_20212202_IJA9WQ.Logic
                                  plant.Hasfrozenbullet,
                                  plant.Damage
                                  ));
-                
+                if (plant.Hasfrozenbullet)
+                {
+                    SnowShootSound?.Invoke();
+                }
+                else
+                {
+                    ShootSound?.Invoke();
+                } 
             }
         }
         private void SunFlowerProduce(Plant plant)
@@ -509,7 +535,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     }
                 }
             }
-          
+            CherrybombSound?.Invoke();
         }
         private void PlantTerminated(GameItem gameitem) 
         {
@@ -547,7 +573,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                     zombie.Explode();
                 }
             }
-         
+            PotatoMineExploisonSound?.Invoke();
         }
         private void BulletStep(Bullet bullet)
         {
@@ -584,12 +610,13 @@ namespace GUI_20212202_IJA9WQ.Logic
                                 closest.Slowed();
                                 closest.DamagedBy(bullet);
                                 bullet.Hit();
-
+                                BulletHitSound?.Invoke();
                             }
                             else
                             {
                                 closest.DamagedBy(bullet);
                                 bullet.Hit();
+                                BulletHitSound?.Invoke();
                             }
                         }
                     }
