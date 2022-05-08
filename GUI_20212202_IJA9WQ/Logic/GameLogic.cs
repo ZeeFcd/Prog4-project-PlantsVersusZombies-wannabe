@@ -267,8 +267,11 @@ namespace GUI_20212202_IJA9WQ.Logic
         }
         private void LawMoverStart(int i)
         {
-            LawnMovers[i].IsStarted = true;
-            LawMoverSound?.Invoke();
+            if (!LawnMovers[i].IsStarted)
+            {
+                LawnMovers[i].IsStarted = true;
+                LawMoverSound?.Invoke();
+            }
         }
         public void PlantSelect(int i)
         {

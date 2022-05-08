@@ -523,6 +523,12 @@
     <None Remove="Sound\Groan3.wav" />
     <None Remove="Sound\Groan4.wav" />
     <None Remove="Sound\Groan6.wav" />
+    <None Remove="Sound\Groan\Groan.wav" />
+    <None Remove="Sound\Groan\Groan3.wav" />
+    <None Remove="Sound\Groan\Groan4.wav" />
+    <None Remove="Sound\Groan\Groan6.wav" />
+    <None Remove="Sound\Groan\Sukhbir2.wav" />
+    <None Remove="Sound\Groan\Sukhbir4.wav" />
     <None Remove="Sound\Gulp.wav" />
     <None Remove="Sound\hugewave.wav" />
     <None Remove="Sound\Lawnmower.wav" />
@@ -537,12 +543,17 @@
     <None Remove="Sound\Splat.wav" />
     <None Remove="Sound\Splat2.wav" />
     <None Remove="Sound\Splat3.wav" />
+    <None Remove="Sound\Splat\Splat.wav" />
+    <None Remove="Sound\Splat\Splat2.wav" />
+    <None Remove="Sound\Splat\Splat3.wav" />
     <None Remove="Sound\startwave.wav" />
     <None Remove="Sound\Sukhbir2.wav" />
     <None Remove="Sound\Sukhbir4.wav" />
     <None Remove="Sound\Sun.wav" />
     <None Remove="Sound\Throw.wav" />
     <None Remove="Sound\Throw2.wav" />
+    <None Remove="Sound\Throw\Throw.wav" />
+    <None Remove="Sound\Throw\Throw2.wav" />
     <None Remove="Sound\winmusic.wav" />
     <None Remove="Sound\ZombieBite.wav" />
   </ItemGroup>
@@ -1937,6 +1948,24 @@
     <Content Include="Sound\Groan6.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sound\Groan\Groan.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Groan\Groan3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Groan\Groan4.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Groan\Groan6.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Groan\Sukhbir2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Groan\Sukhbir4.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sound\Gulp.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1979,6 +2008,15 @@
     <Content Include="Sound\Splat3.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sound\Splat\Splat.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Splat\Splat2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Splat\Splat3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sound\startwave.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1995,6 +2033,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Sound\Throw2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Throw\Throw.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Throw\Throw2.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Sound\winmusic.wav">

@@ -1,41 +1,243 @@
-﻿using System;
+﻿using GUI_20212202_IJA9WQ.Helpers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace GUI_20212202_IJA9WQ.Assets
 {
     class Sounds
     {
-        public static readonly string seedlift = Path.Combine("Sound", "seedlift.wav");
-        public static readonly string cherrybomb = Path.Combine("Sound", "Cherrybomb.wav");
-        public static readonly string daymusic = Path.Combine("Sound", "daymusic.wav");
-        public static readonly string groan1 = Path.Combine("Sound", "Groan.wav");
-        public static readonly string groan2 = Path.Combine("Sound", "Groan3.wav");
-        public static readonly string groan3 = Path.Combine("Sound", "Groan4.wav");
-        public static readonly string groan4 = Path.Combine("Sound", "Groan6.wav");
-        public static readonly string gulp = Path.Combine("Sound", "Gulp.wav");
-        public static readonly string hugewave = Path.Combine("Sound", "hugewave.wav");
-        public static readonly string lawnmover = Path.Combine("Sound", "Lawnmower.wav");
-        public static readonly string losemusic = Path.Combine("Sound", "losemusic.wav");
-        public static readonly string mainmenu = Path.Combine("Sound", "MainMenuPvZ1.wav");
-        public static readonly string plant = Path.Combine("Sound", "Plant.wav");
-        public static readonly string potatomine = Path.Combine("Sound", "Potato_mine.wav");
-        public static readonly string shovel = Path.Combine("Sound", "Shovel.wav");
-        public static readonly string siren = Path.Combine("Sound", "siren.wav");
-        public static readonly string snowpeasparkles = Path.Combine("Sound", "Snow_pea_sparkles.wav");
-        public static readonly string splat1 = Path.Combine("Sound", "Splat.wav");
-        public static readonly string splat2 = Path.Combine("Sound", "Splat2.wav");
-        public static readonly string splat3 = Path.Combine("Sound", "Splat3.wav");
-        public static readonly string startwave = Path.Combine("Sound", "startwave.wav");
-        public static readonly string sukhbir1 = Path.Combine("Sound", "Sukhbir2.wav");
-        public static readonly string sukhbir2 = Path.Combine("Sound", "Sukhbir4.wav");
-        public static readonly string sun = Path.Combine("Sound", "Sun.wav");
-        public static readonly string throw1 = Path.Combine("Sound", "Throw.wav");
-        public static readonly string throw2 = Path.Combine("Sound", "Throw2.wav");
-        public static readonly string winmusic = Path.Combine("Sound", "winmusic.wav");
-        public static readonly string zombiebite = Path.Combine("Sound", "ZombieBite.wav");
+        bool menumuted;
+        MediaPlayer seedlift;
+        MediaPlayer plant;
+        MediaPlayer zombiebite;
+        MediaPlayer throw1;
+        MediaPlayer snowpeasparkles;
+        MediaPlayer startwave;
+        MediaPlayer siren;
+        MediaPlayer sun;
+        MediaPlayer groan1;
+        MediaPlayer splat1;
+        MediaPlayer potatomine;
+        MediaPlayer lawnmover;
+        MediaPlayer hugewave;
+        MediaPlayer gulp;
+        MediaPlayer cherrybomb;
+        MediaPlayer daymusic;
+        MediaPlayer shovel;
+        MediaPlayer losemusic;
+        MediaPlayer mainmenu;
+
+        public List<MediaPlayer> Groan;
+        public List<MediaPlayer> Throw;
+        public List<MediaPlayer> Splat;
+        public Sounds()
+        {
+            menumuted=false;
+            seedlift = new MediaPlayer();
+            seedlift.Open(new Uri(Path.Combine("Sound", "seedlift.wav"), UriKind.RelativeOrAbsolute));
+            seedlift.MediaEnded += Media_Ended;
+            plant = new MediaPlayer();
+            plant.Open(new Uri(Path.Combine("Sound", "Plant.wav"), UriKind.RelativeOrAbsolute));
+            plant.MediaEnded += Media_Ended;
+            zombiebite = new MediaPlayer();
+            zombiebite.Open(new Uri(Path.Combine("Sound", "ZombieBite.wav"), UriKind.RelativeOrAbsolute));
+            zombiebite.MediaEnded += Media_Ended;
+            throw1 = new MediaPlayer();
+            throw1.Open(new Uri(Path.Combine("Sound", "Throw.wav"), UriKind.RelativeOrAbsolute));
+            throw1.MediaEnded += Media_Ended;
+            snowpeasparkles = new MediaPlayer();
+            snowpeasparkles.Open(new Uri(Path.Combine("Sound", "Snow_pea_sparkles.wav"), UriKind.RelativeOrAbsolute));
+            snowpeasparkles.MediaEnded += Media_Ended;
+            startwave = new MediaPlayer();
+            startwave.Open(new Uri(Path.Combine("Sound", "startwave.wav"), UriKind.RelativeOrAbsolute));
+            startwave.MediaEnded += Media_Ended;
+            siren = new MediaPlayer();
+            siren.Open(new Uri(Path.Combine("Sound", "siren.wav"), UriKind.RelativeOrAbsolute));
+            siren.MediaEnded += Media_Ended;
+            sun = new MediaPlayer();
+            sun.Open(new Uri(Path.Combine("Sound", "Sun.wav"), UriKind.RelativeOrAbsolute));
+            sun.MediaEnded += Media_Ended;
+            groan1 = new MediaPlayer();
+            groan1.Open(new Uri(Path.Combine("Sound", "Groan.wav"), UriKind.RelativeOrAbsolute));
+            groan1.MediaEnded += Media_Ended;
+            splat1 = new MediaPlayer();
+            splat1.Open(new Uri(Path.Combine("Sound", "Splat.wav"), UriKind.RelativeOrAbsolute));
+            splat1.MediaEnded += Media_Ended;
+            potatomine = new MediaPlayer();
+            potatomine.Open(new Uri(Path.Combine("Sound", "Potato_mine.wav"), UriKind.RelativeOrAbsolute));
+            potatomine.MediaEnded += Media_Ended;
+            lawnmover = new MediaPlayer();
+            lawnmover.Open(new Uri(Path.Combine("Sound", "Lawnmower.wav"), UriKind.RelativeOrAbsolute));
+            lawnmover.MediaEnded += Media_Ended;
+            hugewave = new MediaPlayer();
+            hugewave.Open(new Uri(Path.Combine("Sound", "hugewave.wav"), UriKind.RelativeOrAbsolute));
+            hugewave.MediaEnded += Media_Ended;
+            gulp = new MediaPlayer();
+            gulp.Open(new Uri(Path.Combine("Sound", "Gulp.wav"), UriKind.RelativeOrAbsolute));
+            gulp.MediaEnded += Media_Ended;
+            cherrybomb = new MediaPlayer();
+            cherrybomb.Open(new Uri(Path.Combine("Sound", "Cherrybomb.wav"), UriKind.RelativeOrAbsolute));
+            cherrybomb.MediaEnded += Media_Ended;
+
+            daymusic = new MediaPlayer();
+            daymusic.Open(new Uri(Path.Combine("Sound", "daymusic.wav"), UriKind.RelativeOrAbsolute));
+            daymusic.MediaEnded += Media_Endedmusic;
+            daymusic.Volume = 0.2;
+
+            shovel = new MediaPlayer();
+            shovel.Open(new Uri(Path.Combine("Sound", "Shovel.wav"), UriKind.RelativeOrAbsolute));
+            shovel.MediaEnded += Media_Ended;
+
+            losemusic = new MediaPlayer();
+            losemusic.Open(new Uri(Path.Combine("Sound", "losemusic.wav"), UriKind.RelativeOrAbsolute));
+            losemusic.MediaEnded += Media_Ended;
+
+            Groan = SoundReader("Groan");
+            Throw = SoundReader("Throw");
+            Splat = SoundReader("Splat");
+
+            mainmenu = new MediaPlayer();
+            mainmenu.Open(new Uri(Path.Combine("Sound", "MainMenuPvZ1.wav"), UriKind.RelativeOrAbsolute));
+            mainmenu.MediaEnded += Media_Endedmusic;
+            mainmenu.Volume = 0.2;
+        }
+        
+       
+        public List<MediaPlayer> SoundReader(string path)
+        {
+            List<MediaPlayer> sounds = new List<MediaPlayer>();
+            string[] files = Directory.GetFiles(Path.Combine("Sound", path));
+            for (int i = 0; i < files.Length ; i++)
+            {
+                MediaPlayer sound = new MediaPlayer();
+                sound.Open(new Uri(files[i], UriKind.RelativeOrAbsolute));
+                sound.MediaEnded += Media_Ended;
+                sounds.Add(sound);
+            }
+            return sounds;
+        }
+
+        public void MainMenuMute()
+        {
+            if (menumuted)
+            {
+                mainmenu.Play();
+            }
+            else
+            {
+                mainmenu.Pause();
+            }
+        }
+
+        public void Daymusic()
+        {
+           daymusic.Play();
+        }
+
+        public void ShovelSound()
+        {
+            shovel.Position = TimeSpan.Zero;
+            shovel.Play();
+        }
+        public void PlantSelectedSound()
+        {
+            seedlift.Position = TimeSpan.Zero;
+            seedlift.Play();
+
+        }
+        public void PlantPlacedSound()
+        {
+            plant.Position = TimeSpan.Zero;
+            plant.Play();
+
+        }
+        public void ZombieBiteSound()
+        {
+            zombiebite.Position = TimeSpan.Zero;
+            zombiebite.Play();
+        }
+        public void ShootSound()
+        {
+            
+            int random = RandomGenerator.Rand.Next(0, Throw.Count);
+            Throw[random].Position = TimeSpan.Zero;
+            Throw[random].Play();
+        }
+        public void SnowShootSound()
+        {
+            snowpeasparkles.Position = TimeSpan.Zero;
+            snowpeasparkles.Play();
+        }
+        public void ZombiesStartedSound()
+        {
+            startwave.Position = TimeSpan.Zero;
+            startwave.Play();
+        }
+        public void WaveSound()
+        {
+            siren.Position = TimeSpan.Zero;
+            siren.Play();
+
+        }
+        public void SunCollectedSound()
+        {
+            sun.Position = TimeSpan.Zero;
+            sun.Play();
+        }
+        public void ZombieGroanSound()
+        {
+            int random = RandomGenerator.Rand.Next(0, Groan.Count);
+            Groan[random].Position = TimeSpan.Zero;
+            Groan[random].Play();
+
+        }
+        public void BulletHitSound()
+        {
+            int random = RandomGenerator.Rand.Next(0, Splat.Count);
+            Splat[random].Position = TimeSpan.Zero;
+            Splat[random].Play();
+
+        }
+        public void PotatoMineExploisonSound()
+        {
+            potatomine.Position = TimeSpan.Zero;
+            potatomine.Play();
+        }
+        public void LawMoverSound()
+        {
+            lawnmover.Position = TimeSpan.Zero;
+            lawnmover.Play();
+        }
+        public void HugeWaveSound()
+        {
+            hugewave.Position = TimeSpan.Zero;
+            hugewave.Play();
+        }
+        public void ZombieGulpSound()
+        {
+            gulp.Position = TimeSpan.Zero;
+            gulp.Play();
+        }
+        public void CherrybombSound()
+        {
+            cherrybomb.Position = TimeSpan.Zero;
+            cherrybomb.Play();
+        }
+
+        public void Media_Ended(object sender, EventArgs e)
+        {
+            (sender as MediaPlayer).Stop();
+        }
+        public void Media_Endedmusic(object sender, EventArgs e)
+        {
+            (sender as MediaPlayer).Position = TimeSpan.Zero;
+
+        }
+
     }
 }
