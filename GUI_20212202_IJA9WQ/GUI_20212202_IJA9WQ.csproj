@@ -517,6 +517,34 @@
     <None Remove="Images\zombiewalkAnimation\zombiewalk %2891%29.gif" />
     <None Remove="Images\zombiewalkAnimation\zombiewalk %2892%29.gif" />
     <None Remove="Images\zombiewalkAnimation\zombiewalk %2893%29.gif" />
+    <None Remove="Sound\Cherrybomb.wav" />
+    <None Remove="Sound\daymusic.wav" />
+    <None Remove="Sound\Groan.wav" />
+    <None Remove="Sound\Groan3.wav" />
+    <None Remove="Sound\Groan4.wav" />
+    <None Remove="Sound\Groan6.wav" />
+    <None Remove="Sound\Gulp.wav" />
+    <None Remove="Sound\hugewave.wav" />
+    <None Remove="Sound\Lawnmower.wav" />
+    <None Remove="Sound\losemusic.wav" />
+    <None Remove="Sound\MainMenuPvZ1.wav" />
+    <None Remove="Sound\Plant.wav" />
+    <None Remove="Sound\Potato_mine.wav" />
+    <None Remove="Sound\seedlift.wav" />
+    <None Remove="Sound\Shovel.wav" />
+    <None Remove="Sound\siren.wav" />
+    <None Remove="Sound\Snow_pea_sparkles.wav" />
+    <None Remove="Sound\Splat.wav" />
+    <None Remove="Sound\Splat2.wav" />
+    <None Remove="Sound\Splat3.wav" />
+    <None Remove="Sound\startwave.wav" />
+    <None Remove="Sound\Sukhbir2.wav" />
+    <None Remove="Sound\Sukhbir4.wav" />
+    <None Remove="Sound\Sun.wav" />
+    <None Remove="Sound\Throw.wav" />
+    <None Remove="Sound\Throw2.wav" />
+    <None Remove="Sound\winmusic.wav" />
+    <None Remove="Sound\ZombieBite.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1877,6 +1905,90 @@
 
   <ItemGroup>
     <Content Include="Images\exploded.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Cherrybomb.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\daymusic.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Groan.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Groan3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Groan4.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Groan6.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Gulp.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\hugewave.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Lawnmower.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\losemusic.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\MainMenuPvZ1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Plant.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Potato_mine.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\seedlift.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Shovel.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\siren.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Snow_pea_sparkles.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Splat.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Splat2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Splat3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\startwave.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Sukhbir2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Sukhbir4.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Sun.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Throw.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Throw2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\winmusic.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\ZombieBite.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -4,6 +4,7 @@ using GUI_20212202_IJA9WQ.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -42,8 +43,25 @@ namespace GUI_20212202_IJA9WQ
             coordinateCalculator = new CoordinateCalculator(grid.ActualWidth, grid.ActualHeight);
             logic = new GameLogic(coordinateCalculator);
             brushes = new GameAnimationBrushes();
-            coordinateCalculator.SetUpLogic(logic);
 
+            logic.ZombieBiteSound+= ZombieBiteSound;
+            logic.ShootSound += ShootSound;
+            logic.SnowShootSound += SnowShootSound;
+            logic.ZombiesStartedSound += ZombiesStartedSound;
+            logic.WaveSound += WaveSound;
+            logic.SunCollectedSound += SunCollectedSound;
+            logic.ZombieGroanSound += ZombieGroanSound;
+            logic.BulletHitSound += BulletHitSound;
+            //logic.ShovelSound += ShovelSound;
+            logic.PlantSelectedSound += PlantSelectedSound;
+            logic.PotatoMineExploisonSound += PotatoMineExploisonSound;
+            logic.PlantPlacedSound += PlantPlacedSound;
+            logic.LawMoverSound += LawMoverSound;
+            logic.ZombieBiteSound += ZombieBiteSound;
+            logic.ZombieGulpSound += ZombieGulpSound;
+            logic.CherrybombSound += CherrybombSound;
+
+            coordinateCalculator.SetUpLogic(logic);
             display.SetupLogic(logic);
             display.SetupCoordinateCalculator(coordinateCalculator);
             display.SetupBrushes(brushes);
@@ -120,5 +138,96 @@ namespace GUI_20212202_IJA9WQ
             display.SetMouse(mouseX, mouseY);
             display.InvalidateVisual();   
         }
+
+        private void PlantSelectedSound()
+        {   
+            SoundPlayer soundP = new SoundPlayer(Sounds.seedlift);
+            soundP.Play();
+        }
+        private void PlantPlacedSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void ZombieBiteSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void ShootSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void SnowShootSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void ZombiesStartedSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void WaveSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void SunCollectedSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void ZombieGroanSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void BulletHitSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+
+        }
+        private void PotatoMineExploisonSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void LawMoverSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void HugeWaveSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void ZombieGulpSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+        }
+        private void CherrybombSound()
+        {
+            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            soundP.Play();
+
+        }
+        //private void Sound()
+        //{
+
+        //}
+        //private void Sound()
+        //{
+
+        //}
+        //private void Sound()
+        //{
+
+        //}
+
     }
 }
