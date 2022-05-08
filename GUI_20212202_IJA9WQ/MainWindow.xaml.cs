@@ -71,36 +71,35 @@ namespace GUI_20212202_IJA9WQ
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            double x = e.GetPosition(grid).X;
-            double y = e.GetPosition(grid).Y;
-            bool isingamemap = coordinateCalculator.IsInGameMap(x, y);
 
-            if (coordinateCalculator.IsInShop(x, y))
+            bool isingamemap = coordinateCalculator.IsInGameMap(mouseX, mouseY);
+
+            if (coordinateCalculator.IsInShop(mouseX, mouseY))
             {
-                logic.PlantSelect(coordinateCalculator.WhichCellInShop(y));
-                display.SetMouse(mouseX, mouseY);
+                logic.PlantSelect(coordinateCalculator.WhichCellInShop(mouseY));
+
                 display.InvalidateVisual();
             }
             else if (logic.CurrentlySelectedIndex != -1 && isingamemap)
             {
-                (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
+                (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(mouseX, mouseY);
                 logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2);
                 display.InvalidateVisual();
             }         
-            else if (!logic.ShovelSelected&&coordinateCalculator.IsShovel(x,y))
+            else if (!logic.ShovelSelected&&coordinateCalculator.IsShovel(mouseX, mouseY))
             {
                 logic.ShovelSelect();
                 display.InvalidateVisual();
             }
             else if (logic.ShovelSelected&& isingamemap)
             {
-                (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
+                (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(mouseX, mouseY);
                 logic.PlantDelete(gameCellindexes.Item1, gameCellindexes.Item2);
                 display.InvalidateVisual();
             }
             else if (isingamemap)
             {
-                logic.IsSunSelected(x, y);
+                logic.IsSunSelected(mouseX, mouseY);
                 display.InvalidateVisual();
             }
             display.InvalidateVisual();
