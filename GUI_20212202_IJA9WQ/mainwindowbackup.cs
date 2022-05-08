@@ -13,6 +13,7 @@ namespace GUI_20212202_IJA9WQ
         //GameLogic logic;
         //CoordinateCalculator coordinateCalculator;
         //GameAnimationBrushes brushes;
+        //Sounds sounds;
         //double mouseX;
         //double mouseY;
 
@@ -23,11 +24,29 @@ namespace GUI_20212202_IJA9WQ
 
         //private void Window_Loaded(object sender, RoutedEventArgs e)
         //{
+        //    sounds = new Sounds();
         //    coordinateCalculator = new CoordinateCalculator(grid.ActualWidth, grid.ActualHeight);
         //    logic = new GameLogic(coordinateCalculator);
         //    brushes = new GameAnimationBrushes();
-        //    coordinateCalculator.SetUpLogic(logic);
 
+        //    logic.ZombieBiteSound += sounds.ZombieBiteSound;
+        //    logic.ShootSound += sounds.ShootSound;
+        //    logic.SnowShootSound += sounds.SnowShootSound;
+        //    logic.ZombiesStartedSound += sounds.ZombiesStartedSound;
+        //    logic.WaveSound += sounds.WaveSound;
+        //    logic.SunCollectedSound += sounds.SunCollectedSound;
+        //    logic.ZombieGroanSound += sounds.ZombieGroanSound;
+        //    logic.BulletHitSound += sounds.BulletHitSound;
+        //    logic.ShovelSound += sounds.ShovelSound;
+        //    logic.PlantSelectedSound += sounds.PlantSelectedSound;
+        //    logic.PotatoMineExploisonSound += sounds.PotatoMineExploisonSound;
+        //    logic.PlantPlacedSound += sounds.PlantPlacedSound;
+        //    logic.LawMoverSound += sounds.LawMoverSound;
+        //    logic.ZombieBiteSound += sounds.ZombieBiteSound;
+        //    logic.ZombieGulpSound += sounds.ZombieGulpSound;
+        //    logic.CherrybombSound += sounds.CherrybombSound;
+
+        //    coordinateCalculator.SetUpLogic(logic);
         //    display.SetupLogic(logic);
         //    display.SetupCoordinateCalculator(coordinateCalculator);
         //    display.SetupBrushes(brushes);
@@ -51,40 +70,42 @@ namespace GUI_20212202_IJA9WQ
 
         //    gamestepDT.Start();
         //    displayDT.Start();
+        //    sounds.Daymusic();
         //}
+
 
         //private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         //{
-        //    double x = e.GetPosition(grid).X;
-        //    double y = e.GetPosition(grid).Y;
-        //    bool isingamemap = coordinateCalculator.IsInGameMap(x, y);
 
-        //    if (coordinateCalculator.IsInShop(x, y))
+        //    bool isingamemap = coordinateCalculator.IsInGameMap(mouseX, mouseY);
+
+        //    if (coordinateCalculator.IsInShop(mouseX, mouseY))
         //    {
-        //        logic.PlantSelect(coordinateCalculator.WhichCellInShop(y));
-        //        display.SetMouse(mouseX, mouseY);
+        //        logic.PlantSelect(coordinateCalculator.WhichCellInShop(mouseY));
+
         //        display.InvalidateVisual();
         //    }
         //    else if (logic.CurrentlySelectedIndex != -1 && isingamemap)
         //    {
-        //        (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
+        //        (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(mouseX, mouseY);
         //        logic.PlantToPlant(gameCellindexes.Item1, gameCellindexes.Item2);
         //        display.InvalidateVisual();
         //    }
-        //    else if (!logic.ShovelSelected && coordinateCalculator.IsShovel(x, y))
+        //    else if (!logic.ShovelSelected && coordinateCalculator.IsShovel(mouseX, mouseY))
         //    {
         //        logic.ShovelSelect();
         //        display.InvalidateVisual();
         //    }
         //    else if (logic.ShovelSelected && isingamemap)
         //    {
-        //        (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(x, y);
+        //        (int, int) gameCellindexes = coordinateCalculator.WhichCellInGameMap(mouseX, mouseY);
         //        logic.PlantDelete(gameCellindexes.Item1, gameCellindexes.Item2);
+        //        sounds.ShovelSound();
         //        display.InvalidateVisual();
         //    }
         //    else if (isingamemap)
         //    {
-        //        logic.IsSunSelected(x, y);
+        //        logic.IsSunSelected(mouseX, mouseY);
         //        display.InvalidateVisual();
         //    }
         //    display.InvalidateVisual();
@@ -105,5 +126,8 @@ namespace GUI_20212202_IJA9WQ
         //    display.SetMouse(mouseX, mouseY);
         //    display.InvalidateVisual();
         //}
+
+
+
     }
 }
