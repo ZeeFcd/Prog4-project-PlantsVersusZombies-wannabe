@@ -42,7 +42,7 @@
             <Button Content="Exit"  Padding="15" Margin="30" Style="{StaticResource buttonText}" Click="Button_Exit_Click"/>
         </Viewbox>
         <Viewbox Grid.Row="3" Grid.Column="3">
-            <Button Content="" Padding="60" Margin="30" Background="{StaticResource muteButtonBrush}"/>
+            <Button Content="" Padding="60" Margin="30" BorderThickness="0" Background="{StaticResource muteButtonBrush}"/>
         </Viewbox>
     </Grid>
 </UserControl>

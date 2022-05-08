@@ -46,6 +46,7 @@
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Background" Value="Transparent" />
                         <Setter Property="Margin" Value="1" />
+                        <Setter Property="FontFamily" Value="\Fonts\#SeriesOrbit"/>
                     </Style>
                 </ListBox.Resources>
                 <ListBox.ItemsPanel>
@@ -53,6 +54,13 @@
                         <StackPanel HorizontalAlignment="Center" Orientation="Vertical" VerticalAlignment="Center" IsItemsHost="True" />
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Viewbox>
+                            <Label Content="{Binding }"/>
+                        </Viewbox>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
                 
             </ListBox>
             <Grid Grid.Column="4">
