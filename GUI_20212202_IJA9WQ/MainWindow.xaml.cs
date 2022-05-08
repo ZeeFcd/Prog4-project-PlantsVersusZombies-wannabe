@@ -151,68 +151,68 @@ namespace GUI_20212202_IJA9WQ
         }
         private void ZombieBiteSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.zombiebite);
             soundP.Play();
         }
         private void ShootSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.throw1);
             soundP.Play();
         }
         private void SnowShootSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.snowpeasparkles);
             soundP.Play();
         }
         private void ZombiesStartedSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.startwave);
             soundP.Play();
         }
         private void WaveSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.siren);
             soundP.Play();
         }
         private void SunCollectedSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.sun);
             soundP.Play();
         }
         private void ZombieGroanSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.groan1);
             soundP.Play();
         }
         private void BulletHitSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.splat1);
             soundP.Play();
 
         }
         private void PotatoMineExploisonSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.potatomine);
             soundP.Play();
         }
         private void LawMoverSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.lawnmover);
             soundP.Play();
         }
         private void HugeWaveSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.hugewave);
             soundP.Play();
         }
         private void ZombieGulpSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.gulp);
             soundP.Play();
         }
         private void CherrybombSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
+            SoundPlayer soundP = new SoundPlayer(Sounds.cherrybomb);
             soundP.Play();
 
         }
