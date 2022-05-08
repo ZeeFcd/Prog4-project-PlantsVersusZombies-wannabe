@@ -73,12 +73,86 @@ namespace GUI_20212202_IJA9WQ.Renderer
 
                 for (int i = 0; i < logic.PlantsSelectionDay.Length; i++)
                 {
-                    drawingContext.DrawRectangle(logic.PlantsSelectionDay[i].ShopImageBrush, new Pen(Brushes.Black, 1),
-                        new Rect(
-                            coordinateCalculator.ShopItemPlaceX,
-                            i * coordinateCalculator.ShopItemPlaceY + coordinateCalculator.ShopItemYShift,
-                            coordinateCalculator.ShopItemWidth,
-                            coordinateCalculator.ShopItemHeight));
+                    bool notenoughmoney = logic.SunValue < logic.PlantsSelectionDay[i].Price;
+                    Pen pen = null;
+                    Brush plantitembrush = null;
+                    if (logic.PlantsSelectionDay[i].Ispurchaseable)
+                    {
+                        pen = new Pen(Brushes.Black, 1);
+                    }
+                    else
+                    {
+                        pen = new Pen(Brushes.Red, 5);
+                    }
+                    switch (logic.PlantsSelectionDay[i].Type)
+                    {
+                        case PlantEnum.Peashooter:
+                            if (notenoughmoney)
+                            {
+                                plantitembrush = GameBrushes.Dea_PeashooterItemBrush;
+                            }
+                            else
+                            {
+                                plantitembrush = GameBrushes.PeashooterItemBrush;
+                            }
+                            break;
+                        case PlantEnum.Wallnut:
+                            if (notenoughmoney)
+                            {
+                                plantitembrush = GameBrushes.Dea_WallnutItemBrush;
+                            }
+                            else
+                            {
+                                plantitembrush = GameBrushes.WallnutItemBrush;
+                            }
+                            break;
+                        case PlantEnum.Potatomine:
+                            if (notenoughmoney)
+                            {
+                                plantitembrush = GameBrushes.Dea_PotatoMineItemBrush;
+                            }
+                            else
+                            {
+                                plantitembrush = GameBrushes.PotatoMineItemBrush;
+                            }
+                            break;
+                        case PlantEnum.Snowpeashooter:
+                            if (notenoughmoney)
+                            {
+                                plantitembrush = GameBrushes.Dea_SnowPeaItemBrush;
+                            }
+                            else
+                            {
+                                plantitembrush = GameBrushes.SnowPeaItemBrush;
+                            }
+                            break;
+                        case PlantEnum.Cherrybomb:
+                            if (notenoughmoney)
+                            {
+                                plantitembrush = GameBrushes.Dea_CherryBombItemBrush;
+                            }
+                            else
+                            {
+                                plantitembrush = GameBrushes.CherryBombItemBrush;
+                            }
+                            break;
+                        case PlantEnum.Sunflower:
+                            if (notenoughmoney)
+                            {
+                                plantitembrush = GameBrushes.Dea_SunflowerItemBrush;
+                            }
+                            else
+                            {
+                                plantitembrush = GameBrushes.SunflowerItemBrush;
+                            }
+                            break;
+                    }
+                    drawingContext.DrawRectangle(plantitembrush, pen,
+                                  new Rect(
+                                      coordinateCalculator.ShopItemPlaceX,
+                                      i * coordinateCalculator.ShopItemPlaceY + coordinateCalculator.ShopItemYShift,
+                                      coordinateCalculator.ShopItemWidth,
+                                      coordinateCalculator.ShopItemHeight));
                 }
 
                 if (logic.CurrentlySelectedIndex != -1 && coordinateCalculator.IsInGameMap(mouseX, mouseY))

@@ -42,7 +42,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             Suns = new List<Sun>();
             gameClock = 0;
 
-            sunValue = 999999;
+            sunValue = 99999;
             PlantsMatrix = new Plant[5, 9];
             ZombiesMatrix = new List<Zombie>[5, 9];
             ZombiesMatrixInitialize();

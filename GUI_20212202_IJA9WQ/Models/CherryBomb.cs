@@ -18,6 +18,7 @@ namespace GUI_20212202_IJA9WQ.Models
             {
                 if (ispurchaseable)
                 {
+                    
                     return GameBrushes.CherryBombItemBrush;
                 }
                 else
