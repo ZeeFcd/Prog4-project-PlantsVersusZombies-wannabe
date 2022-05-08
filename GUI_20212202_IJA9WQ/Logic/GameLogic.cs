@@ -217,7 +217,11 @@ namespace GUI_20212202_IJA9WQ.Logic
             foreach (var deadplant in deadplants)
             {
                 PlantTerminated(deadplant);
-                ZombieGulpSound?.Invoke();
+                if (deadplant.Type!=PlantEnum.Cherrybomb && deadplant.Type != PlantEnum.Potatomine)
+                {
+                    ZombieGulpSound?.Invoke();
+                }
+                
             }
 
         }
@@ -391,7 +395,10 @@ namespace GUI_20212202_IJA9WQ.Logic
 
                                 zombie.State = AttackStateEnum.Attack;
                                 PlantsMatrix[zombie.PlaceGameMatrixY, firstplantXindex].DamagedBy(zombie);
-                                ZombieBiteSound?.Invoke();
+                                if (gameClock%50==0)
+                                {
+                                    ZombieBiteSound?.Invoke();
+                                }
                                 ;// ATTACK THE PLANT
                             }
                         }

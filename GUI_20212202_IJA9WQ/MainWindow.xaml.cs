@@ -32,6 +32,25 @@ namespace GUI_20212202_IJA9WQ
         GameAnimationBrushes brushes;
         double mouseX;
         double mouseY;
+        MediaPlayer seedlift;
+        MediaPlayer plant;
+        MediaPlayer zombiebite;
+        MediaPlayer throw1;
+        MediaPlayer snowpeasparkles;
+        MediaPlayer startwave;
+        MediaPlayer siren;
+        MediaPlayer sun;
+        MediaPlayer groan1;
+        MediaPlayer splat1;
+        MediaPlayer potatomine;
+        MediaPlayer lawnmover;
+        MediaPlayer hugewave;
+        MediaPlayer gulp;
+        MediaPlayer cherrybomb;
+        MediaPlayer daymusic;
+
+
+
 
         public MainWindow()
         {
@@ -40,6 +59,7 @@ namespace GUI_20212202_IJA9WQ
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            MediaplayerInitialize();
             coordinateCalculator = new CoordinateCalculator(grid.ActualWidth, grid.ActualHeight);
             logic = new GameLogic(coordinateCalculator);
             brushes = new GameAnimationBrushes();
@@ -139,95 +159,137 @@ namespace GUI_20212202_IJA9WQ
             display.InvalidateVisual();   
         }
 
+        private void MediaplayerInitialize() 
+        {
+            seedlift = new MediaPlayer();
+            seedlift.Open(new Uri(Sounds.seedlift, UriKind.RelativeOrAbsolute));
+            seedlift.MediaEnded+= Media_Ended;
+            plant = new MediaPlayer();
+            plant.Open(new Uri(Sounds.plant, UriKind.RelativeOrAbsolute));
+            plant.MediaEnded += Media_Ended;
+            zombiebite = new MediaPlayer();
+            zombiebite.Open(new Uri(Sounds.zombiebite, UriKind.RelativeOrAbsolute));
+            zombiebite.MediaEnded += Media_Ended;
+            throw1 = new MediaPlayer();
+            throw1.Open(new Uri(Sounds.throw1, UriKind.RelativeOrAbsolute));
+            throw1.MediaEnded += Media_Ended;
+            snowpeasparkles = new MediaPlayer();
+            snowpeasparkles.Open(new Uri(Sounds.snowpeasparkles, UriKind.RelativeOrAbsolute));
+            snowpeasparkles.MediaEnded += Media_Ended;
+            startwave = new MediaPlayer();
+            startwave.Open(new Uri(Sounds.startwave, UriKind.RelativeOrAbsolute));
+            startwave.MediaEnded += Media_Ended;
+            siren = new MediaPlayer();
+            siren.Open(new Uri(Sounds.siren, UriKind.RelativeOrAbsolute));
+            siren.MediaEnded += Media_Ended;
+            sun = new MediaPlayer();
+            sun.Open(new Uri(Sounds.sun, UriKind.RelativeOrAbsolute));
+            sun.MediaEnded += Media_Ended;
+            groan1 = new MediaPlayer();
+            groan1.Open(new Uri(Sounds.groan1, UriKind.RelativeOrAbsolute));
+            groan1.MediaEnded += Media_Ended;
+            splat1 = new MediaPlayer();
+            splat1.Open(new Uri(Sounds.splat1, UriKind.RelativeOrAbsolute));
+            splat1.MediaEnded += Media_Ended;
+            potatomine = new MediaPlayer();
+            potatomine.Open(new Uri(Sounds.potatomine, UriKind.RelativeOrAbsolute));
+            potatomine.MediaEnded += Media_Ended;
+            lawnmover = new MediaPlayer();
+            lawnmover.Open(new Uri(Sounds.lawnmover, UriKind.RelativeOrAbsolute));
+            lawnmover.MediaEnded += Media_Ended;
+            hugewave = new MediaPlayer();
+            hugewave.Open(new Uri(Sounds.hugewave, UriKind.RelativeOrAbsolute));
+            hugewave.MediaEnded += Media_Ended;
+            gulp = new MediaPlayer();
+            gulp.Open(new Uri(Sounds.gulp, UriKind.RelativeOrAbsolute));
+            gulp.MediaEnded += Media_Ended;
+            cherrybomb = new MediaPlayer();
+            cherrybomb.Open(new Uri(Sounds.cherrybomb, UriKind.RelativeOrAbsolute));
+            cherrybomb.MediaEnded += Media_Ended;
+            daymusic = new MediaPlayer();
+            daymusic.Open(new Uri(Sounds.daymusic, UriKind.RelativeOrAbsolute));
+            daymusic.MediaEnded += Media_Endedmusic;
+
+            daymusic.Play();
+        }
         private void PlantSelectedSound()
-        {   
-            SoundPlayer soundP = new SoundPlayer(Sounds.seedlift);
-            soundP.Play();
+        {
+            seedlift.Play();
+
         }
         private void PlantPlacedSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.plant);
-            soundP.Play();
+            plant.Play();
+
         }
         private void ZombieBiteSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.zombiebite);
-            soundP.Play();
+            zombiebite.Play();
         }
         private void ShootSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.throw1);
-            soundP.Play();
+            throw1.Play();
         }
         private void SnowShootSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.snowpeasparkles);
-            soundP.Play();
+
+            snowpeasparkles.Play();
         }
         private void ZombiesStartedSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.startwave);
-            soundP.Play();
+            startwave.Play();
         }
         private void WaveSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.siren);
-            soundP.Play();
+            siren.Play();
+
         }
         private void SunCollectedSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.sun);
-            soundP.Play();
+            sun.Play();
         }
         private void ZombieGroanSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.groan1);
-            soundP.Play();
+            groan1.Play();
+
         }
         private void BulletHitSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.splat1);
-            soundP.Play();
+            splat1.Play();
 
         }
         private void PotatoMineExploisonSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.potatomine);
-            soundP.Play();
+            potatomine.Play();
         }
         private void LawMoverSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.lawnmover);
-            soundP.Play();
+            lawnmover.Play();
         }
         private void HugeWaveSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.hugewave);
-            soundP.Play();
+            hugewave.Play();
         }
         private void ZombieGulpSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.gulp);
-            soundP.Play();
+            gulp.Play();
         }
         private void CherrybombSound()
         {
-            SoundPlayer soundP = new SoundPlayer(Sounds.cherrybomb);
-            soundP.Play();
+            cherrybomb.Play();
 
         }
-        //private void Sound()
-        //{
 
-        //}
-        //private void Sound()
-        //{
 
-        //}
-        //private void Sound()
-        //{
-
-        //}
-
+        private void Media_Ended(object sender, EventArgs e)
+        {
+            (sender as MediaPlayer).Position = TimeSpan.Zero;
+            (sender as MediaPlayer).Stop();
+        }
+        private void Media_Endedmusic(object sender, EventArgs e)
+        {
+            (sender as MediaPlayer).Position = TimeSpan.Zero;
+            
+        }
     }
 }
