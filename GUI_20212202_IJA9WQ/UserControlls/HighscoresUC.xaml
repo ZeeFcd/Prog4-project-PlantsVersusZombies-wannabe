@@ -14,17 +14,34 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Label Content="Highscores" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="\Fonts\#SeriesOrbit"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Viewbox Grid.Row="1" Grid.Column="1">
+                <Label Content="Highscores" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="\Fonts\#SeriesOrbit"/>
+            </Viewbox>
+
+        </Grid>
         <Grid Grid.Row="1">
             <Grid.Background>
                 <ImageBrush ImageSource="/Images/highscores_background2.jpeg" Stretch="UniformToFill"/>
             </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <ListBox Grid.Row="1" Grid.Column="1" Background="Transparent" ItemsSource="{Binding Highscores}">
+            <ListBox Grid.Row="1" Grid.Column="2" Background="Transparent" BorderThickness="0" ItemsSource="{Binding Highscores}">
                 <ListBox.Resources>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Background" Value="Transparent" />
@@ -38,15 +55,15 @@
                 </ListBox.ItemsPanel>
                 
             </ListBox>
-            <Grid Grid.Column="2">
+            <Grid Grid.Column="4">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Button Grid.Column="2" Grid.Row="2" Padding="20" Margin="30" Command="{Binding BackToMenuCommand}">
+                <Button Grid.Column="2" Grid.Row="2" Padding="20" Margin="20" BorderThickness="0" Command="{Binding BackToMenuCommand}">
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/backtomenu.png"/>
+                        <ImageBrush ImageSource="/Images/backtomenu2.png"/>
                     </Button.Background>
                 </Button>
             </Grid>
