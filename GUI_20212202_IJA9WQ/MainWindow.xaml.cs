@@ -66,6 +66,7 @@ namespace GUI_20212202_IJA9WQ
             logic.CherrybombSound += sounds.CherrybombSound;
             logic.ScreamSound += sounds.ScreamSound;
             logic.HugeWaveSound += sounds.HugeWaveSound;
+            logic.GameOver +=Gameover;
 
             coordinateCalculator.SetUpLogic(logic);
             display.SetupLogic(logic);
@@ -103,6 +104,12 @@ namespace GUI_20212202_IJA9WQ
             sounds.Daymusic();
         }
 
+        private void Gameover()
+        {
+            gamestepDT.Stop();
+            timer.Stop();
+            displayDT.Stop();
+        }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
