@@ -32,7 +32,7 @@ namespace GUI_20212202_IJA9WQ.ViewModels
         public HighscoresViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<IViewLogic>()) { }
         public HighscoresViewModel(IViewLogic viewLogic)
         {
-            Highscores = new List<string>() { "11:20", "11:01", "11:00" };
+            Highscores = new List<string>() { "11:20", "11dsadads01", "11:00" };
             this.viewLogic = viewLogic;
             BackToMenuCommand = new RelayCommand(()=> viewLogic.ChangeView("menu"));
         }
