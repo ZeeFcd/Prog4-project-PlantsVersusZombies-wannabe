@@ -367,7 +367,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 {
                     LawMoverStart(zombie.PlaceGameMatrixY);
                 }
-                else
+                else if (zombie.State!=AttackStateEnum.InActive && zombie.State != AttackStateEnum.Dead)
                 {
                     Gameover();
                 }

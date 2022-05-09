@@ -211,13 +211,13 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     if (zombie.State == AttackStateEnum.Attack)
                     {
-                        drawingContext.DrawGeometry(brushes.ZombieEatGIF[zombie.InnerClock % brushes.ZombieEatGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
+                        drawingContext.DrawGeometry(brushes.ZombieEatGIF[zombie.InnerClock % brushes.ZombieEatGIF.Count], new Pen(Brushes.Black, 1), zombie.Area);
                     }
                     else if (zombie.State == AttackStateEnum.InActive)
                     {
                         if (zombie.ZombieState==ZombieStateEnum.Exploded)
                         {
-                            drawingContext.DrawGeometry(brushes.ZombieAshGIF[(zombie.InnerClock-zombie.DeathStartTime) % brushes.ZombieAshGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
+                            drawingContext.DrawGeometry(brushes.ZombieAshGIF[(zombie.InnerClock-zombie.DeathStartTime) % brushes.ZombieAshGIF.Count], new Pen(Brushes.Black, 1), zombie.Area);
                         }
                         else
                         {
@@ -225,12 +225,12 @@ namespace GUI_20212202_IJA9WQ.Renderer
                             var shiftY = coordinateCalculator.GameMapCellHeight*0.07;
                             Geometry dead = new RectangleGeometry(
                                     new Rect(zombie.PlaceX - shiftX, zombie.PlaceY - shiftY , coordinateCalculator.ZombieWidth + shiftX, coordinateCalculator.ZombieHeight + shiftY));
-                            drawingContext.DrawGeometry(brushes.ZombieDeathGIF[(zombie.InnerClock - zombie.DeathStartTime) % brushes.ZombieDeathGIF.Count], null /*new Pen(Brushes.Black, 1)*/, dead);
+                            drawingContext.DrawGeometry(brushes.ZombieDeathGIF[(zombie.InnerClock - zombie.DeathStartTime) % brushes.ZombieDeathGIF.Count],  new Pen(Brushes.Black, 1), dead);
                         }
                     }
                     else if (zombie.State == AttackStateEnum.Normal)
                     {
-                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[zombie.InnerClock % brushes.ZombieWalkGIF.Count], null /*new Pen(Brushes.Black, 1)*/, zombie.Area);
+                        drawingContext.DrawGeometry(brushes.ZombieWalkGIF[zombie.InnerClock % brushes.ZombieWalkGIF.Count], new Pen(Brushes.Black, 1), zombie.Area);
                     }
                     
                 }
@@ -239,7 +239,7 @@ namespace GUI_20212202_IJA9WQ.Renderer
                 {
                     if (lawnMover != null)
                     {
-                        drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, null /*new Pen(Brushes.Black, 1)*/, lawnMover.Area);
+                        drawingContext.DrawGeometry(GameBrushes.LawnMoverBrush, new Pen(Brushes.Black, 1), lawnMover.Area);
                     }
                 }
 
