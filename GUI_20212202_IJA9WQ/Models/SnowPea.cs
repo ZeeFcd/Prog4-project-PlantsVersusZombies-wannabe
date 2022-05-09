@@ -29,7 +29,7 @@ namespace GUI_20212202_IJA9WQ.Models
         public SnowPea(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
             this.HP = 100;
-            this.Damage = 1;
+            this.Damage = 3;
             this.Price = 175;
             this.Cooldown = 10;
             Type = PlantEnum.Snowpeashooter;

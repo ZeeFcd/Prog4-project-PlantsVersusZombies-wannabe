@@ -121,12 +121,9 @@ namespace GUI_20212202_IJA9WQ.Logic
                 {
                         MediumWave(); 
                 }
-                else if (gameClock %1875 == 0)
-                {
-                    HugeWaveSound?.Invoke();
-                }
                 else if (gameClock % 1925 == 0)
                 {
+                    HugeWaveSound?.Invoke();
                     SmallWave();
                     WaveSound?.Invoke();
                 }

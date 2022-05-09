@@ -56,7 +56,7 @@ namespace GUI_20212202_IJA9WQ.Models
         }
         public override void TimeChanged()
         {
-            if (!ispurchaseable && innerClock - timeWhenBought == 300)
+            if (!ispurchaseable && innerClock - timeWhenBought == 250)
             {
                 ispurchaseable = true;
                 timeWhenBought = 0;
