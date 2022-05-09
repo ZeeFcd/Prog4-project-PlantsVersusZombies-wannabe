@@ -14,6 +14,31 @@
             <Setter Property="FontSize" Value="30"/>
         </Style>
         <ImageBrush x:Key="muteButtonBrush" ImageSource="\Images\mute.png"/>
+        <ImageBrush x:Key="defaultButton" ImageSource="\Images\buttonBackground.png"/>
+        <ImageBrush x:Key="exitButton" ImageSource="\Images\exitButton.png"/>
+        <Style x:Key="withoutHover" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                        BorderThickness="0"
+                        Padding="30" 
+                        BorderBrush="Transparent" 
+                        CornerRadius="3" 
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <Grid Background="{StaticResource background}" x:Name="grid">
         <Grid.RowDefinitions>
@@ -33,16 +58,34 @@
                FontSize="30" FontFamily="\Fonts\#SeriesOrbit"
                />-->
         <Viewbox Grid.Row="1" Grid.Column="1">
-            <Button Content="Start"  Padding="15" Margin="30" Style="{StaticResource buttonText}" Command="{Binding StartGameCommand}"/>
+            <Button Content="Start"  Padding="15" Margin="30" Background="{StaticResource defaultButton}" Style="{StaticResource buttonText}" Command="{Binding StartGameCommand}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </Viewbox>
         <Viewbox Grid.Row="2" Grid.Column="1">
-            <Button Content="Highscores"  Padding="15" Margin="30" Style="{StaticResource buttonText}" Command="{Binding HighscoreCommand}"/>
+            <Button Content="Highscores"  Padding="15" Margin="30" Background="{StaticResource defaultButton}" Style="{StaticResource buttonText}" Command="{Binding HighscoreCommand}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </Viewbox>
         <Viewbox Grid.Row="3" Grid.Column="1">
-            <Button Content="Exit"  Padding="15" Margin="30" Style="{StaticResource buttonText}" Click="Button_Exit_Click"/>
+            <Button Content="Exit"  Padding="15" Margin="30" Background="{StaticResource exitButton}" Style="{StaticResource buttonText}" Click="Button_Exit_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </Viewbox>
         <Viewbox Grid.Row="3" Grid.Column="3">
-            <Button Content="" Padding="60" Margin="30" BorderThickness="0" Command="{Binding MuteCommand}" Background="{StaticResource muteButtonBrush}"/>
+            <Button Style="{StaticResource withoutHover}" Content="" Padding="60" Margin="30" BorderThickness="0" Command="{Binding MuteCommand}" Background="{StaticResource muteButtonBrush}"/>
         </Viewbox>
     </Grid>
 </UserControl>

@@ -18,6 +18,7 @@
     <None Remove="Images\background_day.png" />
     <None Remove="Images\background_night.png" />
     <None Remove="Images\backtomenu2.png" />
+    <None Remove="Images\buttonBackground.png" />
     <None Remove="Images\cherryAnimation\cherry %281%29.gif" />
     <None Remove="Images\cherryAnimation\cherry %2810%29.gif" />
     <None Remove="Images\cherryAnimation\cherry %2811%29.gif" />
@@ -37,6 +38,7 @@
     <None Remove="Images\dea_snowpeashooterItem.png" />
     <None Remove="Images\dea_sunflowerItem.png" />
     <None Remove="Images\dea_wallnutItem.png" />
+    <None Remove="Images\exitButton.PNG" />
     <None Remove="Images\exploded.png" />
     <None Remove="Images\gameover.png" />
     <None Remove="Images\highscores_background.png" />
@@ -589,6 +591,9 @@
     <Content Include="Images\backtomenu2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\buttonBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\cherryAnimation\cherry (1).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -644,6 +649,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\dea_wallnutItem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\exitButton.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\gameover.png">
