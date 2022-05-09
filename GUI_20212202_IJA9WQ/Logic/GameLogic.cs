@@ -111,7 +111,20 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         public void TimeStep()
         {
+            
             SunMoving();
+            if (gameClock!=0 && gameClock % 175==0)
+            {
+                int cellX = RandomGenerator.Rand.Next(0,PlantsMatrix.GetLength(1));
+                int cellY = RandomGenerator.Rand.Next(0, PlantsMatrix.GetLength(0));
+                double x = coordinateCalculator.LeftMapBorder + cellX * coordinateCalculator.GameMapCellWidth;
+                double y = coordinateCalculator.UpperMapBorder + cellY * coordinateCalculator.GameMapCellHeight + coordinateCalculator.PlantHeight * 0.5;
+                Suns.Add(new Sun(x,y,
+                    coordinateCalculator.SunWidth,
+                    coordinateCalculator.SunHeight,
+                    coordinateCalculator.SunSpeed(x,y)
+            ));
+            }
 
             for (int i = 0; i < LawnMovers.Length; i++)
             {
