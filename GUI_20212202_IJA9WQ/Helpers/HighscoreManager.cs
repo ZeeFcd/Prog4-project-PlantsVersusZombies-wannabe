@@ -11,10 +11,6 @@ namespace GUI_20212202_IJA9WQ.Helpers
     {
         
         public static List<(string, string)> Highscores { get; private set; }
-        public HighscoreManager()
-        {
-            ReadHighscoreFromText();
-        }
 
         public void ReadHighscoreFromText() 
         {
