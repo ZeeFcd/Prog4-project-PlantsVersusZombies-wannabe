@@ -127,7 +127,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 }
                 else if (gameClock % 1925 == 0)
                 {
-                    MediumWave();
+                    SmallWave();
                     WaveSound?.Invoke();
                 }
                 else if (gameClock % 1975 == 0)
@@ -143,7 +143,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
 
             SunMoving();
-            if (gameClock != 0 && gameClock % 125 == 0)
+            if (gameClock != 0 && gameClock % 85 == 0)
             {
                 int cellX = RandomGenerator.Rand.Next(0, PlantsMatrix.GetLength(1));
                 int cellY = RandomGenerator.Rand.Next(0, PlantsMatrix.GetLength(0));
