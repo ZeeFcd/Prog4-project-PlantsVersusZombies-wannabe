@@ -16,6 +16,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         int gameClock;
         int currentlySelectedIndex;
         bool shovelSelected;
+        int waveCount;
         public Action ZombieBiteSound;
         public Action ShootSound;
         public Action SnowShootSound;
@@ -32,6 +33,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public Action HugeWaveSound;
         public Action ZombieGulpSound;
         public Action CherrybombSound;
+        public Action ScreamSound;
 
         public Action GameOver;
         public int GameClock { get { return gameClock; } }
@@ -48,6 +50,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public int CurrentlySelectedIndex { get => currentlySelectedIndex; }
         public int SunValue { get => sunValue; }
         public bool ShovelSelected { get => shovelSelected; }
+        public int WaveCount { get => waveCount;  }
 
         public GameLogic(CoordinateCalculator coordinateCalculator)
         {
@@ -59,8 +62,9 @@ namespace GUI_20212202_IJA9WQ.Logic
             LawnMovers = new LawnMover[5];
             Suns = new List<Sun>();
             gameClock = 0;
+            waveCount = 0;
 
-            sunValue = 99999;
+            sunValue = 50;
             PlantsMatrix = new Plant[5, 9];
             ZombiesMatrix = new List<Zombie>[5, 9];
             ZombiesMatrixInitialize();
@@ -80,11 +84,6 @@ namespace GUI_20212202_IJA9WQ.Logic
 
             PlantsSelectionDay = new Plant[] { peashooter, sunflower, cherrybomb, wallNut, potatoMine, snowPea };
 
-            foreach (var plant in PlantsSelectionDay)
-            {
-                plant.Terminated = PlantTerminated;
-            }
-
             for (int i = 0; i < 5; i++)
             {
                 LawnMovers[i] = new LawnMover(coordinateCalculator.LawMoverStartX,
@@ -94,37 +93,68 @@ namespace GUI_20212202_IJA9WQ.Logic
                     coordinateCalculator.LawMoverSpeed);
             }
 
-            for (int i = 1; i < 6; i++)
-            {
-                if (i % 2 == 1)
-                {
-                    Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
-                    coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * i,
-                    coordinateCalculator.ZombieWidth,
-                    coordinateCalculator.ZombieHeight,
-                    coordinateCalculator.ZombieSpeed));
-                }
-
-            }
-
         }
 
         public void TimeStep()
         {
-            
+            if (gameClock>= 500)
+            {
+                if (gameClock == 500)
+                {
+                    ZombiesStartedSound?.Invoke();
+                    Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+                     coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
+                     coordinateCalculator.ZombieWidth,
+                     coordinateCalculator.ZombieHeight,
+                     coordinateCalculator.ZombieSpeed,
+                     1,
+                     10));
+                }
+                else if (gameClock % 750 == 0)
+                {
+                    for (int i = 0; i < waveCount+1; i++)
+                    {
+                        SmallWave();
+                    }
+                }
+                else if (gameClock % 1125 == 0)
+                {
+                        MediumWave(); 
+                }
+                else if (gameClock %1875 == 0)
+                {
+                    HugeWaveSound?.Invoke();
+                }
+                else if (gameClock % 1925 == 0)
+                {
+                    MediumWave();
+                    WaveSound?.Invoke();
+                }
+                else if (gameClock % 1975 == 0)
+                {
+                    MediumWave();
+                }
+                else if (gameClock % 2025 == 0)
+                {
+                    MediumWave();
+                    waveCount++;
+                }
+
+            }
+
             SunMoving();
-            //if (gameClock!=0 && gameClock % 175==0)
-            //{
-            //    int cellX = RandomGenerator.Rand.Next(0,PlantsMatrix.GetLength(1));
-            //    int cellY = RandomGenerator.Rand.Next(0, PlantsMatrix.GetLength(0));
-            //    double x = coordinateCalculator.LeftMapBorder + cellX * coordinateCalculator.GameMapCellWidth;
-            //    double y = coordinateCalculator.UpperMapBorder + cellY * coordinateCalculator.GameMapCellHeight + coordinateCalculator.PlantHeight * 0.5;
-            //    Suns.Add(new Sun(x,y,
-            //        coordinateCalculator.SunWidth,
-            //        coordinateCalculator.SunHeight,
-            //        coordinateCalculator.SunSpeed(x,y)
-            //));
-            //}
+            if (gameClock != 0 && gameClock % 125 == 0)
+            {
+                int cellX = RandomGenerator.Rand.Next(0, PlantsMatrix.GetLength(1));
+                int cellY = RandomGenerator.Rand.Next(0, PlantsMatrix.GetLength(0));
+                double x = coordinateCalculator.LeftMapBorder + cellX * coordinateCalculator.GameMapCellWidth;
+                double y = coordinateCalculator.UpperMapBorder + cellY * coordinateCalculator.GameMapCellHeight + coordinateCalculator.PlantHeight * 0.5;
+                Suns.Add(new Sun(x, y,
+                    coordinateCalculator.SunWidth,
+                    coordinateCalculator.SunHeight,
+                    coordinateCalculator.SunSpeed(x, y)
+            ));
+            }
 
             for (int i = 0; i < LawnMovers.Length; i++)
             {
@@ -144,51 +174,6 @@ namespace GUI_20212202_IJA9WQ.Logic
             foreach (var plant in Plants)
             {
                 plant.Ability();
-            }
-
-
-            if (gameClock == 50)
-            {
-                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
-                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
-                   coordinateCalculator.ZombieWidth,
-                   coordinateCalculator.ZombieHeight,
-                   coordinateCalculator.ZombieSpeed)); ;
-
-            }
-            if (gameClock == 100)
-            {
-                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
-                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
-                   coordinateCalculator.ZombieWidth,
-                   coordinateCalculator.ZombieHeight,
-                   coordinateCalculator.ZombieSpeed)); ;
-                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
-                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
-                   coordinateCalculator.ZombieWidth,
-                   coordinateCalculator.ZombieHeight,
-                   coordinateCalculator.ZombieSpeed));
-            }
-            if (gameClock == 110)
-            {
-                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
-                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
-                   coordinateCalculator.ZombieWidth,
-                   coordinateCalculator.ZombieHeight,
-                   coordinateCalculator.ZombieSpeed)); ;
-                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
-                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
-                   coordinateCalculator.ZombieWidth,
-                   coordinateCalculator.ZombieHeight,
-                   coordinateCalculator.ZombieSpeed));
-            }
-            if (gameClock == 150)
-            {
-                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
-                   coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
-                   coordinateCalculator.ZombieWidth,
-                   coordinateCalculator.ZombieHeight,
-                   coordinateCalculator.ZombieSpeed));
             }
    
             foreach (var plant in PlantsSelectionDay)
@@ -387,7 +372,7 @@ namespace GUI_20212202_IJA9WQ.Logic
                 }
                 else
                 {
-                    ;//játék vége
+                    Gameover();
                 }
             }
             else
@@ -647,6 +632,46 @@ namespace GUI_20212202_IJA9WQ.Logic
             }
  
         }
+        private void Gameover() 
+        {
+            GameOver?.Invoke();
+        }
+        private void SmallWave()
+        {
+            int random = RandomGenerator.Rand.Next(2 + waveCount, 3 + waveCount);
+            //int brokenzombie = RandomGenerator.Rand.Next(1 t, 5 + waveCount);
+            for (int i = 0; i < 2; i++)
+            {
+
+                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+             coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
+             coordinateCalculator.ZombieWidth,
+             coordinateCalculator.ZombieHeight,
+             coordinateCalculator.ZombieSpeed+waveCount* coordinateCalculator.ZombieSpeed * 0.5,
+             1+ waveCount*0.5,
+             12 + waveCount*3
+             ));;
+            }
+        }
+        private void MediumWave()
+        {
+            int random = RandomGenerator.Rand.Next(3 + waveCount, 5 + waveCount);
+            int brokenzombie = RandomGenerator.Rand.Next(3 + waveCount, 5 + waveCount);
+
+            for (int i = 0; i < random; i++)
+            {
+                Zombies.Add(new Zombie(coordinateCalculator.ZombieStartX,
+             coordinateCalculator.ZombieStartYShift + coordinateCalculator.ZombieStartY * RandomGenerator.Rand.Next(1, 6),
+             coordinateCalculator.ZombieWidth,
+             coordinateCalculator.ZombieHeight,
+             coordinateCalculator.ZombieSpeed + waveCount * coordinateCalculator.ZombieSpeed*0.5,
+             1 + waveCount * 0.5,
+             12 + waveCount*3
+             ));
+            }
+        }
+        
+        
     }
 }
 

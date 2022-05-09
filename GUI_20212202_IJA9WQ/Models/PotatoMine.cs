@@ -29,7 +29,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public PotatoMine(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
-            this.HP = 50;
+            this.HP = 100;
             this.Damage = 20;
             this.Price = 25;
             this.Cooldown = 10;
@@ -50,14 +50,13 @@ namespace GUI_20212202_IJA9WQ.Models
                 placeX = this.placeX,
                 placeY = this.placeY,
                 AbilityEvent = this.AbilityEvent,
-                innerClock = 0,
-                Terminated = this.Terminated
+                innerClock = 0
             };
         }
 
         public override void Ability()
         {
-            if (innerClock == 470) // 588
+            if (innerClock == 470) 
             {
                 State = AttackStateEnum.Normal;
             }           
@@ -81,7 +80,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void TimeChanged()
         {
-            if (!ispurchaseable && innerClock - timeWhenBought == 880)
+            if (!ispurchaseable && innerClock - timeWhenBought == 500)
             {
                 ispurchaseable = true;
                 timeWhenBought = 0;

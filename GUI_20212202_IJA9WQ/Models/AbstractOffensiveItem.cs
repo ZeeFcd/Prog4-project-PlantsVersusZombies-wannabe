@@ -12,8 +12,8 @@ namespace GUI_20212202_IJA9WQ.Models
         protected int innerClock;
         protected int deathStartTime;
         public AttackStateEnum State { get;set; }
-        public int Damage { get; set; }
-        public int HP { get; set; }
+        public double Damage { get; set; }
+        public double HP { get; set; }
 
         public int InnerClock
         {
@@ -25,10 +25,10 @@ namespace GUI_20212202_IJA9WQ.Models
         public virtual void DamagedBy(OffensiveItem attacker) 
         {
             this.HP -= attacker.Damage;
-            if (HP<1)
+            if (HP <= 0)
             {
                 State = AttackStateEnum.Dead;
-                //Terminated?.Invoke(this);
+
             }
         }
 

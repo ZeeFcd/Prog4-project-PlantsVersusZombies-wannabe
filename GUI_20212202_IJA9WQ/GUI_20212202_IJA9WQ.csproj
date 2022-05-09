@@ -37,7 +37,10 @@
     <None Remove="Images\dea_sunflowerItem.png" />
     <None Remove="Images\dea_wallnutItem.png" />
     <None Remove="Images\exploded.png" />
+    <None Remove="Images\gameover.png" />
     <None Remove="Images\hole.png" />
+    <None Remove="Images\hugewave.png" />
+    <None Remove="Images\InGameMenu.png" />
     <None Remove="Images\itemShop.png" />
     <None Remove="Images\itemShop1.png" />
     <None Remove="Images\lawn_mover.png" />
@@ -536,6 +539,7 @@
     <None Remove="Sound\MainMenuPvZ1.wav" />
     <None Remove="Sound\Plant.wav" />
     <None Remove="Sound\Potato_mine.wav" />
+    <None Remove="Sound\scream.wav" />
     <None Remove="Sound\seedlift.wav" />
     <None Remove="Sound\Shovel.wav" />
     <None Remove="Sound\siren.wav" />
@@ -634,7 +638,16 @@
     <Content Include="Images\dea_wallnutItem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\gameover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\hole.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\hugewave.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\InGameMenu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\lawn_mover.png">
@@ -2045,6 +2058,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Sound\ZombieBite.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Sound\scream.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

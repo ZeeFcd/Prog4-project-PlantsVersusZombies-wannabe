@@ -27,9 +27,11 @@ namespace GUI_20212202_IJA9WQ
     {
         DispatcherTimer gamestepDT;
         DispatcherTimer displayDT;
+        DispatcherTimer timer;
         GameLogic logic;
         CoordinateCalculator coordinateCalculator;
         GameAnimationBrushes brushes;
+        DateTime gameTime;
         Sounds sounds;
         double mouseX;
         double mouseY;
@@ -62,6 +64,8 @@ namespace GUI_20212202_IJA9WQ
             logic.ZombieBiteSound += sounds.ZombieBiteSound;
             logic.ZombieGulpSound += sounds.ZombieGulpSound;
             logic.CherrybombSound += sounds.CherrybombSound;
+            logic.ScreamSound += sounds.ScreamSound;
+            logic.HugeWaveSound += sounds.HugeWaveSound;
 
             coordinateCalculator.SetUpLogic(logic);
             display.SetupLogic(logic);
@@ -84,9 +88,18 @@ namespace GUI_20212202_IJA9WQ
                 display.InvalidateVisual();
             };
 
+            gameTime = new DateTime();
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += (sender, eventargs) =>
+            {
+                gameTime.AddSeconds(1);
+            };
+
 
             gamestepDT.Start();
             displayDT.Start();
+            timer.Start();
             sounds.Daymusic();
         }
 

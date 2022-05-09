@@ -48,8 +48,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 placeX = this.placeX,
                 placeY = this.placeY,
                 AbilityEvent = this.AbilityEvent,
-                innerClock = 1,
-                Terminated = this.Terminated
+                innerClock = 1
             };
         }
 
@@ -65,7 +64,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void TimeChanged()
         {
-            if (!ispurchaseable && innerClock - timeWhenBought == 220)
+            if (!ispurchaseable && innerClock - timeWhenBought == 170)
             {
                 ispurchaseable = true;
                 timeWhenBought = 0;

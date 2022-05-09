@@ -27,7 +27,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public WallNut(double displayWidth, double displayHeight) : base(displayWidth, displayHeight)
         {
-            this.HP = 100;
+            this.HP = 200;
             this.Damage = 0;
             this.Price = 50;
             this.Cooldown = 10;
@@ -46,8 +46,7 @@ namespace GUI_20212202_IJA9WQ.Models
                 Cooldown = this.Cooldown,
                 placeX = this.placeX,
                 placeY = this.placeY,
-                innerClock = 0,
-                Terminated = this.Terminated
+                innerClock = 0
             };
         }
 
@@ -57,7 +56,7 @@ namespace GUI_20212202_IJA9WQ.Models
         }
         public override void TimeChanged()
         {
-            if (!ispurchaseable && innerClock - timeWhenBought == 880)
+            if (!ispurchaseable && innerClock - timeWhenBought == 550)
             {
                 ispurchaseable = true;
                 timeWhenBought = 0;

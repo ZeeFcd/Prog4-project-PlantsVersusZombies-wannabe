@@ -13,7 +13,7 @@ namespace GUI_20212202_IJA9WQ.Models
     public class Bullet : Moveable
     {
         public bool IsFrozen { get; set; }
-        public Bullet(double placeX, double placeY, double displayWidth, double displayHeight, double speed, bool isfrozen, int damage)
+        public Bullet(double placeX, double placeY, double displayWidth, double displayHeight, double speed, bool isfrozen, double damage)
         {
             this.placeX = placeX;
             this.placeY = placeY;

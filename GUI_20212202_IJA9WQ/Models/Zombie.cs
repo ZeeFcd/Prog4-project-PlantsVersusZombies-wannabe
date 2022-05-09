@@ -12,7 +12,7 @@ namespace GUI_20212202_IJA9WQ.Models
 {
     public class Zombie : Moveable
     {
-        public Zombie(double placeX, double placeY, double displayWidth, double displayHeight, double speed)
+        public Zombie(double placeX, double placeY, double displayWidth, double displayHeight, double speed, double damage, double hp)
         {
             this.placeX = placeX;
             this.placeY = placeY;
@@ -24,8 +24,8 @@ namespace GUI_20212202_IJA9WQ.Models
             this.PlaceGameMatrixY = -1;
             this.State = AttackStateEnum.Normal;
             innerClock = 0;
-            Damage = 1;
-            HP = 12;
+            Damage = damage;
+            HP = hp;
         }
 
         public int PlaceGameMatrixX { get; set; }
@@ -77,7 +77,7 @@ namespace GUI_20212202_IJA9WQ.Models
         public override void DamagedBy(OffensiveItem attacker)
         {
             this.HP -= attacker.Damage;
-            if (HP < 1)
+            if (HP <= 0)
             {
                 State = AttackStateEnum.InActive;
                 Die();

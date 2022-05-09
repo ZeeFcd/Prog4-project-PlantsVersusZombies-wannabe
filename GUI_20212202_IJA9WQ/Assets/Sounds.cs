@@ -26,7 +26,7 @@ namespace GUI_20212202_IJA9WQ.Assets
         MediaPlayer cherrybomb;
         MediaPlayer daymusic;
         MediaPlayer shovel;
-        MediaPlayer losemusic;
+        MediaPlayer scream;
         MediaPlayer mainmenu;
 
         public List<MediaPlayer> Groan;
@@ -93,9 +93,9 @@ namespace GUI_20212202_IJA9WQ.Assets
             shovel.Open(new Uri(Path.Combine("Sound", "Shovel.wav"), UriKind.RelativeOrAbsolute));
             shovel.MediaEnded += Media_Ended;
 
-            losemusic = new MediaPlayer();
-            losemusic.Open(new Uri(Path.Combine("Sound", "losemusic.wav"), UriKind.RelativeOrAbsolute));
-            losemusic.MediaEnded += Media_Ended;
+            scream = new MediaPlayer();
+            scream.Open(new Uri(Path.Combine("Sound", "scream.wav"), UriKind.RelativeOrAbsolute));
+            scream.MediaEnded += Media_Ended;
 
             Groan = SoundReader("Groan");
             Throw = SoundReader("Throw");
@@ -229,6 +229,12 @@ namespace GUI_20212202_IJA9WQ.Assets
         {
             cherrybomb.Position = TimeSpan.Zero;
             cherrybomb.Play();
+        }
+
+        public void ScreamSound()
+        {
+            scream.Position = TimeSpan.Zero;
+            scream.Play();
         }
 
         public void Media_Ended(object sender, EventArgs e)
