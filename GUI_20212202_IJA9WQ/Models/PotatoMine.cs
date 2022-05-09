@@ -57,11 +57,11 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void Ability()
         {
-            if (innerClock == 30) // 588
+            if (innerClock == 470) // 588
             {
                 State = AttackStateEnum.Normal;
             }           
-            else if (deathStartTime != 0 && innerClock - deathStartTime == 40)
+            else if (deathStartTime != 0 && innerClock - deathStartTime == 50)
             {
                 State = AttackStateEnum.Dead;
             }
@@ -81,7 +81,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void TimeChanged()
         {
-            if (!ispurchaseable && innerClock - timeWhenBought == 100)
+            if (!ispurchaseable && innerClock - timeWhenBought == 880)
             {
                 ispurchaseable = true;
                 timeWhenBought = 0;

@@ -248,7 +248,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         }
         public double BulletSpeed
         {
-            get { return 0.013 * displayWidth; }
+            get { return 0.012 * displayWidth; }
         }
         //---------------------
 

@@ -56,7 +56,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void Ability()
         {
-            if (innerClock % 88 == 0)
+            if (innerClock % 50 == 0)
             {
                 //shoot
                 AbilityEvent?.Invoke(this);
@@ -65,7 +65,7 @@ namespace GUI_20212202_IJA9WQ.Models
 
         public override void TimeChanged()
         {
-            if (!ispurchaseable && innerClock - timeWhenBought == 380)
+            if (!ispurchaseable && innerClock - timeWhenBought == 220)
             {
                 ispurchaseable = true;
                 timeWhenBought = 0;
