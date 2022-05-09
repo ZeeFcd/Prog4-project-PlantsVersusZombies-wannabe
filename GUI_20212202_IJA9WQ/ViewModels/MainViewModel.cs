@@ -1,4 +1,5 @@
 ﻿using GUI_20212202_IJA9WQ.Assets;
+using GUI_20212202_IJA9WQ.Helpers;
 using GUI_20212202_IJA9WQ.Logic;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
@@ -31,6 +32,8 @@ namespace GUI_20212202_IJA9WQ.ViewModels
         public MainViewModel(IViewLogic viewLogic)
         {
             this.viewLogic = viewLogic;
+            HighscoreManager manager = new HighscoreManager();
+            manager.ReadHighscoreFromText();
             viewLogic.ChangeView("menu");
             Messenger.Register<MainViewModel, string, string>(this, "Base", (recipient, msg) =>
             {

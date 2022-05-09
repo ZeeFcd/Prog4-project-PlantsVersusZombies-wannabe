@@ -157,7 +157,7 @@ namespace GUI_20212202_IJA9WQ.Assets
         }
         public void DaymusicStop()
         {
-            daymusic.Stop();
+            daymusic.Pause();
         }
 
         public void ShovelSound()

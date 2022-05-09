@@ -7,20 +7,18 @@ using System.Threading.Tasks;
 
 namespace GUI_20212202_IJA9WQ.Helpers
 {
-    class HighscoreManager
+    public class HighscoreManager
     {
-        List<(string, string)> highscores;
-
-        public List<(string,string)> Highscores { get => highscores;}
-
+        
+        public static List<(string, string)> Highscores { get; private set; }
         public HighscoreManager()
         {
             ReadHighscoreFromText();
         }
 
-        private void ReadHighscoreFromText() 
+        public void ReadHighscoreFromText() 
         {
-            highscores = new List<(string, string)>();
+            Highscores = new List<(string, string)>();
             if (File.Exists("highscores.txt"))
             {
                 string[] highscoreLines = File.ReadAllLines("highscores.txt");
@@ -28,7 +26,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
                 {
                     string[] temp = score.Split(',');
                     (string, string) highscore = (temp[0], temp[1]);
-                    highscores.Add(highscore);
+                    Highscores.Add(highscore);
                 }
             }
 
@@ -37,7 +35,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         public void WriteHighscoreToText()
         {
             List<string> highscoresString = new List<string>();
-            foreach (var score in highscores)
+            foreach (var score in Highscores)
             {
                 string temp = score.Item1 + ',' + score.Item2 ;
                 highscoresString.Add(temp);
@@ -47,8 +45,8 @@ namespace GUI_20212202_IJA9WQ.Helpers
 
         public void Add( (string, string)value) 
         {
-            highscores.Add(value);
-            highscores=highscores.OrderBy(x=>x.Item2).ToList();
+            Highscores.Add(value);
+            Highscores = Highscores.OrderBy(x=>x.Item2).ToList();
         }
     }
 }

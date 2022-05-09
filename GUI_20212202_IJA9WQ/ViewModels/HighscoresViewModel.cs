@@ -1,4 +1,5 @@
-﻿using GUI_20212202_IJA9WQ.Logic;
+﻿using GUI_20212202_IJA9WQ.Helpers;
+using GUI_20212202_IJA9WQ.Logic;
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.Input;
 using System;
@@ -16,7 +17,7 @@ namespace GUI_20212202_IJA9WQ.ViewModels
     {
         public IViewLogic viewLogic { get; set; }
         public ICommand BackToMenuCommand { get; set; }
-        public List<string> Highscores { get; set; }
+        public List<(string,string)> Highscores { get; set; }
         public static bool IsInDesignMode
         {
             get
@@ -32,7 +33,7 @@ namespace GUI_20212202_IJA9WQ.ViewModels
         public HighscoresViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<IViewLogic>()) { }
         public HighscoresViewModel(IViewLogic viewLogic)
         {
-            Highscores = new List<string>() { "11:20", "11dsadads01", "11:00" };
+            this.Highscores = HighscoreManager.Highscores;
             this.viewLogic = viewLogic;
             BackToMenuCommand = new RelayCommand(()=> viewLogic.ChangeView("menu"));
         }
