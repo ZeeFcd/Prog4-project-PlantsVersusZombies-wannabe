@@ -636,7 +636,6 @@ namespace GUI_20212202_IJA9WQ.Logic
         private void SmallWave()
         {
             int random = RandomGenerator.Rand.Next(2 + waveCount, 3 + waveCount);
-            //int brokenzombie = RandomGenerator.Rand.Next(1 t, 5 + waveCount);
             for (int i = 0; i < 2; i++)
             {
 
