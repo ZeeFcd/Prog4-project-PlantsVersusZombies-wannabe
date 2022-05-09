@@ -17,6 +17,7 @@
   <ItemGroup>
     <None Remove="Images\background_day.png" />
     <None Remove="Images\background_night.png" />
+    <None Remove="Images\backtomenu2.png" />
     <None Remove="Images\cherryAnimation\cherry %281%29.gif" />
     <None Remove="Images\cherryAnimation\cherry %2810%29.gif" />
     <None Remove="Images\cherryAnimation\cherry %2811%29.gif" />
@@ -38,6 +39,8 @@
     <None Remove="Images\dea_wallnutItem.png" />
     <None Remove="Images\exploded.png" />
     <None Remove="Images\gameover.png" />
+    <None Remove="Images\highscores_background.png" />
+    <None Remove="Images\highscores_background2.jpeg" />
     <None Remove="Images\hole.png" />
     <None Remove="Images\hugewave.png" />
     <None Remove="Images\InGameMenu.png" />
@@ -45,6 +48,8 @@
     <None Remove="Images\itemShop1.png" />
     <None Remove="Images\lawn_mover.png" />
     <None Remove="Images\lawn_mover2.png" />
+    <None Remove="Images\menuBackground.png" />
+    <None Remove="Images\mute.png" />
     <None Remove="Images\notactivatec.png" />
     <None Remove="Images\pea.png" />
     <None Remove="Images\peashooter.gif" />
@@ -581,6 +586,9 @@
     <Content Include="Images\background_night.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\backtomenu2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\cherryAnimation\cherry (1).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -641,6 +649,12 @@
     <Content Include="Images\gameover.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\highscores_background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\highscores_background2.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\hole.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -651,6 +665,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\lawn_mover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\menuBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mute.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pea.png">
@@ -2068,6 +2088,17 @@
     </Content>
   </ItemGroup>
 
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Fonts\SeriesOrbit.TTF">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 	
 	
 </Project>

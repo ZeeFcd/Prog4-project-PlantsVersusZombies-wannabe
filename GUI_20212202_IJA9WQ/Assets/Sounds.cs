@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace GUI_20212202_IJA9WQ.Assets
 {
-    class Sounds
+    public class Sounds
     {
         bool menumuted;
         MediaPlayer seedlift;
@@ -35,15 +35,23 @@ namespace GUI_20212202_IJA9WQ.Assets
         public Sounds()
         {
             menumuted=false;
+            mainmenu = new MediaPlayer();
+            mainmenu.Open(new Uri(Path.Combine("Sound", "MainMenuPvZ1.wav"), UriKind.RelativeOrAbsolute));
+            mainmenu.MediaEnded += Media_Endedmusic;
+            mainmenu.Volume = 0.2;
+        }
+
+        public void LoadGamesSFX() 
+        {
             seedlift = new MediaPlayer();
-         
+
             seedlift.Open(new Uri(Path.Combine("Sound", "seedlift.wav"), UriKind.RelativeOrAbsolute));
             seedlift.MediaEnded += Media_Ended;
 
             plant = new MediaPlayer();
             plant.Open(new Uri(Path.Combine("Sound", "Plant.wav"), UriKind.RelativeOrAbsolute));
             plant.MediaEnded += Media_Ended;
-       
+
             zombiebite = new MediaPlayer();
             zombiebite.Open(new Uri(Path.Combine("Sound", "ZombieBite.wav"), UriKind.RelativeOrAbsolute));
             zombiebite.MediaEnded += Media_Ended;
@@ -101,13 +109,11 @@ namespace GUI_20212202_IJA9WQ.Assets
             Throw = SoundReader("Throw");
             Splat = SoundReader("Splat");
 
-            mainmenu = new MediaPlayer();
-            mainmenu.Open(new Uri(Path.Combine("Sound", "MainMenuPvZ1.wav"), UriKind.RelativeOrAbsolute));
-            mainmenu.MediaEnded += Media_Endedmusic;
-            mainmenu.Volume = 0.2;
         }
-        
-       
+        public void LoadMenuSFX() 
+        {
+
+        }
         public List<MediaPlayer> SoundReader(string path)
         {
             List<MediaPlayer> sounds = new List<MediaPlayer>();
@@ -133,12 +139,25 @@ namespace GUI_20212202_IJA9WQ.Assets
             else
             {
                 mainmenu.Pause();
+                menumuted = true;
             }
+        }
+        public void MainMenuStart()
+        {   
+             mainmenu.Play();   
+        }
+        public void MainMenuStop()
+        {
+            mainmenu.Pause();
         }
 
         public void Daymusic()
         {
            daymusic.Play();
+        }
+        public void DaymusicStop()
+        {
+            daymusic.Stop();
         }
 
         public void ShovelSound()
@@ -237,11 +256,11 @@ namespace GUI_20212202_IJA9WQ.Assets
             scream.Play();
         }
 
-        public void Media_Ended(object sender, EventArgs e)
+        private void Media_Ended(object sender, EventArgs e)
         {
-            (sender as MediaPlayer).Stop();
+            (sender as MediaPlayer).Pause();
         }
-        public void Media_Endedmusic(object sender, EventArgs e)
+        private void Media_Endedmusic(object sender, EventArgs e)
         {
             (sender as MediaPlayer).Position = TimeSpan.Zero;
 

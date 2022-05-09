@@ -17,7 +17,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             switch (view)
             {
                 case "game":
-                    View = new GameUC();
+                    View = new GameUC(this);
                     break;
                 case "menu":
                     View = new MenuUC();

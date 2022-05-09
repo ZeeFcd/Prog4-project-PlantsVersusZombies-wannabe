@@ -1,4 +1,5 @@
-﻿using GUI_20212202_IJA9WQ.Logic;
+﻿using GUI_20212202_IJA9WQ.Assets;
+using GUI_20212202_IJA9WQ.Logic;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.Input;
@@ -15,6 +16,7 @@ namespace GUI_20212202_IJA9WQ.ViewModels
         public ICommand MuteCommand { get; set; }
         public IViewLogic viewLogic { get; set; }
         public ICommand HighscoreCommand { get; set; }
+        Sounds sound;
         public static bool IsInDesignMode
         {
             get
@@ -31,8 +33,11 @@ namespace GUI_20212202_IJA9WQ.ViewModels
         public MenuViewModel(IViewLogic viewLogic)
         {
             this.viewLogic = viewLogic;
-            StartGameCommand = new RelayCommand(() => viewLogic.ChangeView("game"));
-            HighscoreCommand = new RelayCommand(()=> viewLogic.ChangeView("highscores"));
+            this.sound = new Sounds();
+            sound.MainMenuStart();
+            StartGameCommand = new RelayCommand(() => { viewLogic.ChangeView("game"); sound.MainMenuMute(); } );
+            HighscoreCommand = new RelayCommand(()=> { viewLogic.ChangeView("highscores"); sound.MainMenuMute(); });
+            MuteCommand = new RelayCommand(() => sound.MainMenuMute());
         }
 
 
