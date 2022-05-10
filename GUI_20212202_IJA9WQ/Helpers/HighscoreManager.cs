@@ -42,7 +42,7 @@ namespace GUI_20212202_IJA9WQ.Helpers
         public void Add( (string, string)value) 
         {
             Highscores.Add(value);
-            Highscores = Highscores.OrderBy(x=>x.Item2).ToList();
+            Highscores = Highscores.OrderByDescending(x=>x.Item2).ToList();
         }
     }
 }

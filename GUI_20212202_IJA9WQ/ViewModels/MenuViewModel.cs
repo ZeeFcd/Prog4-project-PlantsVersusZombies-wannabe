@@ -35,8 +35,8 @@ namespace GUI_20212202_IJA9WQ.ViewModels
             this.viewLogic = viewLogic;
             this.sound = new Sounds();
             sound.MainMenuStart();
-            StartGameCommand = new RelayCommand(() => { viewLogic.ChangeView("game"); sound.MainMenuMute(); } );
-            HighscoreCommand = new RelayCommand(()=> { viewLogic.ChangeView("highscores"); sound.MainMenuMute(); });
+            StartGameCommand = new RelayCommand(() => { viewLogic.ChangeView("game"); sound.MainMenuStop(); } );
+            HighscoreCommand = new RelayCommand(()=> { viewLogic.ChangeView("highscores"); sound.MainMenuStop(); });
             MuteCommand = new RelayCommand(() => sound.MainMenuMute());
         }
 

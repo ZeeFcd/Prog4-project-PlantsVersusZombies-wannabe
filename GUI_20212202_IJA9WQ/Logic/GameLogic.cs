@@ -14,6 +14,7 @@ namespace GUI_20212202_IJA9WQ.Logic
 
         CoordinateCalculator coordinateCalculator;
         int gameClock;
+        int waveClock;
         int currentlySelectedIndex;
         bool shovelSelected;
         int waveCount;
@@ -51,6 +52,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public int SunValue { get => sunValue; }
         public bool ShovelSelected { get => shovelSelected; }
         public bool GameEnded { get; private set; }
+        public bool IsWaveNow { get; private set; }
         public int WaveCount { get => waveCount;  }
 
         public GameLogic(CoordinateCalculator coordinateCalculator)
@@ -64,6 +66,7 @@ namespace GUI_20212202_IJA9WQ.Logic
             Suns = new List<Sun>();
             gameClock = 0;
             waveCount = 0;
+            IsWaveNow = false;
 
             sunValue = 50;
             PlantsMatrix = new Plant[5, 9];
@@ -115,25 +118,36 @@ namespace GUI_20212202_IJA9WQ.Logic
                 {
                     for (int i = 0; i < waveCount+1; i++)
                     {
+                        ZombieGroanSound?.Invoke();
                         SmallWave();
                     }
                 }
                 else if (gameClock % 1125 == 0)
                 {
-                        MediumWave(); 
+                    ZombieGroanSound?.Invoke();
+                    MediumWave(); 
                 }
                 else if (gameClock % 1925 == 0)
                 {
+                    waveClock = gameClock;
+                    ZombieGroanSound?.Invoke();
                     HugeWaveSound?.Invoke();
                     SmallWave();
-                    WaveSound?.Invoke();
+                    IsWaveNow = true;
                 }
-                else if (gameClock % 1975 == 0)
+                else if (gameClock-waveClock == 50)
                 {
+                    ZombieGroanSound?.Invoke();
+                    WaveSound?.Invoke();
                     MediumWave();
                 }
-                else if (gameClock % 2025 == 0)
+                else if (gameClock - waveClock == 75)
                 {
+                    IsWaveNow = false;
+                }
+                else if (gameClock - waveClock == 100)
+                {
+                    ZombieGroanSound?.Invoke();
                     MediumWave();
                     waveCount++;
                 }

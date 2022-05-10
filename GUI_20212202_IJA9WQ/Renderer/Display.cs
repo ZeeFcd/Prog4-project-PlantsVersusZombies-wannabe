@@ -350,6 +350,16 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     }
                     
                 }
+                if (logic.IsWaveNow)
+                {
+                    Geometry wave = new RectangleGeometry(
+                        new Rect(
+                            coordinateCalculator.LeftMapBorder,
+                            coordinateCalculator.UpperMapBorder + 2 * coordinateCalculator.GameMapCellHeight,
+                             8 * coordinateCalculator.GameMapCellWidth,
+                           coordinateCalculator.GameMapCellHeight / 2));
+                    drawingContext.DrawGeometry(GameBrushes.WaveBrush, null, wave);
+                }
                 if (logic.GameEnded)
                 {
                     Geometry died = new RectangleGeometry(

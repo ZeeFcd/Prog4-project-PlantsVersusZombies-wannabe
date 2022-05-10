@@ -128,9 +128,9 @@ namespace GUI_20212202_IJA9WQ.UserControlls
             {
                 DeathTimer.Stop();
                 HighscoreManager manager = new HighscoreManager();
-                NameInput nameinput = new NameInput(score.Minute + ":" + score.Second);
+                NameInput nameinput = new NameInput(score.ToString("mm:ss"));
                 nameinput.ShowDialog();
-                manager.Add((nameinput.YourName, score.Minute + ":" + score.Second));
+                manager.Add((nameinput.YourName, score.ToString("mm:ss")));
                 BackToMenu();
             }
         }

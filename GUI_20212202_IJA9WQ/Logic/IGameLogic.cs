@@ -10,7 +10,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         LawnMover[] LawnMovers { get; }
         bool ShovelSelected { get; }
         bool GameEnded { get; }
-
+        bool IsWaveNow { get; }
         int GameClock { get; }
         List<Plant> Plants { get; }
         Plant[] PlantsSelectionDay { get; }

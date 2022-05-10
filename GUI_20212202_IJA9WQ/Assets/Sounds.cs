@@ -149,7 +149,7 @@ namespace GUI_20212202_IJA9WQ.Assets
         }
         public void MainMenuStop()
         {
-            mainmenu.Pause();
+            mainmenu.Stop();
         }
 
         public void Daymusic()
@@ -158,7 +158,7 @@ namespace GUI_20212202_IJA9WQ.Assets
         }
         public void DaymusicStop()
         {
-            daymusic.Pause();
+            daymusic.Stop();
         }
 
         public void ShovelSound()
