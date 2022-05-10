@@ -49,5 +49,6 @@ namespace GUI_20212202_IJA9WQ.Assets
 
         public static readonly Brush DiedBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "gameover.png"), UriKind.RelativeOrAbsolute)));
         public static readonly Brush WaveBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "hugewave.png"), UriKind.RelativeOrAbsolute)));
+        public static readonly Brush PauseMenuBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "InGameMenu.png"), UriKind.RelativeOrAbsolute)));
     }
 }

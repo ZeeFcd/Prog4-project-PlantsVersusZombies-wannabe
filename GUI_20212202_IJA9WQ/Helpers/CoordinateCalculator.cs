@@ -322,6 +322,24 @@ namespace GUI_20212202_IJA9WQ.Helpers
             get { return 0; }
         }
         //---------------------
+        public double PauseMenuX
+        {
+            get { return 0.875*displayWidth; }
+        }
+        public double PauseMenuY
+        {
+            get { return 0; }
+        }
+        public double PauseMenuWidth
+        {
+            get { return 0.125 * displayWidth; }
+        }
+        public double PauseMenuHeight
+        {
+            get { return 0.875 * ShopItemWidth; }
+        }
+
+
 
         public bool IsInGameMap(double x, double y) 
         {
@@ -346,6 +364,11 @@ namespace GUI_20212202_IJA9WQ.Helpers
         public bool IsInShovel(double x, double y)
         {
             return ShovelX < x && x < ShovelX+ShovelWidth && ShovelY < y && y < ShovelY+ShovelHeight;
+        }
+
+        public bool IsGamePause(double x, double y)
+        {
+            return PauseMenuX < x && x < displayWidth && PauseMenuY < y && y < PauseMenuY + PauseMenuHeight;
         }
 
         public int WhichCellInShop(double y) 

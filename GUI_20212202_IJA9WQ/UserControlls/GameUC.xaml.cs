@@ -135,9 +135,33 @@ namespace GUI_20212202_IJA9WQ.UserControlls
             }
         }
 
+        private void Pause()
+        {
+            gamestepDT.Stop();
+            displayDT.Stop();
+            timer.Stop();
+            ispaused = true;
+            PauseMenu pause = new PauseMenu();
+
+            if ((bool)pause.ShowDialog())
+            {
+                gameended = true;
+                sounds.DaymusicStop();
+                BackToMenu();
+            }
+            else
+            {
+                gamestepDT.Start();
+                displayDT.Start();
+                timer.Start();
+                ispaused = false;
+            }
+
+        }
+
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (!gameended)
+            if (!gameended&&!ispaused)
             {
                 bool isingamemap = coordinateCalculator.IsInGameMap(mouseX, mouseY);
 
@@ -170,6 +194,10 @@ namespace GUI_20212202_IJA9WQ.UserControlls
                     logic.IsSunSelected(mouseX, mouseY);
                     display.InvalidateVisual();
                 }
+                else if (coordinateCalculator.IsGamePause(mouseX,mouseY))
+                {
+                    Pause();
+                }
                 display.InvalidateVisual();
             }
            
@@ -190,25 +218,7 @@ namespace GUI_20212202_IJA9WQ.UserControlls
             display.SetMouse(mouseX, mouseY);
             display.InvalidateVisual();
         }
-        private void Pause()
-        {
-            gamestepDT.Stop();
-            timer.Stop();
-            displayDT.Stop();
 
-            if (ispaused)
-            {
-                gamestepDT.Start();
-                timer.Start();
-                displayDT.Start();
-            }
-            else
-            {
-                gamestepDT.Stop();
-                timer.Stop();
-                displayDT.Stop();
-            }
-        }
         private void BackToMenu()
         {
             viewLogic.ChangeView("menu");
