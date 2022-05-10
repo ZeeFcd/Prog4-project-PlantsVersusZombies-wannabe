@@ -104,6 +104,7 @@ namespace GUI_20212202_IJA9WQ.Assets
             scream = new MediaPlayer();
             scream.Open(new Uri(Path.Combine("Sound", "scream.wav"), UriKind.RelativeOrAbsolute));
             scream.MediaEnded += Media_Ended;
+            scream.Volume = 0.3;
 
             Groan = SoundReader("Groan");
             Throw = SoundReader("Throw");

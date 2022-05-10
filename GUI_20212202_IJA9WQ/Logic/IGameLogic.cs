@@ -9,6 +9,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         int CurrentlySelectedIndex { get; }
         LawnMover[] LawnMovers { get; }
         bool ShovelSelected { get; }
+        bool GameEnded { get; }
 
         int GameClock { get; }
         List<Plant> Plants { get; }

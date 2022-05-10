@@ -20,10 +20,12 @@ namespace GUI_20212202_IJA9WQ.UserControlls
         DispatcherTimer gamestepDT;
         DispatcherTimer displayDT;
         DispatcherTimer timer;
+        DispatcherTimer DeathTimer;
         GameLogic logic;
         CoordinateCalculator coordinateCalculator;
         GameAnimationBrushes brushes;
-        DateTime gameTime;
+        int deathtime;
+        DateTime score;
         Sounds sounds;
         double mouseX;
         double mouseY;
@@ -87,12 +89,21 @@ namespace GUI_20212202_IJA9WQ.UserControlls
                 display.InvalidateVisual();
             };
 
-            gameTime = new DateTime();
+            score = new DateTime();
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += (sender, eventargs) =>
             {
-                gameTime.AddSeconds(1);
+                score=score.AddSeconds(1);
+            };
+
+            deathtime = 0;
+            DeathTimer = new DispatcherTimer();
+            DeathTimer.Interval = TimeSpan.FromSeconds(1);
+            DeathTimer.Tick += (sender, eventargs) =>
+            {
+                Deathtimer();
+                deathtime++;
             };
 
 
@@ -105,13 +116,23 @@ namespace GUI_20212202_IJA9WQ.UserControlls
         private void Gameover()
         {
             gamestepDT.Stop();
-            timer.Stop();
             displayDT.Stop();
             sounds.DaymusicStop();
-            sounds.ScreamSound();
+            timer.Stop();
             gameended = true;
-            BackToMenu();
-
+            DeathTimer.Start();
+        }
+        private void Deathtimer()
+        {
+            if (deathtime==4)
+            {
+                DeathTimer.Stop();
+                HighscoreManager manager = new HighscoreManager();
+                NameInput nameinput = new NameInput(score.Minute + ":" + score.Second);
+                nameinput.ShowDialog();
+                manager.Add((nameinput.YourName, score.Minute + ":" + score.Second));
+                BackToMenu();
+            }
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

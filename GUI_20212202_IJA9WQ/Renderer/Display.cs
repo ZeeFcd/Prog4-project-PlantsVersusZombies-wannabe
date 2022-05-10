@@ -350,6 +350,16 @@ namespace GUI_20212202_IJA9WQ.Renderer
                     }
                     
                 }
+                if (logic.GameEnded)
+                {
+                    Geometry died = new RectangleGeometry(
+                        new Rect(
+                            coordinateCalculator.LeftMapBorder,
+                            coordinateCalculator.UpperMapBorder,
+                            7*coordinateCalculator.GameMapCellWidth,
+                            4*coordinateCalculator.GameMapCellHeight));
+                    drawingContext.DrawGeometry(GameBrushes.DiedBrush, null, died);
+                }
                
             }
         }

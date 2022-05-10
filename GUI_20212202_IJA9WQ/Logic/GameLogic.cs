@@ -50,6 +50,7 @@ namespace GUI_20212202_IJA9WQ.Logic
         public int CurrentlySelectedIndex { get => currentlySelectedIndex; }
         public int SunValue { get => sunValue; }
         public bool ShovelSelected { get => shovelSelected; }
+        public bool GameEnded { get; private set; }
         public int WaveCount { get => waveCount;  }
 
         public GameLogic(CoordinateCalculator coordinateCalculator)
@@ -631,6 +632,8 @@ namespace GUI_20212202_IJA9WQ.Logic
         }
         private void Gameover() 
         {
+            ScreamSound?.Invoke();
+            GameEnded = true;
             GameOver?.Invoke();
         }
         private void SmallWave()
