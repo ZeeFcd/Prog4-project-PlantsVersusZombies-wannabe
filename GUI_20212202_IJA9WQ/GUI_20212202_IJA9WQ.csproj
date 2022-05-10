@@ -930,9 +930,6 @@
     <Content Include="Images\potatomineItem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\powie.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\powieAnimation\powie (1).gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
