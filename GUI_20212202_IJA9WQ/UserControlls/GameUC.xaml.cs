@@ -26,7 +26,7 @@ namespace GUI_20212202_IJA9WQ.UserControlls
         GameAnimationBrushes brushes;
         int deathtime;
         DateTime score;
-        Sounds sounds;
+        ISoundGame sounds;
         double mouseX;
         double mouseY;
         bool gameended;

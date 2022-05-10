@@ -16,7 +16,7 @@ namespace GUI_20212202_IJA9WQ.ViewModels
         public ICommand MuteCommand { get; set; }
         public IViewLogic viewLogic { get; set; }
         public ICommand HighscoreCommand { get; set; }
-        Sounds sound;
+        ISoundMenu sound;
         public static bool IsInDesignMode
         {
             get

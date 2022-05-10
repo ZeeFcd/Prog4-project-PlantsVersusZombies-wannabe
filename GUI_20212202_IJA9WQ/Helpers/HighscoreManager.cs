@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace GUI_20212202_IJA9WQ.Helpers
 {
-    public class HighscoreManager
+    public class HighscoreManager : IHighscoreManager
     {
-        
+
         public static List<(string, string)> Highscores { get; private set; }
 
-        public void ReadHighscoreFromText() 
+        public void ReadHighscoreFromText()
         {
             Highscores = new List<(string, string)>();
             if (File.Exists("highscores.txt"))
@@ -33,16 +33,16 @@ namespace GUI_20212202_IJA9WQ.Helpers
             List<string> highscoresString = new List<string>();
             foreach (var score in Highscores)
             {
-                string temp = score.Item1 + ',' + score.Item2 ;
+                string temp = score.Item1 + ',' + score.Item2;
                 highscoresString.Add(temp);
             }
             File.WriteAllLines("highscores.txt", highscoresString);
         }
 
-        public void Add( (string, string)value) 
+        public void Add((string, string) value)
         {
             Highscores.Add(value);
-            Highscores = Highscores.OrderByDescending(x=>x.Item2).ToList();
+            Highscores = Highscores.OrderByDescending(x => x.Item2).ToList();
         }
     }
 }

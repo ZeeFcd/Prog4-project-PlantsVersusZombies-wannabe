@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace GUI_20212202_IJA9WQ.Assets
 {
-    public class Sounds
+    public class Sounds : ISoundMenu, ISoundGame
     {
         bool menumuted;
         MediaPlayer seedlift;
@@ -34,14 +34,14 @@ namespace GUI_20212202_IJA9WQ.Assets
         public List<MediaPlayer> Splat;
         public Sounds()
         {
-            menumuted=false;
+            menumuted = false;
             mainmenu = new MediaPlayer();
             mainmenu.Open(new Uri(Path.Combine("Sound", "MainMenuPvZ1.wav"), UriKind.RelativeOrAbsolute));
             mainmenu.MediaEnded += Media_Endedmusic;
             mainmenu.Volume = 0.2;
         }
 
-        public void LoadGamesSFX() 
+        public void LoadGamesSFX()
         {
             seedlift = new MediaPlayer();
 
@@ -111,7 +111,7 @@ namespace GUI_20212202_IJA9WQ.Assets
             Splat = SoundReader("Splat");
 
         }
-        public void LoadMenuSFX() 
+        public void LoadMenuSFX()
         {
 
         }
@@ -119,7 +119,7 @@ namespace GUI_20212202_IJA9WQ.Assets
         {
             List<MediaPlayer> sounds = new List<MediaPlayer>();
             string[] files = Directory.GetFiles(Path.Combine("Sound", path));
-            for (int i = 0; i < files.Length ; i++)
+            for (int i = 0; i < files.Length; i++)
             {
                 MediaPlayer sound = new MediaPlayer();
                 sound.Volume = 0;
@@ -144,8 +144,8 @@ namespace GUI_20212202_IJA9WQ.Assets
             }
         }
         public void MainMenuStart()
-        {   
-             mainmenu.Play();   
+        {
+            mainmenu.Play();
         }
         public void MainMenuStop()
         {
@@ -154,7 +154,7 @@ namespace GUI_20212202_IJA9WQ.Assets
 
         public void Daymusic()
         {
-           daymusic.Play();
+            daymusic.Play();
         }
         public void DaymusicStop()
         {
@@ -185,7 +185,7 @@ namespace GUI_20212202_IJA9WQ.Assets
         }
         public void ShootSound()
         {
-            
+
             int random = RandomGenerator.Rand.Next(0, Throw.Count);
             Throw[random].Position = TimeSpan.Zero;
             Throw[random].Play();

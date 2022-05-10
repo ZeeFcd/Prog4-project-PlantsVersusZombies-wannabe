@@ -37,7 +37,7 @@ namespace GUI_20212202_IJA9WQ.Assets
             CherryGIF = BrushesReader("cherryAnimation");
             PowieGIF = BrushesReader("powieAnimation");
         }
-        public List<Brush> BrushesReader(string path)
+        private List<Brush> BrushesReader(string path)
         {
             List<Brush> brushes = new List<Brush>();
             string[] files = Directory.GetFiles(Path.Combine("Images", path));
